@@ -1,0 +1,45 @@
+.agenda{
+  .headTitle{
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    background-color: #1f644f;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    >div{
+      float: left;
+      text-align: center;
+    }
+    .cate{
+      width: 8%;
+    }
+    .openTime{
+      width: 8%;
+    }
+    .logo{
+      width: 2.75%;
+    }
+    .team{
+      width: 32.775%;
+      text-align: center;
+    }
+    .live{
+      width: 15.7%;
+    }
+  }
+  .matchDate{
+    text-align: center;
+    background-color: #169673;
+    p{
+      font-size: 14px;
+      height: 37px;
+      line-height: 37px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  .agendaTeam{
+    width: 100%;
+    display: table;
+  }
+}

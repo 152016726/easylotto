@@ -1,0 +1,74 @@
+.play_info_panel{
+  padding: 1px 20px 8px 12px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  .text{
+    float: left;
+    width: 190px;
+    >li{
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 0 10px 0;
+      span{
+        display: block;
+        &.attrKey{
+          font-size: 12px;
+          color: #565656;
+          line-height: 14px;
+          height: 14px;
+        }
+        &.attrValue{
+          font-size: 14px;
+          color: #000;
+          line-height: 18px;
+          height: 18px;
+        }
+      }
+      ul{
+        &.attrValue li{
+          font-size: 14px;
+          color: #000;
+          line-height: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  .avatar{
+    float: right;
+    width: 74px;
+    padding-top: 10px;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

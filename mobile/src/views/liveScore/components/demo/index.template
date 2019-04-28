@@ -1,0 +1,4 @@
+<div class="demo">
+    {{demoStr}}
+    <div v-on:click="demoClick">点喔点喔点喔哟</div>
+</div>

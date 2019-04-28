@@ -1,0 +1,4 @@
+<a :class="{icon_button:true}" @click="clickHandle">
+    {{text}}
+    <slot/>
+</a>

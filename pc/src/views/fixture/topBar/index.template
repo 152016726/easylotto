@@ -1,0 +1,9 @@
+<div class="top_bar">
+    <div class="top_buttons clearfix">
+        <icon-button class="reselect" :onClick="clickHandle" :text="langData.reselect"/>
+        <div class="right">
+            <icon-button class="backup" :onClick="clickHandle" :text="langData.remark"/>
+            <icon-button class="odds_time" :onClick="handleShowSchedule" :text="langData.schedule"/>
+        </div>
+    </div>
+</div>

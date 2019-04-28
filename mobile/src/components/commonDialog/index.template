@@ -1,0 +1,12 @@
+<div class="common_dialog" v-if="selfShow">
+    <div class="inner">
+        <h1 v-if="showTitle">
+            <span v-html="title"></span>
+            <a @click="close" class="close_btn"></a>
+        </h1>
+        <div class="content">
+            <slot/>
+        </div>
+        <div class="mask"  @click="close" ></div>
+    </div>
+</div>

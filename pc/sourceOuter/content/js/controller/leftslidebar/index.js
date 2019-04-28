@@ -1,0 +1,30 @@
+/**
+* Created by beate on 2017/10/17
+* Copyright 2017 www.macauslot.com
+* Left menu of the website
+**/
+$("#inside_sidebar").html('<ul class="'+(show_type==2?'_nba':show_type==3?'_tennis':'_soccer')+'">'+
+            // '<li class="show"><a href="javascript:popup(\''+www_link+'page/advertise.html?lang='+lang+'\')" class="backimg img_01" id="inside_odds">'+["盤紙","盤紙",'Odds Download'][lang_id]+'</a></li>'+
+            //'<li class="show"><a '+(lang=='en'?'style="height: 72px;line-height: 14px;background-repeat:  no-repeat;"':'')+' href="'+location.href.split("content/")[0]+'index_old.html?id=pc" onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)舊版本\', \'網站主頁-->舊版本\');"   class="backimg '+(lang=='en'?'_en':'')+' img_old" target="_blank">'+["舊版本","旧版本",'Previous Ver.'][lang_id]+'</a></li>'+
+            '<li class="show"><a  onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)客服\', \'網站主頁-->客服\');"    href="javascript:openPopup(\'slot/html/new/contact_us/'+(lang_id==2?'en_':'')+'contact_us.html\',1000,600)" class="backimg img_02">'+["客服","客服",'Service'][lang_id]+'</a></li>'+
+            '<li class="show"><a  onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)工具\', \'網站主頁-->工具\');"    href="javascript:openPopup(\'Engapp/index.html?lang='+(lang=='sc'?'sc':lang=='en'?'eng':'cn')+'\',1024,768)" class="backimg img_11">'+["工具","工具",'Download'][lang_id]+'</a></li>'+
+            '<li class="show"><a  onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)幫助\', \'網站主頁-->幫助\');"    href="javascript:openPopup(\'slot/html/new/corprofile/faq/faq'+(lang=='en'?'_en':'')+'.html\',1024,768)" class="backimg img_12">'+["幫助","幫助",'FAQ'][lang_id]+'</a></li>'+
+
+            '<li class="hide '+(location.href.indexOf('odds')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'賠率\', \''+ball_type[show_type]+'\賠率\');"  href="'+location.href.split('page/')[0]+'page/'+ball_type[show_type]+'/odds/all.html?sport='+show_type+'&lang='+lang+'" class="'+(show_type==2?'nba_':show_type==3?'tennis_':'')+'backimg img_03 '+(location.href.indexOf('odds')>0?"active":"")+'">'+["賠率","賠率",'Odds'][lang_id]+'</a></li>'+
+            '<li class="hide '+(location.href.indexOf('fixture')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'賽程\', \''+ball_type[show_type]+'\賽程\');" href="'+location.href.split('page/')[0]+'page/'+ball_type[show_type]+'/fixture/index.html?sport='+show_type+'&lang='+lang+'" class="'+(show_type==2?'nba_':show_type==3?'tennis_':'')+'backimg img_04 '+(location.href.indexOf('fixture')>=0?"active":"")+'">'+["賽程","賽程",'Fixture'][lang_id]+'</a></li>'+
+            '<li class="hide '+(location.href.indexOf('livescore')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'比數\', \''+ball_type[show_type]+'\比數\');" href="'+location.href.split('page/')[0]+'page/'+(ball_type[show_type]=='tennis'?'tennis/livescore/livescore.html':'livescore_soccernba.html')+'?sport='+show_type+'&lang='+lang+'" class="'+(show_type==2?'nba_':show_type==3?'tennis_':'')+'backimg img_05 '+(location.href.indexOf('livescore')>0?"active":"")+'">'+["比數","比數",'Livescore'][lang_id]+'</a></li>'+
+            
+            (lang_id !=2? '<li class="hide '+(location.href.indexOf('news')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'新聞\', \''+ball_type[show_type]+'\新聞\');"  href="'+location.href.split('page/')[0]+'page/news/index.html?sport='+show_type+'&lang='+lang+'" class="'+(show_type==2?'nba_':show_type==3?'tennis_':'')+'backimg img_06 '+(location.href.indexOf('news')>0?"active":"")+'">'+["新聞","新聞",'News'][lang_id]+'</a></li>' : '')+
+            
+            '<li class="hide '+(location.href.indexOf('library')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'資料庫\', \''+ball_type[show_type]+'\資料庫\');" href="'+ (show_type!=3?'javascript:openPopup(\''+ball_type[show_type]+'/html/database/current/'+["ch","ch","en"][lang_id]+'-'+(show_type!=2?'tournament':'databasemain')+'.html\', 1000, 600)':location.href.split('page/')[0]+'page/tennis/library/library.html?sport='+show_type+'&lang='+lang ) +'" class="'+(show_type==2?'nba_':show_type==3?'tennis_':'')+'backimg img_07 '+(location.href.indexOf('library')>=0?"active":"")+'">'+["資料庫","資料庫",'Statistic'][lang_id]+'</a></li>'+
+            ((lang_id!=2 && show_type!=2 && show_type!=3)?'<li class="hide '+(location.href.indexOf('analysis')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'分析\', \''+ball_type[show_type]+'\分析\');" href="'+location.href.split('page/')[0]+'page/'+ball_type[show_type]+'/analysis.html?sport='+show_type+'&lang='+ lang +'" class="backimg img_08 '+(location.href.indexOf('analysis')>=0?"active":"")+'">'+["分析","分析",''][lang_id]+'</a></li>':'')+
+            (lang_id!=2 && show_type!=3&& show_type!=2?'<li class="hide"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)'+ball_type[show_type]+'報章\', \''+ball_type[show_type]+'\報章\');"    href="javascript:openPopup(\'soccer/html/forum/boxing/boxing.html\', 900, 600)" class="'+(show_type==2?'nba_':'')+'backimg img_09">'+["報章","報章",''][lang_id]+'</a></li>':'')+
+            (lang_id!=2 && show_type ==3?'<li class="hide '+(location.href.indexOf('ranking')>=0?"active":"")+'"><a onclick="javascript:ga(\'send\', \'event\', \'click\', \'(點擊)網球排名\', \'網球排名\');" href="'+location.href.split('page/')[0]+'page/tennis/ranking/ranking.html?sport='+show_type+'&lang='+lang+'" class="tennis_backimg img_10 '+(location.href.indexOf('ranking')>=0?"active":"")+'">'+["排名","排名",'Ranking'][lang_id]+'</a></li>':'')+
+         '</ul>');
+if (show_type >0 && show_type <4) { //Child Homepage
+      $('.show').hide();
+      $('.hide').show();
+} else { //Homepage
+      $('.show').show();
+      $('.hide').hide();
+}

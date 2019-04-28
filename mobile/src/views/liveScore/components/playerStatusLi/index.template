@@ -1,0 +1,11 @@
+<div class="player-status-li clearfix">
+    <span>{{minuteNum}}</span>
+    <span @click="playerInfoHandle">{{playerName}}</span>
+    <match-icon-view
+            :type="typeNum"
+            :num="num">
+    </match-icon-view>
+    <common-dialog ref="dialog" :title="langData.title">
+        <play-info-panel v-bind="{playerId: playerId}"></play-info-panel>
+    </common-dialog>
+</div>

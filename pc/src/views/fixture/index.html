@@ -1,0 +1,27 @@
+
+<div id="main_container">
+    <div id="container_title" v-cloak>
+        <a href="https://www.macauslot.com/content/page/index.html?sport=1&lang=cn">{{langData.soccer}}</a> &gt; <span
+            class="soccer_text_color">{{langData.fixture}}</span>
+    </div>
+    <div>
+        <div id="MSLiveMain">
+            <scroll-fixed-box  in-iframe="#main_page">
+                <top-bar/>
+            </scroll-fixed-box>
+            <div class="content clearfix">
+                <div class="left">
+                    <agenda></agenda>
+                </div>
+                <div class="right">
+                    <date-plugin></date-plugin>
+                    <ul class="advertisement">
+                        <li v-for="val in adList" @click="gotoAd(val.goToUrl)">
+                            <img :src="val.picUrl">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

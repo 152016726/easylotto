@@ -1,0 +1,31 @@
+<div class="settings_menu" v-if="showSelf">
+    <h3 class="title">{{langData.title}}</h3>
+    <div class="buttons clearfix">
+        <ul class="left">
+            <li class="clearfix">
+                <label><input type="checkbox" :value="checkboxVal[0]" v-model="checkboxArr">{{langData.sound}}</label>
+                <label><input type="radio" name="audio" :value="radioVal[0]" v-model="radioSelected">{{langData.selected}}</label>
+                <label><input type="radio" name="audio" :value="radioVal[1]" v-model="radioSelected">{{langData.all}}</label>
+                <a class="btn" @click="testAudio">测试</a>
+                <audio :src="audio" ref="audio" class="audio_player" controls="controls">
+                    Your browser does not support the audio element.
+                </audio>
+            </li>
+            <li class="clearfix">
+                <label><input type="checkbox" :value="checkboxVal[1]" v-model="checkboxArr">{{langData.win}}*</label>
+                <label><input type="radio" name="dialog" :value="radioVal[0]" v-model="winSelected">{{langData.selected}}</label>
+                <label><input type="radio" name="dialog" :value="radioVal[1]" v-model="winSelected">{{langData.all}}</label>
+                <a class="btn" @click="testWin">测试</a>
+            </li>
+        </ul>
+        <ul class="right">
+            <li class="clearfix">
+                <span>{{langData.sortMethod}}:</span>
+                <label><input type="radio" name="sort" :value="sortRadioVal[0]" v-model="sortSelected">{{langData.playingSort}}</label>
+                <label><input type="radio" name="sort" :value="sortRadioVal[1]" v-model="sortSelected">{{langData.timeSort}}</label>
+            </li>
+            <li>* {{langData.tip}}</li>
+            <li><a @click="toggleSettingsMenu" class="close_btn btn">{{langData.close}}</a></li>
+        </ul>
+    </div>
+</div>

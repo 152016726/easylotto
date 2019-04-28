@@ -1,0 +1,579 @@
+/**
+* create by beate 20171016
+* Copyright 2017 www.macauslot.com
+* Be in index use
+**/
+@charset "utf-8";
+#msl-livescore-result{
+    height: 80%;
+    top:10%;
+}
+.overflow_y{
+    height: 88%;
+    overflow-y: auto;
+}
+TABLE#tableButton {
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+.styleoddsprint {
+    background-color: #FFFFFF;
+}
+
+.msl-odds-abs-left {
+    background-color: #1f644f;
+    font-size: 12px;
+    text-align: center;
+}
+
+.msl-odds-abs-left2 {
+    background-color: #0ed282;
+    font-size: 12px;
+    text-align: center;
+}
+
+.styleoddsding {
+    background-color: #252830;
+}
+
+.msl_odds_abs_hdr_table {
+    font-size: 12px;
+    border-collapse: collapse;
+    border: 0;
+    float: left;
+}
+.msl_odds_abs_hdr_table b{
+    color:#fff;
+}
+
+.msl_odds_abs_hdr_table td {
+    text-align: center;
+    border-top: 0;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    border-left: 0;
+    /* min-height: 30px; */
+    padding: 0px 6px;
+    /* font-size: 14px; */
+}
+
+.msl_odds_abs_hdr_table tr td.lastCol {
+    border-right: 0;
+}
+
+.badge_left {
+    color: #000;
+    background-color: transparent;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.badge_right {
+    color: #000;
+    background-color: transparent;
+    float: right;
+    padding-right: 5px;
+}
+
+.badge {
+    color: #F4F7F9;
+    line-height: 30px;
+}
+
+.styletour {
+    color: #F4F7F9;
+}
+
+.styleodds {
+    background: #fff;
+    font-size: 14px; */
+}
+
+.styleodds2 {
+    background: #e5e5e3;
+    font-size: 14px; */
+}
+
+.divfloat {
+    float: left;
+    padding-left: 5px;
+}
+
+#select_tr {
+    padding-top: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.select_title {
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.select_title li {
+    float: right;
+    margin-right: 10px;
+}
+.select_title a{
+    color:#fff;
+}
+.select_title li select,#odds_type_select {
+    /*border: 0;*/
+    border-radius: 6px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 1em;
+    font-size: 14px;
+    min-width: 140px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+}
+
+
+.load {
+    width: 120px;
+    height: 120px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    #background: url(../../../images/icons/load.gif) no-repeat center center;
+}
+
+.checkbox {
+    position: relative;
+    left: 0;
+    overflow:  hidden;
+    width:  30px;
+    height:  30px;
+    margin: 2px;
+}
+
+.checkbox input[type='checkbox'] {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity:0;
+    opacity:0;
+    filter:alpha(opacity:0);
+    width:  30px;
+    height:  30px;
+}
+
+.checkbox label {
+    background: url(../../../images/icons/checkbox_t.png) no-repeat center;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    -webkit-transition: background 0.5s linear;
+    cursor: pointer;
+    left:  0;
+    /* margin: 4px; */
+}
+
+.checkbox input[type='checkbox']:checked + label:before {
+    background: url(../../../images/icons/checkbox_t.png) no-repeat center center;
+}
+
+#table td a:hover,#table td a:link,#table td a:visited,#table td a:active {
+    color: #0540e9;
+    text-decoration: underline;
+    /* padding:  4px; */
+}
+
+.top_preds {
+    width: 100%;
+    overflow: hidden;
+    background-color: #212121;
+    color: #fff;
+    padding: 5px 0px;
+}
+
+.herder_title,.herder_title_nba{
+    width: 65%;
+    font-size: 14px;
+    line-height: 50px;
+    padding-left: 20px;
+    letter-spacing: -0.5px;
+}
+
+.herder_title strong,.herder_title_nba strong {
+    color: #87c241;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+.herder_title_nba strong {
+    color: #fa961b;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.herder_time {
+    width: 18%;
+    font-size: 14px;
+    background-color: #212121;
+    line-height: 24px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.cboxWrapper {
+    background-color: #fff;
+}
+.cboxWrapper th{
+    background-color:#923d00;
+    color:#fff;
+}
+#msl-livescore-result .date td {
+    background-color:#169673;
+    color: #fff;
+    /*font-size: 12px;*/
+    /*line-height: 20px;*/
+}
+#msl-livescore-result .nba td {
+    background-color: #fa961b;
+}
+#msl-livescore-result .styleone,.styletwo td {
+    line-height: 20px;
+    /*height: 30px;*/
+    /*font-size: 14px;*/
+}
+
+#msl-livescore-result table td {
+    border-top: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+    text-align: center;
+    padding: 5px;
+}
+
+#msl-livescore-result table {
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+#msl-livescore-result ul, .msl_odds_abs_hdr_table ul {
+    width: 60px;
+    left: 0;
+    right: 0;
+    line-height: 20px;
+    margin: 2px auto;
+    overflow:  hidden;
+    background-color:  #fff;
+}
+.msl_odds_abs_hdr_table ul.half_req {
+    background:none;
+    width:100%;
+    text-align:center;
+}
+.msl_odds_abs_hdr_table ul.half_req  img{
+    vertical-align: text-top;
+}
+#msl-livescore-result li , .msl_odds_abs_hdr_table li{
+    list-style: none;
+    float: left;
+    width: 20px;
+}
+
+#msl-livescore-result .orange, .msl_odds_abs_hdr_table .orange {
+    background-color: #e78007;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
+}
+
+#msl-livescore-result .blue, .msl_odds_abs_hdr_table .blue{
+    background-color: #26aeb3;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #fff;
+}
+
+#msl-livescore-result img,.msl_odds_abs_hdr_table li img{
+    vertical-align: middle;
+}
+
+DIV#MSOption {
+    visibility: hidden;
+    display: none;
+    overflow: visible;
+    border: 0;
+    width: 100%;
+    margin: 0;
+    margin-top: 25px;
+}
+TABLE#tableMain TD.NoLeftBorder {
+    border-left:    solid white 0px;
+}
+TABLE#tableMain TD.NoRightBorder {
+    border-right:   solid white 0px;
+}
+TABLE#tableMain TD.NoBothBorder {
+    border-right:   solid white 0px;
+    border-left:    solid white 0px;
+}
+TABLE#tableMain TR.NoAllBorder TD{
+    border: 0px;
+}
+TR.FBRow TD {
+    padding-top:    1px;
+    padding-bottom: 1px;
+}
+TR.BBRow1 TD {
+    padding-top:    5px;
+}
+TR.BBRow2 TD {
+    padding-bottom: 5px;
+}
+
+#MSOption>div{
+    width:80%;
+    clear:both;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+#MSOption li{
+    float:left;
+    min-height:34px;
+}
+.radioList {
+    width:500px;
+    overflow:hidden; 
+    float:left;
+}
+.sortList{
+    width:400px;
+    float: left;
+}
+.radioList>li {
+    width:100%;
+}
+.radioList>li li{
+    width:24%;
+}
+.sortList>li{
+    width:100%;
+}
+.selection_box{
+    width:100%;
+}
+#MSOption input[type=button]{
+    background: #87c241;
+    padding:0px 15px;
+    border-radius:6px;
+    color:#1f644f;
+}
+.NBAHeader td{
+    background-color:#923d00;
+    color:#fff;
+    border:none;
+}
+#container_title .soccer_text_color{
+    color: #0ed282;
+}
+#container_title .nba_text_color{
+    color: #fa961b;
+}
+#msl-livescore-result a:hover, #msl-livescore-result a:link, #msl-livescore-result a:visited, #msl-livescore-result a:active {
+    color: #0540e9;
+    text-decoration: underline;
+    /* padding: 4px; */
+}
+
+
+/** multiple selection **/
+.container_fluid{
+        min-height: 800px;
+}
+    #container_title{
+        line-height: 30px;
+        height: 30px;
+        color: #9e9ea0;
+        background-color: #212121;
+        text-indent: 1em;
+    }
+      ::-webkit-scrollbar
+        {
+            width: 9px;
+            height: 9px;
+        }
+        ::-webkit-scrollbar-track-piece
+        {
+            background-color: #ebebeb;
+            -webkit-border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:vertical
+        {
+            height: 32px;
+            background-color: #ccc;
+            -webkit-border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:horizontal
+        {
+            width: 32px;
+            background-color: #ccc;
+            -webkit-border-radius: 4px;
+        }
+       ul,li{padding: 0;margin: 0}
+        .EventsSelect{
+             position: initial; 
+            width: 100%;
+            min-width: 150px;
+            max-width: 200px;
+        }
+        .EventsSelect .inputWrap{
+            width:100%;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+            background: #fff;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+            text-indent: 0.5em;
+            line-height: 28px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .EventsSelect .inputWrap div{
+            width: 90%;
+            overflow: hidden;
+            float: left;
+        }
+        .EventsSelect ul{
+            padding:0 5px;
+            margin: 0;
+            padding-right: 35px;
+        }
+        .EventsSelect ul,li{
+            list-style: none;
+        }
+        .EventsSelect li{
+            display: inline-block;
+            padding: 3px;
+            margin: 5px 5px 5px 0;
+            border-radius: 5px;
+        }
+        .EventsSelect .fa-close{
+            cursor: pointer;
+        }
+        .EventsSelect .fa-close:hover{
+            color: #237eff;
+        }
+        .EventsSelect .EventsSelect-option{
+            width: 250px;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow: hidden;
+            position: absolute;
+            height: 0;
+            opacity: 0;
+            z-index: 99999;
+            background-color: #fff;
+            font-size: 14px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+        .EventsSelect .EventsSelect-option div{
+            padding: 4px;
+        }
+        .EventsSelect .inputWrap>i{
+            position: absolute;
+            padding: 8px;
+            right: 0;
+            top: 0;
+        }
+        .EventsSelect-option .Select_options div{
+
+            cursor: pointer;
+            border-bottom: 1px solid #e7e7e7;
+            margin: 5px;
+        }
+        #_tips{
+            color: red;
+            padding-left: 10px;
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .Select_options{
+            margin-bottom: 10px;
+        }
+       /* .EventsSelect-option .Select_options div i{
+            float: right;
+            color: #ffffff;
+        }*/
+        .EventsSelect-option .Select_options div.selected{
+            font-weight: bold;
+        }
+    /*    .EventsSelect-option .Select_options div.selected i{
+            color: #000;
+        }*/
+        .Mul_soccer .Select_options div.selected{
+            color: #009970;
+            background: url('../../../images/icons/_s.png') no-repeat 100% center;
+        }
+        .Mul_nba .Select_options div.selected{
+            color: #9e3700;
+            background: url('../../../images/icons/_n.png') no-repeat 100% center;
+        }
+        .Mul_soccer .Select_options div:hover{
+            color: #009970;
+        }
+        .Mul_nba .Select_options div:hover{
+            color: #9e3700;
+        }
+        .inputWrap li{
+            float: none;
+        }
+        .select_title li .button a{
+            width: 50%;
+            float: left;
+        }
+        .combo,.reset {
+            color: #fff;
+            background-color: #87c241;
+            padding: 5px 20px;
+            text-align: center;
+        }
+        .reset{
+            color: #000;
+            background-color: #c3c3c3;
+            margin-right: 0px;
+        }
+        .Mul_nba .combo{
+            background-color: #ff9100;
+        }
+        .EventsSelect-option div.button{
+            width: 100%;
+            height: 34px;
+            overflow: hidden;
+            padding: 0;
+            margin:0;
+            line-height: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .inputWrap>p {
+            width: 10%;
+            height: 100%;
+            float: right;
+        }
+        .fa-angle-down{
+            background: url('../../../images/icons/_down.png') no-repeat 100% center;
+        }
+        .fa-angle-up{
+            background: url('../../../images/icons/_up.png') no-repeat 100% center;
+        }

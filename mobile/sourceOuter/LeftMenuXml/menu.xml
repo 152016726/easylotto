@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<menu >
+	<Item id="1" pid="0" class="" link="" bgcolor="" type="SB"><![CDATA[足球<br>Soccer]]></Item>
+	<Item id="2" pid="1" class="0"  link="OddsSoccer.html?type=odds" bgcolor="" type="SB"><![CDATA[足球賠率 <br> Soccer Odds]]></Item>
+	<Item id="3" pid="1" class="1"  link="news.html?type=news" bgcolor="" type="SB"><![CDATA[足球新聞 <br>Soccer News]]></Item>
+	<Item id="4" pid="1" class="2"  link="LivescoreSoccer.html?type=livescore" bgcolor="" type="SB"><![CDATA[足球現場比數 <br>Soccer Livescores]]></Item>
+	
+	<Item id="5" pid="0" class="" link="" bgcolor="" type="BB"><![CDATA[籃球 <br>Basketball]]></Item>
+	<Item id="6" pid="5" class="0"  link="OddsNba.html?type=odds" bgcolor="" type="BB"><![CDATA[籃球賠率 <br>Basketball Odds]]></Item>
+	<Item id="7" pid="5" class="1"  link="news.html?type=news" bgcolor="" type="BB"><![CDATA[籃球新聞 <br>Basketball News]]></Item>
+	<Item id="8" pid="5" class="2"  link="LivescoreNba.html?type=livescore" bgcolor="" type="BB"><![CDATA[籃球現場比數<br> Basketball Livescores]]></Item>
+	
+	<Item id="9" pid="0"  class=""  link="" bgcolor="" type="TB"><![CDATA[網球<br> Tennis]]></Item>
+	<Item id="10" pid="9" class="0"  link="OddsTennis.html?type=odds" bgcolor="" type="TB"><![CDATA[網球賠率<br> Tennis Odds]]></Item>
+	<Item id="11" pid="9" class="1"  link="news.html?type=news" bgcolor="" type="TB"><![CDATA[網球新聞 <br>Tennis News]]></Item>
+	<Item id="12" pid="9" class="2"  link="LivescoreTennis.html?type=livescore" bgcolor="" type="TB"><![CDATA[網球現場比數 <br>Tennis Livescores]]></Item>
+</menu>
+</data>

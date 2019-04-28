@@ -1,0 +1,39 @@
+.icon_button {
+  &.match_msg_box {
+    position: relative;
+    .msg_box {
+      i {
+        background: #f40;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        &.op0{
+          opacity: 0;
+        }
+      }
+      .msg {
+        position: absolute;
+        word-break: break-all;
+        width: 200px;
+        max-height: 200px;
+        overflow-y: auto;
+        top: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        margin-top: 20px;
+        opacity: 0;
+        display: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: left;
+        line-height: 24px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}

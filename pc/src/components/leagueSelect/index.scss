@@ -1,0 +1,96 @@
+
+.league-select {
+  position: relative;
+  float: left;
+  font-size: 14px;
+  .league-select-title {
+    position: relative;
+    min-width: 150px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    text-indent: 0.5em;
+    user-select: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      right: 2px;
+      width: 22px;
+      height: 15px;
+      background: url("./images/_down.png") no-repeat center;
+    }
+    &.upStyle {
+      &::before {
+        background: url("./images/_up.png") no-repeat center;
+      }
+    }
+  }
+  .league-select-content {
+    display: none;
+    position: absolute;
+    width: 250px;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    z-index: 99999;
+    overflow: hidden;
+    background: #fff;
+    font-size: 14px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    .league-select-content-top {
+      max-height: 158px;
+      margin-bottom: 6px;
+      overflow-y: scroll;
+      ul {
+        padding: 4px;
+        li {
+          cursor: pointer;
+          border-bottom: 1px solid #e7e7e7;
+          margin: 5px;
+          padding: 4px;
+          user-select: none;
+          &.selectSty {
+            color: #009970;
+            font-weight: bold;
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 2px;
+              right: 0;
+              width: 26px;
+              height: 23px;
+              background: url("./images/_s.png") no-repeat center;
+            }
+          }
+        }
+      }
+    }
+    .league-select-content-bottom {
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      div {
+        float: left;
+        width: 50%;
+        cursor: pointer;
+        &:hover {
+          span {
+            text-decoration: underline;
+          }
+        }
+        &:nth-of-type(1) {
+          background: #c3c3c3;
+        }
+        &:nth-of-type(2) {
+          background: #87c241;
+        }
+      }
+    }
+  }
+}

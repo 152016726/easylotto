@@ -1,0 +1,11 @@
+<div class="top_bar">
+    <div class="top_buttons clearfix">
+        <league-select></league-select>
+        <icon-button :onClick="toggleSettingsMenuFn" :text="langData.funcSetting"/>
+        <icon-button class="backup" :onClick="clickHandle" :text="langData.remark"/>
+        <icon-button class="odds_time" :onClick="handleShowSchedule" :text="langData.schedule"/>
+        <icon-button class="result" :onClick="resultClick" :text="langData.matchResult"/>
+        <match-message-box/>
+    </div>
+    <settings-menu :toggle="toggleSettingsMenu"/>
+</div>

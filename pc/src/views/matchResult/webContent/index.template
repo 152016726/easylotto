@@ -1,0 +1,10 @@
+<div class="content">
+    <div class="resultTitle clearfix">
+        <strong class="fl">{{langData.matchResult}}</strong>
+        <div class="introduce fr">
+            <p>{{langData.introduce}}</p>
+            <p>{{`${langData.updated} ${date}`}} </p>
+        </div>
+    </div>
+    <fulltime/>
+</div>

@@ -1,0 +1,21 @@
+.content{
+  .resultTitle{
+    width: 100%;
+    overflow: hidden;
+    background-color: #212121;
+    color: #fff;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    strong{
+      color: #87c241;
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 50px;
+    }
+    .introduce{
+      line-height: 24px;
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+
+.game-status-view {
+  padding: 0 2px;
+  .game-status-view-ul {
+    li {
+      padding: 4px 0;
+      > div {
+        float: left;
+        width: 14%;
+        height: 19px;
+        line-height: 19px;
+        &:nth-of-type(1) {
+          text-align: right;
+          padding-right: 2px;
+          line-height: 24px;
+        }
+        &:nth-of-type(2) {
+          text-align: center;
+          line-height: 24px;
+          width: 72%;
+          span {
+            float: initial;
+            width: 21px;
+            &:last-child {
+              vertical-align: super;
+              position: relative;
+            }
+            &.cornerSty {
+              padding-right: 10px;
+              margin-left: 22px;
+              &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                right: -4px;
+                width: 12px;
+                height: 17px;
+                background: url("../../images/flag.png") no-repeat center;
+                background-size: 70%;
+              }
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          text-align: left;
+          padding-left: 2px;
+          line-height: 24px;
+        }
+      }
+      &.isShowBottom {
+        border-bottom: 1px solid #cccccc;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<div class="match-li-view">
+    <div class="match-li-view-top">
+        <div class="openBtnIcon"
+             :class="{isOpenSty: isShowBottom}"
+             @click.stop="showBottomHandle">
+            <span></span>
+        </div>
+        <div class="top-time-li">
+            <div class="left-div">
+                <img src="../../images/dejia.png" alt=""/>
+                德甲
+            </div>
+            <span>18:00</span>
+        </div>
+        <div @click="showBottomHandle">
+            <div class="team-name clearfix">
+                <div class="home-name">{{eventInfo.hometeamName}}</div>
+                <div class="score-number">
+                    <div>
+                        <score-btn
+                                :score="eventInfo.scoreCurrent.home">
+                        </score-btn>
+                    </div>
+                    <div>
+                        <span v-if="eventInfo.payout.ft !== '3' ">:</span>
+                        <match-icon-view
+                                v-if="eventInfo.payout.ft === '3'"
+                                :type="2">
+                        </match-icon-view>
+                    </div>
+                    <div>
+                        <score-btn
+                                :score="eventInfo.scoreCurrent.away">
+                        </score-btn>
+                    </div>
+                </div>
+                <div class="away-name">{{eventInfo.awayteamName}}</div>
+            </div>
+            <div class="current-state clearfix">
+                <div>
+                    <match-icon-view
+                            v-if="eventInfo.redcardCurrent && eventInfo.redcardCurrent.home"
+                            :type="7"
+                            :num="eventInfo.redcardCurrent && eventInfo.redcardCurrent.home">
+                    </match-icon-view>
+                    <match-icon-view
+                            v-if="isHomeFirst"
+                            :type="firstPayout ? 0: 8">
+                    </match-icon-view>
+                </div>
+                <div>
+                    <div class="current-corner clearfix"
+                         v-if="eventInfo.cornerCurrent">
+                        <span>{{eventInfo.cornerCurrent.home}}</span>
+                        <span></span>
+                        <span>{{eventInfo.cornerCurrent.away}}</span>
+                    </div>
+                    <div class="statusType">{{matchStateStr}}</div>
+                </div>
+                <div>
+                    <match-icon-view
+                            v-if="isAwayFirst"
+                            :type="firstPayout ? 0: 8">
+                    </match-icon-view>
+                    <match-icon-view
+                            v-if="eventInfo.redcardCurrent && eventInfo.redcardCurrent.away"
+                            :type="7"
+                            :num="eventInfo.redcardCurrent && eventInfo.redcardCurrent.away">
+                    </match-icon-view>
+                </div>
+            </div>
+        </div>
+    </div>
+    <match-list-drop-down
+            v-if="isShowBottom"
+            :broad-cast="eventInfo.broadcast"
+            :home-team-id="eventInfo.hometeamId"
+            :away-team-id="eventInfo.awayteamId"
+            :match-id="eventInfo.matchId"
+            :first-goal="eventInfo.firstGoal"
+            :payout="eventInfo.payout"
+            :score-ap="eventInfo.scoreAp"
+            :score-current="eventInfo.scoreCurrent"
+            :score-ft="eventInfo.scoreFt"
+            :score-ht="eventInfo.scoreHt"
+            :score-otf="eventInfo.scoreOtf"
+            :score-oth="eventInfo.scoreOth"
+            :corner-current="eventInfo.cornerCurrent"
+            :corner-ft="eventInfo.cornerFt"
+            :corner-ht="eventInfo.cornerHt"
+            :corner-otf="eventInfo.cornerOtf"
+            :corner-oth="eventInfo.cornerOth">
+    </match-list-drop-down>
+</div>

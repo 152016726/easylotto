@@ -1,0 +1,32 @@
+<div class="league-select"
+     v-clickOutside="handleClose">
+    <div class="league-select-title"
+         :class="{upStyle: isOpen}"
+         @click="toggleContentHandle">
+        {{titleText}}
+    </div>
+    <div class="league-select-content">
+        <div class="league-select-content-top">
+            <ul class="league-select-content-ul">
+                <li @click="allLeagueHandle"
+                    :class="{selectSty: isAllLeague}">
+                    全部聯賽(可多選)
+                </li>
+                <li v-for="(TA,index) in tournamentArr"
+                    :key="index + 'kl'"
+                    :class="{selectSty: selectArr.indexOf(index) !== -1}"
+                    @click="selectHandle(index)">
+                    {{TA.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="league-select-content-bottom clearfix">
+            <div @click="resetHandle">
+                <span>重設</span>
+            </div>
+            <div @click="enterHandle">
+                <span>確定</span>
+            </div>
+        </div>
+    </div>
+</div>

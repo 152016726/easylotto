@@ -1,0 +1,22 @@
+<div class="time_axis">
+    <div class="playName clearfix">
+        <div class="menu"></div>
+        <div class="home">{{params.homeName}}</div>
+        <div class="away">{{params.awayName}}</div>
+    </div>
+
+    <div v-for="(state, stateIndex) in matchGoalCardList" class="table clearfix">
+        <div class="menu" :style="{lineHeight: `${state.maxLength * 30}px`}">{{state.state}}</div>
+        <div v-for="(itemList, itemListIndex) in state.data" :class="[itemListIndex === 0 ? 'home': 'away']">
+            <ul>
+                <li v-for="i in state.maxLength" :class="[stateIndex % 2 === 0 ? 'bgLight': 'bgDark', 'clearfix']">
+                    <div class="name" v-on:click="jumpTo(!!itemList.data && !!itemList.data[i-1] ? itemList.data[i-1].playerId : '')">
+                        <span>{{!!itemList.data && !!itemList.data[i-1] ? itemList.data[i-1].playerName : ""}}</span>
+                    </div>
+                    <div class="icon" v-show="!!itemList.data && !!itemList.data[i-1]" :class="[`${!!itemList.data && !!itemList.data[i-1] && itemList.data[i-1].typeCode === '1' ? 'goal' : 'red'}`]"></div>
+                    <div class="clock">{{!!itemList.data && !!itemList.data[i-1] ? `${itemList.data[i-1].clock}'` : ""}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="game-status-view">
+    <ul class="game-status-view-ul">
+        <li class="clearfix"
+            v-for="(DL, index) in dataList"
+            :class="{isShowBottom: DL.isShowBottom}"
+            :key="index + '_GS'">
+            <div>{{DL.home}}</div>
+            <div>
+                <match-icon-view
+                        v-if="DL.iconType"
+                        :type="DL.iconType">
+                </match-icon-view>
+                <span :class="{cornerSty: DL.isCorner}">{{DL.name}}</span>
+            </div>
+            <div>{{DL.away}}</div>
+        </li>
+    </ul>
+</div>

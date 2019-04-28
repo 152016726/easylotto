@@ -1,0 +1,18 @@
+.teamColumn{
+  .matchDate{
+    text-align: center;
+    background-color: #169673;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    p{
+      font-size: 14px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  .teamTable{
+    display: table;
+  }
+}

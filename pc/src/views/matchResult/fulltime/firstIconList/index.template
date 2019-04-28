@@ -1,0 +1,4 @@
+<div class="icon_list">
+    <i v-for="(item, idx) in iconlist" v-show="item.show(payout)" :class="{[`i_${item.key}`]:true, icon: true}">
+    </i>
+</div>

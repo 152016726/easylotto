@@ -1,0 +1,8 @@
+<div class="match_message_box_list">
+    <h1>赛事消息</h1>
+    <ul>
+        <li v-for="(item, idx) in list" :class="{odd: (idx + 1) % 2 === 1}">
+            {{`赛事消息${idx + 1}`}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="datePlugin">
+    <div class="datePluginHeader">
+        <span class="date-pre" @click.prevent="preClick"></span>
+        <span class="date-curr">{{currentMonth+1}}月 {{currentFullYear}}</span>
+        <span class="date-next" @click.prevent="nextClick"></span>
+    </div>
+    <div class="datePluginContent">
+         <div class="date-week">
+             <a href="#" v-for="(value, index) in weekNames" :key="index">
+                 {{value}}
+             </a>
+         </div>
+         <div class="date-row" v-for="(item, index) in monthDataList" :key="index">
+             <a href="#"
+                v-for="(val, i) in item"
+                :key="val.text"
+                :class="[
+                {current: val.isCurrent},
+                {selected: axis.x === i && axis.y === index+1 && axis.month === currentMonth},
+                {pm: val.ispm},
+                {nm: val.isnm},
+                {disabled: val.isDisabled}
+                ]"
+                @click.prevent="setSelectedDate(val, i, index+1)"
+             >
+                {{val.text}}
+             </a>
+         </div>
+    </div>
+</div>

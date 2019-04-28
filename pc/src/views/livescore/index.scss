@@ -1,0 +1,28 @@
+#container_title {
+  line-height: 30px;
+  height: 30px;
+  color: #9e9ea0;
+  background-color: #212121;
+  text-indent: 1em;
+  a {
+    color: #9e9ea0;
+  }
+  .soccer_text_color {
+    color: #0ed282;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+#main_container {
+  height: 100%;
+  width: 100%;
+  background-color: #dfdfde;
+  #MSLiveMain {
+    .scroll_fixed_box {
+      background: #dfdfde;
+    }
+  }
+}

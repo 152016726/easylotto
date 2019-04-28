@@ -1,0 +1,40 @@
+<div class="match-list-drop-down">
+    <div class="match-list-drop-down-top clearfix">
+        <div>
+            <player-status-view
+                    :player-list="homeList"
+                    :first-goal="firstGoal"
+                    :payout="payout">
+            </player-status-view>
+        </div>
+        <div>
+            <game-status-view
+                    :data-list="gameStateList">
+            </game-status-view>
+        </div>
+        <div>
+            <player-status-view
+                    :player-list="awayList"
+                    :first-goal="firstGoal"
+                    :payout="payout">
+            </player-status-view>
+        </div>
+    </div>
+    <!--<div class="match-list-drop-down-center clearfix">
+        <span>
+            讓球盤[0.0]
+        </span>
+        <span>
+            上/下盤[2.5]
+        </span>
+        <span>角球讓球盤[0.0]</span>
+        <span>角球上/下盤[2.5]</span>
+    </div>-->
+    <div class="match-list-drop-down-bottom clearfix">
+        <span v-for="(BC, index) in broadCast"
+              :key="index + '_bc'"
+              :class="{M_plus: BC.code === '19'}">
+            {{BC.code !== '19'? BC.name: ''}}
+        </span>
+    </div>
+</div>

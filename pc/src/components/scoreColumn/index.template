@@ -1,0 +1,312 @@
+<div class="scoreColumn" :class="{dark: index%2===0}">
+    <div class="draw tableCell">
+
+    </div>
+    <div class="league tableCell" :style="{backgroundColor: '#'+matchInfo.uqTournament.colorCode}">
+        {{matchInfo.uqTournament.name}}
+    </div>
+    <div class="matchTime tableCell">
+        {{matchInfo.startTime}}
+    </div>
+    <!-- 赛事具体信息开始 -->
+    <div class="tableCell timeLine">
+        <div class="timeBox">
+            <!-- 90分钟常规赛开始 -->
+            <div class="regular">
+                <!-- 最先进球球队、首名入球球员开始 -->
+                <div class="award tableCell">
+                    <i
+                     :class="[
+                         {ftg: matchInfo.payout.ftg === '3'},
+                        {ftging: matchInfo.payout.ftg === '2'}
+                     ]"
+                    >
+                    </i>
+                    <i
+                      :class="[
+                        {fg: matchInfo.payout.fg === '3'},
+                        {fging: matchInfo.payout.fg === '2'}
+                     ]"
+                    >
+                    </i>
+                </div>
+                <!-- 最先进球球队、首名入球球员结束 -->
+
+                <!-- 主场球队开始 -->
+                <div class="homeTeam tableCell">
+                    <i class="num" v-if="matchInfo.redcard && matchInfo.redcard.current">
+                        {{matchInfo.redcard.current.split(":")[0]}}
+                    </i>
+                    <i class="teamName">{{matchInfo.hometeamName}}</i>
+                </div>
+                <!-- 主场球队结束 -->
+
+                <!-- 比分情况开始 -->
+                <div class="score tableCell">
+                    <div class="clearfix"
+                         v-if="regularSateList.indexOf(matchInfo.currentState) !== -1 && matchInfo.score.current"
+                    >
+                        <i>{{matchInfo.score.current.split(':')[0]}}</i>
+                        <i class="maohao">:</i>
+                        <i>{{matchInfo.score.current.split(':')[1]}}</i>
+                    </div>
+                    <div class="clearfix"
+                         v-if="regularFinalState.indexOf(matchInfo.currentState) !== -1 && matchInfo.score.ft"
+                    >
+                        <i>{{matchInfo.score.ft.split(':')[0]}}</i>
+                        <i class="maohao">:</i>
+                        <i>{{matchInfo.score.ft.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <!-- 比分情况结束 -->
+
+                <!-- 客场球队开始 -->
+                <div class="awayTeam tableCell">
+                    <i class="teamName">{{matchInfo.awayteamName}}</i>
+                    <i class="num" v-if="matchInfo.redcard && matchInfo.redcard.current">
+                        {{matchInfo.redcard.current.split(":")[1]}}
+                    </i>
+                </div>
+                <!-- 客场球队结束 -->
+
+                <!-- 首名入球球员、最先进球球队开始 -->
+                <div class="award tableCell borderRight rightAward">
+                    <i
+                      :class="[
+                        {fg: matchInfo.payout.fg === '3'},
+                        {fging: matchInfo.payout.fg === '2'}
+                     ]"
+                    >
+                    </i>
+                    <i
+                      :class="[
+                         {ftg: matchInfo.payout.ftg === '3'},
+                        {ftging: matchInfo.payout.ftg === '2'}
+                     ]"
+                    >
+                    </i>
+                </div>
+                <!-- 首名入球球员、最先进球球队结束 -->
+
+                <!-- 比赛状态开始 -->
+                <div class="matchStatus tableCell">
+                    <div class="time"
+                         v-if="matchInfo.currentState !== 0"
+                    >
+                        <i :style="{
+                        background:'url('+(
+                        (regularFinalState.indexOf(matchInfo.currentState) !== -1 || delayState.indexOf(matchInfo.currentState) !== -1 || matchInfo.currentState === '0') ? offline : online
+                        )+') no-repeat center center'}"></i>
+                        <span
+                            v-if="regularFinalState.indexOf(matchInfo.currentState) === -1 && delayState.indexOf(matchInfo.currentState) === -1 && matchInfo.currentState !== '31'"
+                        >
+                            {{matchInfo.clock}}'
+                        </span>
+                    </div>
+                </div>
+                <!-- 比赛状态结束 -->
+
+                <!-- 半场情况开始 -->
+                <div class="state tableCell">
+                    <a href="#" @click.prevent="matchStateClick">{{regularFinalState.indexOf(matchInfo.currentState) !== -1 ? '90分钟完' : matchInfo.stateString}}</a>
+                    <a href="#" class="hf" v-if="matchInfo.payout.ht===3 && matchInfo.currentState === 6"></a>
+                </div>
+                <!-- 半场情况结束 -->
+
+                <!-- 半场比分开始 -->
+                <div class="half tableCell">
+                     {{matchInfo.score.ht ? '半场'+matchInfo.score.ht : ''}}
+                </div>
+                <!-- 半场比分结束 -->
+
+                <!-- 赛事资讯开始 -->
+                <div class="blank tableCell"></div>
+                <!-- 赛事资讯结束 -->
+
+                <!-- 直播状况开始 -->
+                <div class="live tableCell">
+                    <a
+                            v-for="(item, key) in matchInfo.broadcast"
+                            :class="item.code === '19' ? 'betting' : 'fm'"
+                            href="#"
+                            @click.prevent=""
+                            :title="item.name"
+                    >
+                    </a>
+                </div>
+                <!-- 直播情况结束 -->
+            </div>
+            <!-- 90分钟常规赛结束 -->
+
+            <!-- 90分钟角球开始 -->
+            <div class="corner" v-if="matchInfo.corner.current">
+                <div class="award tableCell"></div>
+                <div class="homeTeam tableCell"></div>
+                <div class="score tableCell">
+                    <div class="clearfix"
+                         v-if="regularSateList.indexOf(matchInfo.currentState) !== -1 && matchInfo.corner.current"
+                    >
+                        <i>{{matchInfo.corner.current.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.current.split(':')[1]}}</i>
+                    </div>
+                    <div class="clearfix"
+                         v-if="regularFinalState.indexOf(matchInfo.currentState) !== -1 && matchInfo.corner.ft"
+                    >
+                        <i>{{matchInfo.corner.ft.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.ft.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="awayTeam tableCell"></div>
+                <div class="award tableCell borderRight"></div>
+                <div class="matchStatus tableCell"></div>
+                <div class="state tableCell"></div>
+                <div class="half tableCell">
+                    <div class="cornerhalf" v-if="matchInfo.corner.ht">
+                        <i>{{'半场'+matchInfo.corner.ht.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.ht.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="blank tableCell"></div>
+                <div class="live tableCell"></div>
+            </div>
+            <!-- 90分钟角球结束 -->
+
+            <!-- 加时开始 -->
+            <div class="addTime"
+                 v-if="addTimeAllState.indexOf(matchInfo.currentState) !== -1 && matchInfo.score.oth"
+            >
+                <div class="award tableCell">
+                </div>
+                <div class="homeTeam tableCell">
+
+                </div>
+                <div class="score tableCell">
+                    <div class="clearfix"
+                         v-if="addTimeStateList.indexOf(matchInfo.currentState) !== -1 && matchInfo.score.current"
+                    >
+                        <i>{{matchInfo.score.current.split(':')[0]}}</i>
+                        <i class="maohao">:</i>
+                        <i>{{matchInfo.score.current.split(':')[1]}}</i>
+                    </div>
+                    <div class="clearfix"
+                         v-if="addTimeFinalState.indexOf(matchInfo.currentState) !== -1 && matchInfo.score.otf"
+                    >
+                        <i>{{matchInfo.score.otf.split(':')[0]}}</i>
+                        <i class="maohao">:</i>
+                        <i>{{matchInfo.score.otf.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="awayTeam tableCell">
+
+                </div>
+                <div class="award tableCell borderRight"
+                >
+                </div>
+                <div class="matchStatus tableCell">
+                    <div class="time">
+                        <i :style="{background:'url('+(
+                        (addTimeFinalState.indexOf(matchInfo.currentState) !== -1 || delayState.indexOf(matchInfo.currentState) !== -1) ? offline : online
+                        )+') no-repeat center center'}">
+                        </i>
+                        <span v-if="addTimeFinalState.indexOf(matchInfo.currentState) === -1 && delayState.indexOf(matchInfo.currentState) === -1">
+                            {{matchInfo.clock}}'
+                        </span>
+                    </div>
+                </div>
+                <div class="state tableCell">
+                    <a href="#" @click.prevent="matchStateClick">{{addTimeFinalState.indexOf(matchInfo.currentState) !== -1 ? '加时完' :matchInfo.stateString}}</a>
+                </div>
+                <div class="half tableCell">
+                     {{matchInfo.score.oth ? '半场'+matchInfo.score.oth : ''}}
+                </div>
+                <div class="blank tableCell">
+
+                </div>
+                <div class="live tableCell">
+
+                </div>
+            </div>
+            <!-- 加时结束 -->
+
+            <!-- 加时角球开始 -->
+            <div class="addTimeCorner"
+                 v-if="addTimeAllState.indexOf(matchInfo.currentState) !== -1 && matchInfo.corner.oth"
+            >
+                <div class="award tableCell"></div>
+                <div class="homeTeam tableCell"></div>
+                <div class="score tableCell">
+                    <div class="clearfix" v-if="addTimeStateList.indexOf(matchInfo.currentState) !== -1 && matchInfo.corner.current">
+                        <i>{{matchInfo.corner.current.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.current.split(':')[1]}}</i>
+                    </div>
+                    <div class="clearfix" v-if="addTimeFinalState.indexOf(matchInfo.currentState) !== -1 && matchInfo.corner.otf">
+                        <i>{{matchInfo.corner.otf.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.otf.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="awayTeam tableCell"></div>
+                <div class="award tableCell borderRight"></div>
+                <div class="matchStatus tableCell"></div>
+                <div class="state tableCell"></div>
+                <div class="half tableCell">
+                    <div class="cornerhalf" v-if="matchInfo.corner.ht">
+                        <i>{{'半场'+matchInfo.corner.oth.split(':')[0]}}</i>
+                        <i class="jiaoqiu"></i>
+                        <i>{{matchInfo.corner.oth.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="blank tableCell"></div>
+                <div class="live tableCell"></div>
+            </div>
+            <!-- 加时角球结束 -->
+
+            <!-- 十二码开始 -->
+            <div class="addTime"
+                 v-if="matchInfo.score.ap && pointStateList.indexOf(matchInfo.currentState) !== -1"
+            >
+                <div class="award tableCell">
+                </div>
+                <div class="homeTeam tableCell">
+
+                </div>
+                <div class="score tableCell">
+                    <div class="clearfix" >
+                        <i>{{matchInfo.score.ap.split(':')[0]}}</i>
+                        <i class="maohao">:</i>
+                        <i>{{matchInfo.score.ap.split(':')[1]}}</i>
+                    </div>
+                </div>
+                <div class="awayTeam tableCell">
+
+                </div>
+                <div class="award tableCell borderRight">
+                </div>
+                <div class="matchStatus tableCell">
+                    <div class="time">
+                        <i :style="{background:'url('+(matchInfo.currentState === 120 ? offline : online)+') no-repeat center center'}"></i>
+                    </div>
+                </div>
+                <div class="state tableCell">
+                    <a href="#" @click.prevent="matchStateClick">{{matchInfo.currentState === 120 ? '十二码完' : matchInfo.stateString}}</a>
+                </div>
+                <div class="half tableCell">
+
+                </div>
+                <div class="blank tableCell">
+
+                </div>
+                <div class="live tableCell">
+
+                </div>
+            </div>
+            <!-- 十二码结束 -->
+        </div>
+        </div>
+    </div>
+    <!-- 赛事具体信息结束 -->
+</div>

@@ -1,0 +1,40 @@
+.icon_button{
+  color: #212121;
+  cursor: pointer;
+  min-width: 100px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 20px 0 48px;
+  border-radius: 8px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #87c241;
+  background-repeat: no-repeat;
+  background-position: 22% 6px;
+  background-image: url(./images/button_icons.png);
+  position: relative;
+  &.backup{
+    background-position: 26% -17px;
+    padding-left: 42px;
+  }
+  &.odds_time{
+    background-position: 22% -40px;
+  }
+  &.result{
+    background-position: 18% -69px;
+  }
+  &.reselect{
+    padding: 0 20px 0 30px;
+    background-image: url(./images/reselect.png);
+    background-position: 8px center;
+  }
+  &.match_msg_box{
+    background-image: url(./images/newsbutton.png);
+    background-position: 18% 9px;
+  }
+  &.no_icon{
+    padding: 0 20px 0 20px;
+  }
+}

@@ -1,0 +1,3 @@
+<div class="score-btn-view">
+    <span>{{score}}</span>
+</div>

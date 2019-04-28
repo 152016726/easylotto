@@ -1,0 +1,8 @@
+<span :class="className" v-if="type !== 7"></span>
+<div v-else="type === 7"
+     class="red-card-style-box">
+    <span v-if="num"
+          class="red-card-style">
+        {{num}}
+    </span>
+</div>

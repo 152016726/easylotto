@@ -1,0 +1,56 @@
+<div class="table_body">
+    <dl v-for="(item, idx) in list">
+        <dd class="league" :style="{backgroundColor: `#${item.uqTournament.colorCode}`}">
+            {{item.uqTournament.orderNum}}
+        </dd>
+        <dd class="time">
+            {{item.startTime}}
+        </dd>
+        <dd class="other">
+            <div class="sub_table">
+                <dl>
+                    <dd class="team">
+                        <first-icon-list v-show="item.hometeamId === item.firstGoal.teamId"
+                                         :payout="item.payout"/>
+                        <i class="redCard">{{item.redcardCurrent.home}}</i>
+                        <i>{{item.hometeamName}}</i>
+                    </dd>
+                    <dd class="score"><i>{{item.score.current}}</i></dd>
+                    <dd class="team away">
+                        <i>{{item.awayteamName}}</i>
+                        <i class="redCard">{{item.redcardCurrent.away}}</i>
+                        <first-icon-list :away="true" v-show="item.awayteamId === item.firstGoal.teamId"
+                                         :payout="item.payout"/>
+                    </dd>
+                    <dd class="state">
+                        <a href="#" class="link">90分钟完</a>
+                    </dd>
+                    <dd class="halfInfo">
+                        <div>半场{{item.score.ht}}</div>
+                        <div>首名入球球员：{{item.firstGoal.playerName}}</div>
+                    </dd>
+                </dl>
+                <!--角球玩法-->
+                <dl class="corner" v-if="item.corner">
+                    <dd>
+                    </dd>
+                    <dd class="score">
+                        <i>{{item.cornerCurrent.home}}</i>
+                        <span class="i_corner icon"></span>
+                        <i>{{item.cornerCurrent.away}}</i>
+                    </dd>
+                    <dd>
+                    </dd>
+                    <dd>
+                    </dd>
+                    <dd>
+                        <i>{{item.cornerHt.home}}</i>
+                        <span class="i_corner icon"></span>
+                        <i>{{item.cornerHt.away}}</i>
+                    </dd>
+                </dl>
+            </div>
+
+        </dd>
+    </dl>
+</div>

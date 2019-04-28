@@ -1,0 +1,56 @@
+<div class="datePluginView" v-if="isShow">
+    <div class="mask"></div>
+    <div class="content">
+        <div class="date-plugin-title">
+            <span class="league-market-btn fl"
+                 @click.stop="closeDatePlugin">
+                <span>{{langData.titleLeague}}</span>
+                <span class="arrow-icon"></span>
+            </span>
+            <span class="date-title-text"
+                  @click.stop="closeDatePlugin">
+                {{langData.date}}
+            </span>
+            <div class="date-plugin-title-right"
+                 @click.stop="componentReload">
+                <span></span>
+                {{langData.reset}}
+            </div>
+        </div>
+        <div class="datePlugin">
+            <div class="datePluginHeader">
+                <span class="date-pre" @click.prevent="preClick"><</span>
+                <span class="date-curr">{{currentMonth+1}}月 {{currentFullYear}}</span>
+                <span class="date-next" @click.prevent="nextClick">></span>
+            </div>
+            <div class="datePluginContent">
+                <div class="date-week">
+                    <a href="#" v-for="(value, index) in langData.weekNames" :key="index">
+                        {{value}}
+                    </a>
+                </div>
+                <div class="date-row" v-for="(item, index) in monthDataList" :key="index">
+                    <a href="#"
+                       v-for="(val, i) in item"
+                       :key="val.text"
+                       :class="[
+                {current: val.isCurrent},
+                {pm: val.ispm},
+                {nm: val.isnm},
+                {disabled: val.isDisabled},
+                {selected: axis.x === i && axis.y === index+1 && axis.month === currentMonth},
+                {noLived: val.isNoLived}
+                ]"
+                       @click.prevent="setSelectedDate(val, i, index+1)"
+                    >
+                        {{val.text}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="date-plugin-content-btn clearfix">
+            <div @click.stop="closeDatePlugin">{{langData.close}}</div>
+            <div @click.stop="enterBtnHandle">{{langData.confirm}}</div>
+        </div>
+    </div>
+</div>

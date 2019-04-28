@@ -1,0 +1,13 @@
+<div class="match-message">
+    <span>
+        賽事消息<i v-if="haveMsgNoRead"></i>
+    </span>
+    <div @click="showMsg" class="box"></div>
+    <common-dialog ref="dialog" :title="'赛事消息'">
+        <ul class="m-msg-list">
+            <li :class="{odd: (idx + 1) % 2 === 1}" v-for="(ele, idx) in msgList">
+                {{ele}}
+            </li>
+        </ul>
+    </common-dialog>
+</div>

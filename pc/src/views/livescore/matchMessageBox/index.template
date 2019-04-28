@@ -1,0 +1,10 @@
+<icon-button class="match_msg_box":onClick="clickHandle" :text="langData.matchMsg">
+    <div class="msg_box">
+        <i :class="{op0:!haveMsgNoRead}"></i>
+        <div class="msg minSize">
+            <div class="text">
+                <p>{{text}}</p>
+            </div>
+        </div>
+    </div>
+</icon-button>

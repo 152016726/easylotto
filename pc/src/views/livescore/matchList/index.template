@@ -1,0 +1,9 @@
+<div>
+    <score
+            v-for="(item, key) in grpMatch"
+            :key="key"
+            :time="item.dateWeek"
+            :matchList="item.list"
+    >
+    </score>
+</div>

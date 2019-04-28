@@ -1,0 +1,31 @@
+<div class="agenda">
+    <div class="headTitle clearfix">
+        <div class="cate">
+            {{langData.category}}
+        </div>
+        <div class="openTime">
+            {{langData.matchTime}}
+        </div>
+        <div class="logo"></div>
+        <div class="team">{{langData.home}}</div>
+        <div class="team">{{langData.away}}</div>
+        <div class="logo"></div>
+        <div class="live">{{langData.live}}</div>
+    </div>
+    <!-- 某一天的赛事赛程开始 -->
+    <div class="dateUnit" v-for="(item, key) in grpMatch" :key="key">
+        <div class="matchDate">
+            <p>{{item.dateWeek}}</p>
+        </div>
+        <div class="agendaTeam">
+            <agenda-column
+                    v-for="(val, index) in item.list"
+                    :key="val.id"
+                    :matchInfo="val"
+                    :index="index"
+            >
+            </agenda-column>
+        </div>
+    </div>
+    <!-- 某一天的赛事赛程结束 -->
+</div>

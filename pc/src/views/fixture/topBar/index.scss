@@ -1,0 +1,17 @@
+#MSLiveMain {
+  /*按钮*/
+  .scroll_fixed_box{
+    background: #fff;
+  }
+  .top_buttons {
+    padding: 10px;
+    .icon_button {
+      float: left;
+      margin-left: 10px;
+      user-select: none;
+    }
+    .right{
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="match-list-view">
+    <div class="match-list-box"
+         v-for="(grpM, key) in grpMatch"
+         :key="key+ '_grop_list'">
+        <div class="match-list-title">
+            {{grpM.dateWeek}}
+        </div>
+        <div class="match-list-content">
+            <ul>
+                <li v-for="(item, index) in grpM.list"
+                    :key="index + '_match_li'">
+                    <match-li-view
+                            :event-info="item"
+                            :index-num="1">
+                    </match-li-view>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

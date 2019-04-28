@@ -1,0 +1,92 @@
+<div class="agendaColumn" :class="{dark: index%2!==0}">
+    <!--联赛名开始 -->
+    <div class="league tableCell" :style="{backgroundColor: '#ff6633'}">
+        {{matchInfo.uqTournament.name}}
+    </div>
+    <!--联赛名结束 -->
+
+    <!--比赛时间开始 -->
+    <div class="matchTime tableCell">{{matchInfo.startTime}}</div>
+    <!--比赛时间结束 -->
+    <div class="logo tableCell"></div>
+        <!-- 派彩 - 主队最先进球开始 -->
+        <i
+            :class="[
+                {ftg: matchInfo.payout.ftg === '3'},
+                {ftging: matchInfo.payout.ftg === '2'}
+             ]"
+        >
+        </i>
+        <!-- 派彩 - 主队最先进球结束 -->
+
+        <!-- 派彩 - 主队首名进球开始 -->
+        <i
+            :class="[
+                {fg: matchInfo.payout.fg === '3'},
+                {fging: matchInfo.payout.fg === '2'}
+             ]"
+        >
+        </i>
+        <!-- 派彩 - 主队首名进球结束 -->
+    <div class="matchInfo tableCell">
+        <!-- 比分开始 -->
+        <div class="teamInfo clearfix">
+            <i>{{matchInfo.hometeamName}}</i>
+            <i class="vs">
+                <em v-if="!matchInfo.score.ft">{{langData.vs}}</em>
+                <em v-if="matchInfo.score.ft">{{matchInfo.score.ft}}({{matchInfo.score.ht}})</em>
+            </i>
+            <i>{{matchInfo.awayteamName}}</i>
+        </div>
+        <!-- 比分结束 -->
+
+        <!-- 角球开始 -->
+        <div class="cornerInfo clearfix" v-if="matchInfo.corner && matchInfo.corner.ft && matchInfo.corner.ht">
+            <div class="ft fl">
+                <i>{{matchInfo.corner.ft.split(':')[0]}}</i>
+                <i class="jiaoqiu"></i>
+                <i>{{matchInfo.corner.ft.split(':')[1]}}</i>
+            </div>
+            <div class="ht fl">
+                <i>({{matchInfo.corner.ht.split(':')[0]}}</i>
+                <i class="jiaoqiu"></i>
+                <i>{{matchInfo.corner.ht.split(':')[1]}})</i>
+            </div>
+        </div>
+        <!-- 角球结束 -->
+    </div>
+    <div class="logo tableCell">
+        <!-- 派彩 - 客队首名进球开始 -->
+        <i
+
+            :class="[
+                {fg: matchInfo.payout.fg === '3'},
+                {fging: matchInfo.payout.fg === '2'}
+             ]"
+        >
+        </i>
+        <!-- 派彩 - 客队首名进球结束 -->
+
+        <!-- 派彩 - 客队最先进球开始 -->
+        <i
+            :class="[
+                {ftg: matchInfo.payout.ftg === '3'},
+                {ftging: matchInfo.payout.ftg === '2'}
+             ]"
+        >
+        </i>
+        <!-- 派彩 - 客队最先进球结束 -->
+    </div>
+    <div class="live tableCell">
+        <!--直播频道开始 -->
+        <a
+            v-for="(item, key) in matchInfo.broadcast"
+            :class="item.code === '19' ? 'betting' : 'fm'"
+            href="#"
+            @click.prevent=""
+            :title="item.name"
+        >
+        </a>
+        <!--直播频道结束 -->
+    </div>
+</div>

@@ -1,0 +1,77 @@
+.datePlugin {
+  height: 100%;
+  width: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
+  .datePluginHeader {
+    padding-top: 10px;
+    display: table;
+    line-height: 26px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    span{
+      cursor: pointer;
+      display: table-cell;
+      text-align: center;
+      font-weight: bold;
+      &.date-pre, &.date-next{
+         width: 14%;
+      }
+      &.date-pre{
+        background: url("./images/date_l.jpg") no-repeat center center;
+      }
+      &.date-next{
+        background: url("./images/date_r.jpg") no-repeat center center;
+      }
+      &.date-curr{
+        cursor: auto;
+        font-size: 18px;
+        font-weight: bold;
+        color: #034b5c;
+      }
+    }
+  }
+  .datePluginContent{
+    display: table;
+    width: 100%;
+    text-align: center;
+    .date-week{
+      display: table-header-group;
+      line-height: 24px;
+      a{
+        font-size: 10px;
+        font-weight: 100;
+        letter-spacing: 0px;
+        display: table-cell;
+        width: 14.28%;
+        &:nth-child(1), &:nth-last-child(1){
+          color: #ca5d46
+        }
+      }
+    }
+    .date-row{
+      display: table-row;
+      line-height: 24px;
+      a{
+        font-size: 14px;
+        display: table-cell;
+        width: 14.28%;
+      }
+    }
+  }
+  .disabled{
+    cursor: not-allowed;
+    color: #fcc;
+  }
+  .pm, .nm{
+    color: #dfdfde;
+  }
+  .selected{
+    background-color: #f3bbba;
+    color: #fff;
+    border-radius: 50%;
+  }
+}

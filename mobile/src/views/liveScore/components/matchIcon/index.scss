@@ -1,0 +1,75 @@
+/* 最先入球派彩 */
+.payout_first_entry {
+  background: url("images/payout_first_entry.png") no-repeat center;
+}
+
+/* 加时派彩 */
+.overtime_player {
+  background: url("./images/overtime_player.png") no-repeat center;
+}
+
+/* 全场派彩 */
+.payout_full {
+  background: url("./images/payout_full.png") no-repeat center;
+}
+
+/* 半场派彩 */
+.payout_half {
+  background: url("./images/payout_half.png") no-repeat center;
+}
+
+/* 十二码派彩 */
+.payout_twelve_yards {
+  background: url("./images/payout_twelve_yards.png") no-repeat center;
+}
+
+/* 十二码未派彩 */
+.twelve_yards_in {
+  background: url("./images/twelve_yards_in.png") no-repeat center;
+}
+
+/* 球队首名入球员未派彩 */
+.first_player {
+  background: url("./images/first_player.png") no-repeat center;
+}
+
+/* 球队首名入球员已派彩*/
+.payout_first_player {
+  background: url("./images/payout_first_player.png") no-repeat center;
+}
+
+/* 最先入球未派彩*/
+.first_goal_entry {
+  background: url("./images/first_goal_entry.png") no-repeat center;
+}
+
+/* 红牌样式 */
+.red-card-style-box {
+  display: inline-block;
+  height: 20px;
+  line-height: 28px;
+  padding-right: 2px;
+  .red-card-style {
+    //line-height: initial;
+    color: #FFFFFF;
+    background: red;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+}
+
+.first_goal_entry,
+.payout_first_entry,
+.payout_first_player,
+.overtime_player,
+.payout_full,
+.payout_half,
+.payout_twelve_yards,
+.twelve_yards_in,
+.first_player {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-size: contain;
+}

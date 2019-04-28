@@ -1,0 +1,221 @@
+.scoreColumn {
+  $border: 1px solid #dcdcdc;
+  background-color: #F4F7F9;
+  display: table-row;
+  padding: 1px 0;
+  border-top: 1px solid #dcdcdc;
+  border-left: 1px solid #dcdcdc;
+  .tableCell {
+    font-size: 14px;
+    padding: 6px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #dcdcdc;
+    box-sizing: border-box;
+  }
+  &.dark {
+    background-color: #EAEAEA;
+  }
+  .draw {
+    cursor: pointer;
+    width: 3.55%;
+    background: url("images/checkbox_t.png") no-repeat center center;
+    border-bottom: $border;
+  }
+  .league {
+    color: #ffffff;
+    width: 5.71%;
+    border-bottom: $border;
+  }
+  .matchTime {
+    width: 3.94%;
+    border-bottom: $border;
+  }
+  .timeLine{
+    padding: 0;
+    border-bottom: $border;
+    .timeBox{
+      width: 100%;
+      height: 100%;
+      min-height: 52px;
+      display: table;
+      border-collapse: collapse;
+      .regular, .corner, .addTime, .addTimeCorner{
+        display: table-row;
+        padding-left: 6px;
+      }
+      .corner, .addTimeCorner{
+        .score{
+          i{
+            float: left;
+            vertical-align: middle;
+            color: #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            &:nth-child(1){
+              background-color: #e78006;
+            }
+            &:nth-last-child(1){
+              background-color: #26aeb2;
+            }
+          }
+          .jiaoqiu{
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            background-image: url('./images/jiaoqiu.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .addTime{
+        border-collapse: collapse;
+        border-top: 1px solid #dcdcdc;
+      }
+    }
+  }
+  .award {
+    width: 6.58%;
+    height: 100%;
+    border: none;
+    i{
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-size: contain;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      // 最先进球球队已派彩
+      &.ftg{
+        background-image: url("./images/fst.png");
+      }
+      // 最先进球球队未派彩
+      &.ftging{
+        background-image: url("./images/ftging.png");
+      }
+      // 首名进球已派彩
+      &.fg{
+        background-image: url("./images/fg.jpg");
+      }
+      // 首名进球未派彩
+      &.fging{
+        background-image: url("./images/fging.png");
+      }
+    }
+  }
+  .homeTeam, .awayTeam {
+    width: 16.55%;
+    .num {
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      background-color: #FF0000;
+      color: #ffffff;
+      display: inline-block;
+    }
+  }
+  .homeTeam {
+    text-align: right;
+  }
+  .awayTeam {
+    text-align: left;
+    border: none;
+  }
+  .score {
+    width: 6.85%;
+    min-width: 72px;
+    >div{
+      display: inline-block;
+      margin: 0 auto;
+    }
+    i{
+      float: left;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      &:nth-child(1),&:nth-last-child(1){
+        color: #ffffff;
+        background-color: #3e3a39;
+      }
+      &:nth-child(2){
+        width:10px;
+      }
+    }
+  }
+  .matchStatus {
+    width: 8%;
+    text-align: left;
+    //padding-left: 10%;
+    .time{
+      transform: translateX(20%);
+    }
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .state {
+    width: 8.9%;
+    a {
+      color: #0540E9;
+      text-decoration: underline;
+      &.hf{
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background: url('./images/dollar01.png') no-repeat center center;
+      }
+    }
+  }
+  .half {
+    width: 9.96%;
+    .cornerhalf{
+      display: inline-block;
+    }
+    .jiaoqiu{
+      width: 10px;
+      height: 10px;
+      background-image: url('./images/flag.png');
+      background-size: cover;
+      display: inline-block;
+    }
+  }
+  .blank {
+    width: 9.87%;
+  }
+  .live {
+    width: 10.14%;
+    text-align: left;
+    .betting, .fm {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .fm{
+      background: url("./images/live_tv.png") no-repeat center center;
+    }
+    .betting {
+      width: 49px;
+      height: 21px;
+      background: url("./images/fl.png") no-repeat center center;
+    }
+  }
+  .borderRight {
+    border-right: 1px solid #dcdcdc;
+  }
+  .rightAward{
+    padding-right: 12px;
+  }
+}

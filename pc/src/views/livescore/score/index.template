@@ -1,0 +1,12 @@
+<div class="teamColumn">
+    <!-- 某一天的比分赛事开始 -->
+    <div class="dateUnit">
+        <div class="matchDate">
+            <p>{{time}}</p>
+        </div>
+        <div class="teamTable" v-for="(item, index) in matchList" :key="index">
+            <score-column :matchInfo="item" :index="index"></score-column>
+        </div>
+    </div>
+    <!-- 某一天的比分赛事结束 -->
+</div>

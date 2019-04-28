@@ -1,0 +1,46 @@
+<div class="play_info_panel clearfix">
+    <ul class="text">
+        <li v-show="langType==='cn'">
+            <span class="attrKey">{{langData.playerCName}}</span><span class="attrValue">{{info.playerNameZht}}</span>
+        </li>
+        <li v-show="langType==='sc'" >
+            <span class="attrKey">{{langData.playerCName}}</span><span class="attrValue">{{info.playerNameZht}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.playerName}}</span><span class="attrValue">{{info.playerName}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.teamName}}</span><span class="attrValue">{{info.teamName}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.position}}</span><span class="attrValue">{{info.position}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.birthdate}}</span><span class="attrValue">{{info.birthdate}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.country}}</span><span class="attrValue">{{info.country}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.height}}</span><span class="attrValue">{{info.height}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.registDate}}</span><span class="attrValue">{{info.registDate}}</span>
+        </li>
+        <li v-show="langType!=='en'" >
+            <span class="attrKey">{{langData.preTeamName}}</span><span class="attrValue">{{info.preTeamName}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.transferFee}}</span><span class="attrValue">{{info.transferFee}}</span>
+        </li>
+        <li>
+            <span class="attrKey">{{langData.teamHistory}}</span>
+            <ul class="attrValue">
+                <li v-for="value in info.teamHistory">{{value.teamName}}</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="avatar">
+        <img :src="info.picUrl === '' ? questionmanImg : info.picUrl"/>
+    </div>
+</div>

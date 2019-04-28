@@ -1,0 +1,32 @@
+<div class="league-select-view" v-if="isShow">
+    <div class="mask"></div>
+    <div class="league-select-view-content">
+        <div class="league-select-title">
+        <span class="league-title-text"
+              @click.stop="closeHandle">{{langData.titleLeague}}</span>
+            <div class="league-select-title-right"
+                 @click.stop="resetHandle">
+                <span></span>
+                {{langData.reset}}
+            </div>
+        </div>
+        <div class="league-select-content">
+            <ul>
+                <li :class="{selectLi: isAllLeague}"
+                    @click.stop="allLeagueHandle">
+                    {{langData.allLeague}}
+                </li>
+                <li v-for="(LA, index) in arrTournament"
+                    :class="{selectLi: selectLeagueArr.indexOf(LA.id) !== -1}"
+                    :key="index + '_la'"
+                    @click.stop="leagueHandle(LA.id)">
+                    {{LA.name}}
+                </li>
+            </ul>
+            <div class="league-select-content-btn">
+                <div @click.stop="closeBtnHandle">{{langData.close}}</div>
+                <div @click.stop="enterBtnHandle">{{langData.confirm}}</div>
+            </div>
+        </div>
+    </div>
+</div>

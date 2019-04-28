@@ -1,0 +1,62 @@
+.play_info_panel{
+  padding: 20px;
+  margin: 0 auto;
+  width: 500px;
+  .text{
+    float: left;
+    width: 350px;
+    >li{
+      line-height: 30px;
+      border-bottom: 1px solid #808080;
+      font-size: 14px;
+      font-weight: bold;
+      span{
+        display: block;
+        float: left;
+        &.attrKey{
+          width: 140px;
+        }
+        &.attrValue{
+          width: 210px;
+        }
+      }
+      ul{
+        float: left;
+      }
+    }
+  }
+  .avatar{
+    float: right;
+    width: 125px;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+.agendaColumn {
+  display: table-row;
+  background-color: #ffffff;
+  &.dark {
+    background-color: #dfdfde;
+  }
+  .tableCell {
+    font-size: 14px;
+    padding: 6px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+  .league {
+    width: 8%;
+    color: #ffffff;
+  }
+  .matchTime {
+    width: 8%;
+    border-right: 1px solid #e9e9e9;
+  }
+  .logo {
+    width: 8.5%;
+    i{
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-size: contain;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      // 最先进球球队已派彩
+      &.ftg{
+        background-image: url("./images/fst.png");
+      }
+      // 最先进球球队未派彩
+      &.ftging{
+        background-image: url("./images/ftging.png");
+      }
+      // 首名进球已派彩
+      &.fg{
+        background-image: url("./images/fg.jpg");
+      }
+      // 首名进球未派彩
+      &.fging{
+        background-image: url("./images/fging.png");
+      }
+    }
+  }
+  .matchInfo {
+    width: 51.3%;
+    text-align: center;
+    .teamInfo{
+      width: 100%;
+      i{
+        float: left;
+        width: 42%;
+        font-size: 10px;
+        &:nth-child(1){
+          text-align: right;
+        }
+        &:nth-last-child(1){
+          text-align: left;
+        }
+      }
+      .vs {
+        width: 16%;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    .cornerInfo{
+      width: 120px;
+      left: 0;
+      right: 0;
+      margin: 0px auto;
+      overflow: hidden;
+      >div{
+        width: 50%;
+        .jiaoqiu{
+          height: 15px;
+          background-image: url('./images/jiaoqiu.png');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+        }
+        &.ft{
+          i{
+            float: left;
+            width: 20px;
+            text-align: center;
+            margin: 4px 0px;
+            font-size: 12px;
+            line-height: 16px;
+            vertical-align: middle;
+            color: #ffffff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            &:nth-child(1){
+              background-color: #e78006;
+            }
+            &:nth-last-child(1){
+              background-color: #26aeb2;
+            }
+          }
+        }
+        &.ht{
+          //text-align: left;
+          .jiaoqiu{
+            width: 15px;
+            text-align: center;
+            margin: 4px 0px;
+            font-size: 12px;
+            line-height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .live {
+    width: 15.7%;
+    border-left: 1px solid #e9e9e9;
+    text-align: left;
+    padding: 1px 6px;
+    box-sizing: border-box;
+    .betting, .fm {
+      width: 25px;
+      height: 25px;
+      margin-right: 6px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .fm{
+      background: url("./images/live_tv.png") no-repeat center center;
+    }
+    .betting {
+      width: 49px;
+      height: 25px;
+      background: url("./images/fl.png") no-repeat center center;
+    }
+  }
+}

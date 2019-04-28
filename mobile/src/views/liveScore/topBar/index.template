@@ -1,0 +1,33 @@
+<div class="top-bar-view">
+    <ul class="clearfix">
+        <li>
+        <match-message />
+        </li>
+        <li @click="leagueSelectHandle"
+            class="league-market-btn">
+            <span>{{langData.titleLeague}}</span>
+            <span class="arrow-icon"></span>
+            <league-select-view
+                    ref="leagueSelect"
+                    :arr-tournament="arrTournament"
+                    :call-back-fn="selectLeagueHandle">
+            </league-select-view>
+        </li>
+
+        <li class="league-market-btn"
+            @click="datePluginHandle">
+            <span>{{langData.date}}</span>
+            <span class="arrow-icon"></span>
+            <date-plugin
+                    ref="datePluginView"
+                    @changeDate="changeDate">
+            </date-plugin>
+        </li>
+        <li class="reset-bth-li">
+            <div class="reset-bth"
+                 @click="resetBtnHandle">
+                {{langData.reset}}
+            </div>
+        </li>
+    </ul>
+</div>

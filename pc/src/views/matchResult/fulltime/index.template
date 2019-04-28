@@ -1,0 +1,10 @@
+<div class="fulltime">
+    <!-- 某一天的完整赛事开始 -->
+    <div class="box" v-for="(obj, key) in grpMatch">
+        <h1>{{obj.dateWeek}}</h1>
+        <div class="table">
+            <match-result-match-list :list="obj.list" />
+        </div>
+    </div>
+    <!-- 某一天的完整赛事结束 -->
+</div>

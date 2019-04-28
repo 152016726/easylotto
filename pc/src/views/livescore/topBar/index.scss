@@ -1,0 +1,16 @@
+.top_bar{
+  .top_buttons {
+    padding: 10px;
+    .icon_button {
+      float: left;
+      margin-left: 10px;
+      user-select: none;
+      &:last-child, &:first-child {
+        margin-left: 0;
+      }
+      &.match_msg_box {
+        float: right;
+      }
+    }
+  }
+}

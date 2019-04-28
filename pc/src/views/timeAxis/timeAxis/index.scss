@@ -1,0 +1,107 @@
+.time_axis{
+  margin: 18px 16px 0 0;
+  font-size: 14px;
+  .playName{
+    width: 100%;
+    div {
+      width: 297px;
+      float: left;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .menu{
+      width: 72px;
+    }
+    .home{
+      background-color: #f39800;
+      margin-right: 1px;
+      border-radius:3px 0 0 0;
+    }
+    .away{
+      background-color: #009e96;
+      border-radius:0 3px 0 0;
+    }
+  }
+  .table{
+    >div{
+      float: left;
+      width: 297px;
+      line-height: 30px;
+      &.home{
+        margin-right: 1px;
+      }
+    }
+    .menu{
+      width: 72px;
+      text-align: center;
+      font-weight: bold;
+    }
+    ul{
+      li {
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 1px;
+        padding: 0 16px 0 17px;
+        &.bgLight{
+          background: #f2f2f2;
+        }
+        &.bgDark{
+          background: #c7c7c7;
+        }
+        .name{
+          float: left;
+          width: 155px;
+          color: #006BFB;
+          span{
+            cursor: pointer;
+          }
+        }
+        .icon{
+          float: left;
+          width: 30px;
+          height: 30px;
+          &.goal{
+            background: url("images/goal.png") no-repeat center;
+          }
+          &.red{
+            background: url("images/red.png") no-repeat center;
+          }
+        }
+        .clock{
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<script src="../../../../../gdtc/jingcaiwang/web/node_modules/@easylotto/timer/index.js"></script>
+<div id="main_container" v-cloak>
+    <div id="container_title">
+        <a href="https://www.macauslot.com/content/page/index.html?sport=1&lang=cn">{{langData.soccer}}</a> &gt; <span
+            class="soccer_text_color">{{langData.livescore}} </span>
+    </div>
+    <div id="root">
+        <div id="MSLiveMain">
+            <scroll-fixed-box :in-iframe="'#main_page'">
+                <top-bar/>
+            </scroll-fixed-box>
+        </div>
+        <match-list></match-list>
+    </div>
+</div>

@@ -1,0 +1,797 @@
+/**
+* create by beate 20171013
+* Copyright 2017 www.macauslot.com
+* Be in common use
+**/
+@charset "utf-8";
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {
+  display: block;
+}
+strong{
+	font-family: 'Microsoft Yahei',sans-serif !important;
+	font-weight:500;
+	color:#000
+}
+h1,h2,h3,h4,h5,b{
+	font-family: 'Microsoft Yahei',sans-serif !important;
+	font-weight:500;
+	color:#000
+}
+*{
+	*zoom:1;
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust:none;
+}
+*:focus { outline: none; } 
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body,html {
+	height: 100%;
+}
+body {
+    width: 100%;
+    background-color: #fff;
+    color: #252830;
+    font-family: Arial,Microsoft JhengHei;
+    font-size: 12px;
+    line-height: 20px;
+}
+.main_body{
+	width: 1366px;
+	min-width: 1366px;
+	left: 0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: #2f2f2f;
+}
+ul,li {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+	/* width: 100%; */
+	/* height: 100%; */
+	/* display: block; */
+}
+a:hover, a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+a:active, a:hover {
+    outline: 0;
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.indent_2em{
+	text-indent: 1.5em;
+}
+.font14 {
+	font-size: 18px;
+}
+.center {
+	left: 0;
+	right:0;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	background-color: #fff;
+}
+img {
+	border: none;
+	vertical-align: middle;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+
+/*header*/
+.logo {
+	 margin-left: 3px;
+	 width: 151px;
+	 height: 38px;
+	 background: url(../images/header/logo.jpg) no-repeat 100% 100%;
+	 margin-top: 17px;
+}
+	.logo a {
+	    width: 100%;
+	    height: 100%;
+	    display: block;
+	}
+
+.nav_item {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+	.nav_item>li {
+	    display: inline-block;
+	    margin: 0 8px;
+	    height: 18px;
+	    color: #4d4d4d;
+	    vertical-align: top;
+	    cursor: pointer;
+	    margin-bottom: 2px;
+	    line-height: 16px;
+	}
+		.nav_item li>a {
+		    color: #4d4d4d;
+		    cursor: pointer;
+		}
+	.nav_item_border_right{
+		border-right: 1px solid #636363;
+	}
+	.nav_item .last-item {
+	    /* margin: 0 10px; */
+	    border: none;
+	    width: 80px;
+	    margin-left: 10px;
+	    margin-right:  10px;
+	}
+	.lang_select {
+		background: url(../images/header/icon_lang.png) no-repeat left center;
+	}
+	.btn-group {
+	    position: absolute;
+	    display: inline-block;
+	    z-index: 98;
+	    margin-left: 15px;
+	    min-width: 82px;
+	}
+	.btn {
+	    cursor: pointer;
+	    background-color: #fff;
+	    border: 1px solid transparent;
+	    padding: 0px 12px;
+	}
+	.btn-group.open .dropdown-toggle {
+	    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	}
+	.msl-account-nav-item.msl-nav-lang .btn-group .dropdown-toggle {
+	    padding-top: 0;
+	    padding-bottom: 0;
+	    border: 1px solid transparent;
+	}
+	.caret {
+	    display: inline-block;
+	    width: 0;
+	    height: 0;
+	    margin-left: 0;
+	    vertical-align: middle;
+	    border-top: 4px solid;
+	    border-right: 4px solid transparent;
+	    border-left: 4px solid transparent;
+	}
+
+	.dropdown-menu {
+		width: 100%;
+		position: absolute;
+		top: 90%;
+		z-index: 1000;
+		display: none;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		background-clip: padding-box;
+	}
+	.open>.dropdown-menu {
+	    display: block;
+	}
+	.dropdown-menu>li {
+	    /* padding: 5px 15px; */
+	    text-align:  center;
+	}
+
+a.multi_lang {}
+	.msl-account-nav-item a {
+	    color: #4d4d4d;
+	    cursor: pointer;
+	}
+/*nav menu*/
+#header_menu {
+    /* top: 28px; */
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    /* height: 57px; */
+    background-color: #fff;
+    /*min-width: 1024px;*/
+    overflow: hidden;
+    /*border-bottom: 2px solid #87c241;*/
+    /* position: unset; */
+    /* position:  relative; */
+}
+.soccer_bordercolor{
+	 border-bottom: 2px solid #87c241;
+}
+.nba_bordercolor{
+	 border-bottom: 2px solid #d36610;
+}
+.tennis_bordercolor{
+	 border-bottom: 2px solid #0c9fc0;
+}
+	.sport_nav {
+	    position: absolute;
+	    width: 456px;
+	    height: 71px;
+	    /* padding-left: 55px; */
+	    margin-top: 7px;
+	    /* bottom: 0; */
+	    left: 0;
+	}
+	.nav_home,
+	.nav_football,
+	.nav_basketball,
+	.nav_tennis {
+		top: 13px;
+	}
+	.nav_home{
+		left: 54px;
+	}
+	.nav_football {
+	    left: 145px;
+	}
+	.nav_basketball {
+	    left: 235px;
+	}
+	.nav_tennis {
+	    left: 326px;
+	}
+
+	.sport_nav_item {
+	    position: absolute;
+	    z-index: 9999;
+	}
+
+	.bg_image_home{
+	    background: url(../images/header/nav/nav_home.png) no-repeat;
+	}
+	.bg_image_football {
+	    background: url(../images/header/nav/nav_fball.png) no-repeat;
+	}
+	.bg_image_basketball{
+	    background: url(../images/header/nav/nav_bball.png) no-repeat;
+	}
+	.bg_image_tennis {
+	    background: url(../images/header/nav/nav_tennis.png) no-repeat;
+	}
+
+	.bg_image_home.active{
+	    background: url(../images/header/nav/nav_home-ro.png) no-repeat;
+	}
+	.bg_image_football.active{
+	    background: url(../images/header/nav/nav_fball-ro.png) no-repeat;
+	}
+	.bg_image_basketball.active {
+	    background: url(../images/header/nav/nav_bball-ro.png) no-repeat;
+	}
+	.bg_image_tennis.active {
+	    background: url(../images/header/nav/nav_tennis-ro.png) no-repeat;
+	}
+	.bg_image_home,.bg_image_basketball, .bg_image_football, .bg_image_tennis {
+	    display: block;
+	    width: 94px;
+	    height: 44px;
+	    line-height: 40px;
+	    color:  #fff;
+	    text-indent: 3em;
+	    font-size: 16px;
+	    cursor:  pointer;
+	}
+	.eng_soccer_indent, .eng_tennis_indent {font-size:14px;}
+	.eng_nba_indent{font-size:14px;text-indent:1.5em;text-shadow: 0px 0px 6px #000;}
+	.bg_image_home{
+		text-indent: 0em;
+		text-align:center;
+	}
+
+	.header_banner {
+		width: 981px;
+		height: 71px;
+		display: block;
+		/* position:  absolute; */
+		/* z-index:  222; */
+	}
+		.header_banner .bg_image_mslot{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/soccer_topbanner/mslot.jpg) no-repeat;
+		}
+		.header_banner .bg_image_mslot_en{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/soccer_topbanner/mslot_en.jpg) no-repeat;
+		}
+		.header_banner .bg_image_mslot_sc{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/soccer_topbanner/mslot_sc.jpg) no-repeat;
+		}
+
+		.header_banner .bg_image_mslot_nba{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/nba_topbanner/mslot.jpg) no-repeat right bottom;
+			background-size: 100%;
+		}
+		.header_banner .bg_image_mslot_en_nba{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/nba_topbanner/mslot_en.jpg) no-repeat;
+		}
+		.header_banner .bg_image_mslot_sc_nba{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: url(../images/header/nba_topbanner/mslot_sc.jpg) no-repeat;
+		}
+
+
+#main_container{
+	background-color: #dfdfde;
+	position: relative;
+	/* overflow: hidden; */
+	z-index: 999;
+	max-width: 1311px;
+	width: 95.9%;
+	float: right;
+	min-height: 500px;
+	/*padding-bottom: 7.5px;*/
+}
+
+
+/*slidebar*/
+#inside_sidebar{
+	position: relative;
+	width: 55px;
+	height: 100%;
+	background-color: #2f2f2f;
+	color: #fff;
+	text-align: center;
+	float: left;
+}
+
+#inside_sidebar li{
+	background:#323232;
+	background: -moz-linear-gradient(top,#323232,#2f2f2f,#262626);     /*Mozilla*/
+	background: -webkit-gradient(linear,50 0%,100% 80%,from(#323232),to(#262626));  /*Old gradient for webkit*/
+	background: -webkit-linear-gradient(top,#323232,#2f2f2f,#262626); /*new gradient for Webkit*/
+	background:-o-linear-gradient(top,#323232,#2f2f2f,#262626);  /*Opera11*/
+	background:filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#323232, endColorstr=#262626);/*IE<9>*/
+	background:-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#323232, endColorstr=#262626)";/*IE8+*/
+}
+._soccer li .active,
+._soccer li a:hover{
+	background-color: #94c941;
+}
+._nba li .active,
+._nba li a:hover{
+	background-color: #fa961b;
+}
+._tennis li .active,
+._tennis li a:hover{
+	background-color: #00adf1;
+}
+#inside_sidebar a{
+	text-decoration:none;
+	height: 56px;
+	padding-top: 40px;
+	font-size: 12px;
+	width: 100%;
+	display: block;
+	line-height: 10px;
+}
+#inside_sidebar a:hover,
+.backimg.active,.nba_backimg.active,.tennis_backimg.active{
+	color:#000;
+	background-image: url(../images/icons/leftbar_hover.png);
+}
+.backimg {
+	color:#fff;
+    background-image: url(../images/icons/leftbar.png);
+}
+.nba_backimg {
+	color:#fff;
+    background-image: url(../images/icons/leftbar_nba.png);
+}
+.tennis_backimg {
+	color:#fff;
+    background-image: url(../images/icons/leftbar_tennis.png);
+}
+.img_01{
+    background-position: 0 2px;
+}
+.img_02{
+    background-position: 0 -58px;
+}
+.img_03{
+    background-position: 0 -110px;
+}
+.img_04{
+    background-position: 0 -168px;
+}
+.img_05{
+    background-position: 0 -222px;
+}
+.img_06{
+    background-position: 0 -280px;
+}
+.img_07{
+    background-position: 0 -336px;
+}
+.img_08{
+    background-position: 0 -392px;
+}
+.img_09{
+    background-position: 0 -450px;
+}
+.img_10{
+    background-position: 0 -500px;
+}
+.img_old{
+    background-position: 0 -507px;
+}
+._en.img_old{
+    background-position: 0 -505px;
+}
+.img_11{
+    background-position: 0 -560px;
+}
+.img_12{
+    background-position: 0 -620px;
+}
+#inside_sidebar .img_old:hover{
+    background-position: 0 -548px;
+}
+#inside_sidebar .img_11:hover{
+    background-position: 0 -594px;
+}
+#inside_sidebar .img_12:hover{
+    background-position: 0 -656px;
+}
+/*footer*/
+#footer {
+    position: relative;
+    width: 100%;
+    z-index: 30;
+    background-color: #323232;
+    display: inline-block;
+}
+	.to-top {
+	    position: relative;
+	    width: 100%;
+	    height: 40px;
+	    z-index: 40;
+	    cursor: pointer;
+	}
+	.soccer_to-top_bgcolor {
+	    background-color: #88c342;
+	}
+	.nba_to-top_bgcolor {
+	    background-color: #fa961b;
+	}
+	.tennis_to-top_bgcolor {
+	    background-color: #00adf1;
+	}
+		.to-top p {
+		    position: absolute;
+		    color: #fff;
+		    top: 0;
+		    right: 70px;
+		    font-size: 16px;
+		    line-height: 44px;
+		    margin: 0;
+		}
+		.soccer_to-top_bgcolor span{
+			background-image: url(../images/footer/go_top_arrow.png);
+		}
+		.nba_to-top_bgcolor span{
+			background-image: url(../images/footer/go_top_arrow_nba.png);
+		}
+		.tennis_to-top_bgcolor span{
+			background-image: url(../images/footer/go_top_arrow_tennis.png);
+		}
+		.to-top span {
+		    position: absolute;
+		    width: 50px;
+		    height: 40px;
+		    top: 0;
+		    right: 0;
+		    background-color: #f3f9ed;
+		    background-position: 50%;
+		    background-repeat: no-repeat;
+		}
+		
+
+
+	.footer-wrapper {
+	    position: relative;
+	    width: 100%;
+	    background-color: #323232;
+	    padding: 32px 0px;
+	    margin-bottom: 20px;
+	}
+		.footer-nav {
+		    padding-top: 25px;
+		    margin: 0;
+		    color: #fff;
+		    display: inline-block;
+		    width: 580px;
+		    text-align: center;
+		}
+			.footer-nav-con ul>li {
+				width: 20%;
+				float: left;
+				border-right: 1px solid #323641;
+				line-height: 22px;
+			}
+			.footer-nav div li p {
+				font-size: 14px;
+			}
+			.footer-nav div li a{
+				color: #b4b4b4;
+			}
+		.copyright {
+		    width: 660px;
+		    padding-right: 30px;
+		    color: #fff;
+		    text-align: right;
+		    float: right;
+		    background: url(../images/footer/footer_bsi.png) no-repeat 94% 30%;
+		    padding-top: 62px;
+		}
+		.copyright table td{background:none;border:none;text-align:right;}
+		.copyright td a:hover, 
+		.copyright td a:link, 
+		.copyright td a:visited, 
+		.copyright td a:active{ color:#fff;}
+
+
+
+.Overlay{
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.55);
+    background-color: #000\9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#popbox,#popbet,#msl-livescore-result{
+	z-index: 99999;
+	position: absolute;
+	visibility: visible;
+	position: fixed;
+	overflow: hidden;
+}
+.popbox_overlay{
+	width: 1060px;
+	height:80%;
+	/*height: 550px;*/
+	top: 0;
+	bottom:0;
+	left: 0;
+	right: 0;
+	margin:auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.popbet{
+	width:602px;
+	height:540px;
+	margin: 0;
+	left: 10px;
+	top:20px;
+	border:1px solid #cecece
+}
+#cboxWrapper,.cboxWrapper{
+	width: 1000px;
+	height: 100%;
+	background-color: #fff;
+}
+#cboxWrapper2{
+	width: 600px;
+	height: 100%;
+}
+#cboxClose,#cboxClose_comm,#cboxClose_comm2,#msl_result_cboxClose_comm{
+	background: url(../images/icons/close.jpg);
+	width: 32px;
+	height: 32px;
+	float: right;
+	margin-right: 20px;
+	text-indent: -9999px;
+	border: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0px;
+}
+#cboxClose_comm2{
+	margin-right:15px;
+	margin-top:7px;
+}
+#container_title a{
+	color:#fff;
+	text-decoration:none;
+}
+#container_title a{
+	color: #9e9ea0;
+}
+.load{
+	width: 200px;
+	height: 121px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	#background: url(../images/icons/load.gif) no-repeat center center;
+}
+
+.select_title li .bg,
+.select_title li .bg_nba {
+    min-width: 100px;
+    border-radius: 8px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #983611;
+    cursor:  pointer;
+    background-repeat: no-repeat;
+}
+.select_title li .bg {
+	background-color: #87c241;
+}
+.select_title li .bg_nba {
+    background-color: #fa961b;	
+}
+.select_title li a{
+	color: #212121;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.bg a,
+.bg_nba a{
+	background-image: url(../images/icons/button_icons.png);
+	background-repeat:no-repeat;
+}
+
+.notice  a{
+	background-image: url(../images/icons/newsbutton.png);
+	background-repeat:no-repeat;
+	background-position: 18% 9px;
+	padding-left: 48px;
+	padding-right: 20px;
+}
+
+.bg.notice.nba {
+    background-color: #fa961b;	
+}
+
+
+.backup a{
+	text-indent: 1em;
+	padding-left: 28px;
+	background-position: 26% -17px;
+	padding-right: 20px;
+}
+.odds_time{
+	width:110px;
+}
+.odds_time a{
+	text-indent: 1em;
+	background-position: 22% -40px;
+	padding-left: 26px;
+	padding-right: 10px;
+}
+.odds_calculator a{
+	text-indent: 2em;
+	background-position: 22% -95px;
+}
+.odds_calculator_en a{
+	text-indent: 2em;
+	background-position: 12% -95px;
+}
+.select_title .settings a{
+   background-position: 22% 6px;
+   padding-left: 48px;
+   /* width: 100px; */
+   padding-right: 20px;
+}
+.select_title .odds_time_en a{
+   background-position: 10% -40px;
+   padding-left:30px;
+   padding-right: 8px;
+}
+.select_title #get_result a{
+   background-position: 18% -69px;
+   padding-left: 48px;
+   padding-right: 20px;
+}
+#Reselect, .Reselect {
+	width: 90px;
+	background-color: #87c241;
+	color: #212121;
+	border-radius: 8px;
+	height: 30px;
+	line-height: 32px;
+	display:  block;
+	float:  right;
+	margin-left:  10px;
+	text-indent: 2.22em;
+	background-image: url(../images/icons/reselect.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	text-decoration:  none;
+}
+.nodata_fluid{
+	width:80%;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom: 1px solid #ababab;
+	position: relative;
+	margin-top: 0px;
+}
+.nodata_Text{
+	width: 40%;
+	font-size: 40px;
+	background: #ababab;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -40px;
+	position: absolute;
+	border: 10px solid #dfdfde;
+}
+
+
+
+

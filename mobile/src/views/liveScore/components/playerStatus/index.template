@@ -1,0 +1,16 @@
+<div class="player-status-view">
+    <ul class="player-status-view-ul">
+        <li v-for="(PL, index) in playerList"
+            :key="index + '_pl'">
+            <player-status-li
+                    :clock="PL.clock"
+                    :player-name="PL.playerName"
+                    :type-code="PL.typeCode"
+                    :first-goal="firstGoal"
+                    :payout="payout"
+                    :player-id="PL.playerId"
+                    :currentState="PL.currentState">
+            </player-status-li>
+        </li>
+    </ul>
+</div>
