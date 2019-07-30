@@ -1,0 +1,38 @@
+page {
+  background-color: #f3f3f3;
+}
+.item-wap .item {
+  position: relative;
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+.item-wap .item image {
+  width: 94rpx;
+  height: 94rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 34rpx;
+  background: #fff;
+}
+.item-wap .item .content {
+  margin-left: 116rpx;
+  border-bottom:1px #e5e5e5 solid;
+  padding:17rpx 0;
+}
+.item-wap .item .content .title {
+	font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: #3f3f3f;
+  padding-bottom: 10rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+}
+.item-wap .item .content .tip {
+	font-size: 25rpx;
+	letter-spacing: 0rpx;
+	color: #999999;
+}

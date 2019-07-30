@@ -1,0 +1,43 @@
+<view class="clearfox contenner">
+  <scroll-view class="left leftblock" scroll-y style="height: {{height}}px">
+    <view class="itemwrap">
+      <view class="item" wx:for="{{letterTag}}" wx:for-item="letterItem">
+        <view class="letter">{{letterItem}}</view>
+        <view wx:for="{{classList}}" wx:if="{{letterItem==item.letter}}" data-id="{{item.id}}" data-name="{{item.aliasName}}" data-desc="{{item.deptDesc}}" bindtap="selectClasstap" class="{{currentDept.id==item.id?'active':''}}">{{item.aliasName}}</view>
+      </view>
+      <view style="text-align:center;margin:28rpx 0;" wx:if="{{letterTag.length <= 0}}">暂无科室！</view>
+      <!--view>骨二科</view>
+      <view class="letter">H</view>
+      <view>呼吸内科</view>
+      <view class="letter">G</view>
+      <view>骨一科</view>
+      <view>骨二科</view>
+      <view class="letter">H</view>
+      <view>呼吸内科</view-->
+    </view>
+  </scroll-view>
+  <view class="left rightblock" style="min-height:{{height}}px">
+    <view class="block1" wx:if="{{!currentDept.name}}">
+      <view>请先选择科室！</view>
+    </view>
+    <view class="block1" wx:if="{{currentDept.name}}">
+      <view>{{currentDept.name}}主治：</view>
+      <view>{{currentDept.desc}}</view>
+    </view>
+    <view class="block2" wx:if="{{currentDept.name}}">
+    <!--navigator wx:for="{{docList}}" class="item" url="../selecttime/selecttime?hospId=809664284283744256&deptId=812099958682542080&docId=99999" hover-class="none"-->
+    <!--navigator wx:for="{{docList}}" class="item" url="../selecttime/selecttime?hospId=581265028660350976&deptId=642166592344408064&docId=10001" hover-class="none"-->
+      <navigator wx:for="{{docList}}" class="item" url="../selecttime/selecttime?hospId={{hospId}}&deptId={{currentDept.id}}&docId={{item.id}}" hover-class="none">
+        <image src="{{item.imagePic?item.imagePic:'../../../../images/img_default.png'}}"></image>
+        <view class="content">
+          <view class="name">{{item.name}}</view>
+          <view>{{item.titleName}}</view>
+          <view class="good">擅长：{{item.goodAt}}</view>
+        </view>
+        <view class="tag grey" wx:if="{{schStatus == '2'}}">无排班</view>
+        <view class="tag blue" wx:else>有排班</view>
+      </navigator>
+      <view class="nullview" wx:if="{{docList.length <=0}}">暂无医生信息</view>
+    </view>
+  </view>
+</view>

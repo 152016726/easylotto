@@ -1,0 +1,79 @@
+<!--pages/info/treatment/list/list.wxml-->
+<view class="rm-wrap">
+    <!--下拉菜单-->
+    <picker bindchange="pickChange" value="{{pickIndex}}" range="{{array}}" mode = selector>
+        <view class="menu-nav weui-cell">
+            <view class="weui-cell__bd"><text>当前就诊人:</text><text></text>张三{{array[pickIndex]}}</view>
+            <view class="arrows-box"><!--这个类对接时可能用不到{{isShow?'is-arrow_up':''}}--></view>
+        </view>
+    </picker>
+    <!--tab切换栏-->
+    <view class="nav-tab weui-flex weui-cell_access" bindtap="changeTab">
+        <block wx:for="{{navTab}}">
+            <view class="nav-tab_item {{index==currentIndex?'is-navtab_active':''}}" data-index="{{index}}">
+                {{item}}
+            </view>
+        </block>
+    </view>
+    <!--订单内容列表-->
+    <checkbox-group bindchange="checkboxChange">
+        <view class="main-content {{currentIndex==1?'is-padder_b':''}}">
+            <navigator class="order-box" url="../detail/detail" bindtap="navitagorUrl" hover-class="none" wx:for="{{list}}">
+                <!--待支付有打勾-->
+                <block wx:if="{{currentIndex==0&&item.signStatus==0}}" class="" >
+                    <label class="order-title flex-center"  catchtap="checkboxTitle">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" class="ws-checkbox" style="margin-right:10rpx;"/>
+                        <view class="weui-flex__item">item.title</view>
+                        <view class="order-title_rt">￥{{(item.price)}}</view>
+                    </label>
+                </block>
+                <block wx:else> <!--已支付有打勾-->
+                    <view class="order-title flex-center">
+                        <view class="weui-flex__item">item.title</view>
+                        <view class="order-title_rt">￥{{(item.price)}}</view>
+                    </view>
+                </block>
+                <view class="order-bd flex-center">
+                    <view class="weui-flex__item">
+                        <view><text>就诊科室:</text><text>放射科</text></view>
+                        <view><text>就诊医生:</text><text>张三</text></view>
+                        <view><text>就诊时间:</text><text>2018/12/12</text></view>
+                    </view>
+                    <view class="order-icon_more"></view>
+                </view>
+                <!--已支付状态下显示-->
+                <view class="tip-bar_pay" wx:if="{{currentIndex==1}}">
+                    <text class="warn-tip_sm">已支付</text>
+                    <!--<text class="warn-tip_sm is-wran_wreak">已退款</text>-->
+                </view>
+            </navigator>
+           <!-- <view class="order-box">
+                <view class="order-title flex-center">
+                    <view wx:if="{{currentIndex==0}}">1</view>
+                    <view class="weui-flex__item">药品/检验/检查</view>
+                    <view class="order-title_rt">￥2111</view>
+                </view>
+                <view class="order-bd flex-center">
+                    <view class="weui-flex__item">
+                        <view><text>就诊科室:</text><text>放射科</text></view>
+                        <view><text>就诊医生:</text><text>张三</text></view>
+                        <view><text>就诊时间:</text><text>2018/12/12</text></view>
+                    </view>
+                    <view class="order-icon_more"></view>
+                </view>
+                &lt;!&ndash;已支付状态下显示&ndash;&gt;
+                <view class="tip-bar_pay" wx:if="{{currentIndex==1}}">
+                    <text class="warn-tip_sm">已支付</text>
+                    &lt;!&ndash;<text class="warn-tip_sm is-wran_wreak">已退款</text>&ndash;&gt;
+                </view>
+            </view>-->
+        </view>
+    </checkbox-group>
+    <!--支付按钮-->
+    <view class="flex-center fixed-area_bottom--pay"  wx:if="{{currentIndex==0}}">
+            <view>总价: <text class="f-c_warn">￥{{totalPrice}}</text></view>
+        <button  class="weui-btn weui-btn_info" url="list">确定</button>
+    </view>
+</view>
+
+

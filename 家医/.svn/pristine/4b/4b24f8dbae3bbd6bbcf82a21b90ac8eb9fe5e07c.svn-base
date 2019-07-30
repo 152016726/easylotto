@@ -1,0 +1,116 @@
+<!--pages/info/pages/examination/detail/detail.wxml-->
+<view class="yt-wrap">
+	<view class="wrap-top">
+		<view class="font-b2b2b2_xs">{{recordTime}}</view>
+		<view class="wrap-top_middle">
+			<view class="wrap-circle_sm wrap-circle_left">
+				<view>{{reportData.weight}}</view>
+				<view class="font-grey_xs">体重kg</view>
+			</view>
+			<view class="wrap-circle_lg">
+			 	<image  class="avator-img_md" src="{{userInfo.userPic?userInfo.userPic:(userInfo.userSex=='2'?'../../../../../images/img_famFemale.png':(userInfo.userSex=='1'?'../../../../../images/img_famMale.png':'../../../../../images/user_img.png'))}}"></image>
+			</view>
+			<view class="wrap-circle_sm wrap-circle_right">
+				<view>{{reportData.height}}</view>
+				<view class="font-grey_xs">身高cm</view>
+			</view>
+			<view class="Line-dotted_top"></view>
+			<view class="Line-dotted_bottom"></view>
+		</view>
+		<view class="font-black_l">{{userName}}</view>
+	</view>
+	<view class="cont-box">
+		<view class="wrap-flex_between">
+			<view class="flex-center weui-flex__item">
+				<view class="cont-left">收缩压</view>
+				<view><text class="font-black_m">{{reportData.rightSBP}}</text>mmHg</view>
+			</view>
+			<view class="flex-center weui-flex__item">
+				<view class="cont-left">总胆固醇</view>
+				<view><text class="font-black_m">{{reportData.cholesterol}}</text>nmol/L</view>
+			</view>
+		</view>
+		<view class="wrap-flex_between">
+			<view class="flex-center weui-flex__item">
+				<view class="cont-left">舒张压</view>
+				<view><text class="font-black_m">{{reportData.rightDBP}}</text>mmHg</view>
+			</view>
+			<view class="flex-center weui-flex__item">
+				<view class="cont-left">BMI指数</view>
+				<view><text class="font-black_m">{{reportData.BMI}}</text></view>
+			</view>
+		</view>
+		<view class="wrap-flex_between">
+			<view class="flex-center weui-flex__item">
+				<view class="cont-left">血红蛋白</view>
+				<view><text class="font-black_m">{{reportData.HGB}}</text>g/L</view>
+			</view>
+		</view>
+	</view>
+	<!-- 健康评估报告 -->
+	<navigator class="wrap-middle_assess" url="../assessment/assessment?examCode={{examCode}}&hospHisCode={{hospHisCode}}&id={{recordId}}">	  
+		<view class="wrap-title_assess">健康评估报告</view>
+		<view class="font-default_s">
+			综合报告内检项给出的健康建议与指导
+		</view>
+	</navigator>	
+    <!-- 健康检查结果 -->
+    <view class="wrap-bottom">	  
+    	<view class="wrap-title">健康检查结果</view>
+    	<view class="wrap-content">
+    	    <block wx:for="{{checkList1}}" wx:for-index="checkList1Idx" wx:for-item="checkList1">
+	    	  	<navigator class="flex-center box-item_bottom" url="../result/result?examCode={{examCode}}&hospHisCode={{hospHisCode}}&id={{recordId}}&detailTitle={{checkList1.detailTitle}}&detailCode={{checkList1.detailCode}}">
+	    			<view class="weui-flex__item">{{checkList1.detailTitle}}</view>
+	    			<view class="lz-right-ico"></view>
+	    		</navigator>
+    	    </block>
+    		<view class="flex-center box-item_bottom" bindtap="labCheckToggle">
+    			<view class="weui-flex__item">实验室检查</view>
+    			<view class="{{isFold?'lz-down-base-ico':'lz-up-base-ico'}}"></view>
+    		</view>
+    		<view class="box-bd {{isFold?'':'is-show'}}">
+	            <view class="box-bd_inner">
+	                <block wx:for="{{projectList}}" wx:for-index="projectIdx" wx:for-item="projectItem">
+	                    <navigator class="flex-center box-item" url="../result/result?examCode={{examCode}}&hospHisCode={{hospHisCode}}&id={{recordId}}&detailTitle={{projectItem.itemName}}&detailCode={{projectItem.code}}">
+	                    	<view class="iconDot"></view>
+	                        <view class="weui-flex__item">{{projectItem.itemName}}</view>
+	                    </navigator>
+	                </block>
+                	<navigator class="flex-center box-item {{userInfo.userSex=='2'?'':'maleHidden'}}" url="../result/result?examCode={{examCode}}&hospHisCode={{hospHisCode}}&id={{recordId}}&detailTitle={{'宫颈涂片'}}&detailCode={{'GJTP'}}">
+	                    <view class="iconDot"></view>
+	                    <view class="weui-flex__item">宫颈涂片</view>
+	                </navigator>
+	            </view>
+	        </view>
+	        <block wx:for="{{checkList2}}" wx:for-index="checkList2Idx" wx:for-item="checkList2">
+	    	  	<navigator class="flex-center box-item_bottom" url="../result/result?examCode={{examCode}}&hospHisCode={{hospHisCode}}&id={{recordId}}&detailTitle={{checkList2.detailTitle}}&detailCode={{checkList2.detailCode}}">
+	    			<view class="weui-flex__item">{{checkList2.detailTitle}}</view>
+	    			<view class="lz-right-ico"></view>
+	    		</navigator>
+    	    </block>
+    	</view>
+    </view>
+    <!--需重点关注的项目 产品说不要先保留-->
+   <!--  <view class="box-cont">
+        <view class="box-title" bindtap="infoToggle">
+        	<view class="flex-center">
+        		<view class="weui-flex__item">需重点关注的项目</view>
+            	<view class="{{isShow?'lz-up-base-ico':'lz-down-base-ico'}}"></view>
+        	</view>
+        	<view class="box-small margin-top_s">
+				异常<text>{{exceptionCount}}</text>项
+			</view>
+        </view>
+        <view class="box-bd {{isShow?'is-show':''}}">
+            <view class="box-bd_inner">
+                <block wx:for="{{projectList}}" wx:for-index="projectIdx" wx:for-item="projectItem" wx:if="{{projectItem.status=='0'}}">
+                    <navigator class="flex-center box-item">
+                    	<view class="iconDot"></view>
+                        <view class="weui-flex__item">{{projectItem.itemName}}</view>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+    </view>	 -->
+</view>
+

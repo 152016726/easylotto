@@ -1,0 +1,174 @@
+/****菜单栏样式nav*/
+.menu-nav{
+    position:fixed;
+    width:682rpx;
+    height: 90rpx;
+    line-height:90rpx;
+    padding:0 34rpx;
+    font-size:34rpx;
+    color:#ffffff;
+    background-color:#5394ff;
+    z-index:2000;
+}
+.arrows-box{
+    width:30rpx;
+    height:30rpx;
+    background-color: lightblue;
+}
+.is-arrow_up{background-color: lightpink;  }
+/****菜单栏下拉菜单样式*/
+.menu-cont{
+    position:fixed;
+    top:90rpx;
+    width:100%;
+    height: 0;
+    overflow: hidden;
+    z-index:2000;
+}
+.menu-cont.is-show{ height: 450rpx;overflow: auto;}
+.menu-cont_inner{
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+.is-show .menu-cont_inner{
+    opacity: 1;
+    -webkit-transform: translateY(0);transform: translateY(0);
+}
+.menu-cont_list{
+    height:90rpx;
+    font-size:34rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color:#525252;
+    background: #fff;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+.is-list_active{
+    font-size:34rpx;
+    color:#5394ff;
+}
+/****已支付待支付样式*/
+.nav-tab{
+    position:fixed;
+    width:100%;
+    top:90rpx;
+    height: 90rpx;
+    line-height:90rpx;
+    padding:0 34rpx;
+    font-size:34rpx;
+    color:#7a7a7a;
+    background-color:#fff;
+    z-index:900;
+}
+.nav-tab_item{
+    width:210rpx;
+    position:relative;
+    text-align: center;
+
+}
+.is-navtab_active{
+    font-size:34rpx;
+    color:#5394ff;
+}
+.is-navtab_active:before {
+    content: '';
+    position: absolute;
+    left:35rpx;
+    right:35rpx;
+    bottom:0;
+    height:8rpx;
+    width:140rpx;
+    background-color:#5394ff;
+    border-radius: 4rpx;
+}
+/*订单信息*/
+.main-content{
+    position:absolute;
+    top:180rpx;
+    width:100%;
+    padding-bottom: 150rpx;
+    z-index:100;
+}
+.main-content.is-padder_b{
+    padding-bottom: 0;
+}
+.order-box{
+    padding:0 0 30rpx 0;
+    margin: 30rpx 25rpx;
+    background:#fff;
+    box-shadow:0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+    border-radius:10rpx;
+    /*height:400rpx;*/
+}
+.order-title{
+    position:relative;
+    padding:30rpx 45rpx 30rpx 33rpx;
+    font-size:32rpx;
+    color:#000;
+}
+.order-title:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 33rpx;
+    width: 95%;
+    right: 0;
+    border-top: 1px dashed #e5e5e5;
+}
+.order-title_rt{
+    font-size:40rpx;
+    color:#ff8801;
+}
+.order-bd{
+    /* border-top:1px dashed #e5e5e5; */
+    padding: 10rpx 45rpx 0 33rpx;
+    font-size:30rpx;
+    line-height:65rpx;
+    color:#000;
+}
+.order-icon_more{
+    width:20rpx;
+    height:46rpx;
+    background: lightblue;
+}
+.tip-bar_pay{padding-top:5rpx;padding-left:33rpx;}
+.tip-bar_pay .warn-tip_sm{margin-left:0}
+.tip-bar_pay .is-wran_wreak{
+    color:#7a7a7a;
+    border:2rpx solid #7a7a7a;
+}
+/*底部固定按钮*/
+.fixed-area_bottom--pay{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:695rpx;
+    height:140rpx;
+    font-size: 40rpx;
+    color:#7a7a7a;
+    line-height: 140rpx;
+    background:#ffffff;
+    box-shadow:0 -2rpx 10px 0 rgba(0,0,0,0.16);
+    padding:0 30rpx 0 25rpx;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.f-c_warn{ color:#ff8801;}
+.weui-btn_info{
+    color:#fff;
+    font-size: 34rpx;
+    background:#5394ff;
+    border-radius:100rpx;
+}
+.weui-btn_info:visited{color:#d0d0d0;}
+.weui-btn_info:active{color:#d0d0d0;}
+.fixed-area_bottom--pay .weui-btn_info{
+    width: 320rpx;
+    /*width:400rpx;*/
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align:center;
+}

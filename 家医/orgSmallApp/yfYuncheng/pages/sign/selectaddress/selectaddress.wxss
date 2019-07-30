@@ -1,0 +1,66 @@
+page {
+  background-color: #f3f3f3;
+  padding-bottom: 150rpx;
+}
+.block {
+  margin-bottom: 15rpx;
+  font-size: 32rpx;
+	letter-spacing: 3rpx;
+	color: #545454;
+}
+.manage-block {
+  background-color: #fff;
+  font-size: 27rpx;
+  color: #525252;
+  padding: 30rpx;
+}
+.manage-block .setting-ico {
+  position:relative;
+  top:4rpx;
+  margin-right: 15rpx;
+}
+.manage-block .right {
+  margin-top:6rpx;
+}
+.address-block .line {
+  padding: 35rpx 30rpx;
+  background-color: #fff;
+}
+.address-block .line:not(:last-child) {
+  margin-bottom: 15rpx;
+}
+.address-block .line .linkman {
+  padding-bottom: 25rpx;
+}
+.address-block .line .address {
+  font-size: 27rpx;
+  color: #979797;
+  height: 80rpx;
+}
+.address-block .line .linkman text:nth-child(1) {
+  font-size: 33rpx;
+  color: #3a3a3a;
+  margin-right: 35rpx;
+}
+.address-block .line .linkman text:nth-child(2) {
+  font-size: 28rpx;
+  color: #979797;
+}
+.bottom-block {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.bottom-block .add-btn {
+	font-size: 34rpx;
+	letter-spacing: 3rpx;
+	color: #ffffff;
+  text-align: center;
+  padding: 50rpx 0;
+  line-height: 1;
+  background: -webkit-linear-gradient(left,#1ac2f9,#0099ff);
+  background: -o-linear-gradient(right,#1ac2f9,#0099ff);
+  background: -moz-linear-gradient(right,#1ac2f9,#0099ff);
+  background: linear-gradient(to right,#1ac2f9,#0099ff);
+}

@@ -1,0 +1,59 @@
+<!--page/tabBar/microportal/index.wxml-->
+<view class="yt-wrap">
+	<!--banner-->
+	<swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+		<block wx:for="{{imgArr}}">
+			<swiper-item>
+				<image bindtap='linkImageUrl' data-url="{{item.url}}" src="{{item.picUrl}}" mode="aspectFill"/>
+			</swiper-item>
+		</block>
+	</swiper>
+	<!-- 栏目 -->
+	<view class="flex-center flex-box">
+		<navigator class="box-cell" hover-class="none" url="index">
+			<view class="lz-organization-ico"></view>
+			<view class="box-cell_text">机构介绍</view>
+		</navigator>
+		<navigator  class="box-cell" hover-class="none" url="index">
+			<view class="lz-department-ico"></view>
+			<view class="box-cell_text">科室介绍</view>
+		</navigator>
+		<navigator class="box-cell" hover-class="none" url="index">
+			<view class="lz-service-ico"></view>
+			<view class="box-cell_text">服务介绍</view>
+		</navigator>
+		<navigator class="box-cell" hover-class="none" url="index">
+			<view class="lz-traffic-ico"></view>
+			<view class="box-cell_text">交通指引</view>
+		</navigator>
+		<navigator class="box-cell" hover-class="none" url="index">
+			<view class="lz-view-ico"></view>
+			<view class="box-cell_text">机构全景</view>
+		</navigator>
+		<navigator class="box-cell" hover-class="none" url="index">
+			<view class="lz-guide-ico"></view>
+			<view class="box-cell_text">就诊指南</view>
+		</navigator>
+	</view>
+	<!-- 机构新闻 -->
+	<view class="news-wrap">
+		<view class="flex-center news-wrap_title" bindtap="linkCList">
+			<view class="lz-news-ico"></view>
+			<view class="weui-flex__item">机构新闻</view>
+			<view class="lz-right-ico"></view>
+		</view>
+		<view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>
+		<scroll-view class="scroll-view" style="height: {{height}}px" wx:if="{{!scroll.ifNull}}" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view wx:for="{{communityList}}" data-id="{{item.id}}" class="news-item weui-flex" bindtap="linkCDetail">
+        <view class="weui-flex__item news-item_bd" >
+          <view class="news-item_title">{{item.title}}</view>
+          <view class="fc-time">{{item.createTime}}</view>
+        </view>
+        <image mode="aspectFill" src="{{item.iconUrl}}" class="news-image"></image>
+      </view>
+      <view class="load-text">{{scroll.loadText}}</view>
+		</scroll-view>
+	</view>
+</view>
+
+

@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imgArr}}">  
+        <swiper-item>  
+            <image src="{{item}}" class="slide-image" mode="aspectFit"/>  
+        </swiper-item>  
+      </block>  
+</swiper> 
+<view class="type-entry">
+  <view class="blue-block-back" bindtap="linkActivityCList">
+    <view class="text-wap">
+      <view class="calendar-ico ico"></view>
+      <text>社区活动</text>
+    </view>
+  </view>
+  <view class="red-block-back" bindtap="linkEventCList">
+    <view class="text-wap">
+      <view class="notice-ico ico"></view>
+      <text>社区大事件</text>
+    </view>
+  </view>
+</view>
+
+<!--view class="userinfo">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+</view>
+<view class="usermotto">
+  <text class="user-motto">{{motto}}</text>
+</view>
+<navigator url="/pages/doctor/index/index" hover-class="navigator-hover">我是医生</navigator-->
+<view class="community-wap">
+  <view class="header clearfox" bindtap="linkCList">
+    <text class="left">社区资讯</text>
+    <view class="right right-ico"></view>
+  </view>
+  <view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>
+  <scroll-view class="item-wap" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="item" wx:for="{{communityList}}" data-id="{{item.id}}" bindtap="linkCDetail">
+      <image mode="aspectFill" src="{{item.iconUrl}}"></image>
+      <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="tip">{{item.approveCount}}人点赞</view>
+      </view>
+    </view>
+    <view class="load-text">{{scroll.loadText}}</view>
+  </scroll-view>
+</view>

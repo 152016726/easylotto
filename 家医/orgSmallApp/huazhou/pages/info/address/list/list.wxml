@@ -1,0 +1,42 @@
+<view class='sm-wap'>
+    <view class='address-list'>
+        <!-- 没数据显示 -->
+        <!-- <image src></image> -->
+         <view class='list-null-box' wx:if="{{!hasAddress}}">
+          <view class="location-null-ico"></view>
+          <view class="address-txt">您还未添加地址!</view>
+        </view>
+         <view class='list-block' wx:for="{{addressList}}">
+            <view class='editinfo-list'>
+                <view>
+                    <text class='addressinfo-name'>{{item.name}}</text>
+                    <text class='addressinfo-phone'>{{item.mobile}}</text>
+                </view>
+                <view class='addressinfo-address'>{{item.provinceName}}{{item.cityName?item.cityName:''}}{{item.districtName?item.districtName:''}}{{item.address}}</view>
+            </view>
+            <view class='address-set'>
+                <checkbox-group class='address-checkbox' bindchange="isDefaultChange" data-id="{{item.id}}">
+                    <checkbox class="ws-checkbox" value="isDefault" checked="{{item.isDefault==1?true:false}}" disabled="{{item.isDefault==1?true:false}}"></checkbox>
+                </checkbox-group>
+                <view class='address-setdef'>设为默认地址</view>
+                <view class='address-btn'>
+                    <button class='btn-default btnsize-sm' bindtap="openConfirm" data-id="{{item.id}}">删除</button>
+                    <button class='btn-primary btnsize-sm' bindtap="navEdit" data-id="{{item.id}}">编辑</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='address-add'>
+        <text bindtap="navAdd">添加地址</text>
+    </view>
+	<!-- 模态框 -->
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+        <view class="modal-title">您确定删除该地址？</view>
+        <view class="modal-btn">
+            <button class="btn-primary btnsize-md" bindtap="onConfirm" data-status="confirm">确定</button>
+            <button class="btn-default btnsize-md" bindtap="onCancel" data-status="cancel">取消</button>
+        </view>
+    </view>
+</view>
+ 

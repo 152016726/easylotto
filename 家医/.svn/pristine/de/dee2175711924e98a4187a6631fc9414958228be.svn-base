@@ -1,0 +1,128 @@
+<view class="rm-wrap">
+  <!--view class="page-header weui-flex">
+    <view bindtap=""><template is="location" data="{{...item}}"></template></view>
+    <view bindtap="" class="weui-flex__item text-center"><template is="orgselect" data="{{...item}}"></template></view>
+    <view bindtap="headScanTap"><template is="scan" data="{{...item}}"></template></view>
+  </view>
+  <view class="page-header_copy"></view-->
+  <view class="info-wrap bg-wrap_base">
+      <view class="scroll-wrap">
+        <scroll-view scroll-x="true" style="width:620rpx;">
+          <view  class="flex-center nav-wap" >
+            <block wx:for="{{memberList}}">
+              <view bindtap="changeTab" data-id="{{item.id}}" wx:if="{{item.dicName=='本人'}}" class="nav-tab {{item.checked=='true'?'is-active':''}}">
+                本人
+              </view>
+            </block>
+            <block wx:for="{{memberList}}">
+              <view bindtap="changeTab" data-id="{{item.id}}" wx:if="{{item.dicName!='本人'}}" class="nav-tab {{item.checked=='true'?'is-active':''}}">
+                {{item.name}}
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+        <view class="add-icon" bindtap="linkAddMemberTap">
+          <view class="lz-add-ico"></view>
+        </view>
+      </view>
+    <view class="item-wrap">
+      <view class="flex-center wrap-line1">
+        <text class="info-name">{{currentMember.name}}</text>
+        <view wx:if="{{currentMember.phoneNumber}}" class="lz-phone-grey-ico margin-r_xs"></view>
+        <text class="weui-flex__item">{{currentMember.phoneNumber}}</text>
+        <view class="item-ft">{{currentMember.signStatus=='1'?'已签约':(currentMember.signStatus=='0'?'未签约':'审核中')}}</view>
+      </view>
+      <view class="flex-center wrap-line2">
+        <view class="lz-idCard-ico margin-r_xs"></view>
+        <text>{{currentMember.idCardnum!='****'?currentMember.idCardnum:currentMember.code}}</text>
+      </view>
+      <view class="flex-center wrap-line2">
+        <view class="lz-location-grey-ico margin-rl_location"></view>
+        <text class="ellipsis-line_one">{{currentMember.provinceName}}{{currentMember.cityName}}{{currentMember.districtName}}{{currentMember.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="img-wrap flex-center" wx:if="{{currentMember.signStatus!='1'}}">
+      <image mode="aspectFit" src="../../images/nosignback.png"></image>
+  </view>
+  <!--医生团队&机构团队-->
+  <navigator url="../../../info/pages/doctors/teamdetail/teamdetail?id={{currentMember.teamId}}" class="panel-wrap flex-center" wx:if="{{currentMember.signStatus=='1'}}">
+    <image class="image-doc" src="{{teamPic?teamPic:'../../../../images/img_teamdefault.png'}}" mode="aspectFill"></image>
+    <view class="weui-flex__item min-width_zero">
+      <view class="weui-flex line-wrap">
+        <view class="line-bd">{{currentMember.teamName}}</view>
+        <!--view><text class="lz-inform-ico line-icon"></text><text class="lz-inquiry-small-ico line-icon"></text></view-->
+      </view>
+      <view class="margin-t_sm">队长:<text>{{currentMember.docName}}</text></view>
+    </view>
+  </navigator>
+  <view class="panel-wrap flex-center" wx:if="{{currentMember.signStatus=='1'}}">
+    <image class="image-org" src="{{orgPic?orgPic:'../../../../images/org_default.png'}}" mode="aspectFill"></image>
+    <view class="weui-flex__item min-width_zero">
+      <view class="weui-flex line-wrap">
+        <view class="line-bd ellipsis-line_one">{{currentMember.orgName}}</view>
+        <!--view><text class="lz-fit-small-ico line-icon"></text><text class="lz-inform-ico line-icon"></text><text class="lz-navigation-ico line-icon"></text></view-->
+      </view>
+      <view class="margin-t_sm ellipsis-line_one">{{currentMember.orgAddress}}</view>
+    </view>
+  </view>
+  <!--本人签约家庭医生签约-->
+  <view class="weui-flex small-box">
+    <navigator class="btn-sign ownsign" url="{{ifOwnSign=='0'?'../../pages/sign/ownsign/ownsign':'/page/info/pages/sign/detail/detail?id='+ownOrderId}}">本人签约</navigator>
+    <navigator class="btn-sign familysign" url="{{userInfo.id?'../../pages/sign/familysign/familysign':'../info/editinfo/editinfo'}}">家庭签约</navigator>
+  </view>
+  <!--我的签约-->
+  <view class="weui-flex flex-box">
+    <navigator class="weui-flex__item box-cell" hover-class="none" url="{{userInfo.id?'../../../info/pages/sign/list/list':'../../../info/pages/editinfo/editinfo'}}">
+      <view class="lz-my-sign-ico"></view>
+      <view>我的签约</view>
+    </navigator>
+    <navigator class="weui-flex__item box-cell" hover-class="none" url="../../../info/pages/service/list/list">
+      <view class="lz-my-service-ico"></view>
+      <view>我的服务</view>
+    </navigator>
+    <navigator class="weui-flex__item box-cell" hover-class="none" url="{{userInfo.id?'../../../info/pages/doctors/list/list':'../../../info/pages/editinfo/editinfo'}}">
+      <view class="lz-my-doc-ico"></view>
+      <view>我的医生</view>
+    </navigator>
+  </view>
+  <!--到家服务-->
+  <view class="service-wrap margin-t_md" hidden>
+    <navigator class="flex-center title" url="index">
+      <view class="weui-flex__item">到家服务</view>
+      <view class="lz-right-ico"></view>
+    </navigator>
+    <view class="flex-center item">
+      <view class="lz-needle-ico margin-r_sub"></view>
+      <view>打针输液</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-love-hand-ico margin-r_sub"></view>
+      <view>专业护理</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-bottle-ico margin-r_sub"></view>
+      <view>输液/皮试/肌肉注射</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-bed-ico margin-r_sub"></view>
+      <view>胃管置换/家床护理</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-baby-ico margin-r_sub"></view>
+      <view>婴幼儿</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-medicine-ico margin-r_sub"></view>
+      <view>换药拆线</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-stuture-ico margin-r_sub"></view>
+      <view>外敷换药/外伤缝合拆线</view>
+    </view>
+    <view class="flex-center item">
+      <view class="lz-newborn-ico margin-r_sub"></view>
+      <view>新生儿抚触/催奶护理</view>
+    </view>
+  </view>
+</view>

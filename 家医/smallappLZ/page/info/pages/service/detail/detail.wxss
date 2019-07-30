@@ -1,0 +1,121 @@
+/* pages/lianxi/lianxi.wxss */
+page{
+  background: #eee
+}
+.lx_lx{
+
+  height: 100rpx;
+  padding: 20rpx;
+  /* background: #fff; */
+ 
+  
+}
+.lx_lx view:first-child{
+    font-size: 36rpx;
+    
+}
+.lx_lx view:nth-child(2){
+  margin-top:10rpx; 
+  color:#979797;
+  font-size: 30rpx;
+}
+
+.lx_log{
+  height: 140rpx;
+  padding: 15rpx;
+  background: #fff;
+  /* border: 1px solid #000; */
+
+}
+.lx_img{
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 10rpx;
+  border: 1px solid #eee;
+
+}
+.lx_mar{
+  display: inline-block;
+  width:480rpx;
+  height: 130rpx;
+  margin-left: 10rpx;
+  /* border: 1px solid #000; */
+  vertical-align: top;
+  padding-top:15rpx; 
+}
+.lx_mar view:first-child{
+  font-size: 36rpx;
+  font-weight: 600;
+  color:#747474;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.lx_mar view:nth-child(2){
+  font-size: 32rpx;
+  color:#747474;
+}
+.lx_cs{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  vertical-align: top;
+  padding:50rpx 25rpx;
+}
+.lx_le{
+  padding: 15rpx;
+  /* border: 1px solid #000; */
+  background: #fbf2b0;
+
+}
+.lx_lar{
+  width: 560rpx;
+  /* border: 1px solid #000; */
+  display: inline-block;
+  margin-bottom: 20rpx;
+
+}
+.lx_lar view:first-child{
+    color:#e28638;
+    font-size: 36rpx;
+    padding: 5rpx;
+
+}
+.lx_lar view:nth-child(2){
+  color:#eec580;
+  padding: 5rpx;
+  font-size: 30rpx;
+}
+.lx_pe{
+  height: 140rpx;
+  line-height: 181rpx;
+  color:#e28638;
+  display: inline-block;
+  vertical-align: top;
+  font-weight: 600;
+  font-size: 32rpx;
+  margin-left: 45rpx;
+}
+.lx_po{
+ 
+  font-size: 34rpx;
+  padding:20rpx 10rpx;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  
+}
+.lx_po view:first-child{
+  width: 175rpx;
+  display: inline-block;
+ /* border: 1rpx solid #000; */
+ vertical-align: top;
+   color:#979797;
+}
+.lx_po view:nth-child(2){
+  width: 537rpx;
+  color:#747474;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+
+}

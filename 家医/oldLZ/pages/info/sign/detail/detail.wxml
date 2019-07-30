@@ -1,0 +1,189 @@
+<view class="rm-wrap sign-cont_detail">
+    <view class="green-block-back">
+        <view class="weui-flex item-banner_default">
+            <view class="weui-flex__item">
+                <text class="time-big-ico state-icon_sign"></text>
+                <text>{{orderInfo.statusDesc}}</text>
+            </view>
+        </view>
+    </view>
+    <!--地址栏-->
+    <view class="addr-panel_default bg-wrap_base">
+        <view>
+            <text class="addr-hd_lf">{{addressStr.name}}</text>
+            {{addressStr.mobile}}
+        </view>
+        <view class="margin-t_xxs weui-media-box__desc">
+            <text class="location-line-ico icon-col_base"></text>
+            <text>{{addressStr.addressDesc}}</text>
+        </view>
+    </view>
+    <view class="bg-line_base weui-flex">
+        <view class="bg-line_sub"></view>
+        <view class="bg-line_sub"></view>
+        <view class="bg-line_sub"></view>
+        <view class="bg-line_sub"></view>
+    </view>
+    <!--服务中心-->
+    <view class="bg-wrap_base margin-t_md">
+        <view class="weui-cell panel-title_default">
+            <view class="weui-cell__bd fc-xs_prim">
+                <text class="mark-ico icon-col_base"></text>
+                <text>{{orderInfo.orgName}}</text>
+            </view>
+        </view>
+        <view class="weui-cell fc-lg_default team-title_default ">
+            <view class="ellipsis-line_one">家庭医生签约</view>
+        </view>
+        <view class="weui-cell padder-wrap_defalut">
+            <view class="weui-cell__hd">
+                <image src="{{orderInfo.teamImagePic?orderInfo.teamImagePic:'../../../../images/img_default.png'}}" class="team-img_avator" mode="aspectFill"></image>
+            </view>
+            <view class="weui-cell__bd min-width_zero">
+                <view class="fc-xs_default">{{orderInfo.teamName}}</view>
+                <view class="fc-xxs_prim margin-t_sub">
+                    <text class="margin-r_xs">服务时间</text>
+                    <text>{{orderInfo.serviceTime}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--审核留言**未通过&已通过有这部分-->
+    <view wx:if="{{orderInfo.status==1 ||orderInfo.status==4}}" class="bg-wrap_base margin-t_md">
+        <view class="panel-title_default fc-xs_warn">审核留言</view>
+        <view class="member-wrap_info fc-xs_prim weui-border_top">{{orderInfo.reason}}</view>
+    </view>
+    <!--订单编号code-->
+    <view class="bg-wrap_base margin-t_md fc-xs_default">
+        <view class="weui-cell order-item_detail" bindtap="showCodeDialog">
+            <view class="weui-cell__bd order-width_min">订单编号</view>
+            <view class="weui-cell__ft fc-sm_prim">
+                {{orderInfo.id}}
+            </view>
+            <view class="coede-box">
+                <text class="code-ico"></text>
+            </view>
+        </view>
+        <view class="weui-cell order-item_detail">
+            <view class="weui-cell__bd order-width_min">下单时间</view>
+            <view class="weui-cell__ft fc-sm_prim">
+                <text class="margin-r_xs">{{orderInfo.createTime}}</text>
+            </view>
+        </view>
+        <view class="weui-cell order-item_detail">
+            <view class="weui-cell__bd order-width_min">服务年限</view>
+            <view class="weui-cell__ft fc-sm_prim">
+                {{orderInfo.teamServiceTime}}年
+            </view>
+        </view>
+        <view class="weui-cell order-item_detail">
+            <view class="weui-cell__bd order-width_min">服务对象</view>
+            <view class="weui-cell__ft fc-sm_prim weui-media-box__desc line-clamp_three">
+                <block wx:for="{{member}}">
+                    <block wx:if="{{index<member.length-1}}">{{item.memberName}},</block>
+                    <block wx:else>{{item.memberName}}</block>
+                </block>
+            </view>
+        </view>
+    </view>
+    <!--服务内容-->
+    <view class="bg-wrap_base margin-t_md">
+        <view class="weui-cell ser-item_padder fc-sm_default">
+            <text>服务内容</text>
+        </view>
+        <view class="ser-item_padder fc-xs_prim weui-border_top">
+            <view class="text-jus">{{orderInfo.description}}
+                <!-- <view>1)签约家庭成员建立健康档案，并实现动态管理;</view>
+                <view>2)为签约家庭提供合理膳食、控制体重、限盐、控烟、限酒、控制药物依赖等健康生活方式和可干预危险因素等健康教育;</view>
+                <view>3)为签约家庭中65岁以上老人每年体检一次，体检项目包括：血脂、血糖、血常规、尿常规、肝功能、肾功能、心电图;</view>
+                <view>4)为高血压、糖尿病等慢性病和高危人群进行用药指导和随访服务;</view>
+                <view>5)为育龄妇女提供优生优育、避孕节育、孕期保健指导和产后访视服务;</view>
+                <view>6)为0-6岁儿童建立儿童保健手册和开展新生儿访视服务;</view>
+                <view>7)每季度为签约家庭成员的健康状况进行电话或上门跟踪随访，实时制定健康生活指导方案;</view>
+                <view>8)按签约家庭需要，可提供就诊预约，建立转介、转诊绿色通道服务;</view>
+                <view>9)为签约家庭定期指导整理家庭药箱。 以上1-9项服务为基本服务，不收取费用。</view> -->
+            </view>
+        </view>
+    </view>
+    <!--按钮部分-->
+    <view wx:if="{{orderInfo.status == 0 ||orderInfo.status == 1 && orderInfo.serviceRemainTime<16 ||orderInfo.status == 4}}"
+          class="fixed-area_bottom weui-flex weui-border_top">
+        <!--已通过-续约解约按钮-->
+        <block>
+            <!-- <button wx:if="{{orderInfo.status == 1}}" class="weui-btn weui-btn_base weui-btn_sm"
+                    bindtap="showRemoveSignDialog">解约
+            </button> -->
+            <navigator wx:if="{{orderInfo.status == 1 && orderInfo.serviceRemainTime<16}}"
+                       class="weui-btn weui-btn_normal weui-btn_sm" url="../../../sign/detail/detail?id={{orderInfo.teamId}}">续约
+            </navigator>
+        </block>
+        <!--审核中-取消签约按钮-->
+        <button wx:if="{{orderInfo.status == 0}}" class="weui-btn weui-btn_base weui-btn_sm"
+                bindtap="showCancelSignDialog">取消签约
+        </button>
+        <!--未通过-再次签约按钮-->
+        <navigator wx:if="{{orderInfo.status == 4}}" class="weui-btn weui-btn_normal weui-btn_sm" url="../../../sign/detail/detail?id={{orderInfo.teamId}}">再次签约
+        </navigator>
+    </view>
+    <!--**解约签约弹层-->
+    <view id="removeSignDialog" wx:if="{{showRemoveSignDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content">
+            <view class="dialog-header">
+                <view class="dialog-header_title">
+                    您正在解约
+                </view>
+                <view class="list-back-ico dialog-header_bg"></view>
+            </view>
+            <view class="dialog-body">
+                <view class="dialog-body_title">
+                    与家庭医生解除合约后，将不再自动续约。确定解除合约？
+                </view>
+                <view class="weui-flex dialog-main">
+                    <view>
+                        <image wx:if="{{orderInfo.teamImagePic}}" src="{{orderInfo.teamImagePic}}" class="team-img_avator" mode="aspectFill"></image>
+                        <image wx:else src="../../../../images/img_default.png" class="team-img_avator" mode="aspectFill"></image>
+                    </view>
+                    <view class="weui-flex__item min-width_zero">
+                        <view>{{orderInfo.teamName}}</view>
+                        <view class="margin-t_sm fc-sm_prim weui-media-box__desc"> 
+                        <block wx:for="{{ teamInfo.titleList}}">
+                            <text wx:if="{{index < teamInfo.titleList.length-1}}">{{item.titleCount}}名{{item.titleName}}、</text>
+                            <text wx:else>{{item.titleCount}}名{{item.titleName}}</text>
+                        </block>  
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-flex dialog-btn_area">
+                    <button class="weui-btn weui-btn_normal weui-btn_md" bindtap="confirmRemove">确定</button>
+                    <button class="weui-btn weui-btn_base weui-btn_md" bindtap="cancelRemove">再想想</button>
+                </view>
+            </view>
+            <view class="dialog-box_close" bindtap="closeRemoveDialog">
+                <i class="delete-big-ico dialog-delete"></i>
+            </view>
+        </view>
+    </view>
+    <!--取消签约弹窗-->
+    <view id="cancelSignDialog" wx:if="{{cancelSignDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-content_base">
+            <view class="dialog-header_title--base">您确定取消家庭医生签约？</view>
+            <view class="weui-flex dialog-btn_area--base">
+                <button class="weui-btn weui-btn_normal weui-btn_md" bindtap="onconfirmCancel">确定</button>
+                <button class="weui-btn weui-btn_base weui-btn_md" bindtap="onCancelCancel">再想想</button>
+            </view>
+        </view>
+    </view>
+    <!--二维码弹窗-->
+    <view id="codeDialog" hidden="{{hideCodeDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask" bindtap="hideCodeDialog"></view>
+        <view class="dialog-content dialog-content_code">
+            <view class="dialog-title_code">订单编号</view>
+            <view class="fc-sm_prim">{{orderInfo.id}}</view>
+            <!-- <view class="dialog-main_code"></view> -->
+            <canvas class="dialog-main_code" canvas-id="myQrcode"></canvas>
+            <view class="fc-xs_prim">扫描二维码，获取订单编号</view>
+        </view>
+    </view>
+</view>

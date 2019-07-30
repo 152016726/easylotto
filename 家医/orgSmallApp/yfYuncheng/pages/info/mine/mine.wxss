@@ -1,0 +1,77 @@
+.mineinfo-pic{
+	background-color: #fff;
+    margin-bottom: 16rpx;
+    padding: 35rpx 0 44rpx 45rpx;
+		height: 120rpx;
+}
+.mineinfo-left {
+    float: left;
+    width: 120 rpx;
+    height: 120rpx;
+	margin-right: 35rpx;
+}
+.img{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+		background-color: #999;
+}
+.mineinfo-right{
+    float: left;
+}
+.mineinfo-name {
+    font-size: 34rpx;
+    color: #525252;
+}
+.mineinfo-sexyear{
+	margin-top: 12rpx;
+}
+.mineinfo-sex,.mineinfo-year {
+    font-size: 26rpx;
+    color: #999;
+}
+.mineinfo-sex{
+	margin-right: 30rpx;
+}
+.mineinfo-arrow{
+	position: absolute;
+	top: 93rpx;
+	right: 36rpx;
+	 width: 18rpx;
+    height:26rpx;
+}
+
+.editinfo-list{
+    margin-bottom: 32rpx;
+}
+
+.weui-cells{
+	font-size:30rpx;
+	position: relative;
+	margin-top: 0;
+}
+.weui-cells:before,.weui-cells:after{
+	border: none;
+}
+.weui-cell{
+	 padding:10rpx 15rpx 10rpx 82rpx; 
+	height: 100rpx;
+}
+.weui-cell:before{
+	height: 1rpx;
+	border-top:1rpx solid #eee;
+	left: 0;
+
+}
+.mineedit-icon {
+    width: 50rpx;
+    height:50rpx;
+		position: absolute;
+		left:26rpx;
+}
+.mineedit-arrow {
+		position: absolute;
+		right: 36rpx;
+    top:45rpx;
+} 
+

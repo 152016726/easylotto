@@ -1,0 +1,122 @@
+<view class="rm-wrap">
+    <navigator class="weui-flex info-item" url="../../info/pages/editinfo/editinfo" hover-class="none">
+        <image src="{{userInfo.userPic?userInfo.userPic:(userInfo.userSex=='2'?'../../../images/img_famFemale.png':(userInfo.userSex=='1'?'../../../images/img_famMale.png':'../../../images/user_img.png'))}}" class="avator-img_md"></image>
+        <view class="weui-flex__item margin-t_start">
+            <view class="flex-center info-name"><view class="weui-flex__item">{{userInfo.userName?userInfo.userName:''}}</view><view class="lz-info-enter-ico"></view></view>
+            <view wx:if="{{!phoneNumber}}">
+                <text class="info-tag">未完善信息</text>
+            </view>
+            <view>
+                <text wx:if="{{phoneNumber}}" class="lz-phone-grey-ico margin-r_phone"></text>{{phoneNumber}}
+            </view>
+            <view>
+                <text wx:if="{{idCard}}" class="lz-idCard-ico margin-r_idCard"></text>{{idCard}}
+            </view>
+        </view>
+    </navigator>
+    <view class="weui-flex info-box">
+        <navigator class="weui-flex__item" url="{{userInfo.id?'../../info/pages/family/list/list':'../../info/pages/editinfo/editinfo'}}">
+            <view class="lz-member-info-ico"></view>
+            <view>家庭成员管理</view>
+        </navigator>
+        <navigator class="weui-flex__item" url="{{userInfo.id?'../../info/pages/address/list/list':'../../info/pages/editinfo/editinfo'}}">
+            <view class="lz-house-info-ico"></view>
+            <view>地址管理</view>
+        </navigator>
+        <view class="weui-flex__item" bindtap="linkBlockTap">
+            <view class="lz-management-info-ico"></view>
+            <view>健康管理</view>
+        </view>
+    </view>
+    <view class="flex-center flex-box">
+        <navigator class="box-cell" hover-class="none" url="{{userInfo.id?'../../info/pages/sign/list/list':'../../info/pages/editinfo/editinfo'}}">
+            <view class="lz-my-sign-ico"></view>
+            <view>我的签约</view>
+        </navigator>
+        <navigator class="box-cell" hover-class="none" url="{{userInfo.id?'../../info/pages/doctors/list/list':'../../info/pages/editinfo/editinfo'}}">
+            <view class="lz-my-doc-ico"></view>
+            <view>我的医生</view>
+        </navigator>
+        <navigator class="box-cell" hover-class="none" url="{{userInfo.id?'../../info/pages/online/list/list':'../../info/pages/editinfo/editinfo'}}">
+            <view class="lz-my-consult-ico"></view>
+            <view>我的咨询</view>
+        </navigator>
+        <view class="box-cell" hover-class="none" bindtap="linkBlockTap">
+            <view class="lz-my-appointment-ico"></view>
+            <view>我的预约</view>
+        </view>
+        <view class="box-cell" hover-class="none" bindtap="linkBlockTap">
+            <view class="lz-my-payment-ico"></view>
+            <view>我的缴费</view>
+        </view>
+        <view class="box-cell" hover-class="none" bindtap="linkBlockTap">
+            <view class="lz-my-prescript-ico"></view>
+            <view>我的处方</view>
+        </view>
+        <view class="box-cell" hover-class="none" bindtap="linkBlockTap">
+            <view class="lz-my-report-ico"></view>
+            <view>我的报告</view>
+        </view>
+        <view class="box-cell" hover-class="none" bindtap="linkBlockTap">
+            <view class="lz-my-service-ico"></view>
+            <view>我的服务</view>
+        </view>
+    </view>
+    <!--订单管理-->
+    <view class="ordermanage-wrap" bindtap="linkBlockTap">
+        <navigator class="flex-center title" hover-class="none">
+            <view class="weui-flex__item">订单管理</view>
+            <view class="lz-right-ico"></view>
+        </navigator>
+        <view class="ord-box flex-center">
+            <navigator class="odr-cell" hover-class="none">
+                <view class="lz-payment-behalf-ico"></view>
+                <view>待付款</view>
+            </navigator>
+            <navigator class="odr-cell" hover-class="none">
+                <view class="lz-evaluated-wait-ico"></view>
+                <view>待评价</view>
+            </navigator>
+            <navigator class="odr-cell" hover-class="none">
+                <view class="lz-refund-after-ico"></view>
+                <view>退款/售后</view>
+            </navigator>
+            <navigator class="odr-cell" hover-class="none">
+                <view class="lz-receiving-ico"></view>
+                <view>待收货</view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+
+<!--
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="../../common/resources/kindAPI/logo.png"></image>
+    <view class="index-desc">以下将演示小程序接口能力，具体属性参数详见小程序开发文档。</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="../../common/resources/kindAPI/{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="../../API/pages/{{page.url}}" class="navigator">
+                  <view class="navigator-text">{{page.zh}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+-->

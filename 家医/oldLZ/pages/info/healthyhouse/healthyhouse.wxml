@@ -1,0 +1,113 @@
+<view class="rm-wrap">
+    <view class="header-title">
+        <text class="user-ico icon-col_prim"></text><text>{{user.userName}}</text><text class="header-age">{{user.age}}岁</text>
+        <text class="icon-col_base {{user.userSex==1?'male-ico':(user.userSex==2?'female-ico':'')}}"></text>
+    </view>
+    <view class="body-content" wx:if="{{!isNullData}}">
+        <!--血脂-->
+        <view class="panel-cont" wx:if="{{healthData.bloodFat}}">
+            <view class="weui-flex row-data">
+                <view>
+                    <text class="fc-md_prim">CHOL</text>
+                    <text class="margin-r_xs">{{healthData.bloodFat.bloodFatCHOLVal}}</text>
+                    <text class="{{healthData.bloodFat.bloodFatCHOLStatus==1?'arrow-up-org-ico':(healthData.bloodFat.bloodFatCHOLStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view>
+                    <text class="fc-md_prim">HDL</text>
+                    <text class="margin-r_xs">{{healthData.bloodFat.bloodFatHDLVal}}</text>
+                    <text class="{{healthData.bloodFat.bloodFatHDLStatus==1?'arrow-up-org-ico':(healthData.bloodFat.bloodFatHDLStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view>
+                    <text class="fc-md_prim">TRIG</text>
+                    <text class="margin-r_xs">{{healthData.bloodFat.bloodFatTRIGVal}}</text>
+                    <text class="{{healthData.bloodFat.bloodFatTRIGStatus==1?'arrow-up-org-ico':(healthData.bloodFat.bloodFatTRIGStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+            </view>
+            <view class="row-sub">
+                <view>血脂(mmol/L)</view>
+                <view class="fc-xs_prim">{{healthData.bloodFat.bloodFatDate}}</view>
+            </view>
+        </view>
+        <!--血压-->
+        <view class="panel-cont" wx:if="{{healthData.bloodPressure}}">
+            <view class="weui-flex row-data">
+                <view>
+                    <text class="fc-md_prim">收缩压</text>
+                    <text>{{healthData.bloodPressure.bloodPressureShrinkVal}}</text>
+                    <text class="{{healthData.bloodPressure.bloodPressureShrinkStatus==1?'arrow-up-org-ico':(healthData.bloodPressure.bloodPressureShrinkStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view>
+                    <text class="fc-md_prim">舒张压</text>
+                    <text>{{healthData.bloodPressure.bloodPressureDiastoleVal}}</text>
+                    <text class="{{healthData.bloodPressure.bloodPressureDiastoleStatus==1?'arrow-up-org-ico':(healthData.bloodPressure.bloodPressureDiastoleStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+            </view>
+            <view class="row-sub">
+                <view>血压(mmHg)</view>
+                <view class="fc-xs_prim">{{healthData.bloodPressure.bloodPressureDate}}</view>
+            </view>
+        </view>
+        <view class="weui-flex flex-wrap">
+            <!--身高-->
+            <view class="grid-cont" wx:if="{{healthData.stature}}">
+                <view class="row-data">
+                    <text class="margin-r_sm">{{healthData.stature.statureVal}}</text>
+                    <text class="{{healthData.stature.statureStatus==1?'arrow-up-org-ico':(healthData.stature.statureStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view class="col-sub">
+                    <view>身高(cm)</view>
+                    <view class="fc-xs_prim">{{healthData.stature.statureDate}}</view>
+                </view>
+            </view>
+            <!--体重-->
+            <view class="grid-cont" wx:if="{{healthData.weight}}">
+                <view class="row-data">
+                    <text class="margin-r_sm">{{healthData.weight.weightVal}}</text>
+                    <text class="{{healthData.weight.weightStatus==1?'arrow-up-org-ico':(healthData.weight.weightStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view class="col-sub">
+                    <view>体重(kg)</view>
+                    <view class="fc-xs_prim">{{healthData.weight.weightDate}}</view>
+                </view>
+            </view>
+            <!--体温-->
+            <view class="grid-cont" wx:if="{{healthData.temperature}}">
+                <view class="row-data">
+                    <text class="margin-r_sm">{{healthData.temperature.temperatureVal}}</text>
+                    <text class="{{healthData.temperature.temperatureStatus==1?'arrow-up-org-ico':(healthData.temperature.temperatureStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view class="col-sub">
+                    <view>体温(℃)</view>
+                    <view class="fc-xs_prim">{{healthData.temperature.temperatureDate}}</view>
+                </view>
+            </view>
+            <!--脉搏-->
+            <view class="grid-cont" wx:if="{{healthData.pulse}}">
+                <view class="row-data">
+                    <text class="margin-r_sm">{{healthData.pulse.pulseVal}}</text>
+                    <text class="{{healthData.pulse.pulseStatus==1?'arrow-up-org-ico':(healthData.pulse.pulseStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view class="col-sub">
+                    <view>脉搏(次)</view>
+                    <view class="fc-xs_prim">{{healthData.pulse.pulseDate}}</view>
+                </view>
+            </view>
+            <!--血氧-->
+            <view class="grid-cont" wx:if="{{healthData.bloodoxygen}}">
+                <view class="row-data">
+                    <text>{{healthData.bloodoxygen.bloodoxygenVal}}</text>
+                    <text class="{{healthData.bloodoxygen.bloodoxygenStatus==1?'arrow-up-org-ico':(healthData.bloodoxygen.bloodoxygenStatus==2?'arrow-down-blue-ico':'')}}"></text>
+                </view>
+                <view class="col-sub">
+                    <view>血氧(%)</view>
+                    <view class="fc-xs_prim">{{healthData.bloodoxygen.bloodoxygenDate}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--空页面-->
+    <view class="list-null-box" wx:if="{{isNullData}}">
+        <view class="error-ico"></view>
+        <view class="fc-md_prim margin-top_null">暂无数据</view>
+    </view>
+</view>

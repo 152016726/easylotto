@@ -1,0 +1,104 @@
+<!--pages/doctor/check/detail/detail.wxml-->
+<view class="yt-wrap">
+	<view class="weui-cells bg-color_primary"> 
+		<view class="weui-cell font-white_xs">
+			<view class="weui-cell__bd">
+				<view class="time-white-ico icon-img"></view>
+				<text>签约时间</text>
+				<text class="margin-left_xxs">{{detail.createTime}}</text>
+			</view>
+			<view class="weui-cell__ft">
+                <text class="font-yellow_xs">{{detail.statusDesc}}</text>
+			</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">
+				<view class="font-white_xxxl">{{detail.orgName}}</view>
+				<view class="margin-top_xs font-white_s">签约服务：
+					<text>{{detail.prodName}}</text>
+					<text class="font-white_xs">（{{detail.serviceTime}}）</text>
+				</view>
+			</view>
+		</view>
+		<view class="weui-cell margin-top_xs">
+			<view class="weui-cell__bd font-white_xs">{{detail.teamName}}</view>
+			<view class="weui-cell__ft font-white_xs">{{detail.teamLeaders}}</view>
+		</view>
+		<view class="weui-cell bg-color_default font-info_s">
+			<view class="weui-cell__bd margin-left_xxs">
+				<view class="font-primary_xl">{{detail.userName}}
+					<text class="margin-left_xxs">联系人</text>
+				</view>
+				<view class="margin-top_m">{{contactInfo.mobile}}</view>
+				<view class="margin-top_xs">{{contactInfo.addressDesc}}</view>
+			</view>
+		</view>
+	</view> 
+	<view class="weui-cells" wx:for="{{signMembers}}"> 
+		<view class="weui-cell">
+			<view class="weui-cell__bd margin-left_xxs font-primary_xl">	
+				{{item.name}}<text class="font-info_s">（{{item.relationName}}）</text>
+			</view>
+			<view class="weui-cell__ft font-primary_s">
+                <text wx:if="{{item.sex==1}}"> 男 </text>
+                <text wx:elif="{{item.sex==2}}"> 女 </text>
+                <text wx:else> - </text>
+                <text class="margin-left_s">{{item.age}}岁</text>
+			</view>
+		</view>
+		<view class="weui-cell cell-middle">
+			<view class="weui-cell__bd margin-left_xxs">
+				<view class="font-primary_s">{{item.idCard}}</view>
+                <view class="font-info_s margin-top_xs"></view>
+			</view>
+		</view>
+		<view class="weui-cell" data-idcard="{{item.idCard}}" data-memid="{{item.memberId}}" data-id="{{item.id}}" bindtap="showDialogSelect" data-statu="openDialogSelect">
+			<view class="weui-cell__bd margin-left_xxs">
+				<text class="font-info_s text-ellipsis" wx:if="{{!item.categoryNames}}">选择分类</text>
+				<text class="font-warn_s text-ellipsis" wx:else>{{item.categoryNames}}</text>
+			</view>
+			<view class="margin-left_s right-ico"></view>
+		</view>
+	</view> 
+	<view class="weui-flex btn-area_s" wx:if="{{detail.status == 0}}">
+        <button class="weui-btn_default weui-btn_m" bindtap="showDialogReject" data-statu="openDialogReject">拒绝</button>
+        <button class="weui-btn_primary weui-btn_m" bindtap="onConfirm">同意</button>
+    </view>
+    <!--选择标签-->
+    <view hidden="{{!showDialogSelectStatus}}">
+    	<view class="dialog-mask"></view> 
+    	<view class="dialog-box"> 
+    		<view class="dialog-content">
+    			<view class="dialog-title">人群分类</view> 
+    			<view class="wrap-box"> 
+              <view class="weui-flex flex-flow_wrap">
+                  <view wx:for="{{categoryNames}}" wx:for-item="categoryName" bindtap="checkboxChange" class="checkbox {{((categoryName.isExclude == 'true') ? 'checkDisabled' : '') || ((categoryName.checked == 'true') ? ' checked' : '')}}" data-id="{{categoryName.id}}" data-isexclude="{{categoryName.isExclude}}">{{categoryName.dicDsc}}</view>
+              </view>
+          </view> 
+    			<button class="weui-btn_primary" bindtap="onConfirmSelect" data-statu="confirmSelect">确定</button>
+    		</view>
+    		<view class="margin-top_m">
+    			<view class="delete-big-ico" bindtap="onCancelDialog" data-statu="cancelSelect"></view>
+    		</view>
+    	</view>
+    </view>
+    <!--拒绝弹出框-->
+    <view hidden="{{!showDialogRejectStatus}}" data-statu="openDialogReject">
+    	<view class="dialog-mask"></view> 
+    	<view class="dialog-box"> 
+    		<view class="dialog-content">
+    			<view class="dialog-title">选择拒绝理由</view> 
+    			<radio-group class="wrap-box text-align_left"> 
+                    <label class="flex-start wrap-radio" wx:for="{{refuseReason}}" data-id="{{item.id}}" bindtap="radioChange">
+                        <radio class="ws-radio" value="reason"></radio>
+                        <text class="wrap-radio_text">{{item.title}}</text>
+                    </label>
+    			</radio-group> 
+    			<button class="weui-btn_primary" bindtap="onConfirmReject" data-statu="confirmReject">确定</button>
+    		</view>
+    		<view class="margin-top_m">
+    			<view class="delete-big-ico" bindtap="onCancelDialog" data-statu="closeReject"></view>
+    		</view>
+    	</view>
+    </view>
+</view>

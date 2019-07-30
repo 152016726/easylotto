@@ -1,0 +1,150 @@
+/* page/tabBar/assistant/index.wxss */
+
+.ai_log {
+  width: 740rpx;
+  /* border: 1px solid #000; */
+  position: relative;
+  margin-top: 20rpx;
+  color: #7a7a7a;
+}
+.ai_tis{
+  width: 300rpx;
+  background: #fff;
+  color:#979797;
+  border-radius: 30rpx; 
+  font-size: 30rpx;
+  padding: 2rpx 0;
+  text-align: center;
+  margin: 0 auto;
+  
+}
+.ai_ima {
+  vertical-align: top;
+  width: 75rpx;
+  height: 75rpx;
+  border: 1px solid #eee;
+  background: #979797;
+  margin: 10rpx;
+  border-radius: 75rpx;
+}
+.ai_imas {
+  vertical-align: top;
+  width: 75rpx;
+  height: 75rpx;
+  border: 1px solid #eee;
+  background: #979797;
+  margin: 10rpx;
+  border-radius: 75rpx;
+  position: absolute;
+  right: 10rpx;
+}
+.ai_las {
+  display: inline-block;
+  margin: 10rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.ai_san {
+  width: 0;
+  height: 0;
+  border: 25rpx solid #fff;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  margin-left: -35rpx;
+  display: inline-block;
+  vertical-align: top;
+    position: absolute;
+  top:5rpx;
+  left:-2rpx;
+}
+.ai_si {
+  width: 0;
+  height: 0;
+  border: 25rpx solid #5da3fb;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top:5rpx;
+  right: -35rpx;
+  
+}
+
+.ai_fors {
+ 
+  /* border: 1px solid #000; */
+  display: inline-block;
+  word-wrap: break-word;
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  z-index: 999;
+  margin-left:15rpx;
+}
+.ai_forsa {
+  width: 350rpx;
+
+  display: inline-block;
+  word-wrap: break-word;
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+    z-index: 999;
+    text-align: center;
+}
+.ai_dis {
+  width: 750rpx;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+}
+
+.ai_dis image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  vertical-align: top;
+}
+
+.ai_dis view {
+  width: 600rpx;
+  border-left: 1px solid #e6e6e6;
+  height: 100rpx;
+  vertical-align: top;
+  display: inline-block;
+
+}
+
+.ai_dis input {
+  width: 95%;
+  height: 100rpx;
+  padding-left: 5%;
+  color: #7a7a7a;
+  font-size: 30rpx;
+}
+.ai_nbs{
+  width: 375rpx;
+  
+  /* border: 1px solid #000; */
+  border-radius:10rpx; 
+}
+.im_ai{
+  width: 750rpx;
+
+display: none;
+  background: rgba(0, 0, 0,0.3);
+}
+.im_ai image{
+  width: 90%;
+  height: 95%;
+    margin:2.5% 5%;
+}

@@ -1,0 +1,32 @@
+
+@import '../../../../../resources/wxParse/wxParse.wxss';
+.wxParse {
+  margin: 0;
+  background-color:#fff;
+}
+.bottom-line {
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+  color: #3f3f3f;
+  padding: 35rpx 40rpx 25rpx;
+  position: relative
+}
+.bottom-line .addone {
+  position: absolute;
+  top: 10rpx;
+  right:90rpx;
+  font-size:24rpx;
+  color: #f67d25;
+  opacity: 0;
+}
+.bottom-line .right {
+  color: #999;
+}
+.bottom-line .right text {
+  position:relative;
+  top:-6rpx;
+  margin-left:20rpx;
+  width:35rpx;
+  display:inline-block;
+  text-align:center;
+}

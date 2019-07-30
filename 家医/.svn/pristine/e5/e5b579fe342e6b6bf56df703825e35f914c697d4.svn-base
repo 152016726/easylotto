@@ -1,0 +1,542 @@
+page {
+  background-color: #f3f3f3;
+  padding-bottom:240rpx;
+  box-sizing: border-box
+}
+.block {
+  background-color: #fff;
+  margin-bottom: 15rpx;
+  font-size: 32rpx;
+	letter-spacing: 3rpx;
+	color: #545454;
+}
+.block .line {
+  padding: 30rpx;
+}
+.block .line:not(:last-child) {
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.55);
+}
+.linkman-block {
+  position: relative;
+  padding-right: 70rpx;
+}
+.linkman-block .pen-ico {
+  position: absolute;
+  right: 35rpx;
+  margin-top: -15rpx;
+  top: 50%;
+}
+.linkman-block .info {
+  padding:25rpx 35rpx 35rpx;
+
+}
+.linkman-block .info .line1 {
+  padding:0 35rpx 30rpx;
+}
+.linkman-block .info .line1 >text:nth-child(1) {
+  font-size: 36rpx;
+	letter-spacing: 0rpx;
+	color: #525252;
+  margin-right: 40rpx;
+}
+.linkman-block .info .line1 >text:nth-child(2) {
+  font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: rgba(82, 82, 82, 0.5);
+}
+.linkman-block .info .line2 {
+  padding-left: 35rpx;
+  position: relative;
+  font-size: 28rpx;
+	color: #999999;
+}
+.linkman-block .info .line2 .location-line-ico {
+  position:absolute;
+  left:-1rpx;
+  top:5rpx;
+}
+
+.block1 .team {
+  padding: 30rpx 100rpx 30rpx 203rpx;
+  position: relative;
+  padding-left: 203rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.block1 .team image {
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+  top: 36rpx;
+  background-color: #e5e5e5;
+  left:30rpx;
+  border-radius: 11rpx;
+  border: 1rpx solid #b5b5b5;
+}
+.block1 .team .right-ico {
+  position:absolute;
+  top:50%;
+  right:30rpx;
+  margin-top:-8rpx;
+}
+.block1 .team .content {
+  position:relative;
+}
+.block1 .team .content .name {
+	font-size: 36rpx;
+	color: #3a3a3a;
+}
+.block1 .team .content .description {
+  font-size: 27rpx;
+	color: #979797;
+  padding-bottom: 10rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.block1 .team .content .count {
+  font-size: 25rpx;
+	color: #999999;
+  margin-top:8rpx;
+}
+.block1 .team .content .count .sign-num {
+  margin-right:15rpx;
+  display: inline-block;
+}
+.block1 .team .content .count .service-num {
+  display: inline-block;
+}
+.block1 .team .content .count .sign-num .pen-circle-ico,
+.block1 .team .content .count .service-num .love-circle-ico {
+  position:relative;
+  top:5rpx;
+  margin-right: 5rpx
+}
+.block1 .indications{
+  position: relative;
+  padding: 20rpx;
+  padding-left: 70rpx;
+	font-size: 28rpx;
+	color: #545454;
+}
+.block1 .indications .indications-ico {
+  position: absolute;
+  left:20rpx;
+  top:27rpx;
+}
+.block1 .indications .content {
+  font-size: 27rpx;
+	color: #979797;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.block6 .header {
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.55);
+  padding: 12rpx 30rpx;
+  font-size: 32rpx;
+	letter-spacing: 3rpx;
+	color: #313131;
+}
+.block6 .content {
+  
+}
+.block6 .content .box {
+    padding: 20rpx 30rpx;
+    display: inline-block;
+    text-align: center;
+}
+.block6 .content .box image {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+}
+.block6 .content .box .name {
+	font-size: 30rpx;
+	letter-spacing: 3rpx;
+	color: #545454;
+}
+.block6 .content .box .tag {
+  font-size: 22rpx;
+	letter-spacing: 2rpx;
+	color: #ffffff;
+  background-color: #f67d25;
+	border-radius: 20rpx;
+  display:inline-block;
+  padding:3rpx 16rpx;
+}
+
+
+
+
+
+.block2 .line .left {
+  font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: #696969;
+}
+.block2 .line .right {
+  font-size: 30rpx;
+	letter-spacing: 0rpx;
+  color: #696969;
+}
+.block3 .header {
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.55);
+  padding: 30rpx 30rpx;
+  font-size: 32rpx;
+	letter-spacing: 3rpx;
+	color: #3a3a3a;
+}
+.block3 .header .left {
+	font-size: 32rpx;
+	letter-spacing: 0rpx;
+  line-height: 1.2;
+}
+.block3 .header .check-wap {
+	font-size: 26rpx;
+	letter-spacing: 0rpx;
+}
+.block3 .header .check-wap text {
+	margin-right: 15rpx;
+}
+.block3 .content .box {
+  padding: 20rpx 30rpx;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+.block3 .content .box checkbox {
+  position:absolute;
+  display:block;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.block3 .content .box image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+}
+.block3 .content .box checkbox[checked]+.content-wap image {
+  border: 1px solid #f67d25;
+}
+/*.block3 .content .box.active image {
+  border: 3px solid #f67d25;
+}*/
+.block3 .content .box .selected-ico {
+  display: none;
+}
+.block3 .content .box checkbox[checked]+.content-wap .selected-ico {
+  position: absolute;
+  right:42rpx;
+  top:95rpx;
+  display: inline-block;
+}
+.block3 .content .box .content-wap .signed-tag {
+  position:absolute;
+  right:30rpx;
+  top:96rpx;
+  font-size:18rpx;
+  padding:4rpx 10rpx;
+  line-height:1;
+  border-radius:50rpx;
+  color:#fff;
+  background-color:#0099ff;
+  border: 1px #fff solid;
+}
+.block3 .content .box .name {
+	font-size: 28rpx;
+	letter-spacing: 3rpx;
+	color: #545454;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:125rpx;
+}
+.block4 {
+  padding: 30rpx;
+}
+.block4 .info {
+  font-size: 30rpx;
+	letter-spacing: 3rpx;
+	color: #696969;
+}
+.block5 .header {
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.55);
+  padding: 12rpx 30rpx;
+}
+.block5 .content {
+	font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: #999999;
+  padding: 20rpx 30rpx;
+  text-align: justify;
+}
+.bottom-block {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow:0rpx -2rpx 10rpx 0rpx rgba(0, 0, 0, 0.11);
+}
+.bottom-block .next-btn {
+	font-size: 34rpx;
+	letter-spacing: 3rpx;
+	color: #ffffff;
+  text-align: center;
+  padding: 50rpx 0;
+  line-height: 1;
+  background: -webkit-linear-gradient(left,#1ac2f9,#0099ff);
+  background: -o-linear-gradient(right,#1ac2f9,#0099ff);
+  background: -moz-linear-gradient(right,#1ac2f9,#0099ff);
+  background: linear-gradient(to right,#1ac2f9,#0099ff);
+}
+.sign-wrap .weui-mask{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+.sign-wrap .dialog-content{
+  position: fixed;
+  z-index: 2000;
+  top: 50%;
+  left: 50%;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.sign-wrap .dialog-header{
+  position:relative;
+  width: 636rpx;
+  height: 282rpx;
+  background-color: #09f;
+}
+.sign-wrap .dialog-header_title{
+  padding: 34rpx 0 0;
+  font-size: 35rpx;
+  color:#fff;
+  text-align: center;
+}
+.sign-wrap .dialog-header_bg{
+  position:absolute;
+  margin:0 auto;
+  bottom: -1rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.sign-wrap .dialog-body{
+  font-size: 32rpx;
+  color: #3f3f3f;
+  background:#fff;
+}
+.sign-wrap .dialog-body_title{
+  padding: 15rpx 33rpx;
+}
+.sign-wrap .avator-img_dialog{
+  width:141rpx;
+  height:141rpx;
+  margin-right: 22rpx;
+  border:1rpx solid #b5b5b5;
+  border-radius: 12rpx;
+  vertical-align: middle;
+}
+.sign-wrap  .dialog-main{padding: 15rpx 33rpx; }
+.sign-wrap .dialog-btn_area{padding:30rpx 40rpx; justify-content: space-between;  }
+.sign-wrap .dialog-box_close{padding-top:30rpx;}
+.sign-wrap .dialog-delete{
+  position:relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+}
+.sign-wrap .weui-btn{margin:0; padding:0;}
+.sign-wrap .weui-btn+.weui-btn{margin-top: 0;}
+.sign-wrap .weui-btn_normal{background-color: #09f; font-size: 28rpx;color:#fff;border-radius: 35rpx;}
+.sign-wrap .weui-btn_normal:visited{color:rgba(255, 255, 255,0.4); background-color: #0184dc;}
+.sign-wrap .weui-btn_normal:active{color:rgba(255, 255, 255,0.4); background-color: #0184dc;}
+.sign-wrap .weui-btn_base{background-color: #fff;font-size: 28rpx;color: #999; border:1px solid #999;border-radius: 35rpx;}
+.sign-wrap .weui-btn_base:after{border-width: 0}
+.sign-wrap .weui-btn_base:visited{color:#bababa;border:1px solid #bababa;}
+.sign-wrap .weui-btn_base:active{color:#bababa;border:1px solid #bababa;}
+.sign-wrap .weui-btn_md{width:235rpx;height: 70rpx;line-height: 70rpx;text-align:center;}
+.sign-diolog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #888;
+  padding: 10%;
+  padding-left: 14%;
+}
+.sign-content {
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.sign-diolog .firstCanvas {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+}
+	.sign-diolog .transform-wap {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none
+	}
+	
+	.sign-diolog .transform-wap .tools {
+		text-align: right;
+	    display: -webkit-flex; /* Safari */
+	    display: flex;
+	    -webkit-align-items: flex-start; /* Safari 7.0+ */
+	    align-items: flex-start;
+	    bottom: 2%;
+	    left: 2%;
+	    position: fixed;
+	    flex-direction: column;
+	}
+	.sign-diolog .transform-wap .return {
+		text-align: right;
+	    display: -webkit-flex; /* Safari */
+	    display: flex;
+	    -webkit-align-items: flex-start; /* Safari 7.0+ */
+	    align-items: flex-start;
+	    top: 2%;
+	    left: 2%;
+	    position: fixed;
+	    flex-direction: column;
+	}
+	.sign-diolog .transform-wap .return #cancel,
+	.sign-diolog .transform-wap .return #cancel:hover {
+		  appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+	    background-position: -82rpx -183rpx;
+	    background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 146rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+	}
+	.sign-diolog .transform-wap .tools #reset,
+	.sign-diolog .transform-wap .tools #reset:hover {
+		  appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+        background-position: -82rpx -335rpx;
+        background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 146rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+	}
+	.sign-diolog .transform-wap .tools #submit,
+	.sign-diolog .transform-wap .tools #submit:hover  {
+		appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+      background-position: -82rpx -5rpx;
+      background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 175rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+     	margin-top: 10rpx;
+	}
+	.sign-diolog .transform-wap .return #cancel:active {
+		appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+        background-position: -4rpx -183rpx;
+        background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 146rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+	}
+	.sign-diolog .transform-wap .tools #submit:active {
+		appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+         background-position: -4rpx -5rpx;
+      background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 175rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+	    margin-top: 10rpx;
+	}
+	.sign-diolog .transform-wap .tools #reset:active {
+		appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+        background-position: -4rpx -335rpx;
+	    background-size: 220rpx auto;
+	    width: 74rpx;
+	    height: 146rpx;
+	    display: inline-block;
+	    cursor: pointer;
+	    pointer-events: auto;
+	}
+	.sign-diolog .transform-wap .header {
+	    display: flex;
+	    justify-content: flex-end;
+	    align-items: center;
+	    padding-right: 1%;
+	}
+	.sign-diolog .transform-wap .header .hname {
+	    background: url(http://cda.heyuht.com:8181/image/small/btn.png) no-repeat;
+      background-position:-156rpx -2rpx;
+      background-size:220rpx auto;
+      width:65rpx;
+      height:548rpx;
+      display:inline-block;
+
+	}
+.bottom-block .sign-konw {
+  font-size: 24rpx;
+  padding: 30rpx;
+}
+.bottom-block .sign-konw .question-white-ico {
+  position:relative;
+  top:9rpx;
+  margin-left:10rpx;
+}
+.next-btn[disabled] {
+  opacity: 0.5;
+  color: #fff !important;
+}

@@ -1,0 +1,59 @@
+<!--pages/info/report/detail/detail.wxml-->
+<view class="yt-wrap">
+	<!-- 检查 -->
+	<view class="">
+		<view class="weui-cells wrap-top_s">
+			<view class="wrap-line1">
+				<view>2017/02/11 12:00:12</view>
+				<view>28922535688899633</view>
+			</view>
+			<view class="wrap-line2">
+				<view>
+					张三<text class="wrap-line2_l">25岁</text>
+				</view>
+			</view>
+			<view class="wrap-line3">负责医生：
+				<text>张三</text>
+			</view>	
+		</view>
+		<view class="wrap-middle_check">	  
+			<view class="wrap-title">检查结果</view>
+			<view class="wrap-content">
+				<view>
+					经腹部探查：子宫前位，宫体大小69mm*62mm*47mm,子宫腔内可见一孕囊回声，大小为23mm*26mm*15mm,可见卵黄囊，胚芽3mm,未见心管博动。
+				</view>
+			</view>
+		</view>
+		<view class="wrap-middle_check">	  
+			<view class="wrap-title">诊断意见</view>
+			<view class="wrap-content">
+				<view>早孕（胎心不明显）</view>
+				<view>请复查</view>
+				<view>右卵巢内小囊</view>
+			</view>
+		</view>
+	</view>
+	<!-- 检验 -->
+	<!-- <view class="wrap-flex">
+		<view class="weui-cells wrap-flex_top">
+			<view class="wrap-line2">
+				<view>
+					张三<text class="wrap-line2_l">25岁</text>
+				</view>
+				<view class="box-small">
+					3<text>项异常</text>
+				</view>
+			</view>
+			<view class="wrap-line3">负责医生：
+				<text>张三</text>
+			</view>	
+		</view>
+		<view class="wrap-bottom_inspect">	  
+			<view class="wrap-title">各项参数</view>
+			<view class="wrap-content">
+				<view>白细胞计数</view>
+			</view>
+		</view>
+	</view> -->
+</view>
+

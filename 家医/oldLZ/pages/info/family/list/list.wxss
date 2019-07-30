@@ -1,0 +1,85 @@
+.sm-wap {
+  position: relative;
+  padding-bottom:230rpx;
+  box-sizing:border-box;
+}
+.mineinfo-pic{
+	background-color: #fff;
+    margin-bottom: 35rpx;
+		height: 140rpx;
+}
+.mineinfo-left {
+    float: left;
+    width: 94rpx;
+    height: 94rpx;
+	margin: 24rpx 25rpx 22rpx 23rpx;
+}
+.img{
+    width: 94rpx;
+    height: 94rpx;
+    border-radius: 50%;
+		background-color: #999;
+}
+.mineinfo-right{
+    float: left;
+}
+.mineinfo-name {
+    font-size: 36rpx;
+    color: #525252;
+		margin-right: 15rpx;
+}
+.mineinfo-sex,.mineinfo-year,.mineinfo-me,
+.faminfo-sex,.faminfo-year{
+    font-size: 28rpx;
+    color: #999;
+}
+.mineinfo-sex,.faminfo-sex{
+	margin-right: 30rpx;
+}
+ .mineinfo-sel{
+	margin-top: 15rpx;
+}
+
+/* 其他成员 */
+.faminfo-txt{
+	font-size: 28rpx;
+	color: #525252;
+	margin: 0 0 16rpx 24rpx;
+}
+.faminfo-pic{
+	background-color: #fff;
+    margin-bottom: 15rpx;
+		height: 150rpx;
+}
+.faminfo-left {
+    float: left;
+    width: 94rpx;
+    height: 94rpx;
+	margin: 29rpx 25rpx 28rpx 23rpx;
+}
+.faminfo-right{
+    float: left;
+}
+.faminfo-name {
+    font-size: 36rpx;
+    color: #525252;
+		margin-right: 15rpx;
+}
+.faminfo-me {
+    font-size: 24rpx;
+    color: #999;
+}
+ .faminfo-sel{
+	margin-top: 20rpx;
+}
+.msg{
+	float: right;
+	font-size: 28rpx;
+	color: #f67d25;
+	margin-right: 19rpx;
+}
+.bottom140{
+	position:absolute;
+  bottom:100rpx;
+  width:100%;
+}

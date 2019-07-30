@@ -1,0 +1,105 @@
+/**index.wxss**/
+page {
+  background-color: #f3f3f3;
+}
+swiper {
+  height: 320rpx;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+.doctors-entry {
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-shadow:0rpx 1rpx 8rpx 0rpx rgba(0, 0, 0, 0.11);
+}
+.doctors-entry .doctors-wap {
+  margin-top: 34rpx;
+}
+.doctors-entry .doctors-wap .text1 {
+  font-size:30rpx;
+  color:#3f3f3f;
+  text-align:right;
+}
+.doctors-entry .doctors-wap .text2 {
+  color:#999999;
+  font-size:28rpx;
+  text-align:right;
+}
+.doctors-entry .right.right-ico {
+  margin-top:70rpx;
+  margin-left:30rpx;
+}
+.sign-entry {
+  padding: 22rpx 10rpx;
+  position: relative;
+}
+.sign-entry image {
+  width: 100%;
+  display: block;
+}
+.sign-entry .sign-btn {
+  position: absolute;
+  right: 55rpx;
+  margin-top: -35rpx;
+  top: 54%;
+	font-size: 28rpx;
+	letter-spacing: 2rpx;
+	color: #ffffff;
+  background-color: #d6661c;
+  line-height: 1;
+  padding: 16rpx 25rpx;
+  border-radius: 100rpx;
+}
+.community-wap {
+  border-top: 1rpx  solid #e5e5e5;
+	box-shadow: 0rpx 1rpx 8rpx 0rpx rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+}
+.community-wap .header {
+  padding: 20rpx 25rpx;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.community-wap .header text {
+	font-size: 28rpx;
+	line-height: 1;
+	letter-spacing: 1rpx;
+	color: #525252;
+}
+.community-wap .item-wap .item {
+  position: relative;
+}
+.community-wap .item-wap .item image {
+  width: 94rpx;
+  height: 94rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 17rpx;
+  background: #fff;
+}
+.community-wap .item-wap .item .content {
+  padding:17rpx 25rpx 17rpx 0;
+  margin-left:141rpx;
+  border-bottom:1px #e5e5e5 solid;
+}
+.community-wap .item-wap .item .content .title {
+	font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: #3f3f3f;
+  padding-bottom: 10rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+}
+.community-wap .item-wap .item .content .tip {
+	font-size: 25rpx;
+	letter-spacing: 0rpx;
+	color: #999999;
+}

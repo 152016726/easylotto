@@ -1,0 +1,58 @@
+<view class='sm-wap'>
+    <view class="forminfo">
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">姓名</text>
+            </view>
+            <view class="form-value addressinfo-name">
+                <input class="insertvalue" type="text" placeholder="请输入姓名" placeholder-class="fontcolor" maxlength="8" value="" bindinput="nameInputTap"></input>
+                <view class="error">{{nameTip}}</view>
+            </view>
+            <!--view class="forminput-cancelicon">
+                <icon type="clear" size="20" color="#f3726f"></icon>
+            </view-->
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">手机号</text>
+            </view>
+            <view class="form-value addressinfo-phone">
+                <input class="insertvalue" type="text" placeholder="请输入手机号码" placeholder-class="fontcolor" maxlength="11" value="" bindinput="phoneInputTap"></input>
+                <view class="error">{{phoneTip}}</view>
+            </view>
+            <!--view class="forminput-cancelicon">
+                <icon type="clear" size="20" color="#f3726f"></icon>
+            </view-->
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">所在地区</text>
+            </view>
+            <view class="form-value addressinfo-area">
+                <picker mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindcolumnRegionchange" value="{{addressIndex}}" range="{{addressArray}}">
+                  <view class="picker">
+                    {{province.name}} {{city.name}} {{area.name}}
+                  </view>
+                </picker>
+                <view class="error" wx-if="{{!ifSelectAddress}}">请选择地址</view>
+            </view>
+            <view class="area-arrow right-ico"></view>
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">详细地址</text>
+            </view>
+            <view class="form-value">
+								<input class="insertvalue" type="text" placeholder="请输入详细地址" value="" bindinput="addressTap"></input>
+                <view class="error">{{addressTip}}</view>
+            </view>
+            <!--view class="forminput-cancelicon">
+                <icon type="clear" size="20" color="#f3726f"></icon>
+            </view-->
+        </view>
+    </view>
+
+    <view class="address-save">
+        <button class="btn-primary btnsize-lg" bindtap="openSave">保存</button>
+    </view>
+</view>

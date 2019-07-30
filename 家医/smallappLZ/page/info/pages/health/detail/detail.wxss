@@ -1,0 +1,148 @@
+/*头部信息栏*/
+
+.wrap-top {
+  width: 700rpx;
+  margin: 30rpx auto;
+  padding: 45rpx 0;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.wrap-topBox {
+  flex-direction: column;
+  width: 232rpx;
+  font-size: 40rpx;
+  color: #000;
+  border-right: 1rpx dashed #979797;
+}
+
+.wrap-topBox:nth-last-child(1) {
+  border-right: none;
+}
+
+/*切换栏*/
+
+.nav-item {
+  position: relative;
+  flex: auto;
+  background-color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.nav-item.nav-item_active {
+  color: #09f;
+}
+
+.nav-item_active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 8rpx;
+  right: 8rpx;
+  height: 8rpx;
+  background: #5394ff;
+  border-radius: 8rpx;
+}
+
+/*图表栏*/
+
+.wrap-chart {
+  background: #fff;
+}
+
+.canvas {
+  /*图表*/
+  width: 1000rpx;
+  height: 470rpx;
+  margin: 60rpx 0 30rpx 20rpx;
+}
+
+.padding-default {
+  padding: 70rpx 0;
+}
+
+.wrap-dataCurrent {
+  border-top: 1rpx dashed #979797;
+  padding: 10rpx 0 50rpx;
+}
+
+.font-blue_xb {
+  font-size: 40rpx;
+  color: #5394ff;
+}
+
+.font-org_xb {
+  font-size: 40rpx;
+  color: #fba559;
+}
+
+.btn-area {
+  padding: 10rpx 35rpx;
+}
+
+/*按钮*/
+
+.weui-btn_info {
+  color: #fff;
+  font-size: 34rpx;
+  background: #5394ff;
+  border-radius: 100rpx;
+}
+
+.weui-btn_info:visited, .weui-btn_info:active {
+  color: #d0d0d0;
+}
+
+.weui-btn_info[disabled]:not([type]) {
+  opacity: 0.5;
+  background: #5394ff;
+  color: #fff;
+}
+
+button:after {
+  border: 0;
+}
+
+button {
+  background-color: #fff;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.de_le, .de_ri {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+}
+
+.de_le {
+  left: 80rpx;
+  transform: rotateY(180deg);
+}
+
+.de_ri {
+  right:90rpx;
+  top:0rpx;
+}
+.de_can{
+  /* width: 750rpx;
+  height: 500rpx; */
+  /* overflow: hidden; */
+  /* border: 1px solid #000 */
+}
+.di_loe{
+  height: 150rpx;
+  /* border: 1px solid #000; */
+  position: relative;
+  text-align: center;
+}
+.dl_mer{
+  font-size: 30rpx;
+  color:#7a7a7a;
+
+}
+.dl_mer view{
+  display: inline-block;
+}

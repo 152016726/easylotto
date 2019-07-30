@@ -1,0 +1,49 @@
+  <view class='medicalDetail'>
+    <view class='medicalInfo'>
+        <view class='medicalInfoTit'>
+             <view class="nav">就诊信息</view>
+             <text style="color:{{ orderStatus === '待缴费'?'#5394ff':'' }}">{{ orderStatus }}</text>
+        </view>
+        <view class="name">张三</view>
+        <view class='idCard'>身份证：11111111111111111</view>
+    </view>
+    <view class='detailBox'>
+         <view><text>医院名称：</text>某某医院</view>
+         <view><text>就诊科室：</text>某某医院</view>
+         <view><text>就诊医生：</text>某某医院</view>
+         <view><text>就诊时间：</text>某某医院</view>
+         <view><text>就医流水号：</text>某某医院</view>
+    </view>
+    <view class='paymentInfo'>
+        <view class='paymentInfoTit'>
+          <view class="nav">就诊信息</view>
+        </view>
+        <view class='medicinesList'>
+          <view class='medicinesItem' wx:for="{{ list }}" wx:key="{{ index }}">
+              <view class='drug' data-index="{{ index }}" bindtap='toggleShow'>
+                 {{ item.item }}
+                 <text class='togSubTotal' wx:if="{{ !item.show }}">{{ item.subTotal }}</text>
+                 <image src='../../../images/down.png' class="{{ item.show?'rotate':'' }}"></image>
+              </view>
+              <view class="medicineBox" style="height:{{ item.show? 50 * ( item.medicinesList.length + 1 ) + 'rpx':0}}">
+                <view>
+                    <view class="medicineName" wx:for="{{ item.medicinesList }}" wx:key="{{ index }}">
+                      {{ item.name }}
+                      <text class='num'>{{ "×" + item.num }}</text>
+                      <text class='price'> {{ item.price }}</text>
+                      <text class='unit'> {{ item.unit }}</text>
+                    </view>
+                </view>
+                <view class='subTotal'>小计：{{ item.subTotal }}</view>
+              </view>
+            </view>   
+        </view>
+     </view>
+</view>
+<view class='attention' wx:if="{{ orderStatus === '待缴费' }}"> 
+   <text class='attentionText'>目前微信支付只能提供资费缴费,如需医保、公费记账请移步到人工窗口处进行缴费。</text>
+   <view class="totalPay">
+     <view>总价：<text>3.20元</text></view>
+     <button>支付</button>
+   </view>
+</view>

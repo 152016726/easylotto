@@ -1,0 +1,6 @@
+<view class="wrap" style="height:{{height}}px">
+  <image style="width:750rpx;height:{{height}}px" src="../../../images/sign_success.png" mode="aspectFill"></image>
+  <image animation="{{printAnimationData}}" class="print" src="../../../images/print.png" mode="aspectFit"></image>
+  <image animation="{{sealAnimationData}}" class="seal" src="../../../images/seal.png" mode="aspectFit"></image>
+  <view></view>
+</view>

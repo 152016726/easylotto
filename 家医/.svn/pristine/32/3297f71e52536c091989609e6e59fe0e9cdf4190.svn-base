@@ -1,0 +1,35 @@
+<view class="yt-wrap">
+	<view class="flex-center flex-between wrap-top">
+		<view class="font-blue_s flew-item">
+			提问对象：
+			<text>{{detail.recrFdocName?detail.recrFdocName:(detail.recrTeamName?detail.recrTeamName:detail.recrOrgName)}}</text>
+		</view>
+		<view class="font-grey_xs margin-left_s">{{detail.createTime}}</view>
+	</view>
+	<view class="wrap-middle font-grey_xs">
+		<view class="font-black_l padding_xs word-break">
+			{{detail.topic}}
+		</view>
+		<view class="wrap-line1 font-grey_s word-break">
+			{{detail.disorder}}
+		</view>	
+		<view class="margin-top_xs padding_xs">
+			发病时间：<text>{{detail.diseaseTime}}</text>
+		</view>
+		<view class="padding_xs">
+			就诊经历：<text>{{detail.therapyRecode?detail.therapyRecode:'无'}}</text>
+		</view>
+	</view>
+	<view class="wrap-middle font-grey_s">
+		<view class="font-black_l wrap-title">
+			<view class="padding_xs">医生回复：</view>
+		</view>
+		<view class="wrap-line2">
+			{{detail.repayContent?detail.repayContent:'无'}}
+		</view>	
+	</view>
+</view>
+
+
+
+

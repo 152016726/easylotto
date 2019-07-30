@@ -1,0 +1,153 @@
+<view class="sign-info">
+    <view class="threeline">
+        <text>甲方：</text>
+        <view class="">
+            <view class="">{{agree.orgName}}</view>
+        </view>
+    </view>
+    <view class="tenbitspl">
+        <text>乙方（家庭成员代表）：</text>
+        <view class="orgfontc">{{agree.signName}}</view>
+    </view>
+    <view class="fourbitspl">
+        <text>身份证号：</text>
+        <view class="orgfontc">{{agree.signIdCard}}</view>
+    </view>
+    <view class="fourbitspl">
+        <text>联系电话：</text>
+        <view class="orgfontc">{{agree.signMobile}}</view>
+    </view>
+    <view class="fourbitspl">
+        <text>家庭地址：</text>
+        <view class="orgfontc">{{agree.signAddress}}</view>
+    </view>
+</view>
+<view class="sign-role">
+    <view>甲、乙双方共同确定<text class="team-name">{{agree.teamName}}</text>为乙方的家庭医生团队。</view>
+    <view class="fourbitspl">
+        <text>团队成员：</text>
+        <view>{{agree.docTeamNames}}</view>
+    </view>
+    <view class="sixbitspl">
+        <text>团队责任医生：</text>
+        <view>{{agree.docName}}</view>
+    </view>
+    <view class="fourbitspl">
+        <text>手机：</text>
+        <view>{{agree.docMobile}}</view>
+    </view>
+    <view class="orgfontc justify">甲、乙双方本着平等、尊重和自愿的原则，签订此协议，接受以下条款的约定。</view>
+</view>
+<view class="sign-content">
+    <view>
+        <view class="phead">
+            <view class="pcircle-wap">
+                <view class="pcircle">一</view>
+            </view>
+            <view class='pcircle-line'></view>
+        </view>
+        <view class="pbody">
+            <view>甲方作为服务的提供者，向乙方及其家庭成员免费提供以下基本公共卫生服务: </view>
+            <view>1.建立居民健康档案，开展个人健康评估及健康知识指导。</view>
+            <view>2.提供分类服务——根据居民健康状况和需求，重点是65周岁及以上老年人、高血压及糖尿病病人、孕产妇、0-6岁儿童、严重精神障碍患者、肺结核病人提供主动健康咨询和分类指导服务。</view>
+            <view>(1)65周岁及以上老年人服务内容:每年提供生活方式和健康状况评估、中医体质辨识1次、提供体格检査1次、提供常规辅助检査（含血常规、尿常规、空腹血糖、肝功、肾功、血脂、心电图、腹部黑白B超检査）1次，告知健康体检结果并进行相应健康指导。</view>
+            <view>(2)高血压患者服务内容:每年提供健康体检1次、提供随访并进行健康指导4次。</view>
+            <view>(3)糖尿病患者服务内容:每年提供健康体检1次、提供随访并进行健康指导4次。</view>
+            <view>(4)孕产妇保健服务内容:为孕早期孕妇建立《孕产妇保健手册》并提供孕妇健康状况评估1次，提供常规辅助检查（妇科检查、血常规、尿常规、血型、肝功能、乙型肝炎检查〈首次产检〉），为孕中期孕妇提供产前随访2次，为孕晚期孕妇提供产前随访2次，为产后1周产妇提供产后访视1次，产后42天健康检查1次。</view>
+            <view>(5)0-6岁儿童保健服务内容:为0-6岁儿童建立预防接种证并进行常规预防接种，为出生7天新生儿提供家庭访视1次，为满月新生儿提供健康管理1次，为0-3岁婴幼儿提供健康管理8次，提供3次血常规免费检测，6、12月龄开展中医摩腹和捏脊，18、24月龄开展按揉迎香穴、足三里穴，30、 36月龄开展按揉四神聪穴，并传授给家长。为4-6岁儿童提供健康管理3次，其中，每年提供一次体格检查、血常规检测、视力筛查，并进行生长发育评估。</view>
+            <view>(6)严重精神障碍患者服务内容:为患者提供1次全面健康评估，每年提供4次随访并进行健康指导，每年在患者病情许可的情况下进行体格检查1次（血常规〈含白细胞分类〉、转氨酶、血糖、心电图)。</view>
+            <view>(7)肺结核患者服务内容:为患者提供1次全面健康评估，提供随访服务并进行服务指导。</view>
+            <view>(8)在确保医疗安全及相互理解信任条件下签约年度内免费为签约居民中行动不便且确有需求的老年人、残疾人提供1次出诊服务。</view>
+        </view>
+    </view>
+    <view>
+        <view class="phead">
+            <view class="pcircle-wap">
+                <view class="pcircle">二</view>
+            </view>
+            <view class='pcircle-line'></view>
+        </view>
+        <view class="pbody">
+            <view>1.乙方自愿接受以上所选服务，将自己的身体健康状况及变化情况首先及时告知甲方，并保证沟通畅通，积极配合甲方提供的各项服务。</view>
+            <view>2.乙方要确保提供家庭成员真实详细的健康资料和服务需求。</view>
+            <view>3.乙方应尊重和理解甲方的服务过程，共同探索和完善这种新的服务模式，并尽可能为甲方的工作提供方便和协助。乙方可随时向甲方所在单位反映甲方的服务态度和效率，以提高服务质量。</view>
+            <view>4.协议每年度签订一次，如乙方对原签约的甲方服务不满意，可要求甲方所在单位调换。</view>
+        </view>
+    </view>
+    <view>
+        <view class="phead">
+            <view class="pcircle-wap">
+                <view class="pcircle">三</view>
+            </view>
+            <view class='pcircle-line'></view>
+        </view>
+        <view class="pbody">
+            <view>甲方给乙方提供服务的过程中，因乙方对甲方隐瞒病史信息或不执行甲方指定的防治方案、不听从指导意见而影响到服务质量，其产生的后果由乙方承担。甲方给乙方提供服务时，因乙方病情超出甲方诊疗水平和能力范围的，甲方应及时转诊或会诊，以保证患者及时、合理诊治。</view>
+        </view>
+    </view>
+    <view>
+        <view class="phead">
+            <view class="pcircle-wap">
+                <view class="pcircle">四</view>
+            </view>
+            <view class='pcircle-line'></view>
+        </view>
+        <view class="pbody">
+            <view>未尽事宜，甲乙双方协商解决。</view>
+            <view>本协议一式两份，甲方、乙方各执一份，自双方签字之日起生效，有效期为1年。期满后如需解约，乙方需告知甲方，双方签字确认。双方不提出解约视为自动续约。</view>
+            <view>
+                <view>家庭成员基础信息表</view>
+                <view  class="table">
+                    <view>
+                        <view></view>
+                        <view>与户主关系</view>
+                        <view>姓名</view>
+                        <view>性别</view>
+                        <view>身份证号</view>
+                        <view>对象类别</view>
+                    </view>
+                    <view wx:for="{{agree.signMemberList}}">
+                        <view>0{{index+1}}</view>
+                        <view>{{item.relation}}</view>
+                        <view>{{item.memberName}}</view>
+                        <view>{{item.sex==2?'女':'男'}}</view>
+                        <view>{{item.idCard}}</view>
+                        <view>
+                            <view wx:for="{{item.catArray}}" wx:for-item="itemName">{{itemName}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="sign-confirm">
+    <image wx:if="{{agree.signStatus==2 || agree.signStatus==4}}" mode="aspectFit" class="nosign" src="../../../../../images/nosign.png" />
+    <image wx:if="{{agree.signStatus==1}}" mode="aspectFit" class="nosign" src="{{agree.companySealImgUrl}}" />
+    <view class="aliright sixbitspl clearfox">
+        <text>甲方（盖章）：</text>
+        <view></view>
+    </view>
+    <view class="{{agree.docSignature&&agree.signStatus==1?'alinone':'aliright egbitspl clearfox'}}">
+        <text>责任医生（签名）：</text>
+        <view wx:if="{{!agree.docSignature}}" style="height:36rpx;">
+        </view>
+        <view wx:if="{{agree.docSignature&&agree.signStatus==1}}">
+            <image style="height:120rpx" mode="aspectFit" src="{{agree.docSignature}}"/>
+        </view>
+    </view>
+    <view class="sign-date clearfox">
+        <text class="left">签名时间：</text>
+        <view class="left">{{agree.signTime}}</view>
+    </view>
+    <view class="alinone">
+        <text>乙方（家庭成员代表签名）：</text>
+        <view>
+            <image style="height:120rpx" mode="aspectFit" src="{{agree.signature}}"/>
+        </view>
+    </view>
+    <view class="sign-date clearfox">
+        <text class="left">签名时间：</text>
+        <view class="left">{{agree.createTime}}</view>
+    </view>
+</view>

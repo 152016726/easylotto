@@ -1,0 +1,49 @@
+.mineinfo-txt {
+	float: left;
+	font-size: 32rpx;
+	color: #525252;
+	margin-top: 26rpx;
+}
+.form-line{
+	height: 120rpx;
+}
+.form-label{
+	width: 135rpx;
+}
+.form-value{
+	width: calc(100% - 200rpx);
+}
+.form-value_sm{
+	width: calc(100% - 400rpx);
+}
+.area-arrow {
+	top:48rpx;
+}
+.btn-seccode{
+	width: 200rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx; 
+	color: #fff;
+	background-color: #f67d25;
+	position: relative;
+	right: 44rpx;
+}
+.btn-seccodeag{
+	width: 200rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx; 
+	color: #9f9f9f;
+	background-color: #fff;
+	border: 1rpx solid #9f9f9f;
+
+	position: relative;
+	right: 44rpx;
+}
+.editinfo-save{
+	margin: 40rpx 0;
+}
+
+
+

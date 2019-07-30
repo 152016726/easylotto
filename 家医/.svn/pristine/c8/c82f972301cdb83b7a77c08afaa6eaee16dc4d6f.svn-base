@@ -1,0 +1,150 @@
+.sm-wap{
+	/* display: flex;
+	flex-direction: column; */
+	height: 100%;
+}
+.team-name,.team-info,.team-skill{
+	background-color: #fff;
+	/* flex: 1; */
+}
+.team-name{
+	padding: 33rpx 20rpx 35rpx 28rpx;
+	height: 145rpx;
+}
+.teamname-left,.teamname-middle,.teamname-right{
+	float: left;
+}
+.teamname-left{
+	height: 142rpx;
+	width: 142rpx;
+}
+.teamname-pic{
+	height: 142rpx;
+	width: 142rpx;
+	border-radius: 11rpx;
+}
+.teamname-middle{
+	padding-left:23rpx;
+	width: 380rpx;
+}
+.teamname-title{
+	font-size: 36rpx;
+	line-height: 36rpx;
+	color: #3a3a3a;
+	margin-bottom: 10rpx;
+}
+.teamname-detail{
+	font-size:28rpx;
+	color: #979797;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+	text-overflow: ellipsis; 
+	}
+.teamname-right{
+	width: 150rpx;
+}
+.teamname-btn{
+	width: 140rpx;
+	height: 40rpx;
+	font-size: 22rpx;
+	line-height: 40rpx;
+	text-align: center;
+	vertical-align: middle;
+	color: #35aeff;
+	border-radius: 18rpx;
+	border: 1rpx solid #35aeff;
+}
+.team-info{
+	margin: 16rpx 0 27rpx 0;
+	padding: 25rpx 30rpx;
+}
+.teaminfo-title{
+	font-size: 32rpx;
+	color: #545454;
+	margin-bottom: 10rpx;
+}
+.teaminfo-name{
+	font-size: 30rpx;
+	color: #545454;
+}
+.team-skill{
+	margin-top: 32rpx;
+	padding: 25rpx 30rpx;
+}
+.teamskill-title{
+	font-size: 32rpx;
+	padding:8rpx 0 12rpx 5rpx;
+	color: #525252;
+	border-bottom: 1rpx solid #eee;
+}
+.teamskill-txt{
+	padding: 15rpx 0 10rpx 0;
+}
+.para{
+	font-size: 28rpx;
+	color: #696969;
+}
+.block2 {
+  background: #fff;
+	margin-top: 32rpx;
+}
+.block2 .header {
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.55);
+  padding: 12rpx 30rpx;
+  font-size: 32rpx;
+	letter-spacing: 3rpx;
+	color: #313131;
+} 
+.block2 .content .box {
+    padding: 20rpx 30rpx;
+    display: inline-block;
+    text-align: center;
+}
+.block2 .content .box image {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+}
+.block2 .content .box .name {
+	font-size: 30rpx;
+	letter-spacing: 3rpx;
+	color: #545454;
+}
+.block2 .content .box .tag {
+  font-size: 22rpx;
+	letter-spacing: 2rpx;
+	color: #ffffff;
+  background-color: #f67d25;
+	border-radius: 20rpx;
+  display:inline-block;
+  padding:3rpx 16rpx;
+}
+.doc-detail {
+  background: #f3f3f3;
+  font-size: 30rpx;
+  padding:12rpx 30rpx;
+
+}
+.doc-detail .doc-block {
+  padding: 10rpx 0
+}
+.doc-detail .doc-block.dashed-border {
+  border-bottom: 1rpx dashed #e5e5e5;
+}
+.doc-detail .tag {
+  font-size: 22rpx;
+	letter-spacing: 2rpx;
+  color: #f67d25;
+  border: 1rpx #f67d25 solid;
+	border-radius: 20rpx;
+  display:inline-block;
+  padding:3rpx 16rpx;
+  line-height:1;
+  margin-left: 10rpx;
+}
+.doc-detail .para {
+  color: #888
+}

@@ -1,0 +1,15 @@
+<view class='rm-wrap'>
+    <view class="item-title">健康检查结果</view>
+    <view class="item-box">
+        <view class="item-cell">健康评估</view>
+        <view class="item-descr">
+            {{reportData.healthAssessment?reportData.healthAssessment:"无"}}
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="item-cell">健康指导</view>
+        <view class="item-descr">
+            {{reportData.healthGuide?reportData.healthGuide:"无"}}
+        </view>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+
+.mineinfo-txt {
+	float: left;
+    font-size: 32rpx;
+    color: #525252;
+		margin-top: 26rpx;
+}
+.form-line{
+	height: 120rpx;
+}
+ .form-label{
+width: 135rpx;
+} 
+.form-value{
+    width: calc(100% - 200rpx);
+}
+.streetvalue{
+	display: inline-block;
+	/*height: 105rpx;*/
+}
+.editinfo-save{
+	margin-top: 40rpx;
+}

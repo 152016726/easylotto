@@ -1,0 +1,32 @@
+<!--pages/register/known/known.wxml-->
+<view class="rm-wrap known-main">
+    <view>
+        <view class="known-title">1、预约和挂号要求</view>
+        <view class="known-cont">
+            因医院规定，预约挂号需完成实名制，菜单栏个人中心“就诊卡管理”完成实名认证，初诊患儿可通过新建虚拟卡功能新建虚拟卡，不定就诊卡后方能享受手机端预约挂号、报告查询及自助缴费等全部功能。
+        </view>
+        <view class="known-title">2、预约和挂号要求</view>
+        <view class="known-cont">
+            因医院规定，预约挂号需完成实名制，菜单栏个人中心“就诊卡管理”完成实名认证，初诊患儿可通过新建虚拟卡功能新建虚拟卡，不定就诊卡后方能享受手机端预约挂号、报告查询及自助缴费等全部功能。
+        </view>
+        <view class="known-title">3、预约和挂号要求</view>
+        <view class="known-cont">
+            因医院规定，预约挂号需完成实名制，菜单栏个人中心“就诊卡管理”完成实名认证，初诊患儿可通过新建虚拟卡功能新建虚拟卡，不定就诊卡后方能享受手机端预约挂号、报告查询及自助缴费等全部功能。
+        </view>
+        <view class="known-title">4、预约和挂号要求</view>
+        <view class="known-cont">
+            因医院规定，预约挂号需完成实名制，菜单栏个人中心“就诊卡管理”完成实名认证，初诊患儿可通过新建虚拟卡功能新建虚拟卡，不定就诊卡后方能享受手机端预约挂号、报告查询及自助缴费等全部功能。
+        </view>
+    </view>
+    <view class="bottom-area">
+        <checkbox-group bindchange="checkboxChange" class="">
+            <label class="known-read flex-center">
+                <checkbox value="{{checkeVal}}" checked="true"  class="ws-checkbox"/>
+                <view>已阅读并同意相关要求</view>
+            </label>
+        </checkbox-group>
+        <view class="button_area">
+            <button class="known-btn" disabled="{{disabled}}"  hover-class="known-btn-hover">预约</button>
+        </view>
+    </view>
+</view>

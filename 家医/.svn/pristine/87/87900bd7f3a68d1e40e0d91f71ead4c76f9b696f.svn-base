@@ -1,0 +1,171 @@
+
+.medicalDetail{
+  padding: 20rpx 20rpx 250rpx 20rpx;
+  background: #f4f4f4
+}
+.medicalDetail .medicalInfo,.medicalDetail .detailBox,.medicalDetail .paymentInfo{
+   border-radius: 30rpx;
+   background: #fff;
+   box-shadow: 2px 1px 8px #dddbdb;
+   margin-bottom: 20rpx;
+}
+.medicalDetail .medicalInfo .medicalInfoTit,.medicalDetail .paymentInfo .paymentInfoTit{
+   width: 82%;
+   margin: 0 auto;
+   padding: 15rpx 0;
+   height: 80rpx;
+   line-height: 80rpx;
+   border-bottom:1px dashed #dddbdb;
+   padding-right:50rpx;
+}
+.medicalDetail .medicalInfo .medicalInfoTit .nav,.medicalDetail .paymentInfo .paymentInfoTit .nav{
+   float: left;
+   font-size: 34rpx;
+   font-weight: bold;
+   position: relative;
+   padding-left: 30rpx
+}
+.medicalDetail .medicalInfo .medicalInfoTit .nav:after,.medicalDetail .paymentInfo .paymentInfoTit .nav:after{
+   content: "";
+   display:block;
+   width: 15rpx;
+   height: 50rpx;
+   position: absolute;
+   left: 0;
+   top: 16rpx;
+   background: #5394ff;
+   border-radius: 15rpx;
+}
+.medicalDetail .medicalInfo .medicalInfoTit text{
+   float: right;
+   font-size: 24rpx;
+   color: #7a7a7a
+}
+
+.medicalDetail .medicalInfo .name,.medicalDetail .medicalInfo .idCard{
+   width: 86%;
+   margin: 0 auto;
+  
+}
+.medicalDetail .medicalInfo .name{
+   font-size: 34rpx;
+   font-weight: bold;
+   padding-top: 20rpx;
+   padding-bottom: 20rpx;
+}
+.medicalDetail .medicalInfo .idCard{
+   font-size: 32rpx;
+   color: #7a7a7a;
+   padding-bottom: 30rpx;
+}
+
+.medicalDetail .detailBox{
+  padding: 20rpx 0
+}
+.medicalDetail .detailBox view{
+   width: 86%;
+   margin: 0 auto;
+   padding: 16rpx 0;
+   font-size: 32rpx;
+   border-bottom:1px dashed #dddbdb;
+}
+.medicalDetail .detailBox view text{
+   color:#7a7a7a 
+}
+
+.medicalDetail .paymentInfo .medicinesList{
+  padding-top: 20rpx;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem{
+   width: 86%;
+   margin: 0 auto;
+   padding-bottom:20rpx;
+   font-size: 32rpx;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .subTotal{
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .drug{
+    position: relative;
+    margin-bottom: 20rpx;
+    color: #5394ff;
+    font-weight: bold
+ }
+ .medicalDetail .paymentInfo .medicinesList .medicinesItem .drug .togSubTotal{
+    position:absolute;
+    right: 70rpx;
+    color:#c4c4c4;
+    font-weight: normal
+ }
+
+ .medicalDetail .paymentInfo .medicinesList .medicinesItem .drug .rotate{
+    transform: rotate(-180deg)
+ }
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .drug image{
+   width: 28px;
+   height: 28px;
+   position: absolute;
+   right: 0;
+   top:0;
+   transition: transform .4s
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .medicineBox{
+  height: 0;
+  overflow: hidden;
+  transition: height .4s;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .medicineBox .subTotal{
+  text-align: right;
+  color: #7a7a7a;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .medicineBox .medicineName{
+   line-break: 50rpx;
+   height: 50rpx;
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .medicineBox .medicineName .num{
+   color:#7a7a7a
+}
+.medicalDetail .paymentInfo .medicinesList .medicinesItem .medicineBox .medicineName .price{
+   float: right;
+   color:#7a7a7a
+}
+
+.attention{
+  background: #fdfdfd;
+  position: fixed;
+  width: 100%;
+  bottom: 0
+}
+.attention .attentionText{
+  font-size: 32rpx;
+  color: #7a7a7a;
+  line-height: 50rpx;
+  padding: 20rpx;
+  display: block
+}
+.attention .totalPay{
+    display: flex;
+    padding: 20rpx;
+    padding-top: 20rpx;
+
+}
+.attention .totalPay view{
+   flex: 1;
+   color: #7a7a7a;
+   font-weight: bold;
+  
+}
+.attention .totalPay view text{
+  color: #ff8801;
+}
+.attention .totalPay button{
+   flex: 1;
+   background-color: #5394ff;
+   height: 80rpx;
+   line-height: 80rpx;
+   border-radius:40rpx;
+   color: #fff;
+}

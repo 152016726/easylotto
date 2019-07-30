@@ -1,0 +1,97 @@
+<scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style='height:95vh;display:{{pas}}'>
+
+  <view class="ai_log">
+    <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+    <view class="ai_las">
+      <view class="ai_san"></view>
+      <view class="ai_fors">请问有什么可以帮到您？</view>
+    </view>
+  </view>
+  <view class="ai_log">
+    <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+    <view class="ai_las">
+      <view class="ai_san"></view>
+      <view class="ai_fors">
+        <view>1、家庭医生签约业务介绍</view>
+        <view>2、健康档案查阅管理介绍</view>
+        <view>3、疫苗接种注意事项</view>
+        <view>4、预约挂号流程&须知</view>
+      
+      </view>
+    </view>
+  </view>
+
+
+  <view wx:for="{{lis}}" wx:if="{{lis[0].time}}" style="margin-top:30rpx;">
+    <view class="ai_tis">{{item.time}}</view>
+    <view class="ai_log">
+      <view class="ai_las" style="background:#5da3fb;color:#fff;margin-left: 210rpx;">
+        <view class="ai_si"></view>
+        <view class="ai_forsa">{{item.opo}}</view>
+      </view>
+      <image class="ai_imas" src="{{userPic}}"></image>
+    </view>
+    <view class="ai_log" wx:if="{{item.lia==0}}">
+      <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+      <view class="ai_las">
+        <view class="ai_san"></view>
+        <view class="ai_fors">{{item.dis}}</view>
+      </view>
+
+    </view>
+    <view class="ai_log" wx:if="{{item.lia==2}}">
+      <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+      <image class="ai_nbs" src="{{item.ima}}" bindtap='imgshow' data-img="{{item.ima}}" data-imgnum="2"></image>
+    </view>
+    <view class="ai_log" wx:if="{{item.lia==3}}">
+      <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+      <view class="ai_las">
+        <view class="ai_san"></view>
+        <view class="ai_fors" style="width:450rpx;">
+          <view>宝宝疫苗接种后注意：</view>
+          <view>1、适当休息</view>
+          <view>2、不吃辛辣食物</view>
+          <view>3、不要洗澡</view>
+          <view>4、出现轻微不良反应不要慌</view>
+          <view>5、小心处理接种部位</view>
+          <view>接种前主要事项：以下7种情况不宜接种疫苗</view>
+          <view>（1）体温超过37.5℃，有腋下或淋巴结肿大，请查明病因治愈后再接种。</view>
+          <view>（2）有严重营养不良，或患有严重佝偻病、先天性免疫缺陷，不宜接种疫苗。</view>
+          <view>（3）空腹饥饿时，不宜接种疫苗。</view>
+          <view>（4）皮炎、化脓性皮肤病、严重湿疹都是接种疫苗的禁止名单。</view>
+          <view>（5）哮喘、荨麻疹等过敏体质，不宜接种疫苗。</view>
+          <view>（6）患有神经系统病患，例如：脑发育不正常、脑颅损伤、脑炎后遗症、癫痫病等，不宜接种疫苗。</view>
+          <view>（7）患有严重心、肝、肾疾病和急性传染病、活动型结核病也不宜接种疫苗。</view>
+        </view>
+      </view>
+    </view>
+      <view class="ai_log" wx:if="{{item.lia==4}}">
+      <image class="ai_ima" src="../../../images/ic_gt.png"></image>
+      <view class="ai_las">
+        <view class="ai_san"></view>
+        <view class="ai_fors" style="width:450rpx;">
+          <view>挂号须知：</view>
+          <view>1、可预约7天以内的号源</view>
+          <view>2、微信支付成功后请查阅[订单详情]，请以收到取号成功信息为准，如不成功请自行选择其他途径挂号</view>
+          <view>3、如个人原因不能到医院就诊，请提前24小时进入微信平台取消预约，费用将退还至原支付平台，否则过期费用不可退回</view>
+          <view>4、暂不支持非中国大陆身份证预约，若需就诊可当天窗口现场挂号</view>
+          <view>5、预约成功后，请携带身份证、社保卡等有效证件，于就诊时间段前30分钟到就诊科室排队等候。</view>
+          <view>6、如遇特殊情况，请向医院挂号窗口咨询。</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="height:100rpx;"></view>
+</scroll-view>
+
+
+<!-- 回复 -->
+<view class="ai_dis" style="display:{{pas}}">
+  <image src="../../../images/ic_jp.png"></image>
+  <view>
+    <input type="text" bindblur='list' value='{{sirs}}' placeholder='请输入您的问题'></input>
+  </view>
+</view>
+<view class="im_ai" style="display:{{pos}};height: {{num}}vh;">
+    <image   src="{{imgs}}" style="height:95%" bindtap='imghow'></image>
+</view>

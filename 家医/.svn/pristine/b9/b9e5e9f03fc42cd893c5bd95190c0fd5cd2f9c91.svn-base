@@ -1,0 +1,412 @@
+<view class="rm-wrap">
+    <!--儿童列表-->
+    <scroll-view scroll-x="true">
+        <radio-group class="radio-group_scroll" bindchange="radioChange" >
+            <label wx:for="{{memberList}}">
+                <radio value="{{item.id}}" checked="{{item.checked}}" class="radio-box"/>
+                <view class="radio-main">
+                    <image src="{{item.imgUrl?item.imgUrl:'../../images/user_img.png'}}" class="avator-img_md" mode="aspectFill"></image>
+                    <view class="lz-choosen-ico member-selcted"></view>
+                    <view class="member-name">{{item.name}}</view>
+                    <view class="member-age">{{item.ageDesc}}</view>
+                    <!--view class="flex-center">
+                        <view class="org-name ellipsis-line_one">{{item.orgName}}</view>
+                        <view class="lz-right-white-ico"></view>
+                    </view-->
+                </view>
+            </label>
+            <navigator url="/page/info/pages/family/add/add?ifChild=true" hover-class="none" style="{{memberList.length>0?'':'margin:0 auto'}}">
+                <view class="add-child">
+                    <image src="../../images/child-add.png" class="avator-img_md"></image>
+                    <view class="add-text">添加宝宝</view>
+                </view>
+            </navigator>
+        </radio-group>
+    </scroll-view>
+    <!--没有儿童提示-->
+    <view class="null-box_child weui-flex" wx:if="{{!memberList.length>0}}">
+        <image class="clickedit-img" mode="aspectFit" src="../../images/addchild-tip.png"></image>
+    </view>
+    <!--儿童没有儿童编码时不能接种-->
+    <navigator class="null-box_child weui-flex" url="../info/pages/family/edit/edit?id={{currentMember.id}}" wx:if="{{!currentMember.code&&childinit}}">
+        <image class="clickedit-img" mode="aspectFit" src="../../images/clickedit.png"></image>
+    </navigator>
+    <!--下次接种-->
+    <view class="appointment-panel bg-wrap_base"  wx:if="{{currentMember.code&&memberList.length>0}}">
+        <view class="inoculate-title flex-center">
+            <view class="inoculate-title_hd"><text class="lz-time-grey-ico"></text>下次接种:</view>
+            <view class="inoculate-title_bd weui-flex__item"><text>{{nextVacDetail.vacDate}}</text><text class="week-txt">{{weekDay}}</text></view>
+            <view class="lz-inform-ico margin-t_xxs"></view>
+        </view>
+        <view class="margin-t_xxs" style="color:#5394ff;font-size:28rpx;">{{nextVacDetail.vacMonthDesc}}</view>
+        <view class="flex-center">
+            <view class="weui-flex__item">
+                <block wx:for="{{nextVacDetail.vacs}}">
+                    <view class="inoculate-item_cell">
+                        <text>{{item.vacName}}</text>
+                        <text class="inoculate-item_tab">{{item.vacType==1?"免费":(item.vacType==2?"自费":"其他")}}</text><text class="inoculate-item_tab">{{item.vacType==1?"必选":(item.vacType==2?"非必选":"其他")}}</text>
+                    </view>
+                </block>
+            </view>
+            <view>
+                <button class="appointment-btn" wx:if="{{nextVacDetail.status==1}}" bindtap="showAppointmentDialog">已预约</button>
+                <button class="appointment-btn" hover-class="appointment-btn-hover" wx:if="{{nextVacDetail.status!=1}}" bindtap="showAppointmentDialog">预约</button>
+            </view>
+        </view>
+    </view>
+    <!--接种疫苗列表-->
+
+    <view class="bg-wrap_base card-box" wx:if="{{currentMember.code&&memberList.length>0}}">
+        <view class="card-title flex-center">
+          <view class="weui-flex__item">接种卡</view>
+          <view>
+              <block wx:if="{{switchChecked}}">
+                  <text class="margin-r_xs switch-true">免费(必须)</text>
+              </block>
+              <block wx:else>
+                  <text class="margin-r_xs switch-false">自费</text>
+              </block>
+              <switch bindchange="switchChange" checked="{{switchChecked}}" class="switch-box" color="#fba559"/>
+          </view>
+        </view>
+      <!--疫苗列表-->
+      <scroll-view class="scroll-view"  scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+        <!--一类免费必须疫苗-->
+        <view wx:if="{{switchChecked}}">
+            <view class="item-wrap" wx:for="{{cardVacList}}">
+                <view class="item-title">
+                  <text class="">{{item.vacMonthDesc}}</text>
+                  <text class="hasdate" wx:if="{{item.status==1}}" data-id="{{item.id}}" bindtap="showAppointDetailDialog">已预约</text>
+                  <!--text class="nodate" wx:if="{{item.status==0}}">未预约</text-->
+                </view>
+                <block wx:for="{{item.details}}" wx:for-index="idx" wx:for-item="itemVacList">
+                    <!--疫苗类型，可手工录入已接种status-->
+                    <view class="flex-center item-cell" data-vrstatus="{{item.vacRecordStatus}}" data-id="{{itemVacList.id}}" bindtap="showRecordedDialog" wx:if="{{itemVacList.status==2}}">
+                        <view class="weui-flex__item">
+                          <text class="item-cell_txt bluline" data-id="{{itemVacList.vacId}}" catchtap="showDetail">{{itemVacList.vacName}}</text>
+                          <text>(第{{itemVacList.doseNum}}剂)</text>
+                        </view>
+                        <view>{{itemVacList.actualVacTime}}<text class="margin-l lz-selected--circle"></text></view>
+                    </view>
+                    <!--疫苗类型，可查看详情未接种status-->
+                    <view class="flex-center item-cell" data-vrstatus="{{item.vacRecordStatus}}" data-id="{{itemVacList.id}}" data-opentype="add" bindtap="showManualEditDialog" wx:if="{{itemVacList.status!=2}}">
+                        <view class="weui-flex__item">
+                          <text class="item-cell_txt bluline" data-id="{{itemVacList.vacId}}" catchtap="showDetail">{{itemVacList.vacName}}</text>
+                          <text>(第{{itemVacList.doseNum}}剂)</text>
+                        </view>
+                        <view><text class="margin-l lz-unselected--circle"></text></view>
+                    </view>
+                </block>
+            </view>
+            <view class="load-text">{{scroll.loadText}}</view>
+        </view>
+        <!--二类自费自愿疫苗-->
+        <view wx:if="{{!switchChecked}}" style="padding-bottom:160rpx;">
+            <!--提示tip-->
+            <view class="hint-wrap">
+                以下疫苗均为自费疫苗，属于自愿接种，具体疫苗信息以当地机构说明为准。
+            </view>
+
+            <view class="item-wrap" wx:for="{{cardVacList}}">
+                <view class="item-title">{{item.vacMonthDesc}}</view>
+                <block wx:for="{{item.details}}" wx:for-index="idx" wx:for-item="itemVacList">
+                    <!--疫苗类型，可手工录入已接种 bindtap="showRecordedDialog"-->
+                    <view class="flex-center item-cell">
+                        <view class="weui-flex__item">
+                          <text wx:if="{{itemVacList.vacId}}" class="item-cell_txt bluline" data-id="{{itemVacList.vacId}}" catchtap="showDetail">{{itemVacList.vacName}}</text>
+                          <text wx:if="{{!itemVacList.vacId}}" class="item-cell_txt" data-id="{{itemVacList.vacId}}">{{itemVacList.vacName}}</text>
+                          <text>(第{{itemVacList.doseNum}}剂)</text>
+                        </view>
+                        <!--view>{{itemVacList.actualVacTime}}<text class="margin-l lz-selected--circle"></text></view-->
+                    </view>
+                    <!--view class="flex-center item-cell" wx:if="{{itemVacList.status!=2}}">
+                        <view class="weui-flex__item">
+                          <text wx:if="{{itemVacList.vacId}}" class="item-cell_txt bluline" data-id="{{itemVacList.vacId}}" catchtap="showDetail">{{itemVacList.vacName}}</text>
+                          <text wx:if="{{!itemVacList.vacId}}" class="item-cell_txt" data-id="{{itemVacList.vacId}}">{{itemVacList.vacName}}</text>
+                          <text>(第{{itemVacList.doseNum}}剂)</text>
+                        </view>
+                    </view-->
+                </block>
+            </view>
+            <view class="load-text">{{scroll.loadText}}</view>
+        </view>
+      </scroll-view>
+      <!--二类自费自愿疫苗新增按钮-->
+      <view class="vacbtn" wx:if="{{!switchChecked}}">
+        <button class="weui-btn weui-btn_info button-hover" bindtap="showManualDialog">新增接种记录</button>
+      </view>
+    </view>
+    <!--弹层-->
+    <!--接种预约-->
+    <view id="appointmentDialog" hidden="{{hideAppointmentDialog}}">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile">接种预约<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeAppointmentDialog"></text></view>
+            <scroll-view scroll-y class="dialog-body">
+              <!--未预约-->
+              <view class="dialog-vactag" wx:if="{{nextVacDetail.status!=1}}">
+                  <checkbox-group class="margin-left_s" bindchange="checkPlanChange">
+                    <block wx:for="{{nextVacDetail.vacs}}">
+                        <view class="inoculate-item_cell">
+                            <text>{{item.vacName}}</text>
+                            <text class="inoculate-item_tab">{{item.vacType==1?"免费":(item.vacType==2?"自费":"其他")}}</text><text class="inoculate-item_tab">{{item.vacType==1?"必选":(item.vacType==2?"非必选":"其他")}}</text>
+                              <checkbox class="lz-checkbox-circle" checked="{{item.check}}" value="{{item.vacId}}"/>
+                        </view>
+                    </block>
+                </checkbox-group>
+                  <view class="error">{{apptVacIdsTip}}</view>
+              </view>
+              <!--已预约初始化-->
+              <view class="dialog-vactag" wx:if="{{nextVacDetail.status==1}}">
+                  <checkbox-group class="margin-left_s" bindchange="checkPlanChange">
+                    <block wx:for="{{nextVacDetail.vacs}}">
+                        <view class="inoculate-item_cell">
+                            <text>{{item.vacName}}</text>
+                            <text class="inoculate-item_tab">{{item.vacType==1?"免费":(item.vacType==2?"自费":"其他")}}</text><text class="inoculate-item_tab">{{item.vacType==1?"必选":(item.vacType==2?"非必选":"其他")}}</text>
+                              <checkbox class="lz-checkbox-circle" checked="{{item.check}}" value="{{item.vacId}}"/>
+                        </view>
+                    </block>
+                </checkbox-group>
+                  <view class="error">{{apptVacIdsTip}}</view>
+              </view>
+              <view class="item-title_prim">接种日期<text class="item-star">*</text></view>
+              <view class="input-wrap"> 
+                  <picker mode="date" value="{{apptDate}}" end="{{endSvenDay}}" start="{{nextVacDetail.planDate}}" bindchange="bindApptDateChange">
+                      <view class="input-view">{{apptDate}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">接种机构<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <input value="{{apptOrg}}" class="input-view" placeholder="请输入接种机构" bindinput="apptOrgPickerTap"/>
+                  <view class="lz-write-grey-ico input-icon_right"></view>
+                  <view class="error">{{apptOrgTip}}</view>
+              </view>
+              
+              <view class="item-title_prim">家长电话<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <input type="number" value="{{apptMobile}}" class="input-view" placeholder="请输入家长手机号码" maxlength="11" bindinput="apptVacPhoneTap"/>
+                  <view class="error">{{apptMobileTip}}</view>
+              </view> 
+              <view class="item-title_prim">备注</view>
+              <view class="input-wrap">
+                  <input class="input-view" value="{{apptDescription}}" placeholder="请输入备注说明"  bindinput="apptDescriptionTap"/>
+              </view>
+              <view class="input-btn_area--manual">
+                  <button class="btn-base" bindtap="appointmentSubmit" wx:if="{{nextVacDetail.status!=1}}">预约</button>
+                  <button class="btn-base" bindtap="appointmentEdit" wx:else>确定</button>
+              </view>
+            </scroll-view>
+        </view>
+    </view>
+    <!--接种预约详情-->
+    <view id="appointDetailDialog" hidden="{{appointDetailDialog}}">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile">预约详情<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeAppointDetailDialog"></text></view>
+
+            <view class="dialog-body">
+              <view class="dialog-vactag">
+                  <block wx:for="{{planDetail.detais}}">
+                      <view class="inoculate-item_cell">
+                          <text>{{item.vacName}}</text>
+                          <text class="inoculate-item_tab">{{item.vacType==1?"免费":(item.vacType==2?"自费":"其他")}}</text><text class="inoculate-item_tab">{{item.vacType==1?"必选":(item.vacType==2?"非必选":"其他")}}</text>
+                          <text wx-if="{{status=='1'}}" class="ico-circle lz-unselected--circle"></text>
+                          <text wx-if="{{status!='1'}}" class="ico-circle lz-selected--circle"></text>
+                      </view>
+                  </block>
+              </view>
+              <view class="appoint-line">
+                <text class="apptag">预约时间</text>
+                <text class="appval">{{planDetail.vacTime}}</text>
+              </view>
+              <view class="appoint-line">
+                <text class="apptag">接种机构</text>
+                <text class="appval">{{planDetail.vacOrg}}</text>
+              </view>
+              <view class="appoint-line">
+                <text class="apptag">家长电话</text>
+                <text class="appval">{{planDetail.mobile}}</text>
+              </view>
+              <view class="appoint-line">
+                <text class="apptag">备注</text>
+                <text class="appval">{{planDetail.description}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+    <!--新增接种记录-->
+    <view id="manualDialog" wx:if="{{showManualDialog}}">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile">完善资料<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeManualDialog"></text></view>
+            <scroll-view scroll-y class="dialog-body">
+              <view class="item-title_prim">接种年龄<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <picker mode="selector" range="{{manualAgeArray}}" mode ="selector"  value="{{manualAgePickerIndex}}" bindchange="manualAgeChange">
+                      <view class="input-view">{{manualAgeArray[manualAgePickerIndex]}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">接种日期<text class="item-star">*</text></view>
+              <view class="input-wrap"> 
+                  <picker mode="date" value="{{manualDate}}" start="{{currentMember.birthday}}" end="{{today}}" bindchange="bindManualDateChange">
+                      <view class="input-view">{{manualDate}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">疫苗种类<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <input class="input-view" placeholder="请输入疫苗种类（名称）" bindinput="manualVacInputTap"/>
+                  <view class="error">{{manualVacTip}}</view>
+              </view>
+              <view class="item-title_prim">疫苗剂次<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <picker mode="selector" range="{{manualDoseArray}}" mode ="selector"  value="{{manualDosePickerIndex}}" bindchange="manualDoseChange">
+                      <view class="input-view">{{manualDoseArray[manualDosePickerIndex]}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">接种部位<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                      <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                      <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">接种机构<text class="item-star">*</text></view>
+              <!--<view class="textarea-wrap margin-b_manual">
+                  <textarea class="textarea-view" placeholder="请输入接种机构" fixed="true" show-confirm-bar="{{false}}" adjust-position="{{false}}"/>
+                  <view class="error">不能为空</view>
+              </view>-->
+              <view class="input-wrap">
+                  <input class="input-view" placeholder="请输入接种机构" value="{{manualOrg}}" bindinput="manualOrgInputTap"/>
+                  <view class="lz-write-grey-ico input-icon_right"></view>
+                  <view class="error">{{manualOrgTip}}</view>
+              </view>
+              <view class="input-btn_area--manual">
+                  <button class="btn-base" bindtap="manualSubmit">保存</button>
+              </view>
+            </scroll-view>
+        </view>
+    </view>
+    <!--一类疫苗完善信息-->
+    <view id="manualEditDialog" wx:if="{{showManualEditDialog}}">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile">完善资料<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeManualEditDialog"></text></view>
+            <view class="dialog-body">
+              <view class="manule-tab_box">
+                  <view class=" flex-center">
+                      <text  class="manule-name_vac">{{currentEditVacDetail.vacName}}</text>
+                      <text class="recorded-item_tab">{{currentEditVacDetail.vacType==1?"免费":(currentEditVacDetail.vacType==2?"自费":"其他")}}</text><text class="recorded-item_tab">{{currentEditVacDetail.vacType==1?"必选":(currentEditVacDetail.vacType==2?"非必选":"其他")}}</text>
+                  </view>
+                  <view class="manual-text_age">接种年龄:{{currentEditVacDetail.vacMonthDesc}}</view>
+              </view>
+              <view class="item-title_prim">接种日期<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <picker mode="date" value="{{manualEditDate}}" bindchange="bindManualEditDateChange">
+                      <view class="input-view">{{manualEditDate}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="item-title_prim">接种机构<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <input class="input-view" placeholder="请输入接种机构" value="{{manualEditOrg}}"  bindinput="manualEditOrgChange"/>
+                  <view class="lz-write-grey-ico input-icon_right"></view>
+                  <view class="error">{{manualEditOrgTip}}</view>
+              </view>
+              <view class="item-title_prim">接种部位<text class="item-star">*</text></view>
+              <view class="input-wrap">
+                  <picker bindchange="manualEditPartPickerChange" value="{{manualEditPartPickerIndex}}" range="{{manualEditPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                      <view class="input-view">{{manualEditPartArray[manualEditPartPickerIndex]}}</view>
+                      <view class="lz-right-ico input-icon_right"></view>
+                  </picker>
+              </view>
+              <view class="input-btn_area--manualEdit">
+                  <button class="btn-base" bindtap="manualEditSubmit">保存</button>
+              </view>
+            </view>
+        </view>
+    </view>
+    <!--查看一类疫苗录入信息 -->
+    <view id="recordedDialog" wx:if="{{showRecordedDialog}}" class="recordedDialog">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile recorded-title">查看信息<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeRecordedDialog"></text></view>
+
+            <scroll-view scroll-y class="dialog-body">
+              <!--儿童信息-->
+              <view class="recorded-panel flex-center">
+                  <image class="avator-img_md" src="{{vacEditDetail.memberImgUrl?vacEditDetail.memberImgUrl:'../../images/user_img.png'}}" mode="aspectFill"></image>
+                  <view class="weui-flex__item recorded-panel_bd">
+                      <view>
+                        <text class="recorded-panel_name">{{vacEditDetail.memberName}}</text>
+                        <text style="margin-left: 20rpx">{{vacEditDetail.memberSex=='1'?'男':'女'}}</text>
+                        </view>
+                      <view class="margin-t_xxs">儿童编码: <text>{{vacEditDetail.memberCode}}</text></view>
+                  </view>
+              </view>
+              <!--疫苗信息-->
+              <view class="recorded-tab_vac flex-center">
+                  <text  class="recorded-name_vac">{{vacEditDetail.vacName}}</text>
+                  <text class="recorded-item_tab">{{vacEditDetail.vacType==1?"免费":(vacEditDetail.vacType==2?"自费":"其他")}}</text>
+                  <text class="recorded-item_tab">{{vacEditDetail.vacType==1?"必选":(vacEditDetail.vacType==2?"非必选":"其他")}}</text>
+              </view>
+              <view class="recorded-item weui-flex">
+                  <view class="recorded-item_hd">接种时间:</view>
+                  <view class="weui-flex__item">{{vacEditDetail.actualVacTime}}</view>
+              </view>
+              <view class="recorded-item weui-flex">
+                  <view class="recorded-item_hd">接种年龄:</view>
+                  <view class="weui-flex__item">{{vacEditDetail.vacMonthName}}</view>
+              </view>
+              <view class="recorded-item weui-flex">
+                  <view class="recorded-item_hd">接种部位:</view>
+                  <view class="weui-flex__item">{{vacEditDetail.vacPartName}}</view>
+              </view>
+              <view class="recorded-item weui-flex">
+                  <view class="recorded-item_hd">接种机构:</view>
+                  <view class="weui-flex__item">{{vacEditDetail.vacOrg}}</view>
+              </view>
+              <view class="recorded-btn_area weui-flex">
+                  <button class="btn-grey weui-flex__item" data-id="{{vacEditDetail.id}}" bindtap="recordedDelete">删除</button>
+                  <button class="btn-base weui-flex__item" data-opentype="edit" bindtap="showManualEditDialog">编辑</button>
+              </view>
+            </scroll-view>
+        </view>
+    </view>
+    <!--查看疫苗详情 -->
+    <view id="detailDialog" wx:if="{{showDetailDialog}}" class="recordedDialog">
+        <view class="weui-mask"></view>
+        <view class="dialog-content_bottom">
+            <view class="dialog-titile recorded-title">{{vacDetail.vacDesc}}<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeDetail"></text></view>
+            <scroll-view scroll-y class="dialog-body">
+              <view class="line-title">
+                  <view class="">疫苗说明</view>
+              </view>
+              <view class="detailline">
+                  <view class="">接种效果</view>
+                  <view class="">{{vacDetail.vacEffect}}</view>
+              </view>
+              <view class="detailline">
+                  <view class="">接种部位</view>
+                  <view class="">{{vacDetail.vacPartsDesc}}</view>
+              </view>
+              <view class="detailline">
+                  <view class="">接种禁忌</view>
+                  <view class="">{{vacDetail.vacTaboo}}</view>
+              </view>
+              <view class="detailline">
+                  <view class="">注意事项</view>
+                  <view class="">{{vacDetail.vacAttention}}</view>
+              </view>
+              <view class="detailline">
+                  <view class="">可能反应</view>
+                  <view class="">{{vacDetail.vacImpact}}</view>
+              </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

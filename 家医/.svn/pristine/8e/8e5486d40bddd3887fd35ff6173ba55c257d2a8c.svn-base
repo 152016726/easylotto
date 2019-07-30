@@ -1,0 +1,64 @@
+<view style='background: #fff;height:80rpx;padding:20rpx 0rpx; position: fixed;z-index:999;' bindtap='shuasou'>
+  <view class="wo_in">
+   <view class="search-ico" style="margin-top:20rpx;"></view>
+    <!-- <image src="../../../images/xmagnifier.png"></image> -->
+    <view>点击搜索居民</view>
+  </view>
+</view>
+
+<view class="wo_xla">
+  <view bindtap='las'>{{jihuas}} <text class="margin-left_xxs down-ico"></text></view>
+  <view bindtap='las1'>{{renqun}}  <text class="margin-left_xxs down-ico"></text></view>
+  <view bindtap='las2'>{{timsw}}  <text class="margin-left_xxs down-ico"></text></view>
+</view>
+<view class="wo_xls" style="height:{{gaodu-100}}px;display:{{xianshi}}" bindtap='shuaxins'>
+  <view bindtap="shuaxin" wx:for="{{lis}}" data-ins="{{item.num}}">{{item.jihua}}</view>
+</view>
+
+<view class="wo_xls" style="height:{{gaodu-100}}px;display:{{xianshi1}}" bindtap='shuaxins'>
+  <view bindtap="shuaxin1" wx:for="{{lisd}}" data-ins="{{item.num}}" data-inss="{{item.id}}">{{item.dicDsc}}</view>
+</view>
+
+<view class="wo_xls" style="height:{{gaodu-100}}px;display:{{xianshi2}}" bindtap='shuaxins'>
+  <view bindtap="shuaxin2" wx:for="{{times}}" data-ins="{{item.num}}">{{item.jihua}}</view>
+</view>
+
+<view class="wo_mas">
+
+
+  <view class="wo_po" wx:for="{{mas}}" wx:if="{{item.memberName}}">
+    <view class="wo_poo" bindtap="tiaozhuans" data-id="{{item.id}}">{{item.userName}}</view>
+    <view class="wo_pot" bindtap="tiaozhuans" data-id="{{item.id}}">{{item.name}}</view>
+    <view bindtap="tiaozhuans" class="wo_pos" data-id="{{item.id}}">
+      <view> 计划：{{item.shijian}}</view>
+      <view> 计划：{{item.nextTime}}</view>
+    </view>
+    <view class="wo_posi" bindtap='xiugai' wx:if="{{item.status==1||item.status==2||item.status==3}}">{{item.jihua}}</view>
+    <view class="wo_posis"  wx:if="{{item.status==4}}">{{item.jihua}}</view>
+    <view class="wo_posis"  wx:if="{{item.status==8}}">{{item.jihua}}</view>
+    <view class="wo_posis"  wx:if="{{item.status==9}}">{{item.jihua}}</view>
+    <view class="wo_posis"  wx:if="{{item.status==5}}">{{item.jihua}}</view>
+  </view>
+</view>
+
+
+<view class="wo_xlas" style="height:{{gaodu}}px;display:{{xianshi3}}">
+  <view class="wo_gbs">
+    <view class="wo_gne">关闭任务</view>
+    <view class="wo_kax">
+      <textarea name="txt" clos=",50" rows="5" warp="virtual" placeholder='请输入关闭理由' value="{{ceshi}}" bindblur="bindTextAreaBlur"></textarea>
+    </view>
+    <view class="wo_qfs">
+      <view bindtap='quexiao'>取消</view>
+      <view bindtap="queding">确定</view>
+    </view>
+  </view>
+
+</view>
+
+  
+	<view class="list-null-box" style="display:{{guncu}}">
+		<view class="list-null-ico"></view>
+  
+		<view style=" text-align: center">暂无数据</view>
+	</view>

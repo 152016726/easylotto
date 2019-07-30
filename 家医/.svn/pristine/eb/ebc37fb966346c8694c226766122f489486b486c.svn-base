@@ -1,0 +1,18 @@
+<view class="fu_log">
+  <image src="{{mar.imageSmallPic}}"> </image>
+  <view class="fu_te">
+    <view>{{mar.name}}</view>
+    <view>{{mar.titleList[0].titleName}} {{mar.titleList[1].titleName}} {{mar.titleList[2].titleName}} {{mar.titleList[3].titleName}}</view>
+    <view>已签约</view>
+  </view>
+</view>
+
+<view class="fu_ma">
+  <view>社会信息</view>
+  <view>{{mar.orgName}}</view>
+</view>
+
+<view class="fu_pa">
+  <view>团队擅长</view>
+  <view>{{mar.descRemark}}</view>
+</view>

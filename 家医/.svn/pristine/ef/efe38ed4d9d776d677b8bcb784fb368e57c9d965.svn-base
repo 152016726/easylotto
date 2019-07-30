@@ -1,0 +1,136 @@
+<view class="yt-wrap">
+	<view class="page-content_unfixed">
+		<scroll-view class="" scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!scroll.ifNull}}"> 
+			<radio-group class="radio-group scroll-view" bindchange="radioChange">
+				<label class="" wx:for="{{scrollboxList}}">
+					<radio value="{{item.id}}" checked="{{item.checked}}"/>
+					<view class="scroll-box"> 
+						<view class="flex-between">
+							<view class="box-title" data-id="{{item.id}}" catchtap="linkTeamDetailTap">{{item.name}}</view>
+							<view class="lz-choosen-ico"></view>
+						</view>
+						<view class="weui-flex" data-id="{{item.id}}" catchtap="linkTeamDetailTap">
+							<view class="scroll-block">{{item.teamNum}}名成员</view>
+							<view wx:if="{{item.teamLeader}}" class="scroll-block margin-left_xxs">{{item.teamLeader[0].docName}}</view>
+						</view>
+						<view class="flex-between" data-id="{{item.id}}" catchtap="linkTeamDetailTap">
+							<view class="flex-center">
+								<view class="lz-write-grey-ico"></view>
+								<view class="lz-write-white-ico"></view>
+								签约<text class="margin-l_xxs">{{item.orderNum}}</text>
+							</view>
+							<view class="flex-center">
+								<view class="lz-calendar-grey-ico"></view>
+								<view class="lz-calendar-white-ico"></view>
+								服务<text class="margin-l_xxs">{{item.serviceNum}}</text>
+							</view>
+						</view>
+					</view> 
+				</label>
+			</radio-group>
+		</scroll-view> 
+		<!-- 中间信息栏 -->
+		<view class="wrap-edit_middle font-grey_s">
+			<view class="flex-between wrap-line1">
+				<view class="title-block">签约人</view>
+			</view>
+			<view class="flex-center wrap-line2">
+				<text class="font-black_xl">{{userInfo.userName}}</text>
+				<view class="lz-phone-grey-ico margin-left_s"></view>
+				<text class="margin-left_xxs">{{phoneNumber}}</text>
+			</view>
+			<view class="flex-center wrap-line3">
+				<view class="lz-idCard-ico"></view>
+				<text class="margin-left_xxs">{{idCard}}</text>
+			</view>
+		</view>
+		<!-- 地址栏 -->
+		<view bindsubmit="bindFormSubmit" bindtap="selectAddressTap">
+			<view class="wrap-edit_bottom">	  
+				<view class="flex-between wrap-title">
+					<view>地址信息</view>
+					<view class="flex-center">
+						<view class="flex-center" wx:if="{{showEdit}}">
+							<view class="lz-edit-ico"></view>
+							<view class="font-grey_s margin-left_xxs">编辑</view>
+						</view>
+						<!--view class="flex-center" wx:if="{{!showEdit}}">
+							<button class="flex-center" form-type="submit" >
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">保存</view>
+							</button>
+							<button class="flex-center" bindtap="bindQuitEdit">
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">取消</view>
+							</button>
+						</view-->
+					</view>
+				</view>
+				<view class="wrap-content">
+					
+					<view class="font-grey_s textarea">{{address.provinceName}}{{address.cityName}}{{address.districtName}}{{address.address}}</view>
+				</view>
+			</view>
+		</view>
+    <!--service-->
+    <view class="service-block">
+      <view class="service-line clearfox">
+        <view class="left">服务年限</view>
+        <view class="right">{{teamDetail.serviceTime}}年</view>
+      </view>
+      <view class="service-line">
+        <view class="service-header">服务内容</view>
+        <view>
+          <view wx:for="{{teamDetail.baseServiceList}}">{{item.sort}}）{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+	</view>
+	<!-- 底边栏 -->
+	<view class="page-bottom_fixed">
+		<view class="flex-center">
+			<checkbox-group bindchange="checkboxChange" class="agree-checkbox">
+				<label class="checkbox">
+					<checkbox class="lz-checkbox-circle" checked value="{{readChecked}}"></checkbox>  
+					<text class="margin-left_xs">已阅读并同意 </text>
+          <text class="f-c_warn" catchtap="linkAgreeTap">签约协议</text>
+				</label>
+			</checkbox-group>
+		</view>
+		<button class="weui-btn weui-btn_info" url="" disabled="{{signbtnDisabled}}" bindtap="confirmTap">签约</button>
+	</view>
+</view>
+
+<!--签约弹窗-->
+<view class="sign-wrap" catchtouchmove="preventTouchMove" wx:if="{{ifPlay}}">
+    <view class="weui-mask"></view>
+    <view class="dialog-content">
+        <view class="dialog-header">
+            <view class="dialog-header_title">
+                签约中
+            </view>
+            <view class="sign-success-ico dialog-header_bg"></view>
+        </view>
+        <view class="dialog-body">
+            <view class="dialog-body_title">
+                您确定签约此医生团队，为您的家庭提供健康服务？
+            </view>
+            <view class="weui-flex dialog-main">
+                <view>
+                    <image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../images/img_famMale.png':'../../../images/img_teamdefault.png'}}"  class="avator-img_dialog" mode="aspectFill"></image>
+                </view>
+                <view class="weui-flex__item min-width_zero">
+                    <view>{{detail.name}}</view>
+                    <view class="margin-t_sm fc-sm_prim weui-media-box__desc"><text wx:for="{{detail.titleList}}">{{item.titleCount}}名{{item.titleName}}<text wx:if="{{detail.titleList.length > (index+1)}}">、</text></text></view>
+                </view>
+            </view>
+            <view class="weui-flex dialog-btn_area">
+                <button class="weui-btn weui-btn_base weui-btn_md" bindtap="cancelDialogTap">再想想</button>
+                <button class="weui-btn weui-btn_normal weui-btn_md" bindtap="confirmDialogTap">确定</button>
+            </view>
+        </view>
+        <view class="dialog-box_close">
+            <i class="delete-big-ico dialog-delete" bindtap="cancelDialogTap"></i>
+        </view>
+    </view>
+</view>

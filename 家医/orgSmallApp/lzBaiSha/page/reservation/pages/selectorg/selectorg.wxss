@@ -1,0 +1,122 @@
+/* pages/register/selectorg/selectorg.wxss */
+page {
+    background-color: #fff;
+}
+.search {
+    padding:23rpx 20rpx;
+    /*padding-right:60rpx;*/
+    position:relative;
+}
+.search .input-wap {
+    position:relative;
+}
+.search .input-wap .search-ico {
+    position:absolute;
+    top:22rpx;
+    left:18rpx;
+}
+.search .input-wap .delete-small-line-ico {
+    position:absolute;
+    top:17rpx;
+    right:20rpx;
+     z-index:100; 
+}
+.search .input-wap input {
+    background-color: #fff;
+    border-radius:200rpx;
+    font-size: 26rpx;
+    color:#000;
+    padding-left: 55rpx;
+    padding-right: 70rpx;
+    height:68rpx;
+    box-shadow:4rpx 2rpx 20rpx 0 #d6dfef;
+}
+.placeholder{
+    font-size: 26rpx;
+    color:#7a7a7a;
+}
+.search .location-wap {
+    position:absolute;
+    color: #525252;
+    font-size: 26rpx;
+    top: 25rpx;
+    right: 10rpx;
+}
+.search .cancel-wap {
+    position:absolute;
+    color: #000;
+    font-size: 26rpx;
+    top: 34rpx;
+    right: 30rpx;
+    padding-left:35rpx;
+}
+.search .location-wap .location-ico {
+    margin-right: 5rpx;
+    position:absolute;
+    top:0rpx;
+    left:3rpx;
+}
+.search .location-wap .city-wap {
+    display:inline-block;
+    width:100rpx;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/*内容*/
+.list-cont{
+    border-top: 1rpx solid #b3b3b3;
+    font-size:28rpx;
+    color:#7a7a7a;
+}
+.distance-cell{
+    text-align: center;
+    height:80rpx;
+    line-height: 80rpx;
+    border-bottom: 3rpx solid #f3f3f3;
+}
+.org-img{
+    width:160rpx;
+    height:136rpx;
+    border-radius:10rpx;
+    margin-right: 30rpx;
+    background-color: #f3f3f3;
+}
+.org-cell{
+    position:relative;
+    padding: 25rpx 25rpx 25rpx 35rpx;
+}
+/*.org-cell:first-child{padding-top:27rpx;}*/
+.org-cell:after{
+    content:" ";
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:1px;
+    border-bottom:1rpx dashed #d9d9d9;
+    color:#e5e5e5;
+    left:35rpx;
+}
+.org-cell_bd{
+    width:460rpx;
+}
+.hospital-name{
+    font-size:38rpx;
+    color:#000000;
+    margin-top:-5rpx;
+}
+.f-c_warn{ color:#ff8801!important;}
+.label-cell_prim{
+    display: inline-block;
+    height: 26rpx;
+    min-width: 80rpx;
+    padding:5rpx 20rpx;
+    line-height: 26rpx;
+    font-size:26rpx;
+    color:#5394ff;
+    border:1px solid #70b9fb;
+    border-radius:28rpx;
+}
+.org-cell .label-cell_prim+.label-cell_prim{margin-left:20rpx;}
+.margin-b_sub{margin-bottom: 6rpx;}

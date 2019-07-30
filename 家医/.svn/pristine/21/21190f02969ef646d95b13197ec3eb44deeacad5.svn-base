@@ -1,0 +1,24 @@
+<scroll-view  class="rm-wrap page-wrap" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+    <navigator class="panel-box" url="../detail/detail?examCode={{item.recordId}}&hospHisCode={{item.hospCode}}&id={{recordId}}&recordTime={{item.recordTime}}" wx:for="{{examinationList}}">
+        <view><text class="name">{{userName}}</text> <text class="item-tab">{{item.actName}}</text></view>
+        <view>{{item.recordTime}}</view>
+        <view class="flex-center line-cell">
+            <text class="lz-location-grey-ico"></text>
+            <text class="weui-flex__item">{{item.hospName}}</text>
+            <!--<text class="report-state">已出</text>-->
+        </view>
+        <!--状态区域没有数据-->
+        <!--<view class="patch-right_org"></view>
+        <view class="patch-icon_face lz-smile-ico"></view>-->
+        <!--pink颜色-->
+        <!--<view class="patch-right_pink"></view>
+        <view class="patch-icon_face lz-unSmile-ico"></view>-->
+    </navigator>
+    <view class="load-text">{{scroll.loadText}}</view>
+</scroll-view>
+<view class="rm-wrap" wx:if="{{scroll.ifNull}}">
+    <view class="list-null-box">
+        <view class="list-null-ico"></view>
+        <view class="fc-md_prim margin-tb_base">亲，暂时没有数据哦！</view>
+    </view>
+</view>

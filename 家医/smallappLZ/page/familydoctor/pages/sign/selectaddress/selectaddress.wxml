@@ -1,0 +1,21 @@
+<view class="manage-block block clearfox" bindtap="linkAddresslistTap">
+  <view class="left">
+    <view class="setting-ico"></view>
+    <text>管理地址</text>
+  </view>
+  <view class="right right-ico"></view>
+</view>
+<view class="block address-block">
+  <view class="line" wx:for="{{addressList}}" data-id="{{item.id}}" bindtap="selectedTap">
+    <view class="linkman">
+      <text>{{item.name}}</text>
+      <text>{{item.mobile}}</text>
+    </view>
+    <view class="address">
+      <view>{{item.provinceName}}{{item.cityName?item.cityName:''}}{{item.districtName?item.districtName:''}}{{item.address}}<text wx:if="{{item.isDefault == 1}}">【默认】</text></view>
+    </view>
+  </view>
+</view>
+<view class="bottom-block">
+  <view class="add-btn" bindtap="addAddressTap">添加地址</view>
+</view>

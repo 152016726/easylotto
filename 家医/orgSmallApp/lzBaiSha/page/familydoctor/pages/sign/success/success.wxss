@@ -1,0 +1,19 @@
+.wrap {
+  position: relative;
+}
+image {
+  display: block
+}
+.print {
+  width: 232rpx;
+  position: absolute;
+  bottom:128rpx;
+  right:180rpx;
+  opacity: 0
+}
+.seal {
+  width: 366rpx;
+  position: absolute;
+  bottom:335rpx;
+  right:-350rpx;
+}

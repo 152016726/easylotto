@@ -1,0 +1,71 @@
+/* page/appointment/page/appointmentNotice/appointmentNotice.wxss */
+/* pages/register/known/known.wxss */
+page{
+    height:100%;
+    padding-bottom:320rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.rm-wrap.known-main{
+    height:100%;
+    border-top:1rpx solid #e5e5e5;
+}
+.rm-wrap.known-main .contentpart {
+    overflow:auto;
+    height:100%
+}
+.rm-wrap.known-main .contentpart::-webkit-scrollbar{
+    display: none;
+}
+.known-title{
+    padding:25rpx 47rpx 15rpx 47rpx;
+    font-size:30rpx;
+    color:#000000;
+}
+.known-cont{
+    padding:0rpx 47rpx 5rpx 47rpx;
+    font-size:28rpx;
+    color:#000000;
+}
+.known-cont:last-child{
+    padding-bottom:65rpx;
+}
+.known-read{
+    position:relative;
+    height:120rpx;
+    margin-left:40rpx;
+    font-size:28rpx;
+    color:#7a7a7a;
+    border-top:1rpx dashed #e5e5e5;
+}
+.known-read .ws-checkbox{margin-right: 15rpx;}
+.bottom-area{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+.button_area{
+    background-color: #f3f3f3;
+    padding:60rpx 35rpx;
+}
+.known-btn-hover{
+    opacity: 0.95;
+}
+.known-btn{
+    width:680rpx;
+    height:80rpx;
+    line-height: 80rpx;
+    font-size:30rpx;
+    color:#ffffff;
+    background:#5394ff;
+    border-radius:100px;
+    text-align: center;
+}
+.known-btn[disabled]:not([type]) {
+    opacity: 0.5;
+    background:#5394ff;
+    color:#fff;
+}
+

@@ -1,0 +1,49 @@
+@import "../../common/template/head/head.wxss";
+.vertical-middle{vertical-align: middle;}
+/*swiper*/
+swiper {
+    height: 320rpx;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+swiper image {
+    height: 100%;
+    width: 100%;
+    /*background:#d4e9ff;*/
+}
+.section-card{
+    position:absolute;
+    left:25rpx;
+    top:250rpx;
+    width:700rpx;
+    height:240rpx;
+    font-size:30rpx;
+    color:#000;
+    box-shadow:0 0rpx 50rpx rgba(0,0,0,0.16);
+    background:#fff;
+    border-radius: 28rpx;
+    z-index:100;
+    padding: 0 20rpx;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+.card-cell_text{margin-top: 5rpx;}
+.small-box{
+    padding:205rpx 10rpx 0;
+    justify-content: space-between;
+    background-color: #fff;
+}
+.flex-box{
+    padding: 15rpx 25rpx;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size:28rpx;
+    color:#000;
+    background: #fff;
+}
+.box-cell{
+    padding:17rpx 0;
+    width:175rpx;
+}

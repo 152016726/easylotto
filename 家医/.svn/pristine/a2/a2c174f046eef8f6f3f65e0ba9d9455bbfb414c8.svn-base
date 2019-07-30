@@ -1,0 +1,253 @@
+/* .sm-wap {
+  position: relative;
+  padding-bottom:230rpx;
+  box-sizing:border-box;
+}
+.mineinfo-pic{
+	background-color: #fff;
+    margin-bottom: 35rpx;
+		height: 140rpx;
+}
+.mineinfo-left {
+    float: left;
+    width: 94rpx;
+    height: 94rpx;
+	margin: 24rpx 25rpx 22rpx 23rpx;
+}
+.img{
+    width: 94rpx;
+    height: 94rpx;
+    border-radius: 50%;
+		background-color: #999;
+}
+.mineinfo-right{
+    float: left;
+}
+.mineinfo-name {
+    font-size: 36rpx;
+    color: #525252;
+		margin-right: 15rpx;
+}
+.mineinfo-sex,.mineinfo-year,.mineinfo-me,
+.faminfo-sex,.faminfo-year{
+    font-size: 28rpx;
+    color: #999;
+}
+.mineinfo-sex,.faminfo-sex{
+	margin-right: 30rpx;
+}
+ .mineinfo-sel{
+	margin-top: 15rpx;
+}
+
+/* 其他成员 */
+/* .faminfo-txt{
+	font-size: 28rpx;
+	color: #525252;
+	margin: 0 0 16rpx 24rpx;
+}
+.faminfo-pic{
+	background-color: #fff;
+    margin-bottom: 15rpx;
+}
+.faminfo-left {
+    float: left;
+    width: 94rpx;
+    height: 94rpx;
+	margin: 29rpx 25rpx 28rpx 23rpx;
+}
+.faminfo-right{
+    float: left;
+}
+.faminfo-name {
+    font-size: 36rpx;
+    color: #525252;
+		margin-right: 15rpx;
+}
+.faminfo-me {
+    font-size: 24rpx;
+    color: #999;
+}
+ .faminfo-sel{
+	margin-top: 20rpx;
+}
+.msg{
+	float: right;
+	font-size: 28rpx;
+	color: #f67d25;
+	margin-right: 19rpx;
+}
+.bottom140{
+	position:absolute;
+  bottom:100rpx;
+  width:100%;
+}
+.address-set{
+	margin-left: 30rpx;
+	padding: 10rpx 11rpx 11rpx 0; 
+	border-top: 1rpx solid #e5e5e5;
+	height: 70rpx;
+	position: relative;
+}
+.address-checkbox{
+	display: inline-block;
+	position: absolute;
+	top: 25rpx;
+}
+.address-setdef{
+	display: inline-block; 
+	margin-left: 60rpx;
+	font-size: 24rpx;
+	color: #525252;
+	margin-top: 16rpx;
+}
+.address-btn{
+	float: right; 
+}
+.address-set button{
+	margin-right: 36rpx;
+} */ 
+
+
+/* pages/index/index.wxss */
+.manageList{
+   height: 190rpx;
+   background: #fff;
+   margin:20rpx 20rpx 20rpx 20rpx;
+   border-radius:20rpx;
+   box-shadow: 2px 1px 8px #dddbdb;
+   position: relative
+}
+.confirm{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: -60rpx;
+  z-index: 1;
+  background: #fff;
+  border-radius: 2rpx;
+  overflow: hidden;
+}
+.confirm view{
+   height: 60rpx;
+   line-height:60rpx;
+   text-align: center;
+   font-size: 24rpx;
+  
+}
+.confirm .delete{
+  color: #dd1e1e;
+   border-bottom: 1px solid #ccc;
+}
+.confirm .cancel{
+   color: #000
+}
+.manageList .checked{
+ width:50rpx;
+ height:50rpx;  
+ position: absolute;
+ top: 95rpx;
+ margin-top: -25rpx;
+ left: 50rpx
+}
+
+.manageList .list-right{
+   float: right;
+   margin:2rpx 120rpx 0rpx 0rpx;
+}
+.manageList .list-right .card-img{
+ width:30rpx;
+ height:22rpx;
+ margin-right: 15rpx;
+}
+.manageList .list-right .card{
+ font-size: 26rpx;
+ color: #7A7A7A;
+ margin-top: 10rpx;
+ }
+ .manageList .list-right .phone-img{
+ width:30rpx;
+ height:22rpx;
+ margin-right: 15rpx;
+ }
+ .manageList .list-right .phone{
+ font-size: 26rpx;
+ color: #7A7A7A;
+ margin-top: 10rpx;
+ }
+.manageList .list-right .essential-i .name{
+ font-size: 34rpx;
+ color: #000;
+ margin-right: 40rpx;
+ }
+ .manageList .list-right .essential-i .sex{
+ font-size: 24rpx;
+ color: #7A7A7A;
+ margin-right: 20rpx;
+ }
+  .manageList .list-right .essential-i .age{
+ font-size: 24rpx;
+ color: #7A7A7A;
+ margin-right: 20rpx;
+ }
+
+
+/* .patient{
+  border: 2rpx black solid;
+  text-align: center;
+  display: block
+  } */
+page{
+  background-color: #F4F4F4;
+}
+.radius{
+  background:#F4F4F4;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius:50%;
+  margin:25rpx 0rpx 0rpx 120rpx;
+  float: left
+}
+/* view是属于块级标签   text 行内  */
+
+.manageremind{
+ margin-left: 20rpx;  
+}
+.manageremind .remind-img{
+ width:30rpx;
+ height:30rpx;
+ margin-right: 15rpx;
+ margin-left: 20rpx;
+ position: relative;
+ top: 5rpx
+ }
+.manageremind .reminduser{
+ font-size:26rpx;
+ color: #7A7A7A;
+ }
+
+.managebutton{
+  width: 90%;
+  height: 90rpx;
+  background: #5394FF;
+  border-radius:80rpx;
+  position: fixed;
+  bottom: 90rpx;
+  left: 0;
+  right: 0;
+}
+.managebutton .sure{
+  font-size: 34rpx;
+  color: #fff;
+}
+ .shadow{
+     position: fixed;
+     height: 100%;
+     width: 100%;
+     z-index: 0;
+     top:0;
+     background:rgba(0,0,0,0.5);
+   }

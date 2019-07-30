@@ -1,0 +1,20 @@
+page{background-color: #F6F8FC;}
+.bg-color_primary{background-color: #09f;}
+.bg-color_default{background-color: #fff;}
+.font-opacity{opacity: 0.5;}
+.textarea-view{
+	width: 700rpx;
+	height: 130rpx;
+}
+.btn-area_s{padding:40rpx 60rpx;}
+button:after{border:0;}
+.weui-btn_primary{
+	color:#fff;
+	font-size: 30rpx;
+	background-color: #09f;
+	border-radius: 40rpx;
+}
+.weui-btn_primary:visited{color:rgba(255, 255, 255,0.4);}
+.weui-btn_primary:active{color:rgba(255, 255, 255,0.4); }
+
+

@@ -1,0 +1,8 @@
+<navigator class="li_log" url="/page/info/pages/service/detail/detail?mas={{item.id}}" wx:for="{{aa}}" wx:if="{{item.nameAs}}">
+  <view class="li_lsa">
+    <view>计划时间：{{item.execTime}}</view>
+    <view>已计划</view>
+  </view>
+  <view class="li_na">{{item.memberName}}</view>
+  <view class="li_na">{{item.name}}</view>
+</navigator>

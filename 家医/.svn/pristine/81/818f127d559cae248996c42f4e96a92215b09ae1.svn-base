@@ -1,0 +1,130 @@
+page{
+    background: #f3f3f3;
+}
+.icon-col_base{
+    margin-right: 10rpx;
+    margin-bottom: -3rpx;
+}
+.item-banner_default{
+    height: 142rpx;
+    padding: 0 30rpx;
+    font-size: 33rpx;
+    color:#fff;
+    align-items: center;
+}
+.state-icon_sign{
+    vertical-align: middle;
+    margin-right: 20rpx;
+    margin-bottom: 6rpx;
+}
+.addr-panel_default{
+    min-width: 0;
+    padding: 25rpx 30rpx 30rpx;
+    font-size: 25rpx;
+    color: #999;
+}
+.addr-hd_lf{
+    font-size:33rpx;
+    color: #3a3a3a;
+    padding: 0 30rpx;
+}
+.ramp-line_base{
+    width:100%;
+    height:2rpx;
+}
+.bg-line_base{
+     height:2rpx;
+     background: #1cbbc1;
+}
+.bg-line_sub{
+    height:2rpx;
+    width: 115rpx;
+    background: #1c8cba;
+}
+.bg-line_sub:first-child{
+    margin-left: 100rpx;
+}
+.bg-line_sub+.bg-line_sub{
+    margin-left:65rpx;
+}
+.icon-col_pen{
+    margin-right: 10rpx;
+    margin-bottom: -5rpx;
+}
+.member-wrap_info{padding:20rpx 20rpx 25rpx 30rpx;}
+/*订单编号*/
+.order-item_detail{padding:25rpx 68rpx 25rpx 25rpx;}
+.order-width_min{min-width: 140rpx; }
+.coede-box{
+    position:absolute;
+    right: 25rpx;
+    top:28rpx;
+    bottom:25rpx;
+}
+.line-clamp_three{-webkit-line-clamp:3;}
+/*服务内容*/
+.ser-item_padder{ padding: 15rpx 25rpx;}
+.sign-cont_detail{padding-bottom:145rpx;}
+.text-jus{text-align:justify;}
+/*底部固定按钮*/
+.fixed-area_bottom{
+    position: fixed;
+    width:710rpx;
+    height: 120rpx;
+    padding: 0 20rpx;
+    left:0;
+    bottom:0;
+    background: #fff;
+    z-index:1000;
+    justify-content: flex-end;
+    align-items: center;
+}
+.fixed-area_bottom.weui-border_top{
+    position: fixed;
+}
+.weui-btn_sm+.weui-btn_sm{
+    margin-left: 30rpx;
+}
+.weui-cell:before{left: 25rpx;}
+/*二维码弹窗*/
+.dialog-content_code{
+    width: 600rpx;
+    padding-bottom: 34rpx;
+    text-align: center;
+    background: #fff;
+    border-radius: 11rpx;
+}
+.dialog-title_code{
+    padding: 34rpx 0 10rpx;
+    font-size: 33rpx;
+    color:#1d1d1d;
+}
+.dialog-main_code{
+    width:440rpx;
+    height:440rpx;
+    margin: 36rpx auto 14rpx;
+    background: #bababa;
+}
+/*取消签约弹窗start--后时提common否*/
+.dialog-content_base{
+    width: 600rpx;
+    height: 280rpx;
+    background:#fff;
+    border-radius: 11rpx;
+}
+.dialog-header_title--base{
+    font-size: 36rpx;
+    color: #3f3f3f;
+    text-align: center;
+    padding: 47rpx 0 28rpx;
+}
+.dialog-btn_area--base{
+    padding:40rpx 45rpx;
+    justify-content: space-between;
+}
+/*取消签约弹窗end*/
+
+
+
+
+

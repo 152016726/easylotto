@@ -1,0 +1,162 @@
+<!--page/quicksign/quicksign/quicksign.wxml-->
+<view class="yt-wrap">
+	<view class="page-content_unfixed">
+		<view class="flex-start topBox">
+			<view>
+				<image class="img-square_lg" mode="aspectFill" src="../../../image/homepr.png"></image>
+			</view>
+			<view class="flex-item margin-left_s font-grey_xs">
+				<view>
+					<text class="font-black_xl">张三</text>
+					<text class="margin-left_s textBox_org">主任医师</text>
+				</view>
+				<view class="flex-start margin-top_s">
+					擅长:<text class="text-ellipsis">擅长内容擅长内容大家发链接大家发链大家发链大家发链</text>
+				</view>
+				<view class="margin-top_xs text-ellipsis text-ellipsis_lg">走自己的路子走自己路子走路子走路子走的</view>
+			</view>
+			<view class="margin-top_xs lz-unsigned"></view>
+		</view>
+		<view class="flex-item middleBox">
+			<view class="flex-between">
+				<view class="font-default_xl">雷州卫生院</view>
+				<view class="font-default_s">全科</view>
+			</view>
+			<view class="font-default_s">
+				第二团队
+			</view>
+			<view class="flex-between">
+				<view class="flex-center">
+					<view class="lz-people-ico"></view>
+					<text class="margin-left_xxs font-yellow_xs">900</text>
+					签约人数
+				</view>
+				<view class="flex-between">
+					<view class="textBox_yellow">呼吸道</view>
+					<view class="textBox_yellow">发热</view>
+				</view>
+			</view>
+		</view>
+		<!-- 就诊人信息 -->
+		<view class="infoform">
+			<view class="infoform-title">仅支持本人签约</view>
+			<view class="form-line">
+				<view class="form-label">姓名</view>
+				<view class="form-value">
+					<input class="fontcolor" type="text" placeholder="请输入姓名" placeholder-class="fontcolor" maxlength="8" value="{{userInfo.userName}}" bindinput="nameInputTap"></input>
+					<view class="error">{{nameTip}}</view>
+				</view>
+	        </view>
+	        <view class="form-line">
+	        	<view class="form-label">身份证</view>
+	        	<view class="form-value">
+	        		<input class="fontcolor" type="idcard" placeholder="请输入身份证号码" placeholder-class="fontcolor" value="{{userInfo.idCard}}" bindblur="idCardCheckTap" disabled="{{userInfo.id}}"></input>
+	        		<view class="error">{{idCardTip}}</view>
+	        	</view>
+	        </view>
+	        <view class="form-line">
+	            <view class="form-label">手机</view>
+	            <view class="form-value">
+	                <input class="fontcolor" type="number" placeholder="请输入手机号码"  placeholder-class="fontcolor" value="{{userInfo.userMobile}}" bindblur="phoneInputTap" disabled="{{userInfo.id}}"></input>
+	                <view class="error">{{phoneTip}}</view>
+	            </view>
+	        </view>
+			<view class="form-line" wx-if="{{!userInfo.id}}">
+	            <view class="form-label">验证码</view>
+	            <view class="form-value">
+	                <input class="fontcolor" type="text" placeholder="请输入验证码"  placeholder-class="fontcolor" bindinput="codeInputTap"></input>
+	                <view class="error">{{codeTip}}</view>
+	            </view>
+	            <button class="btn-seccode" bindtap="sendCodeTap" disabled="{{sendText!=='发送验证码'}}">{{sendText}}</button> 
+	        </view>
+	        <view class="form-line">
+	        	<view class="form-label">所在地区</view>
+	        	<view class="form-value">
+	        		<view class="fontcolor section">
+	        			<picker mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindcolumnRegionchange" value="{{addressIndex}}" range="{{addressArray}}">
+	        				<view class="picker">
+	        					{{province.name}} {{city.name}} {{area.name}}
+	        				</view>
+	        			</picker>
+	        		</view>
+	        		<view class="error" wx-if="{{!ifSelectAddress}}">请选择地址</view>
+	        	</view>
+	        	<view class="right-ico"></view>
+	        </view>
+	        <view class="form-line">
+	        	<view class="form-label">详细地址</view>
+	        	<view class="form-value">
+	        		<input class="fontcolor" type="text" placeholder="请输入详细地址"  placeholder-class="fontcolor" value="{{userInfo.address}}" bindinput="addressTap"></input>
+	        		<view class="error">{{addressTip}}</view>
+	        	</view>
+	        </view>
+    	</view>
+		<!-- 服务包 -->
+		<view class="bottom-title">选择服务包，完成签约</view>
+		<radio-group class="radio-group" bindchange="radioChange">
+			<label class="">
+				<view class="flex-between flex-item bottomBox rainbow1">
+					<view class="flex-between">
+						<radio class="ws-radio" value="" checked="true"/>
+						<view class="margin-left_xs">
+							<view class="font-black_xl">基本服务包</view>
+							<view class="font-grey_s">原价：299元</view>
+						</view>
+					</view>
+					<view class="font-default_xl">免费</view>
+				</view>
+			</label>
+			<label class="">
+				<view class="flex-between flex-item bottomBox rainbow2">
+					<view class="flex-between">
+						<radio class="ws-radio" value="" checked=""/>
+						<view class="margin-left_xs">
+							<view class="font-black_xl">健康管理包A</view>
+							<view class="font-grey_s">原价：299元</view>
+						</view>
+					</view>
+					<view class="font-default_xl">199元</view>
+				</view>
+			</label>
+			<label class="">
+				<view class="flex-between flex-item bottomBox rainbow3">
+					<view class="flex-between">
+						<radio class="ws-radio" value="" checked=""/>
+						<view class="margin-left_xs">
+							<view class="font-black_xl">健康管理包B</view>
+							<view class="font-grey_s">原价：599元</view>
+						</view>
+					</view>
+					<view class="font-default_xl">399元</view>
+				</view>
+			</label>
+			<label class="">
+				<view class="flex-between flex-item bottomBox rainbow4">
+					<view class="flex-between">
+						<radio class="ws-radio" value="" checked=""/>
+						<view class="margin-left_xs">
+							<view class="font-black_xl">健康管理包B</view>
+							<view class="font-grey_s">原价：599元</view>
+						</view>
+					</view>
+					<view class="font-default_xl">399元</view>
+				</view>
+			</label>
+		</radio-group>
+	</view>
+	<!-- 底边栏 -->
+	<view class="page-bottom_fixed">
+		<view class="flex-center">
+			<checkbox-group bindchange="checkboxChange">
+				<label class="checkbox">
+					<checkbox class="lz-checkbox-circle" checked="" value="{{readChecked}}"></checkbox>  
+					<text class="margin-left_xs">已阅读并同意 <text class="f-c_warn">签约协议</text></text>
+				</label>
+			</checkbox-group>
+		</view>
+		<button class="weui-btn weui-btn_info" url="" disabled="{{signbtnDisabled}}" bindtap="bindSign">签约</button>
+	</view>
+</view>
+
+
+

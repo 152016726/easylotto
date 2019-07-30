@@ -1,0 +1,81 @@
+page {
+  background-color: #f3f3f3;
+}
+swiper {
+  height: 320rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+.type-entry {
+  padding: 22rpx 10rpx;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+}
+.type-entry > view {
+  margin: 10rpx;
+  vertical-align: middle;
+}
+.type-entry > view .text-wap {
+  padding: 50rpx 0;
+}
+.type-entry > view .text-wap .ico {
+  position: relative;
+  top:4rpx;
+  margin-right:13rpx;
+}
+.community-wap {
+  border-top: 1rpx  solid #e5e5e5;
+	box-shadow: 0rpx 1rpx 8rpx 0rpx rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+}
+.community-wap .header {
+  padding: 20rpx 25rpx;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.community-wap .header text {
+	font-size: 28rpx;
+	line-height: 1;
+	letter-spacing: 1rpx;
+	color: #525252;
+}
+.community-wap .item-wap .item {
+  position: relative;
+  padding: 0 25rpx;
+}
+.community-wap .item-wap .item image {
+  width: 94rpx;
+  height: 94rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 17rpx;
+  background: #fff;
+}
+.community-wap .item-wap .item .content {
+  margin-left:58px;
+  border-bottom:1px #e5e5e5 solid;
+  padding:17rpx 0;
+}
+.community-wap .item-wap .item .content .title {
+	font-size: 30rpx;
+	letter-spacing: 0rpx;
+	color: #3f3f3f;
+  padding-bottom: 10rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+}
+.community-wap .item-wap .item .content .tip {
+	font-size: 25rpx;
+	letter-spacing: 0rpx;
+	color: #999999;
+}

@@ -1,0 +1,47 @@
+page {
+  background-color: #f3f3f3;
+}
+.list {
+  background-color: #fff;
+}
+.list .item {
+  padding: 30rpx 30rpx;
+  position: relative;
+  padding-left: 203rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.list .item image {
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+  top: 36rpx;
+  background-color: #e5e5e5;
+  left:30rpx;
+  border-radius: 11rpx;
+  border: 1rpx solid #b5b5b5;
+}
+.list .item .content {
+  position:relative;
+}
+.list .item .content .name {
+	font-size: 36rpx;
+	color: #3a3a3a;
+}
+.list .item .content .description {
+  font-size: 27rpx;
+	color: #979797;
+  padding-bottom: 10rpx;
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.list .item .content .count {
+  font-size: 25rpx;
+	color: #999999;
+  margin-top:8rpx;
+}
+.list .item .content .count .sign-num {
+  margin-right:15rpx;
+}

@@ -1,0 +1,127 @@
+
+
+
+<view class="yt-wrap">
+  <view>
+    <view class="weui-flex">
+      <text class="font-info_m nav-item {{navbar?'nav-item_active' : ''}}" bindtap="navbarTap">手动录入</text>
+      <text class="font-info_m nav-item {{navbar1?'nav-item_active' : ''}}" bindtap="navbarTap1">智能设备导入</text>
+    </view>
+    <view class="{{navbar?'show':'hidden'}}">
+      <view class="flex-center wrap-chart">
+        <view class="inputBox error">{{inputValTip}}</view>
+        <view class="inputBox error">{{minIndiValueTip}}</view>
+        <view class="flex-center flex-between">
+          <view class="btn-minus" bindtap="bindadd" data-aa="jian"></view>
+          <view class="{{navbarPress? 'show' : 'hidden'}}">
+            <input class="wrap-chartMiddle" placeholder="请输入数值" placeholder-class="font-default_xl" value="{{inputVal}}" bindblur="aa" />
+          </view>
+          <view class="{{navbarPress1&&(typeNum==2)? 'show' : 'hidden'}}">
+            <input class="wrap-chartMiddle" placeholder="请输入数值" placeholder-class="font-default_xl" value="{{inputVal}}" bindblur="aa" />
+          </view>
+          <view class="btn-add" bindtap="bindadd" data-aa="jia"></view>
+        </view>
+        <view class="font-green_s">{{unit}}</view>
+    <scroll-view scroll-x="true" bindscroll="bindscroll" scroll-left="{{scrollLeft}}" style=" background: #fff">
+
+  <view class="in_nu" style="margin-left:{{kuandu}}">
+    <view wx:for="{{nucce}}" class="in_num">{{item}}</view>
+  </view>
+  <view style="width:4000px;height:{{gaodu}}rpx;">
+    <image class="in_img" src="../img/kedu.png" style='margin-left:377rpx;'></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+    <image class="in_img" src="../img/kedu.png"></image>
+  </view>
+ <image class="in_imgs" src="../img/sanjiao.png"></image>
+</scroll-view>
+
+        <view style="margin-top:10rpx;" class="font-default_s {{navbarPress&&(typeNum==2)? 'show' : 'hidden'}}">参考指标值：高压
+          <text>{{zuida}}</text>
+        </view>
+        <view style="margin-top:10rpx;" class="font-default_s {{navbarPress1&&(typeNum==2)? 'show' : 'hidden'}}">参考指标值：低压
+          <text>{{zuixiao}}</text>
+        </view>
+        <view style="margin-top:10rpx;" class="font-default_s" wx:if="{{typeNum!=2}}">参考指标值：{{min}}
+          <text>{{min==''?'无':'~'}}</text>{{max}}</view>
+        <view style="margin-top:10rpx;" class="weui-flex navPress" wx:if="{{typeNum==2}}">
+          <text class="nav-item_press {{navbarPress? 'nav-item_active' : ''}}" bindtap="navbarPressTap">高压</text>
+          <text class="nav-item_press {{navbarPress1? 'nav-item_active' : ''}}" bindtap="navbarPressTap1">低压</text>
+        </view>
+      </view>
+    </view>
+    <view class="{{navbar1?'show':'hidden'}}">
+      <view class="flex-center wrap-chart_AI">
+        <view class="icon-blueTooth">
+          <view class="lz-bluetooth-ico"></view>
+          <!-- <view class="lz-bluetoothAct-ico"></view> -->
+        </view>
+        <view class="font-default_s">请准备好仪器，导入数据</view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-bottom_entry">
+    <view class="{{navbar?'show':'hidden'}}">
+      <view class="forminfo">
+        <view>录入时间</view>
+        <!-- <view class="forminfo-value">
+          <picker mode="date" value="{{entryDate}}" start="2013-09-01-00-00" end="{{endDate}}" bindchange="bindDateChange">
+            <view class="font-black_xl">{{entryDate}}</view>
+            <view class="lz-right-ico input-icon_right"></view>
+          </picker>
+          <view class="error">{{entryDateTip}}</view>
+        </view>
+        <view class="forminfo-value">
+          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <view class="font-black_xl">
+              {{time}}
+            </view>
+            <view class="lz-right-ico input-icon_right"></view>
+          </picker>
+          <view class="error">{{entryDateTip}}</view>
+        </view> -->
+
+        <!-- 另一个 -->
+        <view class="forminfo-value">
+          <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" range="{{dateTimeArray1}}">
+            <view class="font-black_xl">
+              选择日期时间: {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+            </view>
+          </picker>
+          <view class="lz-right-ico input-icon_right"></view>
+        </view>
+
+        <view>备注说明</view>
+        <view class="forminfo-value">
+          <textarea class="textarea-view font-black_xl" placeholder-class="font-black_xl" placeholder="请输入备注说明" show-confirm-bar="{{false}}" bindinput="bindTextAreaBlur" />
+        </view>
+      </view>
+      <view class="btn-area">
+        <button class="weui-btn weui-btn_info" url="" disabled="" bindtap="bindSave">保存</button>
+      </view>
+    </view>
+    <view class="{{navbar1?'show':'hidden'}}">
+      <view class="flex-between forminfo-value_AI">
+        <view class="">
+          <view class="font-grey_m">2018-01-11</view>
+          <view class="font-b2b2b2_s">(mmHg)</view>
+        </view>
+        <view class="">170</view>
+      </view>
+      <view class="flex-between forminfo-value_AI">
+        <view class="">
+          <view class="font-grey_m">2018-01-11</view>
+          <view class="font-b2b2b2_s">(mmHg)</view>
+        </view>
+        <view class="">170</view>
+      </view>
+      <view class="btn-area">
+        <button class="weui-btn weui-btn_info" url="" disabled="" bindtap="">导入数据</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,90 @@
+page {
+  font-size:28rpx;
+}
+.block1 {
+  position: relative;
+  padding: 30rpx 30rpx 30rpx 180rpx;
+  background: #fff;
+  border-bottom: 1px #979797 dashed;
+}
+.block1 image {
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.block1 > view .detail .name {
+  font-size: 38rpx;
+  color:#000000;
+}
+.block1 > view .detail .career {
+  color:#ff8801;
+  border: 1px #ff8801 solid;
+  border-radius: 50rpx;
+  padding: 0rpx 20rpx;
+  line-height: 1;
+  margin-left: 20rpx;
+}
+.block1 > view .detail .attention-ico {
+  float: right;
+}
+.block1 > view .hospital {
+  color:#7a7a7a;
+}
+.block2 {
+  margin: 30rpx 25rpx;
+  background: #fff;
+}
+.block2 .header-tab {
+  display: flex;
+  display: -webkit-flex;
+  padding-top:20rpx;
+}
+.block2 .header-tab > view {
+  flex: 1;
+  text-align: center;
+}
+.block2 .header-tab > view > view {
+  font-size:34rpx;
+  color:#7a7a7a;
+  border-bottom: 8rpx transparent solid;
+  display: inline-block;
+  padding: 0 10rpx;
+}
+.block2 .header-tab > view.active > view {
+  color:#5394ff;
+  border-bottom: 8rpx #5394ff solid;
+}
+.block2 .body-content {
+  padding: 40rpx 0;
+}
+.block2 .body-content .tabledate {
+  display: flex;
+  display: -webkit-flex;
+}
+.block2 .body-content .tabledate .trdate {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #000000;
+}
+.block2 .body-content .tabledate .trdate .tddate {
+  border-bottom: 1px #979797 dashed;
+  border-right: 1px #979797 dashed;
+}
+.block2 .body-content .tabledate .trdate:last-child .tddate {
+  border-right: none;
+}
+.block2 .body-content .tabledate .trdate .tddate.dhead {
+  padding-bottom: 30rpx;
+}
+.block2 .body-content .tabledate .trdate .tddate.dbody {
+  padding-top: 50rpx;
+  padding-bottom: 10rpx;
+}
+.block2 .body-content .tabledate .trdate .tddate.dbody .money {
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}

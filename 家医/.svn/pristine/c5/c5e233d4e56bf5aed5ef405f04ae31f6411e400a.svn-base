@@ -1,0 +1,80 @@
+/* pages/info/report/list/list.wxss */
+/*菜单栏样式nav*/
+.menu-nav{
+    position:fixed;
+    width:682rpx;
+    height: 90rpx;
+    padding:0 34rpx;
+    font-size:34rpx;
+    color:#ffffff;
+    line-height:90rpx;
+    align-items: center;
+    background-color:#5394ff;
+    z-index:2000;
+}
+.yt-wrap .menu-nav .weui-cell{padding:0rpx;}
+/*列表切换栏*/
+.nav{
+    position: fixed;
+    top:90rpx;
+    left: 0;
+    right: 0;
+    border-bottom: 1rpx solid #e8e8e8;
+}
+.nav-item{ 
+    position: relative; 
+    flex: auto; 
+    background-color: #fff;
+    text-align: center; 
+    line-height: 90rpx; 
+} 
+.nav-item_active{ color: #09f;} 
+.nav-item_active:after{ 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    bottom: 0; 
+    left: 8rpx; 
+    right: 8rpx; 
+    height: 8rpx; 
+    background: #5394ff;
+    border-radius: 8rpx;
+} 
+/*报告列表*/
+.list-wrap{
+    padding-top:180rpx;
+}
+.list-block{
+    justify-content: space-between;
+    align-items: center;
+    width:624rpx;
+    margin:34rpx auto;
+    padding: 16rpx 37rpx 20rpx;
+    font-size:38rpx;
+    color:#000;
+    border:1rpx soild #e8e8e8;
+    border-radius:10rpx;
+    box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+    background-color: #fff;
+
+}
+.flex-spaceBetween{
+    justify-content: space-between;
+}
+.font-org_s{
+    font-size:28rpx;
+    color:#ff8801;
+}
+.font-grey_s{
+    font-size:28rpx;
+    color:#7a7a7a;
+}
+.icon-dot{
+    display: inline-block;
+    margin-top: 10rpx;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background:#d8d8d8;
+}
+

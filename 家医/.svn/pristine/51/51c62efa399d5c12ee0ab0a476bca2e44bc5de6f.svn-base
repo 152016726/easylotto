@@ -1,0 +1,121 @@
+<import src="../../common/template/head/scan.wxml" />
+<import src="../../common/template/head/location.wxml" />
+<import src="../../common/template/head/orgselect.wxml" />
+<view class="rm-wrap">
+  <!--view class="page-header weui-flex">
+    <view class="head-hd"><text class="lz-location-ico"></text>湛江</view>
+    <picker bindchange="pickerChange" value="{{pickerIndex}}" range="{{array}}" mode ="selector"  class="weui-flex__item text-center">
+      <view>{{array[pickerIndex]}}<text class="lz-down-ico"></text> </view>
+    </picker>
+    <view class="head-rg">
+      <text class="lz-richscan-ico"></text>
+    </view>
+  </view-->
+  <!--banner-->
+  <!--头部-->
+  <!--view class="page-header weui-flex">
+    <view bindtap=""><template is="location" data="{{...item}}"></template></view>
+    <view bindtap="" class="weui-flex__item text-center"><template is="orgselect" data="{{...item}}"></template></view>
+    <view bindtap="headScanTap"><template is="scan" data="{{...item}}"></template></view>
+  </view-->
+  <view wx:if="{{inletType=='1'}}" class="page-header weui-flex">
+    <view class="weui-flex__item text-center" bindtap="selectComTap">
+      <view>{{orgList[0].name}}<text class="lz-down-ico"></text> </view>
+    </view>
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgArr}}" wx:key="{{ index }}">
+      <swiper-item>
+        <!--mode="aspectFill"-->
+        <image bindtap='linkImageUrl' data-url="{{item.url}}" src="{{item.picUrl}}" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--预约挂号-->
+  <view class="section-card weui-flex">
+    <view class="weui-flex__item" bindtap="linkReservationTap" hover-class="none">
+      <view class="lz-appointment-ico"></view>
+      <view class="card-cell_text">预约挂号</view>
+    </view>
+    <view class="weui-flex__item" bindtap="linkFamilyTap" hover-class="none">
+      <view class="lz-fadoc-ico"></view>
+      <view class="card-cell_text">家庭医生</view>
+    </view>
+    <view class="weui-flex__item" bindtap="linkHealthTap" hover-class="none">
+      <view class="lz-health-ico"></view>
+      <view class="card-cell_text">健康档案</view>
+    </view>
+    <view class="weui-flex__item" bindtap="linkOnlineTap" hover-class="none">
+      <view class="lz-inquiry-ico"></view>
+      <view class="card-cell_text">在线问诊</view>
+    </view>
+  </view>
+  <!--缴费押金-->
+  <view class="flex-center small-box">
+    <view class="lz-deposit-ico" hover-class="none" bindtap="linkBlockTap"></view>
+    <view class="lz-payment-ico" hover-class="none" bindtap="linkBlockTap"></view>
+  </view>
+  <view class="flex-center flex-box">
+    <navigator class="box-cell" hover-class="none" url="/page/common/webviewlink/webviewlink?url={{webDomain}}/family_kengkuo/views/guides/m_h_boy.html&flag=guides"><!--http://zqhomedoc.heyuht.com/family/views/guides/m_h_boy.html（线上）-->
+      <view class="lz-smart-ico"></view>
+      <view>智能导诊</view>
+    </navigator>
+    <view class="box-cell" hover-class="none" bindtap="linkExaminationTap">
+      <view class="lz-exam-ico"></view>
+      <view>体检查询</view>
+    </view>
+    <view  class="box-cell" hover-class="none"  bindtap="linkInoculationTap">
+      <view class="lz-inoculate-ico"></view>
+      <view>接种管理</view>
+    </view>
+    <!--view  class="box-cell" hover-class="none" bindtap="linkBlockTap">
+      <view class="lz-report-ico"></view>
+      <view>报告查询</view>
+    </view-->
+    <view  class="box-cell" hover-class="none" bindtap="linkHealMagTap">
+      <view class="lz-management-ico"></view>
+      <view>健康管理</view>
+    </view>
+    <!--view  class="box-cell" hover-class="none" bindtap="linkBlockTap">
+      <view class="lz-prescript-ico"></view>
+      <view>长处方</view>
+    </view>
+    <view  class="box-cell" hover-class="none" bindtap="linkBlockTap">
+      <view class="lz-extent-prescript-ico"></view>
+      <view>延伸处方</view>
+    </view>
+    <view  class="box-cell" hover-class="none" bindtap="linkBlockTap">
+      <view class="lz-buy-medicine-ico"></view>
+      <view>闪电购药</view>
+    </view-->
+  </view>
+  <view class="doctors-entry clearfox" bindtap="linkDoctors" wx:if="{{userInfo.doc}}">
+    <view class="doctor-man-ico left"></view>
+    <view class="right-ico right"></view>
+    <view class="right doctors-wap">
+      <view class="text1">我是医生</view>
+      <view class="text2">切换到医生工作站</view>
+    </view>
+  </view>
+  <view class="news-wrap">
+    <view class="flex-center news-wrap_title" bindtap="linkCList">
+      <view class="lz-news-ico"></view>
+      <view class="weui-flex__item">新闻资讯</view>
+      <view class="lz-right-ico"></view>
+    </view>
+    <!--<view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>-->
+    <!--wx:if="{{!scroll.ifNull}}"-->
+    <scroll-view class="scroll-view"  scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view wx:for="{{communityList}}" data-id="{{item.id}}" class="news-item weui-flex" bindtap="linkCDetail" wx:key="{{ index }}">
+        <view class="weui-flex__item news-item_bd" >
+          <view class="news-item_title">{{item.title}}</view>
+          <view class="fc-time">{{item.createTime}}</view>
+        </view>
+        <image mode="aspectFill" src="{{item.iconUrl}}" class="news-image"></image>
+      </view>
+      <view class="load-text">{{scroll.loadText}}</view>
+    </scroll-view>
+  </view>
+</view>
+

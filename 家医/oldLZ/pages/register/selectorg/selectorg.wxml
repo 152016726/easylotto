@@ -1,0 +1,52 @@
+<!--pages/register/selectorg/selectorg.wxml-->
+<view class="rm-wrap">
+    <!--搜索栏-->
+    <view class="search" style="{{focusDisplay?'padding-right:140rpx;':''}}">
+        <view class="input-wap">
+            <view class="search-ico"></view>
+            <input placeholder="请输入医疗机构"  confirm-type="search" bindinput="searchTap" value="{{name}}" bindfocus="focusTap" placeholder-class="placeholder"/>
+            <view class="delete-small-line-ico" bindtap="deleteSearchContentTap" style="display:{{deleteDisplay}}"></view>
+        </view>
+        <view class="cancel-wap" wx:if="{{focusDisplay}}" bindtap="cancelTap"><text style="margin-right:15rpx;">取消</text></view>
+        <!--<view class="location-wap" bindtap="locationTap" wx:if="{{!focusDisplay}}">-->
+            <!--<view class="location-ico"></view>-->
+            <!--<text class="city-wap">{{city}}</text>-->
+        <!--</view>-->
+    </view>
+    <!--内容-->
+    <scroll-view scroll-y="true"  style="height:{{height}}px"  style="height: {{height}}px" class="list-cont">
+        <!--距离最近-->
+        <view class="distance-cell" bindtap="showNearest" wx:if="{{!focusDisplay}}">
+            <text class="margin-r_xs">距离最近</text>
+            <text class="{{isNearest?'top-ico':'down-ico'}}"></text>
+        </view>
+        <navigator class="flex-center org-cell" url="selectorg">
+            <view>
+                <image class="org-img"></image>
+            </view>
+            <view class="weui-flex__item org-cell_bd">
+                <view class="hospital-name ellipsis-line_one">鼎湖<text class="f-c_warn">坑口</text>卫生院</view>
+                <view class="ellipsis-line_one margin-b_sub">湖坑口卫生院12鼎湖坑口卫生院12号鼎湖坑口卫生…</view>
+                <view>
+                    <text class="label-cell_prim">三甲医院</text>
+                </view>
+            </view>
+            <view class="org-cell_ico"></view>
+        </navigator>
+        <navigator class="flex-center org-cell" url="selectorg">
+            <view>
+                <image class="org-img"></image>
+            </view>
+            <view class="weui-flex__item org-cell_bd">
+                <view class="hospital-name ellipsis-line_one">鼎湖坑口卫生院</view>
+                <view class="ellipsis-line_one margin-b_sub">湖坑口卫生院12鼎湖坑口卫生院12号鼎湖坑口卫生…</view>
+                <view>
+                    <text class="label-cell_prim">三甲医院</text><text class="label-cell_prim">民医坐诊</text>
+                </view>
+            </view>
+            <view class="org-cell_ico"></view>
+        </navigator>
+        <!--<view class="load-text">{{scroll.loadText}}</view>-->
+    </scroll-view>
+</view>
+

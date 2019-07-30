@@ -1,0 +1,11 @@
+<view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>
+<scroll-view class="item-wap" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+  <view class="item" wx:for="{{communityList}}" data-id="{{item.id}}" bindtap="linkCDetail">
+    <image mode="aspectFill" src="{{item.iconUrl}}"></image>
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="tip">{{item.approveCount}}人点赞</view>
+    </view>
+  </view>
+  <view class="load-text">{{scroll.loadText}}</view>
+</scroll-view>

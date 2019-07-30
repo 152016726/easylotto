@@ -1,0 +1,25 @@
+<view class="ol_log">
+  <view>{{lis.serviceName}}</view>
+  <view>{{lis.memberName}}</view>
+  <view>服务时间{{lis.shijian1}}</view>
+</view>
+
+
+<view class="ol_lar">
+  <view class="ol_one">改期至</view>
+  <view>{{date}}</view>
+  <view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2222-09-01" bindchange="bindDateChange">
+      <view>更改</view>
+    </picker>
+  </view>
+</view>
+
+
+<view class="ol_lars">
+  <view class="ol_masx">改期理由</view>
+
+  <view>{{lis.reason}}</view>
+</view>
+
+<view class="ol_pa" bindtap='tongyi'>同意申请</view>

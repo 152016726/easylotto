@@ -1,0 +1,55 @@
+<view class="yt-wrap">
+	<view>
+		<!--搜索栏-->
+	    <view class="search" style="{{focusDisplay?'padding-right:140rpx;':''}}">
+	        <view class="input-wap">
+	            <view class="search-ico"></view>
+	            <input placeholder="搜索问题/患者"  confirm-type="search" bindinput="searchTap" value="{{inputVal}}" bindfocus="focusTap" placeholder-class="placeholder"/>
+	            <view class="delete-small-line-ico" bindtap="deleteSearchContentTap" style="display:{{deleteDisplay}}"></view>
+	        </view>
+	        <view class="cancel-wap" wx:if="{{focusDisplay}}" bindtap="cancelTap"><text>取消</text></view>
+	    </view>
+	    <!--选择栏-->
+	    <view class="flex-center nav" wx:if="{{!focusDisplay}}">
+	    	<picker bindchange="bindPatientChange" value="{{patientIndex}}" range="{{patientArray}}">
+	    		<view class="flex-center nav-tab">
+		    		患者：<text class="tab-cont">{{patientArray[patientIndex]}}</text>
+		    		<text class="margin-left_xxs down-ico"></text>
+		    		</view>
+	    	</picker>
+	    	<picker bindchange="bindPickerChange" value="{{statusIndex}}" range="{{statusArray}}">
+	    		<view class="flex-center nav-tab">
+		    		状态：<text class="tab-cont">{{statusArray[statusIndex]}}</text>
+		    		<text class="margin-left_xxs down-ico"></text>
+		    		</view>
+	    	</picker>
+	    	<view class="flex-center nav-tab" bindtap="showNearest">
+	    		<text class="margin-r_xs">时间</text>
+	    		<text class="margin-left_xxs {{isNearest?'top-ico':'down-ico'}}"></text>
+	    	</view>
+	    </view>
+	</view>
+  <!-- 列表栏 -->
+  <scroll-view class="scroll-view" scroll-y="true" style="height:{{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!focusDisplay||inputVal}}">
+    <navigator class="scroll-box font-grey_s" wx:for="{{consultionList}}" url="../reply/reply?docId={{docId}}&id={{item.id}}">
+    <view class="flex-between">
+      <view class="font-black_l text-ellipsis_s">{{item.topic}}</view>
+      <view class="font-grey_xs">{{item.createTime}}</view>
+    </view>
+    <view class="flex-center margin-top_xs">
+      <view class="font-blue_s">{{item.userName}}</view>:
+      <view class="text-ellipsis">{{item.disorder}}</view>
+    </view>
+    </navigator>
+    <view class="load-text">{{scroll.loadText}}</view>
+  </scroll-view>
+	<!-- 列表无数据 -->
+	<view class="list-null-box" wx:if="{{!focusDisplay&&scroll.ifNull}}">
+		<view class="list-null-ico"></view>
+		<text>{{scroll.nullText}}</text>
+	</view>
+</view>
+  
+
+
+

@@ -1,0 +1,32 @@
+<!--page/appointment/page/appointmentNotice/appointmentNotice.wxml-->
+<view class="rm-wrap known-main">
+    <view class="contentpart">
+        <view class="known-title">1、可预约7天以内的号源；</view>
+        <view class="known-cont">
+        </view>
+        <view class="known-title">2、微信支付成功后请查阅[订单详情]，请以收到取号成功信息为准，如不成功请自行选择其他途径挂号；</view>
+        <view class="known-cont">
+        </view>
+        <view class="known-title">3、如个人原因不能到医院就诊，请提前24小时进入微信平台取消预约，费用将退还至原支付平台，否则过期费用不可退回</view>
+        <view class="known-cont">
+        </view>
+        <view class="known-title">4、暂不支持非中国大陆身份证预约，若需就诊可当天窗口现场挂号；</view>
+        <view class="known-cont"></view>
+        <view class="known-title">5、预约成功后，请携带身份证、社保卡等有效证件，于就诊时间段前30分钟到就诊科室排队等候。</view>
+        <view class="known-cont"></view>
+        <view class="known-title">6、如遇特殊情况，请向医院挂号窗口咨询。</view>
+        <view class="known-cont">
+        </view>
+    </view>
+    <view class="bottom-area">
+        <checkbox-group bindchange="checkboxChange" class="">
+            <label class="known-read flex-center">
+                <checkbox value="{{checkeVal}}" checked="true"  class="ws-checkbox"/>
+                <view>已阅读并同意相关要求</view>
+            </label>
+        </checkbox-group>
+        <view class="button_area">
+            <button class="known-btn" disabled="{{disabled}}"  hover-class="known-btn-hover" bindtap="linkBookTap">预约</button>
+        </view>
+    </view>
+</view>

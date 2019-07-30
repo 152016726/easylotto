@@ -1,0 +1,46 @@
+<!--pages/register/selectorg/selectorg.wxml-->
+<view class="rm-wrap">
+    <!--搜索栏-->
+    <view class="search" style="{{focusDisplay?'padding-right:140rpx;':''}}">
+        <view class="input-wap">
+            <view class="search-ico"></view>
+            <input placeholder="请输入医疗机构"  confirm-type="search" bindinput="searchTap" value="{{name}}" bindfocus="focusTap" placeholder-class="placeholder"/>
+            <view class="delete-small-line-ico" bindtap="deleteSearchContentTap" style="display:{{deleteDisplay}}"></view>
+        </view>
+        <view class="cancel-wap" wx:if="{{focusDisplay}}" bindtap="cancelTap"><text style="margin-right:15rpx;">取消</text></view>
+        <!--<view class="location-wap" bindtap="locationTap" wx:if="{{!focusDisplay}}">-->
+            <!--<view class="location-ico"></view>-->
+            <!--<text class="city-wap">{{city}}</text>-->
+        <!--</view>-->
+    </view>
+    <!--内容-->
+    <view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>
+    <scroll-view class="list-cont" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+        <!--距离最近-->
+        <!--view class="distance-cell" bindtap="showNearest" wx:if="{{!focusDisplay}}">
+            <text class="margin-r_xs">距离最近</text>
+            <text class="{{isNearest?'top-ico':'down-ico'}}"></text>
+        </view-->
+        <navigator wx:for="{{communityList}}" class="flex-center org-cell" url="../known/known?id={{item.id}}">
+            <view>
+                <image class="org-img" src="{{item.picUrl?item.picUrl:'../../../../images/org_default.png'}}"></image>
+            </view>
+            <view class="weui-flex__item org-cell_bd">
+            
+                <view class="hospital-name" wx-if="{{item.nameArr}}">
+                  <text wx:for="{{item.nameArr}}" wx:for-index="idx" wx:for-item="itemName">
+                    <text wx-if="{{itemName == name}}" class="f-c_warn">{{itemName}}</text>
+                    <text wx-if="{{itemName != name}}">{{itemName}}</text>
+                  </text>
+                </view>
+                <view class="hospital-name" wx-if="{{!item.nameArr}}">{{item.hospName}}</view>
+                <view class="margin-b_sub">{{item.hospAddress}}</view>
+                <view>
+                    <text class="label-cell_prim" wx-if="{{item.dicName}}">{{item.dicName}}</text>
+                </view>
+            </view>
+            <!--view class="lz-navigation-ico"></view-->
+        </navigator>
+    </scroll-view>
+</view>
+

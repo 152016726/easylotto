@@ -1,0 +1,71 @@
+.re_log{
+  padding: 10rpx;
+  background: #fff;
+}
+.re_log view:first-child{
+  color:#747474;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 200rpx;
+
+}
+.re_log view:nth-child(2){
+  text-align: right;
+  font-size: 30rpx;
+  color:#979797;
+    display: inline-block;
+    width: 500rpx;
+}
+.re_logs{
+  padding: 10rpx;
+  background: #fff;
+}
+.re_logs .re_las{
+  color:#747474;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 200rpx;
+}
+.re_logs picker{
+   text-align: right;
+  font-size: 30rpx;
+  color:#979797;
+    display: inline-block;
+    width: 500rpx;
+}
+.re_ka {
+  padding: 10rpx;
+  background: #fff;
+  margin-top: 30rpx;
+}
+.re_ka view{
+    color:#747474;
+    font-size: 30rpx;
+
+}
+.re_ka textarea{
+  height: 200rpx;
+  color:#979797;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  display: inline-block;
+  width:700rpx;
+}
+.re_po{
+  padding: 10rpx;
+  color:#979797;
+  font-size: 30rpx;
+
+}
+.re_qd{
+  width: 500rpx;
+  margin: 120rpx auto;
+  height:80rpx;
+  background: #008be8;
+  color:#fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  border-radius: 60rpx;
+}

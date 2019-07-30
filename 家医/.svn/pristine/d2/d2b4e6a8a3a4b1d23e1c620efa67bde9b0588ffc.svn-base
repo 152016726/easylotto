@@ -1,0 +1,59 @@
+<view class="sm-wap" wx:if="{{memberList.length > 0}}" style="min-height:{{height}}px">
+    <block wx:if="{{selfList.length>0}}">
+        <navigator url="../myinfo/myinfo?id={{item.id}}" class="mineinfo-pic" wx:for="{{selfList}}">
+            <view class="mineinfo-left">
+                <image class="img" src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../../../images/img_famMale.png':'../../../../../images/img_famFemale.png'}}" mode="aspectFill"></image>
+            </view>
+            <view class="mineinfo-right">
+                <view class="mineinfo-sel">
+                    <text class="mineinfo-name">{{item.name}}</text>
+                    <text class="mineinfo-me">{{item.dicName}}</text>
+                </view>
+                <view class="mineinfo-sexyear">
+                    <text class="mineinfo-sex">
+                        <block wx:if="{{item.sex == 1}}">男</block>
+                        <block wx:elif="{{item.sex == 2}}">女</block>
+                    </text>
+                    <text class="mineinfo-year">{{item.age}}</text>
+                </view>
+            </view>
+        </navigator>
+    </block>
+    <blcok wx:if="{{otherMemberList.length>0}}">
+        <view class="faminfo-list">
+            <view class="faminfo-txt">我的家庭成员</view>
+            <navigator url="../edit/edit?id={{item.id}}&idCard={{item.idCard}}" class="faminfo-pic"  wx:for="{{otherMemberList}}">
+                <view class="faminfo-left">
+                    <image class="img" src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../../../images/img_famMale.png':'../../../../../images/img_famFemale.png'}}" mode="aspectFill"></image>
+                </view>
+                <view class="faminfo-right">
+                    <view class="faminfo-sel">
+                        <text class="faminfo-name">{{item.name}}</text>
+                        <text class="faminfo-me">{{item.dicName}}</text>
+                    </view>
+                    <view class="faminfo-sexyear">
+                        <text class="faminfo-sex">
+                            <block wx:if="{{item.sex == 1}}">男</block>
+                            <block wx:elif="{{item.sex == 2}}">女</block>
+                        </text>
+                        <text class="faminfo-year">{{item.age}}</text>
+                    </view>
+                </view>
+            </navigator>
+            <view class="msg">最多添加10位</view>
+        </view>
+    </blcok>
+    <view class="bottom140">
+        <button class="btn-primary btnsize-lg" bindtap="navAdd">新增成员</button>
+        <view></view>
+    </view>
+</view>
+<view class="sm-wap" wx:if="{{memberList.length == 0}}" style="min-height:{{height}}px">
+    <view class="list-null-box">
+        <view class="list-null-ico"></view>
+        <view class="fc-md_prim">还没有成员！</view>
+    </view>
+    <view class="bottom140">
+        <button class="btn-primary btnsize-lg" bindtap="navAdd">新增成员</button>
+    </view>
+</view>

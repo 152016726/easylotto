@@ -1,0 +1,158 @@
+{
+  "pages": [
+    "page/tabBar/index/index",
+    "page/tabBar/microportal/index",
+    "page/tabBar/assistant/index",
+    "page/tabBar/info/index",
+    "page/inoculation/inoculation",
+    "page/quicksign/quicksign/quicksign",
+    "page/quicksign/signresult/signresult",
+    "page/community/center/center",
+    "page/community/list/list",
+    "page/community/detail/detail",
+    "page/healthrecords/healthrecords",
+    "page/common/webviewlink/webviewlink",
+    "page/lzico/lzico",
+    "page/outpatientPayment/outpatientPayment",
+    "page/paymentList/paymentList",
+    "page/paymentList/orderStatus/orderStatus"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "我的健康",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/tabBar/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homepr.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/tabBar/microportal/index",
+        "iconPath": "images/small.png",
+        "selectedIconPath": "images/smallpr.png",
+        "text": "微门户"
+      },
+      {
+        "pagePath": "page/tabBar/assistant/index",
+        "iconPath": "images/assistant.png",
+        "selectedIconPath": "images/assistantpr.png",
+        "text": "智能助手"
+      },
+      {
+        "pagePath": "page/tabBar/info/index",
+        "iconPath": "images/info.png",
+        "selectedIconPath": "images/infopr.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "page/familydoctor/",
+      "pages": [
+        "pages/index/index",
+        "pages/sign/ownsign/ownsign",
+        "pages/sign/familysign/familysign",
+        "pages/sign/selectcommunity/selectcommunity",
+        "pages/sign/selectcity/selectcity",
+        "pages/sign/selectteam/selectteam",
+        "pages/sign/detail/detail",
+        "pages/sign/confirm/confirm",
+        "pages/sign/success/success",
+        "pages/sign/selectaddress/selectaddress",
+        "pages/sign/agree/agree",
+        "pages/doctor/index/index",
+        "pages/doctor/countlist/countlist",
+        "pages/doctor/check/list/list",
+        "pages/doctor/check/detail/detail",
+        "pages/community/center/center",
+        "pages/community/list/list",
+        "pages/community/detail/detail"
+      ]
+    },
+    {
+      "root": "page/reservation/",
+      "pages": [
+        "pages/selectorg/selectorg",
+        "pages/known/known",
+        "pages/selectdoctor/selectdoctor",
+        "pages/selecttime/selecttime",
+        "pages/selectpatient/selectpatient",
+        "pages/orderpay/orderpay"
+      ]
+    },
+    {
+      "root": "page/doctor/",
+      "pages": [
+        "pages/countlist/countlist",
+        "pages/check/list/list",
+        "pages/check/detail/detail",
+        "pages/index/index",
+        "pages/online/list/list",
+        "pages/online/reply/reply",
+        "pages/service/ope/ope",
+        "pages/service/work/work",
+        "pages/service/opelei/opelei",
+        "pages/service/worklei/worklei",
+        "pages/service/worksou/worksou"
+      ]
+    },
+    {
+      "root": "page/info/",
+      "pages": [
+        "pages/mine/mine",
+        "pages/editinfo/editinfo",
+        "pages/address/list/list",
+        "pages/address/edit/edit",
+        "pages/address/add/add",
+        "pages/family/myinfo/myinfo",
+        "pages/family/list/list",
+        "pages/family/edit/edit",
+        "pages/family/add/add",
+        "pages/doctors/list/list",
+        "pages/doctors/detail/detail",
+        "pages/doctors/doctordetail/doctordetail",
+        "pages/doctors/teamdetail/teamdetail",
+        "pages/sign/list/list",
+        "pages/sign/detail/detail",
+        "pages/sign/agree/agree",
+        "pages/healthyhouse/healthyhouse",
+        "pages/treatment/list/list",
+        "pages/treatment/detail/detail",
+        "pages/report/list/list",
+        "pages/report/detail/detail",
+        "pages/mediciner/list/list",
+        "pages/mediciner/detail/detail",
+        "pages/online/list/list",
+        "pages/online/consultation/consultation",
+        "pages/online/detail/detail",
+        "pages/health/index/index",
+        "pages/health/entry/entry",
+        "pages/health/detail/detail",
+        "pages/service/list/list",
+        "pages/service/apply/apply",
+        "pages/service/detail/detail",
+        "pages/service/recent/recent",
+        "pages/service/plan/plan",
+        "pages/visitor/list/list",
+        "pages/visitor/edit/edit",
+        "pages/visitor/add/add",
+        "pages/reservation/list/list",
+        "pages/examination/list/list",
+        "pages/examination/detail/detail",
+        "pages/examination/assessment/assessment",
+        "pages/examination/result/result"
+      ]
+    }
+  ],
+  "debug": false
+}

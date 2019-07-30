@@ -1,0 +1,27 @@
+<scroll-view  class="rm-wrap" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+    <view class="weui-cells margin-t_zero">
+        <navigator class="weui-cell panel-wrap_myDoc" url="../detail/detail?teamId={{item.id}}" wx:for="{{doctorList}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.imagePic?item.imagePic:'../../../../images/img_teamdefault.png'}}" class="avator-img_myDoc" mode="aspectFill"></image>
+            </view>
+            <view class="weui-cell__bd min-width_zero">
+                <view>{{item.name}}</view>
+                <view class="team-list_sub ellipsis-line_one">
+                    <block wx:for="{{item.titleList}}" wx:for-index="titleListIdx" wx:for-item="titleListItem">
+                        <block wx:if="{{titleListIdx < item.titleList.length-1}}">{{titleListItem.titleCount}}名{{titleListItem.titleName}}、</block>
+                        <block wx:else>{{titleListItem.titleCount}}名{{titleListItem.titleName}}</block>
+                    </block>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="load-text">{{scroll.loadText}}</view>
+</scroll-view>
+<!--空页面-->
+<view class="rm-wrap" wx:if="{{scroll.ifNull}}">
+    <view class="list-null-box">
+        <view class="list-null-ico"></view>
+        <view class="fc-md_prim margin-tb_base">亲，还没有家庭医生哦！</view>
+        <!--navigator url="../../../sign/selectcommunity/selectcommunity" class="weui-btn weui-btn_normal weui-btn_sm">去签约</navigator-->
+    </view>
+</view>

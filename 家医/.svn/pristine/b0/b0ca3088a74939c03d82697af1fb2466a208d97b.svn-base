@@ -1,0 +1,60 @@
+<view class="yt-wrap">
+	<view class="weui-cells"> 
+		<view class="weui-cell bg-color_primary font-default_xs">
+			<view class="weui-cell__bd">
+				<text>患者：</text>
+				<text class="margin-left_xxs">{{userName}}</text>
+				<text class="margin-left_xxs font-opacity" wx:if="{{detail.userAge!=''}}">（{{detail.userAge}}岁）</text>
+				<text class="margin-left_xxs font-opacity" wx:else></text>
+			</view>
+			<view class="weui-cell__ft font-default_xs font-opacity">{{userMobile}}</view>
+		</view>
+		<view class="weui-cell bg-color_primary">
+			<view class="weui-cell__bd font-default_xl">
+				{{detail.topic}}
+			</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd margin-left_xxs">
+				<view class="font-info_s">
+					{{detail.disorder}}
+				</view>
+				<view class="margin-top_m font-info_xs">{{detail.createTime}}</view>
+			</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd margin-left_xxs">
+				<view class="font-primary_xs">发病时间：<text>{{detail.diseaseTime}}</text></view>
+			</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd margin-left_xxs">
+				<view class="font-primary_xs">就诊经历：<text>{{detail.therapyRecode}}</text></view>
+			</view>
+		</view>
+	</view> 
+	<view class="margin-top_s">
+		<form bindsubmit="onConfirm">
+			<view class="weui-cells"> 
+				<view class="weui-cell">
+					<view class="weui-cell__bd margin-left_xxs font-primary_s">	
+						请您根据患者描述，回复相关咨询
+					</view>
+				</view>
+				<view class="weui-cell" wx:if="{{detail.status==0}}">
+					<view class="margin-left_xxs">
+						<textarea class="textarea-view font-grey_s" placeholder="请输入您的答复..." value="" focus="" disabled="" name="textarea"/>
+					</view>
+				</view>
+				<view class="weui-cell" wx:if="{{detail.status==1}}">
+					<view class="weui-cell__bd margin-left_xxs">
+						<view class="font-primary_xs">{{detail.repayContent}}</view>
+					</view>
+				</view>
+			</view> 
+			<view class="btn-area_s" wx:if="{{detail.status==0}}">
+		        <button class="weui-btn_primary weui-btn_m" form-type="submit">提交</button>
+		    </view>
+		</form>
+	</view>
+</view>

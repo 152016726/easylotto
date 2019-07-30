@@ -1,0 +1,85 @@
+<!--pages/info/report/detail/detail.wxml-->
+<view class="yt-wrap">
+	<!-- 检验 -->
+	<view class="wrap-flex" wx:if="{{itemType==1}}">
+		<view class="weui-cells wrap-flex_top">
+			<view class="wrap-line1">
+				<view><text class="lz-time-grey-ico"></text><text class="margin-left_xxs">{{checkObj.item.itemTime}}</text></view>
+				<view><text class="lz-order-grey-ico"></text><text class="margin-left_xxs">{{checkObj.item.hisAppNo}}</text></view>
+			</view>
+			<view class="wrap-line2">
+				<view>
+					{{checkObj.item.paitent.name}}<text class="wrap-line2_l">{{checkObj.item.paitent.age}}<text wx:if="{{checkObj.patient.age!=''}}">岁</text></text>
+				</view>
+				<view class="box-small" wx:if="{{abnormalNum!=0}}">
+					<text>{{abnormalNum}}</text>项异常
+				</view>
+			</view>
+			<view class="wrap-line3">负责医生：
+				<text>{{checkObj.item.doctor.name}}</text>
+			</view>	
+		</view>
+		<view class="wrap-bottom_inspect">	  
+			<view class="wrap-title">各项参数</view>
+			<view class="wrap-content" wx:for="{{checkObj.data}}" wx:for-index="dataIndex" wx:for-item="checkObjData">
+				<block wx:for="{{checkObjData.resultMsg}}" wx:for-index="resultIndex" wx:for-item="resultMsg" wx:if="{{resultMsg.resultType==1}}">
+					<view class="font-grey_s">
+						<text class="font-black_l">{{resultMsg.itemDetailName}}</text>
+						<block wx:if="{{resultMsg.unit&&resultMsg.unit!=''}}">
+							(<text>{{resultMsg.unit}}</text>)
+						</block>
+						<block wx:if="{{!resultMsg.unit||resultMsg.unit ==''}}">
+						</block>
+					</view>
+					<view class="barBox">
+						<view class="barBox-bar_grey"></view>
+						<view class="barBox-bar_blue"></view>
+						<view class="barBox-value_min">{{resultMsg.minValue}}</view>
+						<view class="barBox-value_max">{{resultMsg.maxValue}}</view>
+						<view class="barBox-value {{resultMsg.rangeType==2?'':'is-abnormal'}}" style="left:{{resultMsg.rangeLeft}}rpx">{{resultMsg.resultMsg}}</view>
+					</view>
+				</block>
+				<block wx:for="{{checkObjData.resultMsg}}" wx:for-index="resultIndex" wx:for-item="resultMsg" wx:if="{{resultMsg.resultType==2}}">
+					<view class="weui-cell">
+						<view class="weui-cell__bd font-black_l">{{resultMsg.itemDetailName}}</view>
+						<view class="{{resultMsg.isStandard=='1'?'font-blue_m':'font-warn_m'}}">{{resultMsg.resultMsg}}</view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	<!-- 检查 -->
+	<view class="" wx:if="{{itemType==2}}">
+		<view class="weui-cells wrap-top_s">
+			<view class="wrap-line1">
+				<view><text class="lz-time-grey-ico"></text><text class="margin-left_xxs">{{inspecObj.item.itemTime}}</text></view>
+				<view><text class="lz-order-grey-ico"></text><text class="margin-left_xxs">{{inspecObj.item.hisAppNo}}</text></view>
+			</view>
+			<view class="wrap-line2">
+				<view>
+					{{inspecObj.item.paitent.name}}<text class="wrap-line2_l">{{inspecObj.item.paitent.age}}<text wx:if="{{inspecObj.patient.age!=''}}">岁</text></text>
+				</view>
+			</view>
+			<view class="wrap-line3">负责医生：
+				<text>{{inspecObj.item.doctor.name}}</text>
+			</view>	
+		</view>
+		<view class="wrap-middle_check">	  
+			<view class="wrap-title">检查结果</view>
+			<view class="wrap-content">
+				<block wx:for="{{inspecObj.data}}">
+					<view>{{item.resultMsg}}</view>
+				</block>
+			</view>
+		</view>
+		<view class="wrap-middle_check">	  
+			<view class="wrap-title">诊断意见</view>
+			<view class="wrap-content">
+				<block wx:for="{{inspecObj.data}}">
+					<view>{{item.diagnosis}}</view>
+				</block>
+			</view>
+		</view>		
+	</view>
+</view>
+

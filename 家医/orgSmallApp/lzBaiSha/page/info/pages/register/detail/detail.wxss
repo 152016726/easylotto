@@ -1,0 +1,49 @@
+/* pages/info/register/detail/detail.wxss */
+.yt-wrap{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.register-content{
+	position: fixed;
+	top:31rpx;
+	bottom: 0;
+	width:678rpx;
+	padding:0 0rpx 0 22rpx;
+	border:1rpx soild #e8e8e8;
+	border-radius:10rpx;
+	box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+	background-color: #fff;
+}
+.content-line{
+	position: relative;
+	padding:29rpx 34rpx 20rpx 12rpx;
+	line-height: 2em;
+	font-size: 30rpx;
+	color:#000;
+	border-top: 1rpx dashed #979797;
+}
+.content-line:nth-of-type(1){
+	padding:28rpx 34rpx 19rpx 12rpx;
+	font-size: 32rpx;
+	font-weight: 600;
+	border-top: 0;
+}
+.content-line:nth-of-type(4){
+	padding:10rpx 34rpx 27rpx 12rpx;
+}
+.weui-btn_info{
+	position: fixed;
+	bottom:75rpx;
+	left: 36rpx;
+	width:680rpx;
+	line-height: 60rpx;
+	color:#fff;
+	font-size: 34rpx;
+	background:#5394ff;
+	border-radius:100rpx;
+}
+.weui-btn_info:visited{color:#d0d0d0;}
+.weui-btn_info:active{color:#d0d0d0;}
+

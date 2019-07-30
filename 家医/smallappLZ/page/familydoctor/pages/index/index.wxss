@@ -1,0 +1,219 @@
+/**index.wxss**/
+@import "../../../common/template/head/head.wxss";
+page {
+  background-color: #f3f3f3;
+}
+
+.doctors-entry {
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-shadow:0rpx 1rpx 8rpx 0rpx rgba(0, 0, 0, 0.11);
+}
+.doctors-entry .doctors-wap {
+  margin-top: 34rpx;
+}
+.doctors-entry .doctors-wap .text1 {
+  font-size:30rpx;
+  color:#3f3f3f;
+  text-align:right;
+}
+.doctors-entry .doctors-wap .text2 {
+  color:#999999;
+  font-size:28rpx;
+  text-align:right;
+}
+.doctors-entry .right.right-ico {
+  margin-top:70rpx;
+  margin-left:30rpx;
+}
+.sign-entry {
+  padding: 22rpx 10rpx;
+  position: relative;
+}
+.sign-entry image {
+  width: 100%;
+  display: block;
+}
+.sign-entry .sign-btn {
+  position: absolute;
+  right: 55rpx;
+  margin-top: -35rpx;
+  top: 54%;
+	font-size: 28rpx;
+	letter-spacing: 2rpx;
+	color: #ffffff;
+  background-color: #d6661c;
+  line-height: 1;
+  padding: 16rpx 25rpx;
+  border-radius: 100rpx;
+}
+
+/*本人家人信息*/
+.page-header_copy{height:80rpx;background:rgba(101,174,249,0.5);}
+.info-wrap .scroll-wrap{position:relative;padding:0 85rpx 0 25rpx;}
+.info-wrap .scroll-wrap view{overflow:visible;}
+.info-wrap .scroll-wrap .nav-wap{
+  position: relative;
+  padding:25rpx 35rpx 35rpx 0;
+}
+.info-wrap .scroll-wrap .nav-wap .nav-tab{
+  position: relative;
+  min-width:100rpx;
+  padding: 7rpx 10rpx;
+  margin-right:30rpx;
+  font-size:28rpx;
+  text-align: center;
+  color:#7a7a7a;
+  border:1rpx solid #979797;
+  border-radius: 100rpx;
+  z-index:10;
+}
+.info-wrap .scroll-wrap .nav-wap .is-active{
+  background:#5394ff;
+  color:#fff;
+  border:1rpx solid #5394ff;
+}
+.info-wrap .scroll-wrap .nav-wap .is-active:after{
+  position: absolute;
+  content: '';
+  left: 40%;
+  bottom: -14rpx;
+  border-top: 15rpx solid #5394ff;
+  border-bottom: 0rpx solid transparent;
+  border-left: 11rpx solid transparent;
+  border-right: 11rpx solid transparent;
+}
+.info-wrap .scroll-wrap .add-icon{
+  position: absolute;
+  top:30rpx;
+  right:35rpx;
+}
+
+.info-wrap  .item-wrap{
+  margin-left:37rpx;
+  padding:0 40rpx 20rpx 0;
+  border-top:1rpx dashed #979797;
+  font-size:28rpx;
+  color:#7a7a7a;
+}
+.info-wrap .item-wrap .wrap-line1{
+  justify-content: flex-start;
+  padding:25rpx 10rpx 20rpx 10rpx;
+}
+.info-wrap .item-wrap .wrap-line1 .info-name{
+  font-size:34rpx;
+  color:#000;
+  padding-right:40rpx;
+}
+.info-wrap .item-wrap .wrap-line1 .item-ft{
+  font-size:28rpx;
+  color:#fba559;
+  text-align: right;
+}
+.info-wrap .item-wrap  .wrap-line2{
+  justify-content: flex-start;
+  padding:0rpx 10rpx;
+}
+.info-wrap .item-wrap  .wrap-line2 .margin-rl_location{
+  margin-left:9rpx;
+  margin-right:15rpx;
+}
+/*医生团队&机构团队*/
+.panel-wrap{
+  margin: 30rpx 25rpx;
+  padding:35rpx 20rpx;
+  height:130rpx;
+  font-size:28rpx;
+  color:#7a7a7a;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.panel-wrap .image-doc{
+  width:130rpx;
+  height:130rpx;
+  margin-right:23rpx;
+  border-radius: 10rpx;
+  background: #979797;
+}
+.panel-wrap .line-wrap{
+  justify-content:space-between;
+}
+.panel-wrap .line-wrap .line-bd{
+  width:354rpx;
+  font-size:34rpx;
+  color:#000;
+}
+.panel-wrap .line-wrap .line-icon{
+  margin-left:15rpx;
+  vertical-align: middle;
+}
+.panel-wrap .line-wrap .line-icon:nth-of-type(1){
+  margin-left:0;
+}
+.panel-wrap .image-org{
+  width:130rpx;
+  height:111rpx;
+  margin-right:23rpx;
+  border-radius: 10rpx;
+  background: #979797;
+}
+/*本人签约家庭医生签约*/
+.small-box{
+   margin:0 20rpx 30rpx;
+   justify-content: space-between;
+}
+.small-box .btn-sign{
+  width:340rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  font-size:32rpx;
+  color:#ffffff;
+  text-align: center;
+  border-radius:20rpx;
+}
+.small-box .ownsign{
+  background-image:linear-gradient(100deg, #fba13c 0%, #ffba66 100%);
+}
+.small-box .familysign{
+  background-image:linear-gradient(138deg, #59a1f4 0%, #76cfff 100%);
+}
+.flex-box{
+  padding: 16rpx 27rpx 14rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#000;
+  background: #fff;
+}
+.box-cell{
+  padding:12rpx 0;
+}
+/*服务到家*/
+.service-wrap{
+  font-size:28rpx;
+  color:#000;
+  background: #fff;
+}
+.service-wrap .title{
+  position:relative;
+  height:100rpx;
+  padding:0 56rpx 0 42rpx;
+  font-size:34rpx;
+  color:#7a7a7a;
+  background: #fff;
+}
+.service-wrap .item{
+  position:relative;
+  height:100rpx;
+  padding:0 45rpx 0 5rpx;
+  margin-left:42rpx;
+  border-top:1rpx dashed #979797;
+}
+.service-wrap .item:nth-of-type(1){ border-top:none; }
+.service-wrap .item .margin-r_sub{margin-right: 12rpx;}
+.img-wrap {
+  margin:30rpx 0;
+}
+.img-wrap image {
+  width: 100%;
+  height: 300rpx;
+}

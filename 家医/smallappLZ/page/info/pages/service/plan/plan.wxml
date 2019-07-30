@@ -1,0 +1,38 @@
+<view class="pl_log">
+  <view class="pl_jq">近期服务</view>
+  <view wx:if="{{!aa[0].memberName}}" class="pl_ln">
+    请签约
+  </view>
+  <scroll-view scroll-x="true">
+    <view style="width:1300rpx">
+
+      <navigator class="pl_hz" wx:for="{{aa}}" url="../detail/detail?mas={{item.id}}">
+        <image src="{{item.tupian}}"></image>
+        <view>{{item.memberName}}</view>
+        <view>{{item.nameAs}}</view>
+        <view>{{item.execTime}}</view>
+      </navigator>
+  
+      <navigator class="pl_gd" url="../list/list">更多 〉</navigator>
+    </view>
+  </scroll-view>
+</view>
+<view class="pl_las">
+  <view class="pl_jq">服务方案({{lis.length}})</view>
+  <view  class="pl_ln" wx:if="{{!lis[0].memberName}}">
+    请签约
+  </view>
+   <view wx:if="{{aa[0].memberName}}">
+ 
+      <navigator class="pl_fes"wx:for="{{lis}}" url="../list/list?nameAs={{item.nameAs}}">
+        <image src="{{item.tupian}}"></image>
+        <view class="pl_ca" >
+            <view>{{item.memberName}}</view>
+            <view>{{item.nameAs}}</view>
+            <view>{{item.nextTime}}</view>
+        </view> 
+      </navigator>
+     
+  </view> 
+</view>
+<view class="pl_wan">已加载完毕</view>

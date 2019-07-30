@@ -1,0 +1,107 @@
+<!--pages/doctor/index/index.wxml-->
+<view class="yt-wrap">
+  <view>
+    <view class="weui-cells">
+      <view class="weui-cell padding-index_top">
+        <view class="weui-cell__hd">
+          <image class="img-circle_lg" mode="aspectFill" src="{{userInfo.doc.imagePic?userInfo.doc.imagePic:'../../../../images/img_default.png'}}"></image>
+        </view>
+        <view class="weui-cell__bd margin-left_s">
+          <view class="font-primary_xxl">{{userInfo.doc.name}}</view>
+          <view class="font-info_xs margin-top_s">{{userInfo.doc.titleName}}
+            <text class="margin-left_s">{{userInfo.doc.teamInfo.teamName}}</text>
+          </view>
+        </view>
+        <view class="weui-cell__ft flex-center flex-flow_column box_QRCode" bindtap="showDialogCode" data-statu="openDialogCode">
+          <view class="line-vertical"></view>
+          <view class="code-circle-ico"></view>
+          <text class="margin-top_xs">扫码签约</text>
+        </view>
+      </view>
+    </view>
+    <!-- 扫码弹窗 -->
+    <view hidden="{{!showDialogCode}}" data-statu="openDialogCode">
+      <view class="dialog-mask"></view>
+      <view class="dialog-box">
+        <view class="dialog-content">
+          <view class="weui-cell dialog-content_cell">
+            <view class="weui-cell__hd">
+              <image class="img-circle_lg" mode="aspectFill" src="{{userInfo.doc.imagePic?userInfo.doc.imagePic:'../../../../images/img_default.png'}}"></image>
+            </view>
+            <view class="weui-cell__bd margin-left_s text-align_left">
+              <view class="font-primary_xxl">{{userInfo.doc.name}}</view>
+              <view class="font-info_xs margin-top_s">{{userInfo.doc.titleName}}
+                <text class="margin-left_s">{{userInfo.doc.teamInfo.teamName}}</text>
+              </view>
+            </view>
+          </view>
+          <canvas class="dialog-main_code" canvas-id="myQrcode"></canvas>
+          <view class="font-info_xs">扫一扫，与我签约</view>
+        </view>
+        <view class="margin-top_m">
+          <view class="delete-big-ico" bindtap="onCancelDialog"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 签约审核 -->
+  <!-- <navigator class="flex-center box_sign" url="../check/list/list?docId={{docId}}" hover-class="navigator-hover">
+		<image class="pic-bg" mode="{{item.bgMode}}" src="{{bgSrc}}"></image>
+		<view class="box-text">
+			<view class="font-default_xl">签约审核</view>
+			<view class="font-default_s">审核居民签约申请</view>
+		</view>
+	</navigator> -->
+  <!-- 健康咨询 -->
+  <!-- <navigator class="flex-center box_sign" url="../online/list/list?docId={{id}}" hover-class="navigator-hover">
+		<image class="pic-bg" mode="{{item.bgMode}}" src="{{bgOnlineSrc}}"></image>
+		<view class="box-text">
+			<view class="font-default_xl">健康咨询</view>
+			<view class="font-default_s">解答患者疑问</view>
+		</view>
+	</navigator> -->
+
+  <view class="dc_in">
+    <navigator url="../check/list/list?docId={{docId}}">
+      <image src="../../images/plan.png"></image>
+      <view>签约审核</view>
+    </navigator>
+    <navigator url="../online/list/list?docId={{familyDocId}}">
+      <image src="../../images/short.png"></image>
+      <view>健康咨询</view>
+    </navigator>
+    <navigator url="../service/work/work">
+      <image src="../../images/textbook.png"></image>
+      <view>工作计划</view>
+    </navigator>
+    <navigator url="../service/ope/ope">
+      <image src="../../images/time.png"></image>
+      <view>服务计划</view>
+    </navigator>
+  </view>
+
+
+  <!--图表-->
+  <navigator class="weui-cell weui-cell_lZero" url="../countlist/countlist?orgId={{orgId}}&teamId={{teamId}}" hover-class="navigator-hover">
+    <view class="weui-cell__bd">
+      <text class="font-primary_m">签约统计</text>
+    </view>
+    <view class="weui-cell__ft right-ico"></view>
+  </navigator>
+  <view class="weui-cell flex-flow_column">
+    <view class="canvas-series font-info_xxs">
+      <text class="canvas-circle"></text>
+      <text class="margin-left_xxs">全院</text>
+      <text class="canvas-circle canvas-circle_primary margin-left_s"></text>
+      <text class="margin-left_xxs">本团队</text>
+    </view>
+    <canvas hidden="{{showDialogCode}}" canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+  <!-- 图表无数据(后端改了逻辑，不存在无数据情况)-->
+  <!-- <block wx:if="{{countDataLength==0}}">
+		<view class="weui-cell flex-flow_column">
+			<view class="pic-null error-ico"></view>
+			<text class="font-info_m">暂无数据</text>
+		</view>
+	</block> -->
+</view>

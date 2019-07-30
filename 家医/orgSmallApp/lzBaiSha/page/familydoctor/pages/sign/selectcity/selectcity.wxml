@@ -1,0 +1,46 @@
+<view class="search" style="{{focusDisplay?'padding-right:140rpx;':''}}">
+  <view class="input-wap">
+    <view class="search-ico"></view>
+    <input placeholder="搜索城市" confirm-type="search" bindinput="searchCityTap" value="{{name}}" bindfocus="focusTap"/>
+    <view class="delete-small-line-ico" bindtap="cancelCityTap"  style="display:{{deleteCityDisplay}}"></view>
+  </view>
+  <view class="location-wap" wx:if="{{focusDisplay}}" bindtap="cancelTap"><text style="margin-right:15rpx;">取消</text></view>
+</view>
+<scroll-view class="list" wx:if="{{focusDisplay}}" scroll-y="true" style="height: {{height}}px" scroll-into-view="{{toView}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+  <view class="all-row">
+    <view>
+      <view class="body">
+        <view wx:if="{{(selectCities.length<1)&&name}}" style="text-align:center">未找到相应城市！</view>
+        <view wx:for="{{selectCities}}" bindtap="selectedTap" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{!focusDisplay}}">
+  <view class="current-row" wx:if="{{city}}">
+    <view>当前城市</view>
+    <view class="current-city">
+      <view class="city-btn">{{city}}</view>
+    </view>
+  </view>
+</view>
+<scroll-view class="list" wx:if="{{!focusDisplay}}" scroll-y="true" style="height: {{height}}px" scroll-into-view="{{toView}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+  <view class="all-row">
+    <view>
+      <view class="header" id="hot">热门城市</view>
+      <view class="body">
+        <view wx:for="{{hotCities}}" bindtap="selectedTap" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view wx:for="{{letterArr}}" wx:for-item="letter">
+      <view class="header" id="{{letter}}">{{letter}}</view>
+      <view class="body">
+        <view wx:for="{{cityList}}" wx:if="{{item.letter==letter}}" bindtap="selectedTap" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="letter-tab" wx:if="{{!focusDisplay}}">
+  <view bindtap="tabLinkTap" data-id="hot" class="{{'hot'==toView?'active':''}}">HOT</view>
+  <view wx:for="{{letterTag}}" bindtap="tabLinkTap" data-id="{{item}}" class="{{item==toView?'active':''}}">{{item}}</view>
+</view>

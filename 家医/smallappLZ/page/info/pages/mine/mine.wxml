@@ -1,0 +1,112 @@
+<view class='sm-wap'>
+    <navigator url="../editinfo/editinfo" class="mineinfo-pic">
+        <view class="mineinfo-left">
+            <image src="{{userInfo.userPic?userInfo.userPic:(userInfo.userSex=='2'?'../../../images/img_famFemale.png':(userInfo.userSex=='1'?'../../../images/img_famMale.png':'../../../images/user_img.png'))}}" mode="aspectFill" class="img"></image>
+        </view>
+        <view class="mineinfo-right">
+            <view class="mineinfo-name">{{userInfo.userName}}</view>
+            <view class="mineinfo-sexyear">
+                <text class="mineinfo-sex">{{userInfo.userSex=="1"?"男" : (userInfo.userSex=="2"?"女":"")}}</text>
+                <text class="mineinfo-year" wx-if="{{userInfo.age}}">{{userInfo.age}}岁</text>
+            </view>
+        </view>
+        <image class="mineinfo-arrow right-ico"></image>
+    </navigator>
+    <view class="editinfo-list">
+			  <view class="weui-cells">
+            <navigator url="{{userInfo.id?'../sign/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+										<image class="mineedit-icon list-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">我的签约</view>
+                    
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../doctors/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon group-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">我的医生</view>
+                   
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../family/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon family-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">家庭成员</view>
+                  
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../address/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon location-blue-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">管理地址</view>
+                </view>
+								<view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../../webviewlink/webviewlink?url=https://zqceshi.jiankang120.com.cn/physique-test/physiquelist.html':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon group-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">我的体测</view>
+                   
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+        </view>
+    </view>
+    <!--view class="editinfo-list">
+			  <view class="weui-cells">
+            <navigator url="{{userInfo.id?'../sign/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+										<image class="mineedit-icon list-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">我的挂号</view>
+                    
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../doctors/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon group-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">就诊缴费</view>
+                   
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../family/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon family-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">我的报告</view>
+                  
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="{{userInfo.id?'../address/list/list':'../editinfo/editinfo'}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon location-blue-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">关注的医生</view>
+                </view>
+								<view class="mineedit-arrow right-ico"></view>
+            </navigator>
+        </view>
+    </view-->
+    <view class="mine-comm">
+         <view class="weui-cells">
+            <navigator class="weui-cell weui-cell_access" url="{{userInfo.id?'../healthyhouse/healthyhouse':'../editinfo/editinfo'}}">
+                <view class="weui-cell__bd">
+										<image class="mineedit-icon house-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">智康小屋</view>
+                    
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+            <navigator url="../../community/center/center" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+								<image class="mineedit-icon building-ico"></image>
+                    <view style="display: inline-block; vertical-align: middle">社区中心</view>
+                </view>
+                <view class="mineedit-arrow right-ico"></view>
+            </navigator>
+        </view>
+    </view>
+</view>

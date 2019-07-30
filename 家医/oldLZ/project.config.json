@@ -1,0 +1,164 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wxf9b46d65f027cf94",
+	"projectname": "%E9%9B%B7%E5%B7%9E%E5%AE%B6%E5%BA%AD%E5%8C%BB%E7%94%9F",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "签约详情",
+					"pathName": "pages/sign/detail/detail",
+					"query": "id=744286859561234432"
+				},
+				{
+					"id": 1,
+					"name": "签约确认",
+					"pathName": "pages/sign/confirm/confirm",
+					"query": "tid=744286859561234432"
+				},
+				{
+					"id": -1,
+					"name": "图标",
+					"pathName": "pages/icodemo/icodemo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择地址",
+					"pathName": "pages/sign/selectaddress/selectaddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "社区资讯列表",
+					"pathName": "pages/community/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "社区资讯详情",
+					"pathName": "pages/community/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "社区中心",
+					"pathName": "pages/community/center/center",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择社区",
+					"pathName": "pages/sign/selectcommunity/selectcommunity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "医生审核详情",
+					"pathName": "pages/doctor/check/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择社区",
+					"pathName": "pages/sign/selectcommunity/selectcommunity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "信息编辑",
+					"pathName": "pages/info/editinfo/editinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择地址",
+					"pathName": "pages/sign/selectaddress/selectaddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "管理地址",
+					"pathName": "pages/info/address/list/list",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "编辑地址",
+					"pathName": "pages/info/address/edit/edit",
+					"query": "id=754512848441475072"
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/info/address/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新增成员",
+					"pathName": "pages/info/family/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "家庭成员列表",
+					"pathName": "pages/info/family/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "签约成功",
+					"pathName": "pages/sign/success/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择城市",
+					"pathName": "pages/sign/selectcity/selectcity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/info/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预约--选择时间",
+					"pathName": "pages/reservation/selectdate/selectdate",
+					"query": ""
+				}
+			]
+		}
+	}
+}

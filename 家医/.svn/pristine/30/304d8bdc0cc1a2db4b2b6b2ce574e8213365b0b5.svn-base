@@ -1,0 +1,23 @@
+<view class="re_log">
+  <view>计划时间</view>
+  <view> {{mar.execTime}}</view>
+</view>
+
+
+  <view class="re_logs">
+    <view class="re_las">申请改期时间</view>
+    <picker mode="date" value="{{date}}" start="2018-08-01" end="2222-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+  </view>
+
+<view class="re_ka">
+  <view>修改理由</view>
+  <textarea name="txt" clos=",50" rows="5" warp="virtual" placeholder='请填写改期理由' value="{{ceshi}}" bindblur="bindTextAreaBlur"></textarea>
+</view>
+
+<view class="re_po">说明：您对本次服务计划只能改期一次，若确定后仍需改动，请自行与医生联系。</view>
+
+<view class="re_qd" bindtap='lists'>确定</view>

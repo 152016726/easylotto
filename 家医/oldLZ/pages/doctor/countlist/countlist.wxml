@@ -1,0 +1,22 @@
+<!--pages/doctor/countlist/countlist.wxml-->
+<view class="yt-wrap">
+    <view class="weui-cells">
+		<view class="weui-cell">
+			<view class="flex-item flex-item_s">日期</view>
+			<view class="flex-item flex-item_l">全院签约(人)</view>
+			<view class="flex-item flex-item_m">本团队签约(人)</view>
+		</view>
+    </view>
+    <view class="list-null-box" wx:if="{{scroll.ifNull}}">
+        <view class="list-null-ico"></view>
+        <text>{{scroll.nullText}}</text>
+    </view>
+    <scroll-view class="scrollBox" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+        <view class="weui-cell" wx:for="{{countList}}">
+            <view class="flex-item flex-item_s">{{item.signDate}}</view>
+            <view class="flex-item flex-item_l">{{item.orgTotal}}</view>
+            <view class="flex-item flex-item_m">{{item.teamTotal}}</view>
+        </view>
+        <view class="load-text">{{scroll.loadText}}</view>
+    </scroll-view>
+</view>

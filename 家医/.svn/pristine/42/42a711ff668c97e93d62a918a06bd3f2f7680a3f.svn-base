@@ -1,0 +1,30 @@
+<view class="sm-wap">
+	<view class="team-name">
+		<view class="teamname-left">
+			<image class="teamname-pic" src="{{detailList.imagePic?detailList.imagePic:'../../../../../images/img_teamdefault.png'}}" mode="aspectFill"></image>
+		</view>
+		<view class="teamname-middle">
+			<view class="teamname-title">{{detailList.name}}</view>
+			<view class="teamname-detail">
+				<block wx:for="{{detailList.titleList}}">
+					 <text wx:if="{{index < detailList.titleList.length-1}}">{{item.titleCount}}名{{item.titleName}}、</text> 
+					 <text wx:else>{{item.titleCount}}名{{item.titleName}}</text>
+				</block>
+			</view>
+		</view>
+		<view class="teamname-right">
+			<view wx:if="{{isSign}}" class="teamname-btn">已签约</view>
+			<view wx:else class="teamname-btn">未签约</view>
+		</view>
+	</view>
+	<view class="team-info">
+		<view class="teaminfo-title">社区信息</view>
+		<view class="teaminfo-name">{{detailList.orgName}}</view>
+	</view>
+	<view class="team-skill">
+		<view class="teamskill-title">团队擅长</view>
+		<view class="teamskill-txt">
+			<view class="para">{{detailList.goodAt}}</view>
+		</view>
+	</view>
+</view>

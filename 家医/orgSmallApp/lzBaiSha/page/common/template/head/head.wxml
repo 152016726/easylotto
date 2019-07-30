@@ -1,0 +1,13 @@
+<template name="head">
+  <view class="page-header weui-flex">
+    <view class="head-hd"><text class="lz-location-ico"></text>湛江</view>
+    <picker bindchange="pickerChange" value="{{pickerIndex}}" range="{{array}}" mode ="selector"  class="weui-flex__item text-center">
+      <view>{{array[pickerIndex]}}<text class="lz-down-ico"></text> </view>
+    </picker>
+    <!--非pickerwxml-->
+    <!--<view class="weui-flex__item text-center">雷州市xx社区卫生服务中心 <text class="lz-down-ico"></text> </view>-->
+    <view class="head-rg">
+      <text class="lz-richscan-ico"></text>
+    </view>
+  </view>
+</template>

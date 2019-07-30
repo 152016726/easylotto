@@ -1,0 +1,79 @@
+<view class="block block1" data-id="{{detail.id}}" bindtap="linkTeamDetailTap">
+  <view class="team">
+    <image src="{{detail.imagePic?detail.imagePic:'../../../images/img_teamdefault.png'}}"  mode="aspectFill"></image>
+    <view class="content">
+      <view class="name">{{detail.name}}</view>
+      <view class="description">
+        <text wx:for="{{detail.titleList}}" wx:for-index="idx">{{item.titleCount}}名{{item.titleName}}<text wx:if="{{(idx+1) != detail.titleList.length}}">、</text></text>
+      </view>
+      <view class="count">
+        <view class="sign-num">
+          <view class="pen-circle-ico"></view>
+          <text>签约数 {{detail.orderNum}}</text>
+        </view>
+        <view class="service-num">
+          <view class="love-circle-ico"></view>
+          <text>服务人数 {{detail.serviceNum}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="right-ico"></view>
+  </view>
+  <view class="indications">
+    <view class="indications-ico"></view>
+    <view class="content">{{detail.goodAt}}<text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+  </view>
+</view>
+<view class="block block2">
+  <view class="header">团队情况</view>
+  <scroll-view class="content" scroll-x="true" style=" white-space: nowrap; display: flex" >
+    <view class="box" wx:for="{{team}}" wx:if="{{item.teamTitle==1}}">
+      <navigator url="../../info/doctors/doctordetail/doctordetail?id={{item.docId}}">
+        <view><image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../images/img_default.png'}}" mode="aspectFill"></image></view>
+        <view class="name">{{item.docName}}</view>
+        <view class="tag">队长</view>
+      </navigator>
+      </view>
+    <view class="box" wx:for="{{team}}" wx:if="{{item.teamTitle!=1}}">
+      <navigator url="../../info/doctors/doctordetail/doctordetail?id={{item.docId}}">
+        <view><image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../images/img_default.png'}}" mode="aspectFill"></image></view>
+        <view class="name">{{item.docName}}</view>
+        <view wx:if="{{item.teamTitle==3}}" class="tag">后勤</view>
+        <view wx:if="{{item.teamTitle!=1}}"><text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>
+<view class="block block3">
+  <view class="line clearfox">
+    <view class="left">服务对象</view>
+    <view class="right">全体家庭成员</view>
+  </view>
+  <view class="line clearfox">
+    <view class="left">协议年限</view>
+    <view class="right">{{detail.serviceTime}}年</view>
+  </view>
+</view>
+<view class="block block4">
+  <view>社区信息</view>
+  <view class="info">{{detail.orgName}}</view>
+</view>
+<view class="block block5">
+  <view class="header">
+    <view>服务内容</view>
+  </view>
+  <view class="content-wap">
+    <view class="content">
+      <view>{{detail.description}}</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-block">
+  <view class="sign-konw clearfox">
+    <view class="left"  bindtap="linkAgreeTap">签约须知<view class="question-white-ico"></view></view>
+    <checkbox-group class="check-wap right" bindchange="checkboxChange">
+      <checkbox class="ws-checkbox" value="{{checkeVal}}" checked="true"/>
+    </checkbox-group>
+  </view>
+  <button class="next-btn" disabled="{{disabled}}" bindtap="confirmTap">下一步</button>
+</view>

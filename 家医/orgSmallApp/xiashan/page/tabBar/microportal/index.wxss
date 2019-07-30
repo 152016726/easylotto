@@ -1,0 +1,27 @@
+/*swiper*/
+.swiper{
+    height: 320rpx;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.swiper image{
+    height: 100%;
+    width: 100%;
+}
+/*栏目*/
+.flex-box{
+    padding: 0 27rpx 17rpx;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    font-size:28rpx;
+    color:#000;
+    background: #fff;
+}
+.box-cell{
+    padding:34rpx 0 22rpx;
+    width:200rpx;
+}
+.box-cell_text{
+	margin-top: -9rpx;
+}

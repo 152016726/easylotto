@@ -1,0 +1,184 @@
+<view class="block linkman-block" bindtap="selectAddressTap">
+  <view class="info">
+    <view wx:if="{{address.name}}" class="line1">
+      <text>{{address.name}}</text>
+      <text>{{address.mobile}}</text>
+    </view>
+    <view wx:if="{{address.provinceName}}" class="line2">
+      <view class="location-line-ico"></view>
+      <view>{{address.provinceName}}{{address.cityName}}{{address.districtName}}{{address.address}}</view>
+    </view>
+    <view wx:if="{{!address.provinceName}}" class="line2">
+      <view>请选择地址</view>
+    </view>
+  </view>
+  <view class="pen-ico"></view>
+</view>
+<view class="block block1" data-id="{{detail.id}}" bindtap="linkTeamDetailTap">
+  <view class="team">
+    <image src="{{detail.imageSmallPic?detail.imageSmallPic:'../../../images/img_teamdefault.png'}}"  mode="aspectFill"></image>
+    <view class="content">
+      <view class="name">{{detail.name}}</view>
+      <view class="description">
+        <text wx:for="{{detail.titleList}}" wx:for-index="idx">{{item.titleCount}}名{{item.titleName}}<text wx:if="{{(idx+1) != detail.titleList.length}}">、</text></text>
+      </view>
+      <view class="count">
+        <view class="sign-num">
+          <view class="pen-circle-ico"></view>
+          <text>签约数 {{detail.orderNum}}</text>
+        </view>
+        <view class="service-num">
+          <view class="love-circle-ico"></view>
+          <text>服务人数 {{detail.serviceNum}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="right-ico"></view>
+  </view>
+  <view class="indications">
+    <view class="indications-ico"></view>
+    <view class="content">{{detail.goodAt}}<text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+  </view>
+</view>
+<view class="block block6">
+  <view class="header">团队情况</view>
+  <scroll-view class="content" scroll-x="true" style=" white-space: nowrap; display: flex" >
+    <view class="box" wx:for="{{team}}" wx:if="{{item.teamTitle==1}}">
+      <navigator url="../../info/doctors/doctordetail/doctordetail?id={{item.docId}}">
+        <view><image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../images/img_default.png'}}" mode="aspectFill"></image></view>
+        <view class="name">{{item.docName}}</view>
+        <view class="tag">队长</view>
+      </navigator>
+      </view>
+    <view class="box" wx:for="{{team}}" wx:if="{{item.teamTitle!=1}}">
+      <navigator url="../../info/doctors/doctordetail/doctordetail?id={{item.docId}}">
+        <view><image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../images/img_default.png'}}" mode="aspectFill"></image></view>
+        <view class="name">{{item.docName}}</view>
+        <view wx:if="{{item.teamTitle==3}}" class="tag">后勤</view>
+        <view wx:if="{{item.teamTitle!=1}}"><text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>
+<view class="block block3">
+  <view class="header clearfox">
+    <view class="left">选择家庭成员</view>
+    <checkbox-group class="check-wap right" bindchange="checkAllChange">
+      <text>全选</text>
+      <checkbox class="ws-checkbox" checked="{{checkAll}}"/>
+    </checkbox-group>
+  </view>
+  <checkbox-group class="content" bindchange="checkboxChange">
+    <view class="box" wx:for="{{checkboxList}}">
+      <checkbox value="{{item.value}}" checked="{{item.checked}}" wx:if="{{item.signStatus=='0'}}"/>
+      <view class="content-wap">
+        <view><image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../images/img_famMale.png':'../../../images/img_famFemale.png'}}" mode="aspectFill"></image></view>
+        <view class="name">{{item.name}}</view>
+        <view class="selected-ico"></view>
+        <view class="signed-tag" wx:if="{{item.signStatus=='1'}}">已签</view>
+      </view>
+    </view>
+    <view wx:if="{{checkboxList.length < 10}}" class="box" bindtap="linkAddMemberTap">
+      <view><image src="../../../images/add.png" mode="aspectFit"></image></view>
+      <view class="name" style="opacity:0">...</view>
+    </view>
+  </checkbox-group>
+</view>
+<view class="block block2">
+  <view class="line clearfox">
+    <view class="left">服务方式</view>
+    <view class="right">{{detail.serviceTypeName}}</view>
+  </view>
+  <view class="line clearfox">
+    <view class="left">服务对象</view>
+    <view class="right">全体家庭成员</view>
+  </view>
+  <view class="line clearfox">
+    <view class="left">协议年限</view>
+    <view class="right">{{detail.serviceTime}}年</view>
+  </view>
+</view>
+<view class="block block4">
+  <view>社区信息</view>
+  <view class="info">{{detail.orgName}}</view>
+</view>
+<view class="block block5">
+  <view class="header">
+    <view>服务内容</view>
+  </view>
+  <view class="content-wap">
+    <view class="content">
+      <view>{{detail.description}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="bottom-block">
+  <view class="sign-konw clearfox">
+    <view class="left"  bindtap="linkAgreeTap">签约须知<view class="question-white-ico"></view></view>
+    <checkbox-group class="check-wap right" bindchange="checkAgree">
+      <checkbox class="ws-checkbox" value="{{checkeVal}}" checked="true"/>
+    </checkbox-group>
+  </view>
+  <button class="next-btn" disabled="{{disabled}}" bindtap="confirmTap">立即签约</button>
+</view>
+<!--签约弹窗-->
+<view class="sign-wrap" catchtouchmove="preventTouchMove" wx:if="{{ifPlay}}">
+    <view class="weui-mask"></view>
+    <view class="dialog-content">
+        <view class="dialog-header">
+            <view class="dialog-header_title">
+                签约中
+            </view>
+            <view class="sign-success-ico dialog-header_bg"></view>
+        </view>
+        <view class="dialog-body">
+            <view class="dialog-body_title">
+                您确定签约此医生团队，为您的家庭提供健康服务？
+            </view>
+            <view class="weui-flex dialog-main">
+                <view>
+                    <image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../images/img_famMale.png':'../../../images/img_teamdefault.png'}}"  class="avator-img_dialog" mode="aspectFill"></image>
+                </view>
+                <view class="weui-flex__item min-width_zero">
+                    <view>{{detail.name}}</view>
+                    <view class="margin-t_sm fc-sm_prim weui-media-box__desc"><text wx:for="{{detail.titleList}}">{{item.titleCount}}名{{item.titleName}}<text wx:if="{{detail.titleList.length > (index+1)}}">、</text></text></view>
+                </view>
+            </view>
+            <view class="weui-flex dialog-btn_area">
+                <button class="weui-btn weui-btn_base weui-btn_md" bindtap="cancelDialogTap">再想想</button>
+                <button class="weui-btn weui-btn_normal weui-btn_md" bindtap="confirmDialogTap">确定</button>
+            </view>
+        </view>
+        <view class="dialog-box_close">
+            <i class="delete-big-ico dialog-delete" bindtap="cancelDialogTap"></i>
+        </view>
+    </view>
+</view>
+<!--签名弹窗-->
+<view class='sign-diolog' hidden="{{ifshow}}">
+    <view class="sign-content">
+      <canvas class='firstCanvas'
+              canvas-id="firstCanvas" 
+              bindtouchmove='move' 
+              bindtouchstart='start' 
+              bindtouchend='end' 
+              bindtouchcancel='cancel'
+              bindlongtap='tap'
+              disable-scroll='true'
+              binderror='error'>        
+      </canvas>
+    </view>
+      <view class="transform-wap">
+        <view class="header">
+          <view class="hname"></view>
+        </view>
+        <view class="return">
+          <view id="cancel" bindtap='returnClick'></view>
+        </view>
+        <view class="tools">
+          <view id="reset" bindtap='clearClick'></view>
+          <view id="submit" bindtap='saveClick' ></view>
+        </view>
+      </view>
+</view>

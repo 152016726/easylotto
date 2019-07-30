@@ -1,0 +1,54 @@
+<!--pages/info/report/list/list.wxml-->
+<view class="yt-wrap">
+    <!--下拉菜单-->
+    <picker bindchange="bindPatientChange" bindcancel="bindcancel" value="{{patientIndex}}" range="{{patientArray}}" mode = selector>
+        <view class="weui-flex menu-nav" bindtap="arrowChange">
+            <view class="weui-cell__bd"><text>当前就诊人:</text>{{patientArray[patientIndex]}}</view>
+            <view class="{{isShow?'lz-up-ico':'lz-down-ico'}}">
+            </view>
+        </view>
+    </picker>
+    <view class="nav-tab weui-flex weui-cell_access" bindtap="changeTab">
+        <block wx:for="{{navTab}}">
+            <view class="nav-tab_item {{index==currentIndex?'is-navtab_active':''}}" data-index="{{index}}">
+                {{item}}
+            </view>
+        </block>
+    </view>
+    <!-- 列表切换栏 -->
+    <view>
+        <view class="weui-flex nav"> 
+            <text wx:for="{{navbar}}" data-idx="{{index}}" class="font-info_m nav-item {{currentTab==index ? 'nav-item_active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+        </view> 
+    </view>
+    <view class="list-wrap">
+        <scroll-view class="scroll-view" scroll-y="true" style="height:{{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!scroll.ifNull}}">
+            <navigator class="list-block weui-flex" wx:for="{{reportList}}" url="../detail/detail?itemId={{item.id}}&patientId={{patientId}}&itemType={{item.itemType}}">
+                <view class="weui-flex__item">
+                    <view class="flex-center flex-spaceBetween">
+                        <view class="weui-cell__bd">{{item.itemName}}</view>
+                        <view class="font-org_s">报告已出</view>
+                       <!--  <view class="font-b2b2b2_s">暂未出</view>  -->
+                    </view>
+                    <view class="font-grey_s margin-top_s">{{item.itemTime}}</view>
+                </view>
+               <!--  改版前-无报告状态 -暂时保留-->
+              <!--   <view class="weui-flex__item">
+                    <view>{{item.itemName}}</view>
+                    <view class="font-grey_s margin-top_s">{{item.itemTime}}</view>
+                </view>
+                <view class="weui-flex flex-flow_column">
+                    <view class="icon-dot"></view>  
+                    <view class="icon-dot"></view>  
+                    <view class="icon-dot"></view>
+                </view> -->
+            </navigator>
+            <view class="load-text">{{scroll.loadText}}</view>
+        </scroll-view>
+        <!-- 列表无数据 -->
+        <view class="list-null-box" wx:if="{{scroll.ifNull}}">
+            <view class="list-null-ico"></view>
+            <text>{{scroll.nullText}}</text>
+        </view>
+    </view>
+</view>

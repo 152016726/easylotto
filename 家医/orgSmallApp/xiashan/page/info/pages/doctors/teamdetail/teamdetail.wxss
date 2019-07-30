@@ -1,0 +1,94 @@
+.sm-wap{
+	/* display: flex;
+	flex-direction: column; */
+	height: 100%;
+}
+.team-name,.team-info,.team-skill{
+	background-color: #fff;
+	/* flex: 1; */
+}
+.team-name{
+	padding: 33rpx 20rpx 35rpx 28rpx;
+	height: 145rpx;
+}
+.teamname-left,.teamname-middle,.teamname-right{
+	float: left;
+}
+.teamname-left{
+	height: 142rpx;
+	width: 142rpx;
+}
+.teamname-pic{
+	height: 142rpx;
+	width: 142rpx;
+	border-radius: 11rpx;
+}
+.teamname-middle{
+	padding-left:23rpx;
+	width: 380rpx;
+}
+.teamname-title{
+	font-size: 36rpx;
+	line-height: 36rpx;
+	color: #3a3a3a;
+	margin-bottom: 10rpx;
+}
+.teamname-detail{
+	font-size:28rpx;
+	color: #979797;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+	text-overflow: ellipsis; 
+	}
+.teamname-right{
+	width: 150rpx;
+}
+.teamname-btn{
+	width: 140rpx;
+	height: 40rpx;
+	font-size: 22rpx;
+	line-height: 40rpx;
+	text-align: center;
+	vertical-align: middle;
+	color: #35aeff;
+	border-radius: 18rpx;
+	border: 1rpx solid #35aeff;
+}
+.team-info{
+	margin: 16rpx 0 27rpx 0;
+	padding: 25rpx 0 28rpx 30rpx;
+}
+.teaminfo-title{
+	font-size: 32rpx;
+	color: #545454;
+	margin-bottom: 10rpx;
+}
+.teaminfo-name{
+	font-size: 30rpx;
+	color: #545454;
+}
+.team-skill{
+	width:100%;
+	padding-left: 35rpx;
+	position: absolute;
+	top: 416rpx;
+	bottom:0;
+	left:0rpx;
+
+}
+.teamskill-title{
+	font-size: 32rpx;
+	padding:8rpx 0 12rpx 5rpx;
+	color: #525252;
+	border-bottom: 1rpx solid #eee;
+}
+.teamskill-txt{
+	padding: 15rpx 40rpx 10rpx 0;
+}
+.para{
+	font-size: 28rpx;
+	color: #696969;
+	text-indent: 2em;
+}

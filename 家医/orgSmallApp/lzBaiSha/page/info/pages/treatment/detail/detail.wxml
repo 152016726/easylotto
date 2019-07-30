@@ -1,0 +1,46 @@
+<!--pages/info/treatment/detail/detail.wxml-->
+<view class="rm-wrap">
+    <view class="box-cont">
+        <view class="box-title flex-center">
+            <view class="weui-flex__item">就诊人: <text>李一二</text></view>
+            <view class="warn-tip_sm"><text>已支付</text></view>
+        </view>
+        <view class="box-bd_prim">
+            <view>科室：<text></text>放射科</view>
+            <view>就诊医生：放射科</view>
+            <view>就诊时间：放射科</view>
+        </view>
+    </view>
+    <!--药品/检查/检验-->
+    <view class="box-cont" wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class="box-title flex-center" bindtap="infoToggle" id="{{item.id}}">
+            <view class="weui-flex__item">{{item.name}}</view>
+            <view class="arrows-box {{item.open?'is-arrow_up':''}}"></view>
+        </view>
+        <view class="box-bd {{item.open?'is-show':''}}">
+            <view class="box-bd_inner">
+                <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                    <view class="flex-center box-item">
+                        <view class="weui-flex__item">{{page}}\t<text>*1</text></view>
+                        <view class="box-bd_ft">￥24.00</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <!--静态模板-->
+    <!--<view class="box-cont">
+        <view class="box-title flex-center">
+            <view class="weui-flex__item">就诊人: <text>李一二</text></view>
+            <view class="warn-tip_sm"><text>已支付</text></view>
+        </view>
+        <view class="box-bd">
+            <view class="weui-flex">
+                <view class="weui-flex__item">药品名\t <text>*1</text></view>
+                <view class="box-bd_ft">￥24.00</view>
+            </view>
+            <view>就诊医生：放射科</view>
+            <view>就诊时间：放射科</view>
+        </view>
+    </view>-->
+</view>

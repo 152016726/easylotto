@@ -1,0 +1,72 @@
+<!--pages/doctor/check/list/list.wxml-->
+<view class="yt-wrap">
+	<!-- 搜索栏 -->
+	<view class="weui-search-bar">
+		<view class="weui-search-bar__form">
+			<view class="weui-search-bar__box">
+				<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+				<input type="text" class="weui-search-bar__input font-primary_s" placeholder="输入签约代表" placeholder-class="placeholder" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"/>
+				<view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+					<icon type="clear" size="14"></icon>
+				</view>
+			</view>
+			<label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+				<icon class="weui-icon-search" type="search" size="14"></icon>
+				<view class="weui-search-bar__text font-info_s">去搜索</view>
+			</label>
+		</view>
+		<view class="weui-search-bar__cancel-btn font-primary_m" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+	</view>
+	<!-- 搜索无结果 -->
+	<view class="search_null" wx:if="{{inputShowed&&(inputVal.length > 0)&&(scroll.ifNull)}}">
+		<text class="font-info_xl">无搜索结果</text>
+	</view>
+	<!-- 搜索结果 -->
+	<view class="cell_sign font-info_xs" wx:if="{{(inputVal.length > 0)&&inputShowed&&(!scroll.ifNull)}}">签约记录</view>
+	<!-- 列表切换栏 -->
+	<view hidden="{{inputShowed}}">
+		<view class="weui-flex nav"> 
+			<text wx:for="{{navbar}}" data-idx="{{index}}" class="font-info_m nav-item {{currentTab==index ? 'nav-item_active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+		</view> 
+	</view>
+	<!-- 列表无数据 -->
+	<view class="list-null-box" wx:if="{{scroll.ifNull&&!inputShowed}}">
+		<view class="list-null-ico"></view>
+		<text>{{scroll.nullText}}</text>
+	</view>
+	<!--审核列表--> 
+	<scroll-view wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+		<navigator class="weui-cells" wx:for="{{checkList}}" url="/pages/doctor/check/detail/detail?docId={{docId}}&id={{item.id}}" hover-class="navigator-hover"> 
+			<view class="weui-cell font-info_xs">
+				<view class="weui-cell__bd">
+					<view class="time-grey-ico icon-img"></view>
+					<text>签约时间</text>
+					<text class="margin-left_xxs">{{item.createTime}}</text>
+				</view>
+				<view class="weui-cell__ft">
+					<text class="font-warn_s" wx:if="{{statusDesc!='待审核'&&item.statusDesc=='已同意'}}">{{item.statusDesc}}</text>
+					<text class="font-info_xs" wx:if="{{statusDesc!='待审核'&&item.statusDesc=='已拒绝'}}">{{item.statusDesc}}</text>
+				</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__bd margin-left_xxs">
+					<view class="font-primary_xxxl" wx-if="{{!item.userNameArr}}">
+						<text>{{item.userName}}</text>
+						<text>的家庭</text>
+						<text class="font-primary_s">({{item.signMemberNum}}人)</text>
+					</view>
+					<view class="font-primary_xxxl" wx-if="{{item.userNameArr}}">
+						<text wx:for="{{item.userNameArr}}" wx:key="{{index}}" class="{{item == inputVal ? 'is-active' : '' }}">{{item}}</text>
+						<text>的家庭</text>
+						<text class="font-primary_s">({{item.signMemberNum}}人)</text>
+					</view>
+					<view class="font-info_s margin-top_xs">
+					    {{item.teamName}}
+						<text class="box-border">{{item.orderType=="1"?"基础服务":"增值服务"}}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<view class="load-text">{{scroll.loadText}}</view>  
+	</scroll-view>
+</view>

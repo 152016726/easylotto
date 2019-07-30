@@ -1,0 +1,74 @@
+<view class='sm-wap'>
+    <view class="forminfo membinfo-pic">
+        <view class="membinfo-txt">头像</view>
+        <view class="membinfo-img">
+            <image class="img" src="{{myInfo.userPic?myInfo.userPic:(myInfo.userSex=='2'?'../../../../../images/img_famFemale.png':(myInfo.userSex=='1'?'../../../../../images/img_famMale.png':'../../../../../images/user_img.png'))}}" mode="aspectFill"></image>
+        </view>
+    </view>
+
+    <view class="forminfo membinfo-list">
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">姓名</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue">{{myInfo.userName}}</text>
+            </view>
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">身份证</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue" >{{myInfo.idCard}}</text>
+            </view>
+        </view>
+				<view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">年龄</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue">{{userAge}}</text>
+            </view>
+        </view>
+				<view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">性别</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue">{{userSex}}</text>
+            </view>
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">地区</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue">{{myInfo.provinceName}} {{myInfo.cityName}} {{myInfo.districtName}}</text>
+            </view>
+        </view>
+        <view class="form-line">
+            <view class="form-label">
+                <text class="textlabel streetlabel">地址</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue streetvalue">{{myInfo.address}}</text>
+            </view>
+        </view>
+    </view>
+
+		<view class="forminfo editinfo-list">
+		<view class="form-line">
+            <view class="form-label">
+                <text class="textlabel">手机</text>
+            </view>
+            <view class="form-value">
+                <text class="insertvalue">{{myInfo.userMobile}}</text>
+            </view>
+        </view>
+		</view>
+
+		<!-- <view class="editinfo-save">
+        <button class="btn-primary btnsize-lg" bindtap="openSave">保存</button>
+    </view> -->
+</view>

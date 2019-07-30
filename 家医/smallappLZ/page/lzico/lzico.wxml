@@ -1,0 +1,479 @@
+<!--page/tabBar/lzico/lzico.wxml-->
+<view style="background: #e3e3e3;padding-left:10rpx;">
+    <view style="font-size:26rpx;">雪碧图lzico1.png</view>
+    <view>
+        <view class="lz-code-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-code-ico</text>
+    </view>
+    <view>
+        <view class="lz-news-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-news-ico</text>
+    </view>
+    <view>
+        <view class="lz-time-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-time-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-time-orange-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-time-orange-ico</text>
+    </view>
+    <view>
+        <view class="lz-order-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-order-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-phone-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-phone-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-phone-org-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-phone-org-ico</text>
+    </view>
+    <view>
+        <view class="lz-richscan-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-richscan-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-left-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-left-ico</text>
+    </view>
+    <view>
+        <view class="lz-top-cancle-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-top-cancle-ico</text>
+    </view>
+    <view>
+        <checkbox-group bindchange="checkboxChange">
+            <label>
+                <checkbox value="01" checked="{{true}}"  class="lz-checkbox-circle"/>
+                <text style="margin-left:20rpx;font-size:26rpx;">lz-checkbox-circle(checked=true)</text>
+            </label>
+        </checkbox-group>
+    </view>
+    <view>
+        <view class="lz-unselected--circle"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-unselected--circle</text>
+    </view>
+    <view>
+        <view class="lz-selected--circle"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-selected--circle</text>
+    </view>
+    <view>
+        <view class="lz-search-micphe-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-search-micphe-ico</text>
+    </view>
+    <view>
+        <view class="lz-search-glass-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-search-glass-ico</text>
+    </view>
+    <view>
+        <view class="lz-add-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-add-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-navigation-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-navigation-ico</text>
+    </view>
+    <view>
+        <view class="lz-more-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-more-ico</text>
+    </view>
+    <view>
+        <view class="lz-edit-pink-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-edit-pink-ico</text>
+    </view>
+    <view>
+        <view class="lz-cancel-pink-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-cancel-pink-ico</text>
+    </view>
+    <view>
+        <view class="lz-location-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-location-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-write-white-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-write-white-ico</text>
+    </view>
+    <view>
+        <view class="lz-write-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-write-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-calendar-white-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-calendar-white-ico</text>
+    </view>
+    <view>
+        <view class="lz-calendar-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-calendar-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-wechat-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-wechat-ico</text>
+    </view>
+    <view>
+        <view class="lz-idCard-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-idCard-ico身份证图标</text>
+    </view>
+    <view>
+        <view class="lz-bottle-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-bottle-ico</text>
+    </view>
+    <view>
+        <view class="lz-baby-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-baby-ico</text>
+    </view>
+    <view style="font-size:26rpx;">雪碧图lzico2.png</view>
+    <view>
+        <view class="lz-needle-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-needle-ico</text>
+    </view>
+    <view>
+        <view class="lz-love-hand-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-love-hand-ico</text>
+    </view>
+    <view>
+        <view class="lz-newborn-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-newborn-ico</text>
+    </view>
+    <view>
+        <view class="lz-medicine-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-medicine-ico</text>
+    </view>
+    <view>
+        <view class="lz-bed-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-bed-ico</text>
+    </view>
+    <view>
+        <view class="lz-stuture-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-stuture-ico</text>
+    </view>
+    <!--第二版-->
+    <view>
+        <view class="lz-delete-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-delete-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-delete-grey-base-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-delete-grey-base-ico</text>
+    </view>
+    <view>
+        <view class="lz-eyes-open-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-eyes-open-ico</text>
+    </view>
+    <view>
+        <view class="lz-eyes-close-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-eyes-close-ico</text>
+    </view>
+    <view>
+        <view class="lz-edit-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-edit-ico</text>
+    </view>
+    <view>
+        <view class="lz-edit-deep-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-edit-ico</text>
+    </view>
+    <view>
+        <view class="lz-inform-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-inform-ico 通知图标</text>
+    </view>
+    <view>
+        <view class="lz-fit-small-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-fit-small-ico健康图标</text>
+    </view>
+    <view>
+        <view class="lz-inquiry-small-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-inquiry-small-ico问诊图标</text>
+    </view>
+
+    <view>
+        <view class="lz-time-grey-big-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-time-grey-big-ico</text>
+    </view>
+    <view>
+        <view class="lz-choosen-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-choosen-ico</text>
+    </view>
+    <view>
+        <view class="lz-selected-solid-circle-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-selected-solid-circle-ico</text>
+    </view>
+    <view>
+        <view class="lz-thumbs-up-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-thumbs-up-ico</text>
+    </view>
+    <view>
+        <view class="lz-location-circle-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-location-circle-ico</text>
+    </view>
+    <view>
+        <view class="lz-unsigned"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-unsigned</text>
+    </view>
+    <view>
+        <view class="lz-signed"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-signed</text>
+    </view>
+    <view>
+        <checkbox-group bindchange="checkboxChange">
+            <label>
+                <checkbox value="01" checked="{{true}}"  class="lz-checkbox-collect"/>
+                <text style="margin-left:20rpx;font-size:26rpx;">lz-checkbox-collect(checked=true)</text>
+            </label>
+        </checkbox-group>
+    </view>
+    <view>
+        <view class="lz-heigh-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-heigh-ico</text>
+    </view>
+    <view>
+        <view class="lz-flat-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-flat-ico</text>
+    </view>
+    <view>
+        <view class="lz-location-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-location-ico</text>
+    </view>
+    <view>
+        <view class="lz-share-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-share-ico</text>
+    </view>
+    <view>
+        <view class="lz-share-grey-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-share-grey-ico</text>
+    </view>
+    <view>
+        <view class="lz-add-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-add-ico</text>
+    </view>
+    <view>
+        <view class="lz-selected-big-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-selected-big-ico</text>
+    </view>
+    <view>
+        <view class="lz-unselected-big-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-unselected-big-ico</text>
+    </view>
+
+    <view>
+        <view class="lz-send-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-send-ico</text>
+    </view>
+    <view>
+        <view class="lz-smile-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-smile-ico</text>
+    </view>
+    <view>
+        <view class="lz-unSmile-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-unSmile-ico</text>
+    </view>
+    <view>
+        <view class="lz-down-base-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-down-base-ico</text>
+    </view>
+    <view>
+        <view class="lz-up-base-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-up-base-ico</text>
+    </view>
+    <view>
+        <view class="lz-right-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-right-ico*</text>
+    </view>
+
+    <view>
+        <view class="lz-up-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-up-ico</text>
+    </view>
+    <view>
+        <view class="lz-down-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-down-ico</text>
+    </view>
+
+    <view>
+        <view class="lz-right-white-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-right-white-ico</text>
+    </view>
+
+    <view>
+        <view class="lz-richscan-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-richscan-ico</text>
+    </view>
+    <view>
+        <view class="lz-people-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-people-ico</text>
+    </view>
+
+    <view>
+        <view class="lz-info-enter-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-info-enter-ico个人信息入口</text>
+    </view>
+    <view>
+        <view class="lz-footprint-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-footprint-ico</text>
+    </view>
+    <view>
+        <view class="lz-distance-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-distance-ico</text>
+    </view>
+    <view>
+        <view class="lz-stairs-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-stairs-ico</text>
+    </view>
+    <view>
+        <view class="lz-calories-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-calories-ico</text>
+    </view>
+    <!--<view>
+        <view class="lz-bluetooth-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-bluetooth-ico(此可忽略，暂时没有用到)</text>
+    </view>-->
+    <view>
+        <view class="lz-bluetoothAct-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-bluetoothAct-ico</text>
+    </view>
+
+    <text style="margin-left:20rpx;font-size:26rpx;">雪碧图lzico1.png大图标</text>
+    <view style="margin:20rpx;font-size:26rpx;">首页大图标</view>
+    <view>
+        <view class="lz-deposit-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-deposit-ico</text>
+    </view>
+    <view>
+        <view class="lz-payment-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-payment-ico</text>
+    </view>
+    <view>
+        <view class="lz-appointment-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-appointment-ico</text>
+    </view>
+    <view>
+        <view class="lz-fadoc-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-fadoc-ico</text>
+    </view>
+    <view>
+        <view class="lz-health-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-health-ico</text>
+    </view>
+    <view>
+        <view class="lz-inquiry-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-inquiry-ico</text>
+    </view>
+
+    <view>
+        <view class="lz-smart-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-smart-ico</text>
+    </view>
+    <view>
+        <view class="lz-report-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-report-ico</text>
+    </view>
+    <view>
+        <view class="lz-inoculate-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-inoculate-ico</text>
+    </view>
+    <view>
+        <view class="lz-exam-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-exam-ico</text>
+    </view>
+    <view>
+        <view class="lz-management-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-management-ico</text>
+    </view>
+    <view>
+        <view class="lz-prescript-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-prescript-ico</text>
+    </view>
+    <view>
+        <view class="lz-extent-prescript-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-extent-prescript-ico</text>
+    </view>
+    <view>
+        <view class="lz-buy-medicine-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-buy-medicine-ico</text>
+    </view>
+    <view style="margin:20rpx;font-size:26rpx;">微门户大图标</view>
+    <view>
+        <view class="lz-organization-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-organization-ico</text>
+    </view>
+    <view>
+        <view class="lz-department-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-department-ico</text>
+    </view>
+    <view>
+        <view class="lz-service-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-service-ico</text>
+    </view>
+    <view>
+        <view class="lz-traffic-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-traffic-ico</text>
+    </view>
+    <view>
+        <view class="lz-view-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-view-ico</text>
+    </view>
+    <view>
+        <view class="lz-guide-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-guide-ico</text>
+    </view>
+
+    <view style="margin:20rpx;font-size:26rpx;">个人中心页图标</view>
+    <view>
+        <view class="lz-house-info-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-house-info-ico</text>
+    </view>
+    <view>
+        <view class="lz-management-info-ico"></view>
+        <text style="margin:20rpx;font-size:26rpx;">lz-management-info-ico</text>
+    </view>
+    <view>
+        <view class="lz-member-info-ico"></view>
+        <text style="margin:20rpx;font-size:26rpx;">lz-member-info-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-sign-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-sign-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-doc-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-doc-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-consult-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-consult-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-appointment-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-appointment-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-payment-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-payment-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-prescript-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-prescript-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-report-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-report-ico</text>
+    </view>
+    <view>
+        <view class="lz-my-service-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-my-service-ico</text>
+    </view>
+    <view>
+        <view class="lz-payment-behalf-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-payment-behalf-ico</text>
+    </view>
+    <view>
+        <view class="lz-evaluated-wait-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-evaluated-wait-ico</text>
+    </view>
+    <view>
+        <view class="lz-refund-after-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-refund-after-ico</text>
+    </view>
+    <view>
+        <view class="lz-receiving-ico"></view>
+        <text style="margin-left:20rpx;font-size:26rpx;">lz-receiving-ico</text>
+    </view>
+</view>

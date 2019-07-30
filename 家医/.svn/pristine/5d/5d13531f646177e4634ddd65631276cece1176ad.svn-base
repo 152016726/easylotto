@@ -1,0 +1,73 @@
+<view class="wap">
+  <view class="block1">
+    <image src="{{docDetail.imagePic?docDetail.imagePic:'../../../../images/img_default.png'}}"></image>
+    <view class="content">
+      <view class="name">
+        <text>{{docDetail.name}}</text>
+        <text class="title">{{docDetail.titleName}}</text>
+      </view>
+      <view class="good">擅长：{{docDetail.goodAt}}</view>
+    </view>
+    <view wx:if="{{docDetail.isGP!=1}}" class="tag">
+      <view bindtap="attentionTap" class="{{docDetail.isAttention==1?'lz-signed':'lz-unsigned'}}"></view>
+    </view>
+  </view>
+  <view class="block2">
+    <view class="header">
+      <view bindtap="exchange" data-name="预约时间" class="{{activeItem=='预约时间'?'active':''}}">预约时间</view>
+      <view bindtap="exchange" data-name="更多" class="{{activeItem=='更多'?'active':''}}">更多</view>
+    </view>
+    <view class="body">
+      <view style="{{activeItem=='预约时间'?'display:block':'display:none'}}">
+        <view class="schedule-block">
+          <view wx:for="{{schedule}}">
+            <view class="th">
+              <view>{{item.weekStr}}</view>
+              <view>{{item.dayStr}}</view>
+            </view>
+            <view class="tr tr-top">
+              <view class="wrap" wx:if="{{!item.morning}}"></view>
+              <view wx:if="{{item.morning}}" class="wrap {{item.morning.schCount==0?'grey-wrap':'blue-wrap'}}" bindtap="pickerTimeTap" data-obj="{{item.morning}}" data-id="{{item.morning.id}}" data-period="{{item.morning.timePeriod}}">
+                <view wx:if="{{item.morning.schCount!=0}}" class="hasnum">有号</view>
+                <view wx:if="{{item.morning.schCount!=0}}">上午</view>
+                <view wx:if="{{item.morning.schCount==0}}">已满</view>
+              </view>
+            </view>
+            <view class="tr tr-bottom">
+              <view class="wrap" wx:if="{{!item.afternoon}}"></view>
+              <view wx:if="{{item.afternoon}}" class="wrap {{item.afternoon.schCount==0?'grey-wrap':'blue-wrap'}}" bindtap="pickerTimeTap" data-obj="{{item.afternoon}}" data-id="{{item.afternoon.id}}" data-period="{{item.afternoon.timePeriod}}">
+                <view wx:if="{{item.afternoon.schCount!=0}}" class="hasnum">有号</view>
+                <view wx:if="{{item.afternoon.schCount!=0}}">下午</view>
+                <view wx:if="{{item.afternoon.schCount==0}}">已满</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="{{activeItem=='更多'?'display:block':'display:none'}}">
+        <view class="more">暂无内容</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--时间选择弹框 -->
+<view class="rm-wrap">
+  <view wx:if="{{showTimeDialog}}" class="TimeDialog">
+      <view class="weui-mask"></view>
+      <view class="dialog-content_bottom">
+          <view class="dialog-titile recorded-title">
+            <view class="tit1"><text class="circle"></text>{{currentSequence.schDateStr}}<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeTimeDialog"></text></view>
+            <view class="tit2">{{currentSequence.timePeriod==1?'上午':(currentSequence.timePeriod==2?'下午':'晚上')}} <text>￥{{currentSequence.schRegfee}}元</text></view>
+          </view>
+          <scroll-view scroll-y class="dialog-body">
+            <view wx:for="{{sequence}}" data-item="{{item}}" class="timeblock {{item.seqRegCount==0?'disable':''}} {{item.checked==true?'checked':''}}" bindtap="selectedTap">
+              <view class="time-tag">{{item.seqBeginTime}} - {{item.seqEndTime}}</view>
+              <view><text class="{{item.checked==true?'time-white-ico':'lz-time-grey-ico'}}"></text>剩余 <text>{{item.seqRegCount}}</text></view>
+            </view>
+            <view class="btn-area">
+                <button class="btn-primary" bindtap="confirmTap">确定</button>
+            </view>
+          </scroll-view>
+      </view>
+  </view>
+</view>

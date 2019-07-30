@@ -1,0 +1,31 @@
+<!--pages/info/mediciner/list/list.wxml-->
+<view class="rm-wrap border-top">
+    <navigator class="weui-flex mediciner-panel" url="../detail/detail">
+        <image src="" class="avator-img_md" mode="aspectFill"></image>
+        <view class="mediciner-panel_bd">
+            <view class="mediciner-panel_hd weui-flex"><text >张医生</text><text class="warn-tip_sm">主任医师</text></view>
+            <view class="ellipsis-line_one margin-t_sm">
+                <text>擅长:</text><text>骨折、腰疼、腰间盘突出突出突出突出突出</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="weui-flex mediciner-panel" url="../detail/detail">
+        <image src="" class="avator-img_md" mode="aspectFill"></image>
+        <view class="mediciner-panel_bd">
+            <view class="mediciner-panel_hd weui-flex"><text >张医生</text><text class="warn-tip_sm">主任医师</text></view>
+            <view class="ellipsis-line_one margin-t_sm">
+                <text>擅长:</text><text>骨折、腰疼、腰间盘突出突出突出突出突出</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="weui-flex mediciner-panel" url="../detail/detail">
+        <image src="" class="avator-img_md" mode="aspectFill"></image>
+        <view class="mediciner-panel_bd">
+            <view class="mediciner-panel_hd weui-flex"><text >张医生</text><text class="warn-tip_sm">主任医师</text></view>
+            <view class="ellipsis-line_one margin-t_sm">
+                <text>擅长:</text><text>骨折、腰疼、腰间盘突出突出突出突出突出</text>
+            </view>
+        </view>
+    </navigator>
+
+</view>

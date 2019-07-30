@@ -1,0 +1,66 @@
+.form-line{
+	height: 140rpx;
+	position: relative;
+}
+.form-line:first{
+	border: none;
+}
+.form-label{
+	width: 135rpx;
+} 
+.btn-area{
+	padding-top: 40rpx;
+	padding-bottom: 40rpx;
+}
+.rel-arrow{
+	position: absolute;
+	right: 38rpx;
+	width: 18rpx;
+	height:26rpx;
+  top:57rpx;
+}
+.form-value{
+	width: calc(100% - 200rpx);
+}
+.forminfo.clearfox {
+  padding:20rpx 60rpx 20rpx 66rpx;
+  font-size:32rpx;
+  color:#525252;
+  border-bottom:1rpx solid #eee;
+
+}
+.forminfo.clearfox .left {
+  margin-top:6rpx;
+}
+.forminfo.clearfox .right {
+  margin-right:-10rpx;
+}
+.bluetext {
+  color:#09f;
+}
+.btn-seccode{
+	width: 200rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx; 
+	color: #fff;
+	background-color: #f67d25;
+	position: relative;
+	right: 44rpx;
+}
+.btn-seccodeag{
+	width: 200rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx; 
+	color: #9f9f9f;
+	background-color: #fff;
+	border: 1rpx solid #9f9f9f;
+
+	position: relative;
+	right: 44rpx;
+}
+.code-form-line .form-value.form-value_sm {
+  width:calc(100% - 425rpx);
+  padding-right:60rpx;
+}

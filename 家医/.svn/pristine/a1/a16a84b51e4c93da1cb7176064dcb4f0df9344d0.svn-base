@@ -1,0 +1,87 @@
+<view class="yt-wrap">
+	<!-- <view class="wrap-sport">
+		<view class="flex-between wrap-line1">
+			<view class="title-block">运动统计</view>
+		</view>
+		<view class="flex-between wrap-line2">
+			<view class="flex-center font-black_m">
+				<view class="lz-footprint-ico"></view>
+				<view class="margin-left_xxs">步数</view>
+			</view>
+			<view class="flex-center">
+				<view class="">1822002<text>步</text></view>
+				<view class="lz-right-ico margin-left_xs"></view>
+			</view>
+		</view>
+		<view class="flex-between wrap-line2">
+			<view class="flex-center font-black_m">
+				<view class="lz-distance-ico"></view>
+				<view class="margin-left_xxs">距离</view>
+			</view>
+			<view class="flex-center">
+				<view class="">1.4<text>公里</text></view>
+				<view class="lz-right-ico margin-left_xs"></view>
+			</view>
+		</view>
+		<view class="flex-between wrap-line2">
+			<view class="flex-center font-black_m">
+				<view class="lz-stairs-ico"></view>
+				<view class="margin-left_xxs">爬楼</view>
+			</view>
+			<view class="flex-center">
+				<view class="">10.0<text>米</text></view>
+				<view class="lz-right-ico margin-left_xs"></view>
+			</view>
+		</view>
+		<view class="flex-between wrap-line2">
+			<view class="flex-center font-black_m">
+				<view class="lz-calories-ico"></view>
+				<view class="margin-left_xxs">热量</view>
+			</view>
+			<view class="flex-center">
+				<view class="">88<text>千卡</text></view>
+				<view class="lz-right-ico margin-left_xs"></view>
+			</view>
+		</view>
+	</view> -->
+	<view class="wrap-health">
+		<view class="wrap-healthLine"></view>
+		<view class="flex-between">
+			<block wx:for="{{healthTypeList}}">
+				<navigator class="flex-center wrap-healthBox" url="../detail/detail?userId={{userId}}&type={{item.key}}"  hover-class="none">
+					<view class="font-black_m">{{item.value}}</view>
+					<view wx:if="{{(item.value =='血压')&&(item.maxIndiValue!='')}}">{{item.maxIndiValue}}/{{item.minIndiValue}}<text class="font-b2b2b2_xs">({{item.unit}})</text></view>
+					<view wx:if="{{(item.value=='血压')&&(item.maxIndiValue =='')}}">0<text class="font-b2b2b2_xs">({{item.unit}})</text></view>
+					<view wx:if="{{(item.value!='血压')&&(item.indiValue!='')}}">{{item.indiValue}}<text class="font-b2b2b2_xs">({{item.unit}})</text></view>
+					<view wx:if="{{(item.value!='血压')&&(item.indiValue =='')}}">0<text class="font-b2b2b2_xs">({{item.unit}})</text></view>
+					<block>
+						<view class="box-block" wx:if="{{item.standard==1}}">偏低</view>
+						<view class="box-block" wx:elif="{{item.standard==2}}">正常</view>
+						<view class="box-block" wx:elif="{{item.standard==3}}">偏高</view>
+						<view class="" else></view>
+					</block>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<view class="news-wrap">
+		<view class="flex-center news-wrap_title" bindtap="linkCList">
+			<view class="lz-news-ico"></view>
+			<view class="weui-flex__item">健康资讯</view>
+			<view class="lz-right-ico"></view>
+		</view>
+		<!-- <view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view> -->
+		<scroll-view class="scroll-view" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+			<view wx:for="{{communityList}}" data-id="{{item.id}}" class="news-item weui-flex" bindtap="linkCDetail">
+				<view class="weui-flex__item news-item_bd" >
+					<view class="news-item_title">{{item.title}}</view>
+					<view class="fc-time">{{item.createTime}}</view>
+				</view>
+				<image mode="aspectFill" src="{{item.iconUrl}}" class="news-image"></image>
+			</view>
+			<view class="load-text">{{scroll.loadText}}</view>
+		</scroll-view>
+	</view>
+</view>
+
+		

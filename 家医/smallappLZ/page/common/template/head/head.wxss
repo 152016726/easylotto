@@ -1,0 +1,22 @@
+
+/*header栏*/
+.page-header{
+  position:fixed;
+height:80rpx;
+line-height:80rpx;
+font-size:28rpx;
+color:#ffffff;
+background:rgba(101,174,249,0.7);
+width:100%;
+top:0;
+left:0;
+right:0;
+z-index:999;
+
+}
+.page-header .text-center{text-align: center;}
+.page-header .text-center .lz-down-ico{margin-left:10rpx;}
+.page-header .head-hd{padding:0 20rpx;}
+.page-header .lz-location-ico{margin-right:10rpx;vertical-align: middle;margin-top:-5rpx;}
+.page-header .head-rg{padding:0 26rpx;}
+.page-header .head-rg .lz-richscan-ico{vertical-align: middle;}

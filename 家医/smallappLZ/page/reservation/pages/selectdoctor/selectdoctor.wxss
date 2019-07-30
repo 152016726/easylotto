@@ -1,0 +1,87 @@
+view {
+box-sizing:border-box;
+}
+.contenner {
+  font-size: 28rpx;
+  color: #7a7a7a;
+}
+.leftblock {
+  width: 30%;
+}
+.leftblock .itemwrap {
+  
+}
+.leftblock .itemwrap .item > view {
+  padding: 20rpx 0rpx 20rpx 28rpx;
+  border-bottom: 1px #b2b2b2 dashed;
+  background: #fff;
+  font-size: 34rpx;
+}
+.leftblock .itemwrap .item > view.active {
+  background:#fba559;
+  color: #fff;
+}
+.leftblock .itemwrap .item > view.letter {
+  background: #f3f3f3;
+  font-size: 26rpx;
+}
+.rightblock {
+  width: 70%;
+  min-height: 100%;
+  border-left: 1px #b2b2b2 dashed;
+  box-sizing: border-box;
+}
+.rightblock .block1 {
+  padding: 28rpx 35rpx;
+  border-bottom: 1px #b2b2b2 dashed;
+}
+.rightblock .block1 >view:first-child {
+  color: #000;
+}
+.rightblock .block2 .nullview {
+  background: #fff;
+  padding: 28rpx;
+  text-align: center;
+}
+.rightblock .block2 > .item {
+  padding: 28rpx;
+  border-bottom: 1px #b2b2b2 dashed;
+  position: relative;
+  display:flex;
+  align-items:center;
+  background: #fff;
+}
+.rightblock .block2 > .item .tag {
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rightblock .block2 > .item .tag.blue {
+  color:#5394ff;
+  background:#e7f1ff;
+}
+.rightblock .block2 > .item .tag.grey {
+  color:#b2b2b2;
+  background:#f4f4f4;
+}
+.rightblock .block2 > .item .content {
+  width:calc( 100% - 60px);
+}
+.rightblock .block2 > .item .content .name {
+  color: #000;
+  font-size: 34rpx;
+}
+.rightblock .block2 > .item .content .good {
+  font-size: 26rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.rightblock .block2 > .item image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right:15rpx;
+}

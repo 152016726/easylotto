@@ -1,0 +1,186 @@
+<view>
+    <!--医生信息-->
+    <view class="aboutDoc weui-flex">
+        <image src="{{'../../../../images/img_default.png'}}"></image>
+        <view class="docDetail">
+            <view class="name">
+                <text>张医生</text>
+                <text class="jobtitle">主任医师</text>
+            </view>
+            <view class="dir">骨一科门诊</view>
+        </view>
+        <view class="follow">
+            <checkbox-group bindchange="checkboxFollowChange">
+                <label>
+                    <checkbox value="{{followCheckBoxVal.value}}" class="lz-checkbox-collect"/>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <!--排班模块-->
+    <view class="arrange-wrap">
+        <view class="arrange-main">
+            <view class="arrangeBox">
+                <view class="arrangeTab">
+                    <view class='tab'>
+                        <view class="tab-th is-th">
+                            <view>今日</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th is-th">
+                            <view>明日</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th">
+                            <view>周三</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th">
+                            <view>周四</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th">
+                            <view>周五</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th is-th">
+                            <view>周六</view>
+                            <view>08/21</view>
+                        </view>
+                        <view class="tab-th is-th">
+                            <view>周日</view>
+                            <view>08/21</view>
+                        </view>
+                    </view>
+                    <view class='tab'>
+                        <view class="tab-td">
+                            <view class="cell blue-cell" bindtap="{{'true'?'toOrderDialog':''}}">
+                                <view class="num">有号</view>
+                                <view claclose lz-top-cancle-icoss="noon">上午</view>
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell blue-cell" bindtap="{{'true'?'toOrderDialog':''}}">
+                                <view class="num">有号</view>
+                                <view class="noon">上午</view>
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell grey-cell"  bindtap="{{''?'toOrderDialog':''}}">
+                                <!--<view class="num">有号</view>
+                               <view class="noon">上午</view>-->
+                                <view>已满</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='tab'>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell blue-cell" bindtap="{{'true'?'toOrderDialog':''}}">
+                                <view class="num">有号</view>
+                                <view class="noon">上午</view>
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell blue-cell" bindtap="{{'true'?'toOrderDialog':''}}">
+                                <view class="num">有号</view>
+                                <view class="noon">上午</view>
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                        <view class="tab-td">
+                            <view class="cell grey-cell" bindtap="{{''?'toOrderDialog':''}}">
+                                <!--<view class="num">有号</view>
+                               <view class="noon">上午</view>-->
+                                <view>已满</view>
+                            </view>
+                        </view>
+                        <view class="tab-td" >
+                            <view class="cell">
+                                <!--<view class="num">有号</view>
+                                <view class="noon">上午</view>-->
+                                <!--<view>已满</view>-->
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--排班弹层  hidden="{{hiddenOrderDialog}}"-->
+    <view>
+        <view class="weui-mask {{!hiddenOrderDialog?'show':''}}"></view>
+        <view class="arrangeInfo {{!hiddenOrderDialog?'show':''}}">
+            <view class="arrangeinst">
+                <view><text class="circle"></text>2018年08月21日</view>
+                <view class="margin-top">上午<text class="price">¥7元</text></view>
+                <view class="close lz-top-cancle-ico" bindtap="closeOrderDialog"></view>
+            </view>
+            <view class="timeList">
+                <!--@click="toLookArrangeInfo(item.surplus)"-->
+                <view wx:for="{{timeList}}" class="{{item.surplus == 0?'disabled':''}} {{item.checked == true?'checked':''}}" data-id="{{item.id}}" bindtap="selectTime">
+                    <view>{{ item.time }}</view>
+                    <view class="nun-wrap">
+                        <!--<text class="time-ico {{item.checked==true?'time-white-ico':'lz-time-grey-ico'}}"></text>-->
+                        <image src="{{item.checked==true?'../../../../images/ic_clock_white.png':'../../../../images/ic_clock_grey.png'}}" class="time-ico"></image><text>剩余</text><text class="num">{{ item.surplus }}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="weui-btn weui-btn_info" bindtap="comfirmOrder">确定</button>
+            </view>
+        </view>
+
+    </view>
+</view>

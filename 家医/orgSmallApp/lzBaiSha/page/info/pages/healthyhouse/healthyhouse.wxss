@@ -1,0 +1,60 @@
+/* pages/info/healthyhouse/healthyhouse.wxss */
+.header-title{
+    padding: 20rpx 25rpx;
+    font-size:38rpx;
+    color:#fff;
+    background: #0093f5;
+}
+.icon-col_prim{
+    margin-right: 10rpx;
+    margin-bottom: -5rpx;
+}
+.icon-col_base{
+    margin-right: 10rpx;
+    margin-bottom: -3rpx;
+}
+.header-age{
+    padding:0 20rpx 0 58rpx;
+    font-size:30rpx;
+    color:#fefefe;
+}
+.body-content{
+    padding:34rpx 0 10rpx 15rpx;
+    font-size: 30rpx;
+    color:#525252;
+}
+.panel-cont{
+    width:714rpx;
+    margin-bottom: 30rpx;
+    border-radius:10rpx;
+    box-shadow: 0 0 2rpx 0rpx rgba(0,0,0,0.1)
+}
+.row-data{
+    padding:28rpx 15rpx 28rpx 45rpx;
+    background: #fff;
+    font-size:44rpx;
+    color: #525252;
+}
+.row-data .fc-md_prim{margin-right: 6rpx;}
+.row-data view:first-child{width:240rpx}
+.row-data view:nth-of-type(2){width:230rpx}
+.row-sub{
+    padding:5rpx 46rpx;
+    background:#f7f7f7;
+}
+.flex-wrap{flex-wrap:wrap}
+.grid-cont{
+    width:340rpx;
+    margin:0 29rpx 30rpx 0;
+    border-radius:10rpx;
+    box-shadow: 0 0 3rpx 0rpx rgba(0,0,0,0.1)
+}
+.grid-cont .row-data{
+    padding-left:34rpx;
+}
+.col-sub{
+    padding:3rpx 34rpx;
+    background:#f7f7f7;
+}
+.margin-r_sm{margin-right:15rpx;}
+.margin-top_null{margin-top: 50rpx;}

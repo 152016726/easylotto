@@ -1,0 +1,191 @@
+.wap {
+  color: #7a7a7a
+}
+.wap .block1 {
+  padding: 40rpx 28rpx;
+  border-bottom: 1px #b2b2b2 dashed;
+  position: relative;
+  padding-left: 170rpx;
+  background: #fff
+}
+.wap .block1 .tag {
+  padding: 5rpx 10rpx;
+  position: absolute;
+  right:28rpx;
+  top:40rpx;
+}
+.wap .block1 .content .name {
+  color: #000;
+  font-size: 38rpx;
+}
+.wap .block1 .content .title {
+  margin-left:20rpx;
+  color:#ff8801;
+  font-size:28rpx;
+  border:1rpx #ff8801 solid;
+  border-radius:50rpx;
+  padding:1rpx 15rpx;
+}
+.wap .block1 .content .good {
+  font-size: 28rpx;
+}
+.wap .block1 image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  position:absolute;
+  left:28rpx;
+  top:35rpx;
+}
+.wap .block2 {
+  margin: 30rpx 25rpx;
+  background: #fff;
+}
+.wap .block2 .header {
+  display: flex;
+}
+.wap .block2 .header > view {
+  flex: 1;
+  text-align: center;
+  font-size:34rpx;
+  border-bottom: 8rpx transparent solid;
+  line-height:2.5;
+}
+.wap .block2 .header > view.active {
+  color:#5394ff;
+  border-bottom: 8rpx #5394ff solid;
+}
+.wap .block2 .body {
+  padding: 0 7rpx;
+}
+.wap .block2 .body .more {
+  font-size:30rpx;
+  color:#000000;
+  padding: 30rpx;
+}
+.wap .block2 .body .schedule-block {
+  display: flex;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.wap .block2 .body .schedule-block > view {
+  flex: 1;
+  font-size: 26rpx;
+}
+.wap .block2 .body .schedule-block > view .th,
+.wap .block2 .body .schedule-block > view .tr {
+  border-bottom: 1px dashed #979797;
+  border-left: 1px dashed #979797;
+}
+.wap .block2 .body .schedule-block > view:first-child .th,
+.wap .block2 .body .schedule-block > view:first-child .tr {
+  border-left: none;
+}
+.wap .block2 .body .schedule-block > view .tr .wrap {
+  margin: 4rpx;
+  border-radius: 6rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.wap .block2 .body .schedule-block > view .tr .wrap.blue-wrap {
+  background: #5394ff;
+  color: #fff;
+  box-shadow: 0 4rpx 10rpx 0 #b4d2fa;
+}
+.wap .block2 .body .schedule-block > view .tr .wrap.grey-wrap {
+  color: #fff;
+  background:#d3d3d3;
+}.hasnum {
+  font-size: 30rpx;
+}
+.dialog-titile{
+    /*width:100%;*/
+    position:relative;
+    padding:30rpx 0 40rpx;
+    font-size:38rpx;
+    color:#000000;
+}
+.dialog-titile .tit1 .circle {
+  width: 18rpx;
+  height: 18rpx;
+  background: #fba559;
+  border-radius:50%;
+  display:inline-block;
+  position:relative;
+  top:-5rpx;
+  margin-right:12rpx;
+}
+.dialog-titile .tit2 > text {
+  color:#ff8801;
+}
+.dialog-top_close{
+    position: absolute;
+    top:40rpx;
+    right: 30rpx;
+}
+.dialog-content_bottom{
+    position: fixed;
+    bottom:0;
+    left:50%;
+    background:#ffffff;
+    border-radius:20rpx 20rpx 0 0;
+    width:700rpx;
+    overflow: auto;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2000;
+    padding:0 28rpx 40rpx;
+}
+.dialog-content_bottom .dialog-body{
+    height:700rpx;
+    position: relative;
+}
+.dialog-content_bottom .dialog-body .timeblock {
+  width: 250rpx;
+  border:1px solid #979797;
+  border-radius:20rpx;
+  padding: 30rpx 38rpx;
+  display:inline-block;
+  margin:10.5rpx;
+  color: #b2b2b2;
+  text-align:center;
+}
+.dialog-content_bottom .dialog-body .timeblock.checked {
+  background:#fba559;
+  color: #fff;
+  box-shadow:0rpx 0rpx 14rpx #fba559;
+  border:1px solid #fba559;
+}
+.dialog-content_bottom .dialog-body .timeblock.disable {
+  background:#f4f4f4;
+  border:1px solid #f4f4f4;
+}
+.dialog-content_bottom .dialog-body .timeblock .time-tag {
+  font-size:38rpx;
+  color:#7a7a7a;
+}
+.dialog-content_bottom .dialog-body .timeblock.checked .time-tag {
+  color: #fff;
+}
+.dialog-content_bottom .dialog-body .timeblock .lz-time-grey-ico,
+.dialog-content_bottom .dialog-body .timeblock .time-white-ico {
+  top: 2px;
+  position: relative;
+  margin-right: 10rpx
+}
+.dialog-content_bottom .dialog-body .btn-area {
+	padding-top: 40rpx;
+	padding-bottom: 40rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.dialog-content_bottom .dialog-body .btn-area .btn-primary {
+  color:#fff;
+  font-size:34rpx;
+  background:#5394ff;
+  border-radius:100rpx;
+}

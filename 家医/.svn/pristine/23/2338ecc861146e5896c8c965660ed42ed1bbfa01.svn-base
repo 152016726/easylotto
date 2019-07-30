@@ -1,0 +1,83 @@
+/*运动统计*/
+.wrap-sport{
+	padding-left:44rpx;
+	background-color: #fff;
+}
+.wrap-line1{
+	position: relative;
+	padding:16rpx 40rpx;
+	font-size: 34rpx;
+	color:#000;
+}
+.wrap-line2{
+	padding:30rpx 56rpx 30rpx 0;
+	font-size:30rpx;
+	color:#5394ff;
+	border-bottom: 1rpx dashed #979797;
+}
+.wrap-line2:nth-last-child(1){
+	border-bottom: none;
+}
+.title-block:before{
+    content: " ";
+    position: absolute;
+    left:10rpx;
+    top:50%;
+    width:22rpx;
+    height:40rpx;
+    background:#5394ff;
+    border-radius:8rpx;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5) translateY(-50%); 
+    transform: scaleX(0.5) translateY(-50%);
+}
+/*健康状况*/
+.wrap-health{
+	position: relative;
+	width: 628rpx;
+	margin:30rpx auto;
+	padding:0rpx 36rpx;
+	background-color: #fff;
+	box-shadow:4rpx 4rpx 10rpx 0rpx rgba(0,0,0,0.06);
+	border-radius:20rpx 20rpx 0rpx 0rpx; 
+}
+.flex-between{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.wrap-healthBox{
+	flex-direction: column;
+	width: 313rpx;
+	min-height: 174rpx;
+	padding:24rpx 0;
+	border-bottom:1rpx dashed #979797;
+	font-size:50rpx;
+	color:#5394ff;
+}
+.wrap-healthBox:nth-last-of-type(1),
+.wrap-healthBox:nth-last-of-type(2){
+	border-bottom:none;
+}
+.wrap-healthLine{
+	position: absolute;
+	left: 349rpx;
+	top:53rpx;
+	width:1rpx;
+	height:984rpx;
+	border-right:1rpx dashed #979797;
+}
+.box-block{
+	display: inline-block;
+	padding:0 20rpx;
+	font-size:28rpx;
+	color:#ff8801;
+	letter-spacing:-0.68rpx;
+	text-align:center;
+	line-height: 32rpx;
+	border:1rpx solid #ff8801;
+	border-radius:100rpx;
+}

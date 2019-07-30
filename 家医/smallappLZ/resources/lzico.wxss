@@ -1,0 +1,928 @@
+/*http://cda.heyuht.com:8181/image/small/lzico1.png相应图标样式*/
+/*首页图标*/
+.lz-deposit-ico{/*就诊缴费*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:0rpx 0rpx;
+    background-size:750rpx auto;
+    width:355rpx;
+    height:126rpx;
+    display: inline-block;
+}
+.lz-payment-ico{/*住院缴费*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-357rpx 1rpx;
+    background-size:750rpx auto;
+    width:355rpx;
+    height:126rpx;
+    display: inline-block;
+}
+.lz-appointment-ico{/*预约挂号*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:0 -126rpx;
+    background-size:750rpx auto;
+    width:124rpx;
+    height:124rpx;
+    display: inline-block;
+}
+.lz-fadoc-ico{/*家庭医生*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-123rpx -126rpx;
+    background-size:750rpx auto;
+    width:124rpx;
+    height:124rpx;
+    display: inline-block;
+}
+.lz-health-ico{/*健康档案*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-251rpx -126rpx;
+    background-size:750rpx auto;
+    width:124rpx;
+    height:124rpx;
+    display: inline-block;
+}
+.lz-inquiry-ico{/*在线问诊*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-377rpx -125rpx;
+    background-size:750rpx auto;
+    width:124rpx;
+    height:124rpx;
+    display: inline-block;
+}
+.lz-smart-ico{/*智能导诊*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-88rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-report-ico{/*报告查询*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-448rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-inoculate-ico{/*接种管理*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-538rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-exam-ico{/*体检预约*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-357rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-management-ico{/*健康管理*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-179rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-prescript-ico{/*长处方*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:1rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-extent-prescript-ico{/*延伸处方*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-267rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-buy-medicine-ico{/*闪电购药*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-631rpx -349rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+
+/*微门户大图标*/
+.lz-organization-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-199rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-department-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-100rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-service-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-294rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-traffic-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-1rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-view-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-483rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-guide-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-388rpx -438rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+
+/*个人中心页*/
+.lz-member-info-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-363rpx -50rpx;
+    background-size:750rpx auto;
+    width:56rpx;
+    height:56rpx;
+    display: inline-block;
+}
+.lz-house-info-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-632rpx -441rpx;
+    background-size:750rpx auto;
+    width:57rpx;
+    height:57rpx;
+    display: inline-block;
+}
+.lz-management-info-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-692rpx -441rpx;
+    background-size:750rpx auto;
+    width:57rpx;
+    height:57rpx;
+    display: inline-block;
+}
+.lz-my-sign-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-630rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-doc-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-539rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-consult-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-359rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-appointment-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-448rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-payment-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-179rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-prescript-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:0rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-report-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-269rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-my-service-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-89rpx -258rpx;
+    background-size:750rpx auto;
+    width:90rpx;
+    height:90rpx;
+    display: inline-block;
+}
+.lz-payment-behalf-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-215rpx -534rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-evaluated-wait-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-145rpx -534rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-refund-after-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-75rpx -534rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-receiving-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-8rpx -534rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+
+/*其他图标*/
+.lz-code-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-500rpx -123rpx;
+    background-size:750rpx auto;
+    width:37rpx;
+    height:35rpx;
+    display: inline-block;
+}
+.lz-news-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-539rpx -127rpx;
+    background-size:750rpx auto;
+    width:36rpx;
+    height:27rpx;
+    display: inline-block;
+}
+.lz-time-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-578rpx -125rpx;
+    background-size:750rpx auto;
+    width:32rpx;
+    height:32rpx;
+    display: inline-block;
+}
+.lz-time-orange-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-613rpx -125rpx;
+    background-size:750rpx auto;
+    width:32rpx;
+    height:32rpx;
+    display: inline-block;
+}
+.lz-order-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-647rpx -124rpx;
+    background-size:750rpx auto;
+    width:32rpx;
+    height:32rpx;
+    display: inline-block;
+}
+.lz-phone-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-681rpx -127rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:28rpx;
+    display: inline-block;
+}
+.lz-phone-org-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-723rpx -161rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:28rpx;
+    display: inline-block;
+}
+.lz-richscan-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-709rpx -125rpx;
+    background-size:750rpx auto;
+    width:34rpx;
+    height:32rpx;
+    display: inline-block;
+}
+.lz-left-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-503rpx -164rpx;
+    background-size:750rpx auto;
+    width:25rpx;
+    height:36rpx;
+    display: inline-block;
+}
+.lz-top-cancle-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-535rpx -161rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.wx-checkbox-input{
+    display: none;
+}
+.lz-checkbox-circle,.lz-unselected--circle{
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-580rpx -161rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:40rpx;
+}
+.lz-checkbox-circle[checked],.lz-selected--circle{
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-619rpx -161rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:40rpx;
+}
+
+.lz-search-micphe-ico{/*搜索-麦克风*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-659rpx -160rpx;
+    background-size:750rpx auto;
+    width:29rpx;
+    height:40rpx;
+    display: inline-block;
+}
+.lz-search-glass-ico{/*搜索-放大镜*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-687rpx -163rpx;
+    background-size:750rpx auto;
+    width:38rpx;
+    height:38rpx;
+    display: inline-block;
+}
+
+.lz-add-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-503rpx -206rpx;
+    background-size:750rpx auto;
+    width:46rpx;
+    height:46rpx;
+    display: inline-block;
+}
+.lz-navigation-ico{/*导航*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-680rpx -203rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-more-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-552rpx -209rpx;
+    background-size:750rpx auto;
+    width:10rpx;
+    height:39rpx;
+    display: inline-block;
+}
+.lz-edit-pink-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-565rpx -202rpx;
+    background-size:750rpx auto;
+    width:56rpx;
+    height:56rpx;
+    display: inline-block;
+}
+.lz-cancel-pink-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-622rpx -202rpx;
+    background-size:750rpx auto;
+    width:56rpx;
+    height:56rpx;
+    display: inline-block;
+}
+.lz-location-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-723rpx -187rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:30rpx;
+    display: inline-block;
+}
+.lz-write-white-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-711rpx -2rpx;
+    background-size:750rpx auto;
+    width:25rpx;
+    height:25rpx;
+    display: inline-block;
+}
+.lz-write-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-711rpx -77rpx;
+    background-size:750rpx auto;
+    width:25rpx;
+    height:25rpx;
+    display: inline-block;
+}
+.lz-calendar-white-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png ") no-repeat;
+    background-position:-711rpx -52rpx;
+    background-size:750rpx auto;
+    width:25rpx;
+    height:25rpx;
+    display: inline-block;
+}
+.lz-calendar-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png ") no-repeat;
+    background-position:-711rpx -27rpx;
+    background-size:750rpx auto;
+    width:25rpx;
+    height:25rpx;
+    display: inline-block;
+}
+.lz-wechat-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-573rpx -442rpx;
+    background-size:750rpx auto;
+    width:52rpx;
+    height:52rpx;
+    display: inline-block;
+}
+.lz-idCard-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-411rpx -532rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:32rpx;
+    display: inline-block;
+}
+.lz-bottle-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-282rpx -532rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-baby-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico1.png") no-repeat;
+    background-position:-348rpx -532rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+
+/*http://cda.heyuht.com:8181/image/small/lzico2.png*/
+.lz-needle-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-185rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-love-hand-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-306rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-newborn-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-8rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-medicine-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-127rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-bed-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-67rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-stuture-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-243rpx -50rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-delete-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-3rpx -3rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-delete-grey-base-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-47rpx -3rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-eyes-open-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-91rpx -9rpx;
+    background-size:750rpx auto;
+    width:35rpx;
+    height:30rpx;
+    display: inline-block;
+}
+.lz-eyes-close-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-131rpx -9rpx;
+    background-size:750rpx auto;
+    width:35rpx;
+    height:30rpx;
+    display: inline-block;
+}
+.lz-edit-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-171rpx -4rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:40rpx;
+    display: inline-block;
+}
+.lz-edit-deep-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-214rpx -4rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:40rpx;
+    display: inline-block;
+}
+
+.lz-inform-ico{/*家庭医生首页通知--服务器旧版图没有*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-255rpx -2rpx;
+    background-size:750rpx auto;
+    width: 42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-fit-small-ico{/*家庭医生首页ic-健康--服务器旧版图没有*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-296rpx -2rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-inquiry-small-ico{/*家庭医生首页问诊-服务器旧版图没有*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-336rpx -2rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-time-grey-big-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-379rpx -2rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-choosen-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-418rpx -2rpx;
+    background-size:750rpx auto;
+    width:38rpx;
+    height:40rpx;
+    display: inline-block;
+}
+.lz-selected-solid-circle-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-455rpx -2rpx;
+    background-size:750rpx auto;
+    width:40rpx;
+    height:40rpx;
+    display: inline-block;
+}
+.lz-thumbs-up-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-493rpx -2rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-location-circle-ico{/*就诊地址*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-536rpx -3rpx;
+    background-size:750rpx auto;
+    width:42rpx;
+    height:42rpx;
+    display: inline-block;
+}
+.lz-unsigned{
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-579rpx -5rpx;
+    background-size:750rpx auto;
+    width:44rpx;
+    height:44rpx;
+}
+.lz-signed{
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-624rpx -6rpx;
+    background-size:750rpx auto;
+    width:44rpx;
+    height:44rpx;
+}
+.lz-checkbox-collect{/*收藏*/
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-579rpx -5rpx;
+    background-size:750rpx auto;
+    width:44rpx;
+    height:44rpx;
+}
+.lz-checkbox-collect[checked] {
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-624rpx -6rpx;
+    background-size:750rpx auto;
+    width:44rpx;
+    height:44rpx;
+}
+.lz-heigh-ico{/*偏高*/
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-667rpx 0;
+    background-size:750rpx auto;
+    width:31rpx;
+    height:47rpx;
+}
+.lz-flat-ico{/*偏低*/
+    display: inline-block;
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-696rpx 0;
+    background-size:750rpx auto;
+    width:31rpx;
+    height:47rpx;
+}
+.lz-location-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-728rpx -0rpx;
+    background-size:750rpx auto;
+    width:22rpx;
+    height:35rpx;
+    display: inline-block;
+}
+
+.lz-share-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-418rpx -42rpx;
+    background-size:750rpx auto;
+    width:66rpx;
+    height:66rpx;
+    display: inline-block;
+}
+.lz-share-grey-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-480rpx -42rpx;
+    background-size:750rpx auto;
+    width:66rpx;
+    height:66rpx;
+    display: inline-block;
+}
+
+/*家庭医生首页图标*/
+.lz-add-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-680rpx -47rpx;
+    background-size:750rpx auto;
+    width:56rpx;
+    height:56rpx;
+    display: inline-block;
+}
+.lz-selected-big-ico{/*就诊人选中big*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:0rpx -105rpx;
+    background-size:750rpx auto;
+    width:68rpx;
+    height:80rpx;
+    display: inline-block;
+}
+.lz-unselected-big-ico{/*未选中*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-65rpx -106rpx;
+    background-size:750rpx auto;
+    width:68rpx;
+    height:80rpx;
+    display: inline-block;
+}
+.lz-send-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-133rpx -108rpx;
+    background-size:750rpx auto;
+    width:56rpx;
+    height:46rpx;
+    display: inline-block;
+}
+.lz-smile-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-240rpx -107rpx;
+    background-size:750rpx auto;
+    width:54rpx;
+    height:52rpx;
+    display: inline-block;
+}
+.lz-unSmile-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-187rpx -105rpx;
+    background-size:750rpx auto;
+    width:54rpx;
+    height:52rpx;
+    display: inline-block;
+}
+
+.lz-down-base-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-295rpx -115rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:17rpx;
+    display: inline-block;
+}
+.lz-up-base-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-324rpx -114rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:17rpx;
+    display: inline-block;
+}
+
+.lz-right-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-358rpx -110rpx;
+    background-size:750rpx auto;
+    width:20rpx;
+    height:26rpx;
+    display: inline-block;
+}
+.lz-up-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-382rpx -114rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:17rpx;
+    display: inline-block;
+}
+.lz-down-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-410rpx -115rpx;
+    background-size:750rpx auto;
+    width:26rpx;
+    height:17rpx;
+    display: inline-block;
+}
+
+.lz-right-white-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-444rpx -109rpx;
+    background-size:750rpx auto;
+    width:20rpx;
+    height:28rpx;
+    display: inline-block;
+}
+
+.lz-richscan-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-468rpx -108rpx;
+    background-size:750rpx auto;
+    width:32rpx;
+    height:28rpx;
+    display: inline-block;
+}
+/*快速签约*/
+.lz-people-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-500rpx -105rpx;
+    background-size:750rpx auto;
+    width:35rpx;
+    height:33rpx;
+    display: inline-block;
+}
+.lz-info-enter-ico{/*家庭医生首页ic-健康--服务器旧版图没有*/
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-378rpx -140rpx;
+    background-size:750rpx auto;
+    width:165rpx;
+    height:57rpx;
+    display: inline-block;
+}
+/*健康管理*/
+.lz-footprint-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-272rpx -211rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-distance-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-335rpx -211rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-stairs-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-397rpx -211rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-calories-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-210rpx -211rpx;
+    background-size:750rpx auto;
+    width:50rpx;
+    height:50rpx;
+    display: inline-block;
+}
+.lz-bluetooth-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-position:-549rpx -121rpx;
+    background-size:750rpx auto;
+    width:202rpx;
+    height:202rpx;
+    display: inline-block;
+}
+.lz-bluetoothAct-ico{
+    background: url("http://cda.heyuht.com:8181/image/small/lzico2.png") no-repeat;
+    background-size:750rpx auto;
+    background-position:-3rpx -205rpx;
+    width:202rpx;
+    height:202rpx;
+    display: inline-block;
+}

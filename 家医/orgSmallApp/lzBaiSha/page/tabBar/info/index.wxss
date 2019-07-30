@@ -1,0 +1,73 @@
+.avator-img_md{/*共用*/
+    background:#bababa;
+    /*box-shadow:0 0px 1px 0 rgba(0,0,0,0.16);*/
+    width:120rpx;
+    height:120rpx;
+    border-radius:50%;
+    margin-right: 30rpx;
+}
+.info-item{
+    padding:53rpx 0 0 42rpx;
+    font-size:32rpx;
+    color:#7a7a7a;
+    background: #fff;
+}
+.margin-t_start{margin-top:-8rpx;}
+.info-name{
+    font-size:50rpx;
+    color:#000000;
+    line-height: normal;
+}
+.margin-r_phone{margin-right:15rpx;}
+.margin-r_idCard{
+    margin-left:-3rpx;
+    margin-right:8rpx;
+}
+.info-box{
+    padding: 45rpx 10rpx 20rpx;
+    margin-bottom:30rpx;
+    text-align: center;
+    font-size:28rpx;
+    color:#000000;
+    background: #fff;
+}
+.flex-box{
+    padding: 15rpx 25rpx 10rpx;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size:28rpx;
+    color:#000;
+    background: #fff;
+}
+.box-cell{
+    padding:25rpx 0;
+    width:175rpx;
+}
+/*订单管理*/
+.ordermanage-wrap{background-color: #fff;margin:25rpx 0 15rpx;}
+.ordermanage-wrap .title{
+    height:100rpx;
+    line-height:100rpx;
+    padding: 0 60rpx 0 40rpx;
+    font-size:34rpx;
+    color:#7a7a7a;
+}
+.ordermanage-wrap .ord-box{
+    padding:0 65rpx 20rpx 20rpx;
+    font-size:28rpx;
+    color:#7a7a7a;
+    text-align: center;
+}
+.ordermanage-wrap .ord-box .odr-cell{
+    width:25%;
+    padding: 10rpx 0;
+}
+.info-tag {
+  font-size:22rpx;
+  display:inline-block;
+  background:#ffac38;
+  padding:0 10rpx;
+  border-radius:50rpx;
+  color:#fff;
+  margin-top:24rpx;
+}

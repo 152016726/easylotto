@@ -1,0 +1,18 @@
+<view class="op_log"  wx:for="{{lis}}">
+  <image url="{{item.imgUrl}}"></image>
+  <navigator class="op_los" url="../opelei/opelei?id={{item.id}}">
+    <view>{{item.memberName}}</view>
+    <view >改期申请到{{item.shijian}}</view>
+
+  </navigator>
+  <view class="op_dv" wx:if="{{item.status==1}}" bindtap="goodisa" data-id="{{item.id}}" data-docId="{{item.docId}}">同意</view>
+  <view class="op_gb" wx:if="{{item.status==2}}">已同意</view>
+    <view class="op_gb" wx:if="{{item.status==3}}"></view>
+  <view class="op_gb" wx:if="{{item.status==0}}">已拒绝</view>
+  <view class="op_gb" wx:if="{{item.status==9}}">已删除</view>
+</view>
+
+	<view class="list-null-box" wx:if="{{!lis[0].status}}">
+		<view class="list-null-ico"></view>
+		<text>暂无数据</text>
+	</view>

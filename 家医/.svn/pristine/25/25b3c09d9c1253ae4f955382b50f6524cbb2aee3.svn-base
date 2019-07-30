@@ -1,0 +1,22 @@
+page{background: #f3f3f3;}
+.title_member{
+    padding: 23rpx 25rpx 17rpx;
+    font-size:26rpx;
+    color:#525252;
+    background: #f3f3f3;
+}
+.avator-img_sm{
+    width: 94rpx;
+    height: 94rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.panel-wrap_docTeam{
+    padding: 20rpx 90rpx 20rpx 23rpx;
+    /*height:94rpx;*/
+    font-size: 26rpx;
+    color: #999;
+}
+.weui-cell:before{left:0;}
+.margin-l_job{margin-left: 6rpx;}

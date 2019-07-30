@@ -1,0 +1,28 @@
+<view class="selectBox">
+  <view class='select-item'>
+      <view class='select {{item.off?"":"active"}}' data-select="{{ item.select }}" wx:for="{{ btnList }}" data-id="{{ index }}" wx:key="{{ index }}" bindtap='checkPatient'>
+        <text>{{ item.text }}：{{ item.select === ""?'全部':item.select }}</text>
+        <image src="{{ item.off ?'../../images/arrow_down.png':'../../images/arrow_up.png' }}"></image>
+      </view>
+    </view>
+    <view class="patientList" wx:if="{{ resultList.length }}">
+      <view hover-class="down" 
+      class="patientItem  {{ checkedItem === item.name?'checked':''}}" data-text="{{ item.name }}"                bindtap='itemClickHandler' wx:for="{{resultList}}" wx:key="{{ index }}" >
+         {{ item.name }}         
+      </view>
+    </view>
+</view>
+<view class='paymentList'>
+    <view class='paymentItem' wx:for="{{ paymentList }}" data-status="{{ item.status }}" wx:key="{{ index }}" bindtap='lookDetail'>
+        <view class='paymentItem-tit'>
+            <view class="name">{{ item.subName }}</view>
+            <text class='price'>￥{{ item.price }}</text>
+        </view>
+        <view class='patient'>患者:{{ item.patient }}</view> 
+        <view class='time'>开方时间:{{ item.time }}</view>  
+        <view class='status'>
+            {{ item.status }}
+        </view>  
+    </view>
+</view>
+<view class='shadow' bindtap='hidePatientList' wx:if="{{ resultList.length }}"></view>

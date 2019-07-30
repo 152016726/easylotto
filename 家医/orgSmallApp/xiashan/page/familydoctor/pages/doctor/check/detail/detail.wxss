@@ -1,0 +1,64 @@
+page{background-color: #F6F8FC;}
+.bg-color_primary{background-color: #09f;}
+.bg-color_default{background-color: #fff;}
+.font-white_xs{color:#fff;font-size: 26rpx;}
+.font-white_s{color:#fff;font-size: 28rpx;}
+.font-white_xxxl{color:#fff;font-size: 38rpx;}
+.font-yellow_xs{color:#fdff73;font-size: 26rpx;}
+.icon-img{margin-bottom:-6rpx;margin-right:8rpx;}
+.bg-color_primary .weui-cell::before{border-top: 1rpx solid #80ccff;}
+.bg-color_primary .weui-cell:nth-child(3)::before{border-top: 0;}
+.bg-color_primary .weui-cell:nth-child(4)::before{left: 0;}
+.yt-wrap .cell-middle{padding-top:0;}
+.yt-wrap .cell-middle::before{border-top: 0;}
+.text-ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:1;
+}
+.btn-area_s{padding:40rpx 20rpx;}
+button:after{border:0;}
+.weui-btn_default{
+	color:#999;
+	font-size: 30rpx;
+	background-color: #fff;
+	border:1px solid #999;
+	border-radius: 40rpx;
+}
+.weui-btn_default:visited{color:#d0d0d0;}
+.weui-btn_default:active{color:#d0d0d0;}
+.weui-btn_primary{
+	color:#fff;
+	font-size: 30rpx;
+	background-color: #09f;
+	border-radius: 40rpx;
+}
+.weui-btn_primary:visited{color:rgba(255, 255, 255,0.4);}
+.weui-btn_primary:active{color:rgba(255, 255, 255,0.4); }
+.weui-btn_m{width:300rpx;}
+/*选择人群分类弹出框*/
+.checkWrap{
+	position: relative;
+	line-height: normal;
+	border-radius: 30rpx;
+}
+.checkbox{
+	border-radius: 30rpx;
+	padding: 8rpx 25rpx 10rpx;
+	margin-bottom: 46rpx;
+	margin-left: 20rpx;
+	border: 1rpx solid #e5e5e5;
+}
+.checkText{position: relative;}
+.checkbox.checked {background-color: #09f;color: #fff;}
+.checkbox.checked+text{color: #fff;}
+.checkDisabled{
+    color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(229, 229, 229, .3);
+}
+/*拒绝理由弹出框*/
+.text-align_left{text-align:left}
+.wrap-radio{margin-bottom: 50rpx;}
+.wrap-radio_text{margin-left:16rpx;line-height: 35rpx;}

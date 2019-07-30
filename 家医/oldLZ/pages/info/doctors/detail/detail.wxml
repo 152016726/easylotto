@@ -1,0 +1,30 @@
+<view class="rm-wrap" wx:if="{{teamMember.length > 0}}">
+    <view class="bg-wrap_base">
+        <view class="title_member" wx:for="{{leader}}" wx:if="{{index == 0}}">队长</view>
+        <navigator wx:for="{{teamMember}}" wx:if="{{item.teamTitle ==1}}" class="weui-cell panel-wrap_docTeam" url="../doctordetail/doctordetail?id={{item.docId}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../../images/img_default.png'}}" alt="vator" class="avator-img_sm" mode="aspectFill"></image>
+            </view>
+            <view class="weui-cell__bd min-width_zero">
+                <view><text class="fc-xlg_default">{{item.docName}}</text><text class="fc-sm_default margin-l_job">{{item.docTitleName}}</text></view>
+                <view class="ellipsis-line_one margin-t_sm"><text>擅长:</text><text>{{item.goodAt}}</text></view>
+            </view>
+        </navigator>
+        <view class="weui-cell title_member" wx:for="{{member}}" wx:if="{{index == 0}}">队员</view>
+        <navigator wx:for="{{teamMember}}" wx:if="{{item.teamTitle ==2||item.teamTitle==3}}"  class="weui-cell panel-wrap_docTeam" url="../doctordetail/doctordetail?id={{item.docId}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.imglUrlSmall?item.imglUrlSmall:'../../../../images/img_default.png'}}" alt="vator" class="avator-img_sm" mode="aspectFill"></image>
+            </view>
+            <view class="weui-cell__bd min-width_zero">
+                <view><text class="fc-xlg_default">{{item.docName}}</text><text class="fc-sm_default margin-l_job">{{item.docTitleName}}</text></view>
+                <view class="ellipsis-line_one margin-t_sm"><text>擅长:</text><text>{{item.goodAt}}</text></view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="rm-wrap" wx:if="{{teamMember.length == 0}}">
+    <view class="list-null-box">
+        <view class="list-null-ico"></view>
+        <view class="fc-md_prim margin-tb_base">还没有团队成员！</view>
+    </view>
+</view>

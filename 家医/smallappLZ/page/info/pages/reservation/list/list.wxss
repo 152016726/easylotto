@@ -1,0 +1,130 @@
+.yt-wrap .flex-between{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+/*列表切换栏*/
+.nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 990;
+    border-bottom: 1rpx solid #e8e8e8;
+}
+.nav-item{ 
+    position: relative; 
+    flex: auto; 
+    background-color: #fff;
+    text-align: center; 
+    line-height: 90rpx; 
+} 
+.nav-item_active{ color: #09f;} 
+.nav-item_active:after{ 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    bottom: 2rpx; 
+    left: 8rpx; 
+    right: 8rpx; 
+    height: 8rpx; 
+    background: #5394ff;
+    box-shadow:4rpx 4rpx 10rpx 0 rgba(83,148,255,0.47);
+    border-radius: 8rpx;
+} 
+/*循环列表*/
+.list-wrap{
+    padding-top:98rpx;
+}
+.bottomBox{
+    position: relative;
+    margin:30rpx 25rpx;
+    padding:27rpx 0rpx 34rpx;
+    background:#fff;
+    box-shadow:4rpx 4rpx 10rpx 0rpx rgba(0,0,0,0.06);
+    border-radius:20rpx;
+    overflow:hidden;
+}
+.bottomBox-title{
+    width:486rpx;
+    padding:0 174rpx 10rpx 40rpx;
+    font-weight:600;
+}
+.padding-lr{
+    padding:0 40rpx;
+}
+.patch-right_org{
+    position: absolute;
+    width:180rpx;
+    height: 180rpx;
+    right:-24rpx;
+    top:-42rpx;
+    background-color:#fba559;
+    border-radius: 50%;
+}
+.patch-text_org{
+    position: absolute;
+    top:30rpx;
+    right: 24rpx;
+    color: #fff; 
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.patch-right_grey{
+    position: absolute;
+    width:180rpx;
+    height: 180rpx;
+    right:-24rpx;
+    top:-42rpx;
+    background:#f4f4f4;
+    border-radius: 50%;
+}
+.patch-text_grey{
+    position: absolute;
+    top:30rpx;
+    right: 24rpx;
+    font-size:30rpx;
+    color:#b2b2b2;
+    font-weight: 600;
+}
+.topBox{
+    padding:43rpx 31rpx 37rpx;
+    background-color: #fff;
+    border-bottom: 1rpx dashed #979797; 
+}
+.img-square_lg{
+    box-shadow:4rpx 4rpx 20rpx 0rpx rgba(0,0,0,0.06);
+    border-radius:50%;
+    width:120rpx;
+    height:120rpx;
+}
+.flex-item{
+    flex:1;
+    -webkit-flex:1;
+}
+.font-weight{
+    font-weight: 600;
+}
+.textBox_org{
+    padding:3rpx 20rpx;
+    font-size:28rpx;
+    color:#ff8801;
+    letter-spacing:-0.68rpx;
+    border:2rpx solid #ff8801;
+    border-radius:100rpx;
+}
+.text-ellipsis{
+    width: 410rpx;
+    display: inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.font-org_s{
+    font-size:28rpx;
+    color:#ff8801;
+}

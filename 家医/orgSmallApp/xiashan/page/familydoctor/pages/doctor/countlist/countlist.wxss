@@ -1,0 +1,22 @@
+/* pages/doctor/countlist/countlist.wxss */
+/*签约统计*/
+.yt-wrap .weui-cell::before{left:0rpx;}
+.scrollBox{background-color: #fff;}
+.scrollBox .weui-cell:last-child::after{
+	content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1rpx;
+    border-bottom: 1rpx solid #e8e8e8;
+    z-index: 2
+}
+.flex-item{
+	color:#545454;
+	font-size: 28rpx;
+	padding:10rpx 10rpx;
+}
+.flex-item_s{width:30%;}
+.flex-item_m{width:30%;}
+.flex-item_l{width:40%;}

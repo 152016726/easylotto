@@ -1,0 +1,99 @@
+<!--page/quicksign/signresult/signresult.wxml-->
+<view class="yt-wrap">
+	<view class="flex-start topBox">
+		<view>
+			<image class="img-square_lg" mode="aspectFill" src="../../../image/homepr.png"></image>
+		</view>
+		<view class="flex-item margin-left_s font-grey_xs">
+			<view>
+				<text class="font-black_xl">张三</text>
+				<text class="margin-left_s textBox_org">主任医师</text>
+			</view>
+			<view class="flex-start margin-top_s">
+				擅长:<text class="text-ellipsis">擅长内容擅长内容大家发链接大家发链大家发链大家发链</text>
+			</view>
+			<view class="margin-top_xs text-ellipsis text-ellipsis_lg">走自己的路子走自己路子走路子走路子走的</view>
+		</view>
+		<view class="margin-top_xs lz-signed"></view>
+	</view>
+	<view class="flex-item middleBox">
+		<view class="flex-between">
+			<view class="font-default_xl">雷州卫生院</view>
+			<view class="font-default_s">全科</view>
+		</view>
+		<view class="font-default_s">
+			第二团队
+		</view>
+		<view class="flex-between">
+			<view class="flex-center">
+				<view class="lz-people-ico"></view>
+				<text class="margin-left_xxs font-yellow_xs">900</text>
+				签约人数
+			</view>
+			<view class="flex-between">
+				<view class="textBox_yellow">呼吸道</view>
+				<view class="textBox_yellow">发热</view>
+			</view>
+		</view>
+	</view>
+	<!-- 中间信息栏 -->
+	<view class="wrap-edit_middle font-grey_s">
+		<view class="flex-between wrap-line1">
+			<view class="title-block">签约人<text class="margin-left_xs textBox_grey">本人</text></view>
+		</view>
+		<view class="flex-center wrap-line2">
+			<text class="font-black_xl">张三</text>
+			<view class="lz-phone-org-ico margin-left_s"></view>
+			<text class="margin-left_xxs">{{phoneNumber}}</text>
+		</view>
+		<view class="flex-center margin-left_xxs">
+			<view>身份证：</view>
+			<text>{{idCard}}</text>
+		</view>	
+		<view class="wrap-line3">
+			<view class="flex-center">
+				<view class="lz-location-grey-ico"></view>
+				<text class="margin-left_xxs">广州市天河区基河区基河区基</text>
+			</view>
+		</view>	
+	</view>
+	<!-- 服务包 -->
+	<view class="flex-item bottomBox">
+		<view class="flex-between">
+			<view class="font-black_xl">
+				<text>基本服务包</text>
+				<text class="font-b2b2b2_s margin-left_xxs">（价值299元）</text>
+			</view>
+			<view class="patch-right_org"></view>
+			<view class="patch-text_org">有效</view>
+		</view>
+		<view class="margin-top_s font-grey_s">
+			<text>雷州卫生院</text>
+			<text class="margin-left_xs">第二团队</text>
+		</view>
+		<view class="font-grey_s">
+			2018/12/1至2019/20/12
+		</view>
+	</view>
+	<view class="flex-item bottomBox">
+		<view class="flex-between">
+			<view class="font-black_xl">
+				<text>基本服务包</text>
+				<text class="font-b2b2b2_s margin-left_xxs">（价值299元）</text>
+			</view>
+			<view class="patch-right_grey"></view>
+			<view class="patch-text_grey">完结</view>
+		</view>
+		<view class="margin-top_s font-grey_s">
+			<text>雷州卫生院</text>
+			<text class="margin-left_xs">第二团队</text>
+		</view>
+		<view class="font-grey_s">
+			2018/12/1至2019/20/12
+		</view>
+	</view>
+</view>
+
+
+
+

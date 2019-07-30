@@ -1,0 +1,198 @@
+/* page/quicksign/quicksign/quicksign.wxss */
+.yt-wrap .flex-between{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.page-content_unfixed{padding-bottom: 240rpx;}
+/*顶部信息栏*/
+.img-square_lg{
+	box-shadow:4rpx 4rpx 20rpx 0rpx rgba(0,0,0,0.06);
+	border-radius:10rpx;
+	width:170rpx;
+	height:200rpx;
+}
+.topBox{
+	padding:43rpx 31rpx 37rpx;
+	background-color: #fff;
+	border-bottom: 1rpx dashed #979797; 
+}
+.flex-item{
+	flex:1;
+	-webkit-flex:1;
+}
+.textBox_org{
+	padding:3rpx 20rpx;
+	font-size:28rpx;
+	color:#ff8801;
+	letter-spacing:-0.68rpx;
+	border:2rpx solid #ff8801;
+	border-radius:100rpx;
+}
+.text-ellipsis{
+	width: 340rpx;
+	display: inline-block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.text-ellipsis_lg{width: 410rpx;}
+/*团队信息栏*/
+.middleBox{
+	margin:18rpx 25rpx 25rpx;
+	padding:14rpx 36rpx 25rpx;
+	background:#5394ff;
+	box-shadow:0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.16);
+	border-radius:20rpx;
+	font-size: 26rpx;
+	color:#fff;
+}
+.textBox_yellow{
+	padding:3rpx 20rpx;
+	font-size:26rpx;
+	color:#f7ff88;
+	letter-spacing:-0.63rpx;
+	border:2rpx solid #f7ff88;
+	border-radius:100rpx;
+}
+.textBox_yellow+.textBox_yellow{
+	margin-left: 30rpx;
+}
+/*个人信息栏*/
+.infoform{background-color: #fff;}
+.infoform .infoform-title{
+	font-size:26rpx;
+	color:#b2b2b2;
+	line-height: 64rpx;
+	text-align: center;
+}
+.infoform .form-line{
+	height: 110rpx;
+	padding:5rpx 20rpx;
+	border-top: 1rpx dashed #979797;
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+}
+.infoform .form-line:nth-child(2){border: none;}
+.infoform .form-label{
+	width: 135rpx;
+	padding-right: 15rpx;
+	font-size: 30rpx;
+	color: #000;
+	text-align: right;
+}
+.infoform .form-value{flex:1;-webkit-flex:1;}
+.infoform .fontcolor{
+	font-size: 30rpx;
+	color:#7a7a7a;
+}
+.infoform .btn-seccode{
+	position: relative;
+	right: 44rpx;
+	width: 200rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	color: #fff;
+	line-height: 60rpx; 
+	background:#fba559;
+	border-radius:100rpx;
+}
+/*服务包*/
+.bottom-title{
+	height: 42rpx;
+	padding-top:29rpx;
+	font-size:26rpx;
+	color:#b2b2b2;
+	text-align: center;
+}
+.bottomBox{
+	height:140rpx;
+	margin:18rpx 25rpx 25rpx;
+	padding-left:30rpx;
+	font-size: 26rpx;
+	color:#fff;
+	background-color:#fff;
+	box-shadow:4rpx 4rpx 10rpx 0rpx rgba(0,0,0,0.06);
+	border-radius:20rpx;
+}
+.bottomBox .font-default_xl{margin-right: 23rpx;}
+/*背景图片*/
+.rainbow1{
+    background: url("http://cda.heyuht.com:8181/image/small/colorful.png") no-repeat;
+    background-position:2rpx -4rpx;
+    background-size:700rpx auto;
+    display: inline-block;
+    background-color:#fff;
+}
+.rainbow2{
+    background: url("http://cda.heyuht.com:8181/image/small/colorful.png") no-repeat;
+    background-position:2rpx -154rpx;
+    background-size:700rpx auto;
+    display: inline-block;
+    background-color:#fff;
+}
+.rainbow3{
+    background: url("http://cda.heyuht.com:8181/image/small/colorful.png") no-repeat;
+    background-position:2rpx -302rpx;
+    background-size:700rpx auto;
+    display: inline-block;
+    background-color:#fff;
+}
+.rainbow4{
+    background: url("http://cda.heyuht.com:8181/image/small/colorful.png") no-repeat;
+    background-position:2rpx -452rpx;
+    background-size:700rpx auto;
+    display: inline-block;
+    background-color:#fff;
+}
+/*底边栏*/
+/*底部固定按钮*/
+.page-bottom_fixed{
+    position:fixed;
+    left:0;
+    right: 0;
+    bottom:0;
+    height:180rpx;
+    padding:30rpx 35rpx;
+    font-size:28rpx;
+    color:#7a7a7a;
+    background:#ffffff;
+    box-shadow:0 -2rpx 10px 0 rgba(0,0,0,0.16);
+    z-index: 1000;
+    opacity: 0.9;
+}
+.page-bottom_fixed .checkbox{
+	line-height: 38rpx;
+}
+.f-c_warn{ 
+	color:#ff8801;
+	text-decoration: underline;
+}
+button:after{border:0;}
+button{
+	background-color: #fff;
+	padding-left: 10rpx;
+	padding-right: 10rpx;
+}
+.weui-btn_info{
+    color:#fff;
+    font-size: 34rpx;
+    background:#5394ff;
+    border-radius:100rpx;
+}
+.weui-btn_info:visited,
+.weui-btn_info:active{color:#d0d0d0;}
+.weui-btn_info[disabled]:not([type]) {
+    opacity: 0.5;
+    background:#5394ff;
+    color:#fff;
+}
+
+

@@ -1,0 +1,5 @@
+<template name="scan">
+    <view class="head-rg" bindtap="sanceTap">
+      <text class="lz-richscan-ico"></text>
+    </view>
+</template>

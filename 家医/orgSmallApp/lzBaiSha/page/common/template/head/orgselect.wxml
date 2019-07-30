@@ -1,0 +1,5 @@
+<template name="orgselect">
+    <picker bindchange="pickerChange" value="{{pickerIndex}}" range="{{array}}" mode ="selector">
+      <view>{{array[pickerIndex]}}<text class="lz-down-ico"></text> </view>
+    </picker>
+</template>

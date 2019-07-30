@@ -1,0 +1,229 @@
+<view class="yt-wrap">
+    <!--  一般项目检查 -->
+    <block wx:if="{{detailCode=='1'}}">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">身高</view>
+                <view class="font-grey_s">{{generalData1.height}}cm</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">体重</view>
+                <view class="font-grey_s">{{generalData1.weight}}kg</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">腰围</view>
+                <view class="font-grey_s">{{generalData1.waistCircumference}}cm</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">体质指数</view>
+                <view class="font-grey_s">{{generalData1.BMI}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">血压(左侧)</view>
+                <view class="font-grey_s">{{generalData1.leftSBP}}/{{generalData1.leftDBP}}mmHg</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">血压(右侧)</view>
+                <view class="font-grey_s">{{generalData1.rightSBP}}/{{generalData1.rightDBP}}mmHg</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">视力</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">左眼</view>
+                <view class="font-black_m" id="leftVision">{{generalData2.leftVision}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">右眼</view>
+                <view class="font-black_m" id="rightVision">{{generalData2.rightVision}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">听力</view>
+                <view class="font-grey_s">{{generalData2.hearing}}</view>
+            </view>
+        </view>
+    </block>
+    <!-- 内科项目 -->
+    <block wx:if="{{detailCode=='2'}}">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">体温</view>
+                <view class="font-grey_s">{{generalData1.temperature}}℃</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">脉率</view>
+                <view class="font-grey_s">{{generalData1.pulseFrequency}}次/分</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd font-black_l">呼吸频率</view>
+                <view class="font-grey_s">{{generalData1.breathingRate}}次/分</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">肺部</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">桶状胸</view>
+                <view class="font-black_m">{{internalData.barrelChest}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">呼吸音</view>
+                <view class="font-black_m">{{internalData.breathSounds}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">罗音</view>
+                <view class="font-black_m">{{internalData.rale}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">心脏</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">心率</view>
+                <view class="font-black_m">{{internalData.heartRate}}次/分</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">杂音</view>
+                <view class="font-black_m">{{internalData.cardiacMurmur}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">腹部</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">压痛</view>
+                <view class="font-black_m">{{internalData.abdominalTenderness}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">包块</view>
+                <view class="font-black_m">{{internalData.abdominalMass}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">肝大</view>
+                <view class="font-black_m">{{internalData.hepatomegaly}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">脾大</view>
+                <view class="font-black_m">{{internalData.splenomegaly}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">移动性浊音</view>
+                <view class="font-black_m">{{internalData.shiftingDullness}}</view>
+            </view>
+        </view>
+    </block>
+    <!-- 外科项目 -->
+    <block wx:if="{{detailCode=='3'}}">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">皮肤</view>
+                <view class="font-grey_s">{{internalData.skin}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">巩膜</view>
+                <view class="font-grey_s">{{internalData.sclera}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell font-black_l">
+                <view class="weui-cell__bd wrap-title">淋巴结</view>
+                <view class="font-grey_s">{{internalData.lymphNode}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">口腔</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">口唇</view>
+                <view class="font-black_m">{{generalData2.oral}}</view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">齿列</view>
+                <view class="font-black_m row-item_ft"><text>{{dentitionStr}}</text></view>
+            </view>
+            <view class="weui-cell font-grey_s">
+                <view class="weui-cell__bd">咽部</view>
+                <view class="font-black_m">{{generalData2.pharyngeal}}</view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">运动能力</view>
+                <view class="font-grey_s">{{generalData2.sportsAbility}}</view>
+            </view>
+        </view>
+    </block>
+    <!-- 描述类 -->
+    <block wx:if="{{detailCode=='DBQX'||detailCode=='YXGY'}}">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">{{detailItemName}}</view>
+                <view class="wrap-subtitle">{{detailDesc}}</view>
+            </view>
+        </view>
+        <view class="wrap-content_desc" wx:if="{{detailDesc==''}}">
+            <view>描述</view>
+            <view class="wrap-text">暂无该项结果</view>
+        </view>
+    </block>
+    <block wx:if="{{detailCode=='GJTP'||detailCode=='FBBC'||detailCode=='XBXX'||detailCode=='XDT'}}">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd wrap-title">{{detailItemName}}</view>
+                <view class="wrap-subtitle">{{detailDesc}}</view>
+            </view>
+        </view>
+        <view class="wrap-content_desc">
+            <view>描述</view>
+            <view class="wrap-text" wx:if="{{detailOtherDesc!=''}}">{{detailOtherDesc}}</view>
+            <view class="wrap-text" wx:if="{{detailOtherDesc==''}}">暂无该项结果</view>
+        </view>
+    </block>
+    <block wx:if="{{detailCode=='XCG'||detailCode=='NCG'||detailCode=='GGN'||detailCode=='SGN'||detailCode=='KFXT'||detailCode=='XZ'||detailCode=='NWLDB'||detailCode=='THXHDB'}}">
+        <!-- 有范围值非描述类 -->
+        <view class="wrap-flex" wx:if="{{checkObjDataNone===false}}">
+            <view class="wrap-content_bar">    
+                <view class="wrap-title">各项参数</view>
+                <view class="wrap-content">
+                    <block wx:for="{{checkObjData}}" wx:for-index="checkObjDataIndex" wx:for-item="checkObjData" wx:if="{{checkObjData.type===1}}">
+                        <view class="font-grey_s">
+                            <text class="font-black_l">{{checkObjData.name}}</text>
+                            <block wx:if="{{checkObjData.unit&&checkObjData.unit!=''}}">
+                                (<text>{{checkObjData.unit}}</text>)
+                            </block>
+                            <block wx:if="{{!checkObjData.unit||checkObjData.unit ==''}}">
+                            </block>
+                        </view>
+                        <view class="barBox">
+                            <view class="barBox-bar_grey"></view>
+                            <view class="barBox-bar_blue"></view>
+                            <view class="barBox-value_min">{{checkObjData.min}}</view>
+                            <view class="barBox-value_max">{{checkObjData.max}}</view>
+                            <view class="barBox-value {{checkObjData.rangeType==2?'':'is-abnormal'}}" style="left:{{checkObjData.rangeLeft}}rpx">{{checkObjData.value}}</view>
+                        </view>
+                    </block>
+                    <block wx:for="{{checkObjData}}" wx:for-index="checkObjDataIndex" wx:for-item="checkObjData" wx:if="{{checkObjData.type===2||checkObjData.type===3}}">
+                        <view class="noBar weui-cell">
+                            <view class="weui-cell__bd font-black_l">{{checkObjData.name}}</view>
+                            <view class="{{checkObjData.status===1?'font-blue_m':'font-warn_m'}}">{{checkObjData.desc}}</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="list-null-box"  wx:if="{{checkObjDataNone===true}}">
+            <view class="list-null-ico"></view>
+            <text>暂无该项结果</text>
+        </view>
+    </block>
+</view>

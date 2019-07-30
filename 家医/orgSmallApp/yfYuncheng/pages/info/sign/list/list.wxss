@@ -1,0 +1,12 @@
+page{background: #f3f3f3;}
+.icon-col_clockGray{
+    margin-right: 10rpx;
+    margin-bottom: -5rpx;
+}
+.weui-btn_xs+.weui-btn_xs{margin-left:34rpx}
+.bg-wrap_base:first-child{border-top: 1rpx solid #d9d9d9;}
+.bg-wrap_base+.bg-wrap_base{margin-top:22rpx;}
+.padder-wrap_rs{padding: 27rpx 20rpx 27rpx 25rpx;}
+.padder-cont_b{padding-bottom: 10rpx;}
+.weui-cell:before{left: 30rpx;}
+.margin-tb_base{margin-top: 10rpx;margin-bottom: 25rpx;}

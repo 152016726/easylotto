@@ -1,0 +1,12 @@
+<import src="../../../resources/wxParse/wxParse.wxml"/>
+<view class="wxParse">
+  <template is="wxParse" data="{{wxParseData:communityContent.nodes}}"/>
+</view>
+<view class="clearfox bottom-line">
+  <view class="addone" animation="{{animationData2}}">+1</view>
+  <view class="left">阅读原文</view>
+  <view class="right" bindtap="approveTap">
+    <view class="like-ico" animation="{{animationData}}"></view>
+    <text>{{approveCount}}</text>
+  </view>
+</view>

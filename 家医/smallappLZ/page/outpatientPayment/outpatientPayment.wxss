@@ -1,0 +1,39 @@
+
+.paymentDir .dirList{
+   padding: 14rpx 20rpx;
+   font-size: 36rpx;
+   border-radius:4rpx;
+   background: #fff;
+}
+.paymentDir .dirList label{
+  color:#7a7a7a;
+  font-size:30rpx;
+  padding: 40rpx 0 40rpx 0;
+  margin-top: 70rpx;
+  border-top:1rpx dashed #e5e5e5;
+  display: block;
+}
+.paymentDir .dirList view{
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.paymentDir .dirList .listTit{
+   font-size: 38rpx
+}
+.paymentDir .agr-icon{
+   margin-top: -1px;
+}
+.paymentDir .next{
+  position: fixed;
+  bottom: 90rpx;
+  color:#fff;
+  height: 90rpx;
+  background: #5394ff;
+  border:1px solid #5394ff;
+  border-radius:45rpx; 
+  width:90%;
+  left:0;
+  right:0;
+  margin: 0 auto
+}

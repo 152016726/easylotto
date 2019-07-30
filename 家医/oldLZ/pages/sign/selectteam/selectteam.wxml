@@ -1,0 +1,21 @@
+<view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view>
+<scroll-view class="list" wx:if="{{!scroll.ifNull}}" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+  <view class="item" bindtap="linkDetailTap" wx:for="{{teamList}}" data-id="{{item.id}}">
+    <image src="{{item.imagePic?item.imagePic:'../../../images/img_teamdefault.png'}}" mode="aspectFill"></image>
+    <view class="content">
+      <view class="name">{{item.name}}<text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+      <view class="description">{{item.goodAt}}<text decode="{{true}}" space="{{true}}">&nbsp;</text></view>
+      <view class="count">
+        <text class="sign-num">
+          <view class="sign-ico"></view>
+          <text>签约数 {{item.orderNum}}</text>
+        </text>
+        <text class="service-num">
+          <view class="service-ico"></view>
+          <text>服务人数 {{item.serviceNum}}</text>
+        </text>
+      </view>
+    </view>
+  </view>
+  <view class="load-text">{{scroll.loadText}}</view>
+</scroll-view>

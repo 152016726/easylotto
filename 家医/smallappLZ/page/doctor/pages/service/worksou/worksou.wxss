@@ -1,0 +1,146 @@
+.wo_in {
+  width: 666rpx;
+  height: 72rpx;
+  border: 1px solid #fff;
+  margin: 8rpx 40rpx;
+  border-radius: 85rpx;
+  background: #fff;
+  color: #979797;
+  box-shadow:4rpx 2rpx 20rpx 0 #d6dfef;
+
+}
+
+.wo_in image {
+  width: 45rpx;
+  height: 45rpx;
+  /* border: 1px solid #000; */
+  margin: 17rpx;
+}
+
+
+
+.wo_in view {
+  display: inline-block;
+  color: #fff;
+  font-size: 36rpx;
+  vertical-align: top;
+  padding-top: 11rpx;
+  margin-left: 10rpx;
+}
+
+.wo_in input {
+  display: inline-block;
+
+  position: absolute;
+  top: 37rpx;
+  left: 130rpx;
+  color: #979797;
+  font-size: 30rpx;
+}
+
+.wo_xla {
+  width: 750rpx;
+  height: 120rpx;
+  color: #fff;
+  background: #5256c0;
+  position: fixed;
+  margin-top: 120rpx;
+  z-index: 999;
+}
+
+.wo_xla view {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  line-height: 120rpx;
+  font-size: 30rpx;
+}
+
+.wo_xls {
+  width: 100%;
+  font-size: 30rpx;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  margin-top: 240rpx;
+  z-index: 999;
+}
+
+.wo_xls view {
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0rpx 20rpx;
+}
+
+.wo_po {
+  width: 680rpx;
+  background: #fff;
+  height: 140rpx;
+  border-radius: 15rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  position: relative;
+  padding-top: 10rpx;
+}
+
+.wo_poo {
+
+  padding-left: 10rpx;
+  font-size:28rpx;
+  color: #979797;
+}
+
+.wo_pot {
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  color: #979797;
+}
+
+.wo_pos {
+    padding-left: 10rpx;
+  color: #929292;
+  font-size: 26rpx;
+
+}
+.wo_mas {
+  /* border: 1px solid #000; */
+  padding: 0rpx 35rpx;
+  padding-top: 145rpx;
+}
+.wo_pos view {
+  display: inline-block;
+  width: 49%;
+}
+
+.wo_pos view:nth-child(2) {
+  text-align: right;
+}
+
+.wo_posi {
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+ width: 120rpx;
+  height: 50rpx;
+  background: #fccdb0;
+  color: #bc612a;
+  font-size: 26rpx;
+  text-align: center;
+  line-height:50rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  z-index: 3;
+}
+.wo_posis {
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  width: 120rpx;
+  height: 50rpx;
+  background: #e5e5e5;
+  color: #777;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius:50rpx 0 0 50rpx;
+  z-index: 3;
+}

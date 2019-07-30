@@ -1,0 +1,82 @@
+<!--pages/register/orderpay/orderpay.wxml-->
+<view class="rm-wrap orderpay-content">
+    <view class="tip-cell_time fc-sm_tip">
+        <text class="time-grey-ico time-ico_pay"></text><text>{{clock}}</text>
+    </view>
+    <view class="info-box">
+        <view class="info-title">
+            就诊人信息
+        </view>
+        <view class="flex-center info-bd_user--outer">
+            <view>
+                <image class="avator-img_prim"></image>
+            </view>
+            <view class="weui-flex__item">
+                <view class="flex-center info-cell_user" >
+                    <view class="user-name label_sm">张三</view>
+                    <view class="weui-flex__item user-phone">
+                        <text class="phone-icon"></text><text class="fc-sm_tip">13576666237</text>
+                    </view>
+                </view>
+                <view class="flex-center info-cell_user" bindtap="IDCardShow">
+                    <view class="label_sm">身份证:</view>
+                    <view class="weui-flex__item">{{idCard}}<text class="vertl-center_ico {{showIDCardNum?'idCard-icon':'idCard-icon-none'}}"></text></view>
+                </view >
+                <view class="flex-center info-cell_user">
+                    <view class="label_sm">健康卡:</view>
+                    <view class="weui-flex__item" bindtap="showCodeDialog">782731992<view class="code-ico vertl-center_ico" bindtap="showCodeDialog"></view></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="info-box">
+        <view class="info-title flex-center">
+            <view class="weui-flex__item">就诊人信息</view><view class="fc-sm_tip"> 预约成功</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">就诊日期</view>
+            <view>2018-07-01</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">就诊时段</view>
+            <view>16:00-16:30/14:25</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">就诊科室</view>
+            <view class="weui-flex__item">口腔修复<view class="depart-icon vertl-center_ico"></view></view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">就诊医生</view>
+            <view>张三</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">支付方式</view>
+            <view class="payment-icon">2</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">支付状态</view>
+            <view class="fc-sm_tip">待支付</view>
+        </view>
+        <view class="flex-center info-cell_order">
+            <view class="label-l_order">订单号</view>
+            <view>20181231231</view>
+        </view>
+    </view>
+    <!--支付按钮-->
+    <view class="flex-center fixed-area_bottom--pay">
+        <view>总价: <text class="f-c_warn">3.2元</text></view>
+        <button  class="weui-btn weui-btn_info" url="list" disabled="{{disabled}}">支付</button>
+    </view>
+    <!--二维码弹窗-->
+    <view id="codeDialog" hidden="{{hideCodeDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask" bindtap="hideCodeDialog"></view>
+        <view class="dialog-content dialog-content_code">
+            <view class="dialog-title_code">健康卡</view>
+            <view class="fc-sm_prim">782731992</view>
+            <!-- <view class="dialog-main_code"></view> -->
+            <canvas class="dialog-main_code" canvas-id="myQrcode"></canvas>
+            <view class="fc-xs_prim">扫描二维码，获取健康卡</view>
+        </view>
+    </view>
+</view>
+

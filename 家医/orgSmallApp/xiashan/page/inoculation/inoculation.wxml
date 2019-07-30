@@ -1,0 +1,610 @@
+<!--page/inoculation/inoculation.wxml-->
+<view class="rm-wrap">
+    <!--成员列表样式-->
+    <scroll-view scroll-x="true">
+        <radio-group class="radio-group_scroll" bindchange="radioChange" >
+            <label wx:for="{{memberList}}">
+                <radio value="{{item.value}}" checked="{{item.checked}}" class="radio-box"/>
+                <view class="radio-main">
+                    <image class="avator-img_md"></image>
+                    <view class="lz-choosen-ico member-selcted"></view>
+                    <view class="member-name">徐澈</view>
+                    <view class="member-age">1岁3个月16天</view>
+                    <view class="flex-center">
+                        <view class="org-name ellipsis-line_one">雷州卫生州卫生州卫生州卫生院雷...</view>
+                        <view class="lz-right-white-ico"></view>
+                    </view>
+                </view>
+            </label>
+            <view wx:if="{{allMemberListLength<10}}">
+                <view class="add-child">
+                    <image class="avator-img_md"></image>
+                    <view class="add-text">添加宝宝</view>
+                </view>
+            </view>
+        </radio-group>
+    </scroll-view>
+    <!--预约模块-->
+    <view class="appointment-panel bg-wrap_base">
+        <view class="inoculate-title flex-center">
+            <view class="inoculate-title_hd"><text class="lz-time-grey-ico"></text>下次接种:</view>
+            <view class="inoculate-title_bd weui-flex__item"><text>2018-01-09</text><text class="week-txt">周三</text></view>
+            <view class="lz-inform-ico margin-t_xxs"></view>
+        </view>
+        <view class="flex-center">
+            <view class="weui-flex__item">
+                <view class="inoculate-item_cell"><text>麻腮风疫苗</text> <text class="inoculate-item_tab">免费</text><text class="inoculate-item_tab">必选</text></view>
+                <view class="inoculate-item_cell"><text>甲肝减毒活疫苗</text><text class="inoculate-item_tab">免费</text><text class="inoculate-item_tab">必选</text></view>
+            </view>
+            <view>
+                <!--disabled-->
+                <button class="appointment-btn" hover-class="appointment-btn-hover" bindtap="showAppointmentDialog" >预约</button>
+            </view>
+        </view>
+    </view>
+    <!--接种卡-->
+    <view class="bg-wrap_base card-box">
+        <view class="card-title flex-center">
+          <view class="weui-flex__item">接种卡</view>
+          <view>
+              <block wx:if="{{switchChecked}}">
+                  <text class="margin-r_xs switch-true">免费(必须)</text>
+              </block>
+              <block wx:else>
+                  <text class="margin-r_xs switch-false">自费</text>
+              </block>
+              <switch bindchange="switchChange" checked="{{switchChecked}}" class="switch-box" color="#fba559"/>
+          </view>
+        </view>
+
+        <!--一类免费必须疫苗-->
+        <view hidden="{{!switchChecked}}">
+            <!--疫苗类型，可手工录入-->
+            <view class="item-wrap">
+                <view class="item-title">出生</view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙肝疫苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12<text class="margin-l lz-selected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">卡介苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12<text class="margin-l lz-selected--circle"></text></view>
+                </view>
+            </view>
+            <!--疫苗类型，可查看详细信息-->
+            <view class="item-wrap">
+                <view class="item-title">1月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙肝疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">2月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">脊灰灭活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">3月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">口服脊灰减毒疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">百白破疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">4月龄</view>
+                 <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">口服脊灰减毒疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">百白破疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">5月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">百白破疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">6月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙肝疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A群流脑疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">8月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙肝减毒活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">麻风疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">9月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A群流脑疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+             <view class="item-wrap">
+                <view class="item-title">一岁半</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">百白破疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">甲肝减毒活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">麻腮风疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">2周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙脑减毒活疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">3周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A+C群流脑疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">4周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">口服脊灰减毒疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">6周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A+C群流脑疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">白破疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+        </view>
+        <!--二类自费自愿疫苗-->
+        <view hidden="{{switchChecked}}">
+            <view class="item-wrap">
+                <view class="item-title">2月龄</view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">五联疫苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12 <text class="margin-l lz-selected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">13价肺炎疫苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12 <text class="margin-l lz-selected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">Hib疫苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12 <text class="margin-l lz-selected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showRecordedDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">三联疫苗</text><text>(第1剂)</text></view>
+                    <view>2018-08-12 <text class="margin-l lz-selected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">3月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">四联疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">脊灰灭活疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">Hib疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">五联疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">13价肺炎疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">三联疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">4月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">四联疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">脊灰灭活疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">五联疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">13价肺炎疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">Hib疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">三联疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">6月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A+C流脑疫苗(结合)</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">肠道病毒71型灭活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">7月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">肠道病毒71型灭活疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">8月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙脑灭活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙脑灭活疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">9月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">A+C流脑疫苗(结合)</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">11月龄</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">轮状病毒疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+             <view class="item-wrap">
+                <view class="item-title">1周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">13价肺炎疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                 <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">水逗疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">1岁半</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">四联疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">Hib疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">甲肝灭活疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">五联疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                 <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">脊灰灭活疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">2周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙脑灭活疫苗</text><text>(第3剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">23价肺炎球菌疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">甲肝灭活疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">3周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">甲乙肝疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">ACYW135流脑疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">4周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">水痘疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">6周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">ACYW135流脑疫苗</text><text>(第2剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">乙脑灭活疫苗</text><text>(第4剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+            <view class="item-wrap">
+                <view class="item-title">9周岁</view>
+                <view class="flex-center item-cell" bindtap="showManualDialog">
+                    <view class="weui-flex__item"><text class="item-cell_txt">二价宫颈癌疫苗</text><text>(第1剂)</text></view>
+                    <view><text class="margin-l lz-unselected--circle"></text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--宝宝弹层-->
+    <view id="babyInfoDialog" hidden="{{hideBabyInfoDialog}}" catchtouchmove="preventTouchMove" class="babyinfo-dialog">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-main_prim bg-wrap_base">
+            <view class="dialog-top_close--babyInfo lz-top-cancle-ico"  bindtap="closeBabyInfoDialog"></view>
+            <!--宝宝头像-->
+            <view class="image-box_baby">
+                <image class="avator-img_md"></image>
+                <view class="item-sub">李一二 <text class="text-baby">(宝宝)</text></view>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="babyInfoPickerChange" value="{{babyInfoPickerIndex}}" range="{{babyInfoArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{babyInfoArray[babyInfoPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+
+            </view>
+            <!--选择宝宝时间-->
+            <view class="input-wrap">
+                <picker mode="date" value="{{babyInfoDate}}" start="2015-09-01" end="2067-09-01" bindchange="bindBabyInfoDateChange">
+                    <view class="input-view">{{babyInfoDate}}</view>
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <input type="number" class="input-view" placeholder="请输入接种本儿童编码"/>
+                <view class="lz-richscan-grey-ico input-icon_right"></view>
+                <view class="error">{{themeTip}}不能为空</view>
+            </view>
+            <view class="input-btn_area--appt">
+                <button class="btn-base" bindtap="babyInfoSubmit">保存宝宝信息</button>
+            </view>
+
+        </view>
+    </view>
+    <!--接种预约弹出层-->
+    <view id="appointmentDialog" hidden="{{hideAppointmentDialog}}" class="appt-dialog"  catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-main_ino bg-wrap_base" style="position:fixed;">
+            <view class="dialog-titile">接种预约<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeAppointmentDialog"></text></view>
+            <!--选择接种时间-->
+            <view class="input-wrap">
+                <picker mode="date" value="{{apptDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindApptDateChange">
+                     <view class="input-view">{{apptDate}}</view>
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="apptOrgPickerChange" value="{{apptOrgPickerIndex}}" range="{{apptOrgArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{apptOrgArray[apptOrgPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" fixed="true" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>  adjust-position="{{false}}"-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <input type="number" class="input-view" placeholder="请输入家长手机号码" maxlength="11"/>
+            </view>
+            <view class="textarea-wrap">
+                <textarea class="textarea-view" placeholder="请输入备注" show-confirm-bar="{{false}}" fixed="true" adjust-position="{{true}}"/>
+            </view>
+            <view class="input-btn_area--appt">
+                <button class="btn-base" bindtap="appointmentSubmit">预约</button>
+            </view>
+
+        </view>
+    </view>
+    <!--手工录入弹层manual-->
+    <!--<view id="manualDialog" hidden="{{hideManualDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-main_prim bg-wrap_base">
+            <view class="dialog-titile">手工录入<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeManualDialog"></text></view>
+            &lt;!&ndash;选择接种时间&ndash;&gt;
+            <view class="input-wrap"> 
+                <picker mode="date" value="{{manualDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindManualDateChange">
+                    <view class="input-view">{{manualDate}}</view>
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="textarea-wrap margin-b_manual">
+                <textarea class="textarea-view" placeholder="请输入接种机构" fixed="true" show-confirm-bar="{{false}}" adjust-position="{{false}}"/>
+                <view class="error">{{themeTip}}不能为空</view>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    &lt;!&ndash;<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>&ndash;&gt;
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="textarea-wrap margin-b_manual">
+                <textarea class="textarea-view" placeholder="请输入接种机构" fixed="true" show-confirm-bar="{{false}}" adjust-position="{{true}}"/>
+                <view class="error">{{themeTip}}不能为空</view>
+            </view>
+            <view class="input-btn_area&#45;&#45;manual">
+                <button class="btn-base" bindtap="manualSubmit">保存</button>
+            </view>
+        </view>
+    </view>-->
+    <!--手工录入弹层manual-->
+    <view id="manualDialog" hidden="{{hideManualDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-main_prim bg-wrap_base">
+            <scroll-view style="height:500rpx;overflow: auto" scroll-y="true">
+            <view class="dialog-titile">手工录入<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeManualDialog"></text></view>
+            <!--选择接种时间-->
+            <view class="input-wrap">
+                <picker mode="date" value="{{manualDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindManualDateChange">
+                    <view class="input-view">{{manualDate}}</view>
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="textarea-wrap margin-b_manual">
+                <textarea class="textarea-view" placeholder="请输入接种机构" show-confirm-bar="{{false}}" fixed="true" adjust-position="{{false}}"/>
+                <view class="error">{{themeTip}}不能为空</view>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+            <view class="input-wrap">
+                <picker bindchange="manualPartPickerChange" value="{{manualPartPickerIndex}}" range="{{manualPartArray}}" mode ="selector"  class="weui-flex__item text-center">
+                    <view class="input-view">{{manualPartArray[manualPartPickerIndex]}}</view>
+                    <!--<input type="text" class="input-view" placeholder="请选择接种机构" value="{{array[pickerIndex]}}/>-->
+                    <view class="lz-right-ico input-icon_right"></view>
+                </picker>
+            </view>
+             <view class="textarea-wrap margin-b_manual">
+                 <textarea class="textarea-view" placeholder="请输入接种机构1" show-confirm-bar="{{false}}" fixed="false" adjust-position="{{true}}"/>
+                 <view class="error">{{themeTip}}不能为空</view>
+             </view>
+            <view class="input-wrap">
+                <input type="number" class="input-view" placeholder="请输入家长手机号码" maxlength="11"/>
+            </view>
+            <view class="input-wrap">
+                <input type="text" class="input-view" placeholder="请输入家长手机号码"/>
+            </view>
+            <view class="input-btn_area--manual">
+                <button class="btn-base" bindtap="manualSubmit">保存</button>
+            </view>
+            </scroll-view>
+
+        </view>
+    </view>
+    <!--查看疫苗录入信息弹层Recorded-->
+    <view id="recordedDialog" hidden="{{hideRecordedDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-main_prim bg-wrap_base">
+            <view class="dialog-titile recorded-title">查看信息<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeRecordedDialog"></text></view>
+            <!--选择接种时间-->
+            <view class="recorded-item weui-flex">
+                <view class="recorded-item_hd">接种日期:</view>
+                <view class="weui-flex__item">2017-08-01</view>
+            </view>
+            <view class="recorded-item weui-flex">
+                <view class="recorded-item_hd">接种机构:</view>
+                <view class="weui-flex__item">雷州某某社区雷某某社</view>
+            </view>
+            <view class="recorded-item weui-flex">
+                <view class="recorded-item_hd">接种部位:</view>
+                <view class="weui-flex__item">手臂</view>
+            </view>
+        </view>
+    </view>
+    <!--修改状态时的说明--使用wx.showToast()只能显示两行-->
+    <view id="statementDialog" hidden="{{hideStatementDialog}}" catchtouchmove="preventTouchMove">
+        <view class="weui-mask"></view>
+        <view class="dialog-content dialog-main_prim bg-wrap_base">
+            <view class="dialog-titile statement-title">说明<text class="dialog-top_close lz-top-cancle-ico"  bindtap="closeStatementdDialog"></text></view>
+            <!--选择接种时间-->
+            <view class="statement-item">
+                <view>
+                    免费的疫苗为国家疫苗接种计划推行的接种项目，要求所有婴幼儿都必须接种；
+                    二类自费疫苗为自愿接种的自费型疫苗，具体疫苗信息以机构说明为准
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

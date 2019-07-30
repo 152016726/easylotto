@@ -1,0 +1,76 @@
+/* pages/doctor/index/index.wxss */
+/*医生工作台*/
+page{background-color: #fff;}
+.padding-index_top{padding:35rpx 20rpx;line-height: 1em;}
+.img-circle_lg{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+}
+.box_QRCode{  /*扫码签约*/
+	position: relative;
+	padding:0 30rpx 0 45rpx;
+	width: 115rpx;
+	color: #563bae;
+	font-size: 24rpx;
+}
+.line-vertical::before{
+    content: '';
+    position: absolute;
+    top:65rpx;
+    left: 0;
+    width: 1rpx;
+    height: 120rpx;
+    border-left: 1rpx solid #e8e8e8;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scaleX(0.5) translateY(-50%);
+    -webkit-transform: scaleX(0.5) translateY(-50%);
+}
+.dialog-content_cell{
+	width:490rpx;
+	line-height: 1em;
+	margin: 20rpx auto 15rpx;
+}
+.text-align_left{text-align: left;}
+.dialog-main_code {
+	width:170px;
+	height:170px;
+	margin:10rpx auto 14rpx;
+	background:#bababa;
+}
+.box_sign{ /* 签约审核*/
+	position: relative;
+	padding: 27rpx 22rpx;
+	background-color: #f0f3fc;
+}
+.pic-bg{
+	width: 750rpx;
+	height: 200rpx;
+	border-radius: 20rpx; 
+}
+.box-text{
+	position: absolute;
+	top:76rpx;
+	right:94rpx;
+	text-align: right;
+}
+.canvas-series{
+	width: 100%;
+	padding-right: 45rpx;
+	text-align: right;
+}
+.canvas-circle{
+	display: inline-block;
+	width: 15rpx;
+	height: 15rpx;
+	border-radius: 50%;
+	border: 1rpx solid #21a1f6;
+}
+.canvas-circle_primary{border: 1rpx solid #ff918c;}
+.canvas{  /*图表*/
+	width: 100%;
+	height:600rpx;
+	margin-top:30rpx;
+}
+.pic-null{margin-top: 126rpx;}

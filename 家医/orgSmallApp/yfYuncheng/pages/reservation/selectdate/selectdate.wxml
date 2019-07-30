@@ -1,0 +1,44 @@
+<view class="block1">
+  <image src="../../../images/img_default.png"></image>
+  <view>
+    <view class="detail">
+      <text class="name">张医生</text>
+      <text class="career">主任医师</text>
+      <text class="attention-ico"></text>
+    </view>
+    <view class="hospital">习水县医院</view>
+  </view>
+</view>
+<view class="block2">
+  <view class="header-tab">
+    <view class="{{tabTag=='time'?'active':''}}" bindtap="tabChangeTap" data-id="time">
+      <view>挂号时间</view>
+    </view>
+    <view class="{{tabTag=='dec'?'active':''}}" bindtap="tabChangeTap" data-id="dec">
+      <view>医生介绍</view>
+    </view>
+    <view></view>
+  </view>
+  <view class="body-content">
+    <view class="tabledate" style="display: {{tabTag=='time'?'flex':'none'}}">
+      <view class="trdate" wx:for="{{arr}}">
+        <view class="tddate dhead">
+          <view>{{item}}</view>
+          <view>08/21</view>
+        </view>
+        <view class="tddate dbody">
+          <view class="money">2.5元</view>
+          <view>上午</view>
+        </view>
+        <view class="tddate dbody">
+          <view class="money">2.5元</view>
+          <view>下午</view>
+        </view>
+      </view>
+    </view>
+    <view style="display: {{tabTag=='dec'?'flex':'none'}}">医生介绍...</view>
+  </view>
+</view>
+<view>
+  <view>选择时间段</view>
+</view>

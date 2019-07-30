@@ -1,0 +1,224 @@
+
+page {
+  font-size:28rpx;
+  background: #fff;
+}
+.justify {
+	text-align: justify;
+}
+.sign-info {
+	padding: 10rpx;
+}
+.sign-info > view {
+	margin: 0 0 0.7rpx 0;
+}
+.sign-info .threeline > text:nth-child(1) {
+}
+.sign-info .threeline > view:nth-child(2) {
+    padding-left: 30rpx;
+}
+.sign-info .threeline > view:nth-child(2) > view {
+    border-bottom: 1px #ddd solid;
+    min-height: 15rpx;
+    text-align: center;
+    display: inline-block;
+}
+.sign-info > view.tenbitspl {
+   /*  padding-left: 8.5rpx; */
+}
+.sign-info > view.fourbitspl {
+    /* padding-left: 3.6rpx; */
+}
+.sign-info > view:last-child {
+	margin-bottom: 0rpx;
+}
+.sign-info > view > text {
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	float: left;
+}
+.sign-info .orgfontc {
+    border-bottom: 1px #ddd solid;
+    display: -webkit-box;
+    display: flex;
+    min-height: 15rpx;
+}
+.sign-role {
+	padding: 10rpx;
+}
+.sign-role .orgfontc {
+	color: #dd781e;
+}
+.sign-role .teamClass{
+	min-height: 15rpx;
+}
+.sign-role > view {
+	/* position: relative; */
+	margin-bottom: 14rpx;
+}
+.sign-role > view.sixbitspl {
+    /* padding-left: 5.2rpx; */
+}
+.sign-role > view.fourbitspl {
+    /* padding-left: 3.6rpx; */
+}
+.sign-role > view.sixbitspl > view,
+.sign-role > view.fourbitspl > view {
+    border-bottom: 1px #ddd solid;
+    display: -webkit-box;
+    display: flex;
+}
+.sign-role > view.sixbitspl > text,
+.sign-role > view.fourbitspl > text {
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	float: left;
+}
+.sign-content > view {
+	padding-bottom: 20rpx
+}
+.sign-content .phead {
+	position: relative;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+.sign-content .phead .pcircle-wap {
+	position: relative;
+    z-index: 2;
+    background: #fff;
+    display: inline-block;
+    padding: 0 20rpx;
+}
+.sign-content .phead .pcircle-wap .pcircle {
+    background-color: #4c4c4c;
+    display: inline-block;
+    color: #fff;
+    width:40rpx;
+    height:40rpx;
+    line-height:40rpx;
+    border-radius:50%;
+    font-size:25rpx;
+}
+.sign-content .phead .pcircle-line {
+    border-bottom: 1px #a3a3a3 solid;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.sign-content .pbody {
+    padding: 0 10rpx;
+}
+.sign-content .pbody p {
+	text-align: justify;
+	line-height: 15;
+}
+.sign-content .pbody table {
+	width:100%;
+	border-spacing: 0;
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+	text-align: center;
+	margin-bottom: 8rpx;
+}
+.sign-content .pbody table td,
+.sign-content .pbody table th {
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	padding: 4rpx 0;
+}
+.sign-content .pbody table th {
+	color: #999;
+	font-weight: 400
+}
+.sign-confirm {
+	padding: 10rpx;
+	position: relative;
+}
+.sign-confirm .nosign {
+	position:absolute;
+  top:-90px;
+  left:110rpx;
+  width:200rpx;
+}
+.sign-confirm > view {
+	margin-bottom: 15rpx;
+}
+.sign-confirm .aliright {
+    position: relative;
+}
+.sign-confirm > view.sixbitspl {
+    /* padding-left: 5.2rpx; */
+}
+.sign-confirm > view.egbitspl {
+    /* padding-left: 7rpx; */
+}
+.sign-confirm > view.egbitspl > view {
+    border-bottom: 1px #ddd solid;
+    display: -webkit-box;
+    display: flex;
+    height: 15rpx;
+}
+.sign-confirm > view.sixbitspl > text,
+.sign-confirm > view.egbitspl > text {
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	float: left;
+}
+.sign-confirm .alinone {
+	position: relative;
+}
+.sign-confirm .alinone > view {
+	height: 120rpx;
+    border-bottom: 1px #ddd solid;
+    text-align: center;
+}
+.sign-confirm > view.flex-two:after {
+	content: '';
+	visibility: hidden;
+	clear: both;
+	display: block;
+	height: 0;
+}
+.sign-confirm > view.flex-two > view {
+	width: 50%;
+	float: left;
+	position: relative;
+}
+.sign-confirm > view.flex-two > view:not(:last-child) {
+	padding-right: 5rpx;
+}
+.sign-confirm > view.flex-two > view > view {
+    display: -webkit-box;
+    display: flex;
+}
+.sign-confirm > view.flex-two > view > text {
+	float: left;
+}
+.sign-content .table {
+  font-size: 22rpx;
+  padding:20rpx;
+
+}
+.sign-content .table > view {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.sign-content .table > view > view {
+  flex: 2;
+  -webkit-flex: 2;
+  text-align: center
+}
+.sign-content .table > view > view:nth-child(1) {
+  flex: 1;
+  -webkit-flex: 1;
+  text-align: left
+}
+.sign-content .table > view > view:last-child {
+  text-align: right
+}

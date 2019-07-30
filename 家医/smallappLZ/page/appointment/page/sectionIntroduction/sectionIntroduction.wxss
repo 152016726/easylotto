@@ -1,0 +1,54 @@
+.officeBox{
+   height: 100%
+}
+.officeList{
+  display: flex;
+  border-top: 1px solid #E8E8E8;
+  height: 100%;
+}
+.officeLeft{
+   flex: 2;
+   font-size: 30rpx;
+   overflow-y:scroll;
+   max-height: 1214rpx;
+   background-color: #fff;
+   border-right: 1px solid #E8E8E8;
+}
+.scrollbar::-webkit-scrollbar{
+  display: none;
+}
+.officeLeft .officeItem{
+    text-indent: 14rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    color: #7A7A7A;
+    border-bottom: 1rpx dashed #B2B2B2;
+    box-sizing: border-box
+}
+
+.officeList .officeLeft .active{
+  background-color: #F4F4F4;
+  color:black;
+  
+}
+.officeList .officeLeft .mint-cell .mint-cell-text{
+  font-size: .18rem;
+}
+.officeList .officeRight{
+   flex: 3;
+   font-size: 30rpx;
+   overflow-y:scroll;
+   max-height: 1214rpx;
+}
+.officeList .officeRight .officeItem{
+    text-indent: 14rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    color: #000000;
+    border-bottom: 1rpx dashed #B2B2B2;
+    box-sizing: border-box
+}
+.officeList .officeLeft .officeItem:last-child,.officeList .officeRight .officeItem:last-child{
+  border: none
+}
+

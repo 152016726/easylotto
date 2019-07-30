@@ -1,0 +1,82 @@
+page {
+  background-color: #f3f3f3;
+}
+.search {
+  padding:14rpx 20rpx;
+  position:relative;
+}
+.search .input-wap {
+  position:relative;
+}
+.search .input-wap .search-ico {
+  position:absolute;
+  top:18rpx;
+  left:18rpx;
+}
+.search .input-wap .delete-small-line-ico {
+  position:absolute;
+  top:14rpx;
+  right:20rpx;
+}
+.search .input-wap input {
+  background-color: #fff;
+  border-radius:200rpx;
+  border: solid 1px #a0a0a0;
+  font-size: 26rpx;
+  padding-left: 55rpx;
+  padding-right: 70rpx;
+  height:58rpx;
+}
+.search .location-wap {
+  position:absolute;
+  color: #525252;
+  font-size: 26rpx;
+  top: 25rpx;
+  right: 30rpx;
+
+}
+.search .location-wap .location-ico {
+  margin-right: 5rpx;
+}
+.list {
+  color: #525252;
+  font-size: 32rpx;
+}
+.current-row {
+  padding: 30rpx 30rpx;
+  background:#fff;
+}
+.current-row .current-city {
+  padding-right:15rpx;
+  padding-top:30rpx;
+}
+.current-row .city-btn {
+  border: 1rpx solid #09f;
+  font-size: 32rpx;
+  padding: 10rpx 30rpx;
+  float: left;
+  border-radius: 6rpx;
+}
+.all-row .header {
+  padding: 30rpx 30rpx;
+  line-height: 1;
+  border-bottom: 1rpx #e5e5e5 solid;
+  background: #F1F3F7;
+}
+.all-row .body > view {
+  padding: 50rpx 30rpx;
+  line-height: 1;
+  border-bottom: 1rpx #e5e5e5 solid;
+  background: #fff;
+}
+.letter-tab {
+  position: fixed;
+  right: 15rpx;
+  top: 140rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #BEBFC3;
+}
+.letter-tab .active {
+  color: #09f;
+}

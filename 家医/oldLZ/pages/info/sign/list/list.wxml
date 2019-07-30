@@ -1,0 +1,100 @@
+<view class="rm-wrap" wx:if="{{!scroll.ifNull}}">
+    <scroll-view scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" enable-back-to-top="true">
+        <!--已通过-->
+        <view class="bg-wrap_base" wx:for="{{signList}}" wx:if="{{item.orderType==1}}">
+            <!--navigator个状态有的部分-->
+            <navigator url="../detail/detail?id={{item.id}}">
+                <view class="weui-cell panel-title_default">
+                    <view class="weui-cell__bd fc-xs_prim">
+                        <text class="time-grey-ico icon-col_clockGray"></text><text class="margin-r_xs">签约时间</text><text>{{item.createTime}}</text>
+                    </view>
+                    <!--status订单状态--0:审核中 1:已签约 2:已取消 3:已超时 4:未通过 9:删除-->
+                    <!--已通过/审核中（0/1）-字体颜色-->
+                    <block wx:if="{{item.status==0||item.status==1}}">
+                        <view class="weui-cell__ft fc-xxs_warn">{{item.statusDesc}}</view>
+                    </block>
+                    <!--已取消/未通过(2/4)-字体样色-->
+                    <block wx:if="{{item.status==2||item.status==4}}">
+                        <view class="weui-cell__ft fc-xs_prim">{{item.statusDesc}}</view>
+                    </block>
+                </view>
+                <view class="weui-cell team-title_default fc-xlg_default">
+                    <view class="weui-cell__bd ellipsis-line_one">{{item.prodName}}</view>
+                </view>
+                <view class="weui-cell padder-wrap_defalut">
+                    <view class="weui-cell__hd">
+                        <image src="{{item.teamImagePic?item.teamImagePic:'../../../../images/img_teamdefault.png'}}" class="team-img_avator" mode="aspectFill"></image>
+                    </view>
+                    <view class="weui-cell__bd min-width_zero">
+                        <view class="fc-xs_default">{{item.teamName}}</view>
+                        <view class="fc-xxs_prim margin-t_sub"><text class="margin-r_xs">服务时间</text><text>{{item.serviceTime}}</text></view>
+                    </view>
+                </view>
+            </navigator>
+            <!--已通过显示的栏目 status1-->
+            <block wx:if="{{item.status==1}}">
+                <view class="weui-cell team-row_right">
+                    <view class="weui-cell__bd">
+                        <text class="fc-xxs_prim margin-r_xs">服务剩余时间</text>
+                        <text class="fc-xxs_warn">{{item.serviceRemainTime<90?(item.serviceRemainTime +"天") : "约"+(item.serviceRemainTime-(item.serviceRemainTime%30))/30+"个月"}}</text>
+                    </view>
+                    <block wx:if="{{item.serviceRemainTime<15}}">
+                        <!--解约按钮本期不考虑-->
+                        <!--<button class="weui-btn weui-btn_base weui-btn_xs" bindtap="showRemoveSignDialog" data-id="{{item.teamId}}">解约</button>-->
+                        <navigator class="weui-btn weui-btn_normal weui-btn_xs" url="../../../sign/detail/detail?id={{item.teamId}}">续签</navigator>
+                    </block>
+                </view>
+            </block>
+            <!--已取消/未通过(2/4)---显示原因，目前只有未通过状态有原因-->
+            <block wx:if="{{item.status==4}}">
+                <view class="weui-cell padder-wrap_rs">
+                    <view class="weui-cell__hd fc-xxs_prim margin-r_xs">拒绝原因</view>
+                    <view class="weui-cell__bd fc-xxs_warn">{{item.reason}}</view>
+                </view>
+            </block>
+        </view>
+        <view class="load-text">{{scroll.loadText}}</view>
+    </scroll-view>
+    <!--  取消签约弹层--本期不考虑-->
+    <!--<view id="removeSignDialog" catchtouchmove="preventTouchMove" wx:if="{{showRemoveSignDialog}}">
+        <view class="weui-mask"></view>
+        <view class="dialog-content">
+            <view class="dialog-header">
+                <view class="dialog-header_title">
+                    您正在解约
+                </view>
+                <view class="list-back-ico dialog-header_bg"></view>
+            </view>
+            <view class="dialog-body">
+                <view class="dialog-body_title">
+                    与家庭医生解除合约后，将不再自动续约。确定解除合约？
+                </view>
+                <view class="weui-flex dialog-main">
+                    <view>
+                        <image src="../../../../images/img_default.png"  class="avator-img_dialog" mode="aspectFill"></image>
+                    </view>
+                    <view class="weui-flex__item min-width_zero">
+                        <view>样浩宁医师团队</view>
+                        <view class="margin-t_sm fc-sm_prim weui-media-box__desc"> 1名主任医师、3名护士、2名中医生</view>
+                    </view>
+                </view>
+                <view class="weui-flex dialog-btn_area">
+                    <button class="weui-btn weui-btn_normal weui-btn_md" bindtap="confirmRemove">确定</button>
+                    <button class="weui-btn weui-btn_base weui-btn_md" bindtap="cancelRemove">再想想</button>
+                </view>
+            </view>
+            <view class="dialog-box_close">
+                <i class="delete-big-ico dialog-delete" bindtap="closeRemoveDialog"></i>
+            </view>
+        </view>
+    </view>-->
+</view>
+<!--空页面-->
+<view class="rm-wrap" wx:if="{{scroll.ifNull}}">
+    <view class="list-null-box">
+        <view class="list-null-ico"></view>
+        <view class="fc-md_prim margin-tb_base">亲，还没有任何签约哦！</view>
+        <navigator url="../../../sign/selectcommunity/selectcommunity" class="weui-btn weui-btn_normal weui-btn_sm">去签约</navigator>
+    </view>
+</view>
+

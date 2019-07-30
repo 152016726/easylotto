@@ -1,0 +1,24 @@
+<!--pages/info/mediciner/detail/detail.wxml-->
+<view class="rm-wrap weui-flex">
+    <view class="weui-flex detail-panel" url="../detail/detail">
+        <image src="" class="avator-img_md" mode="aspectFill"></image>
+        <view class="weui-flex__item detail-panel_bd">
+            <view class="detail-panel_hd weui-flex"><text >张医生</text><text class="warn-tip_sm">主任医师</text></view>
+            <view class="ellipsis-line_one margin-t_sm">
+                <text>习水县医院</text>
+            </view>
+        </view>
+    </view>
+    <view class="weui-flex__item box-content">
+        <view class="item-title">个人擅长</view>
+        <view class="box-content_bd">
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+            个人擅长个人擅长个人擅长个人擅长
+        </view>
+    </view>
+</view>

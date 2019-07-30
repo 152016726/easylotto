@@ -1,0 +1,60 @@
+<view class="lx_lx">
+  <view>完成确认</view>
+  <view>你的服务以确定</view>
+</view>
+
+<navigator class="lx_log" url="../apply/apply?mas={{mar.id}}" >
+  <image class="lx_img" src="{{mar.teamImageUrl}}"></image>
+  <view class="lx_mar">
+    <view>{{mar.teamName}}</view>
+    <view>责任医生：{{mar.exeDocName}}</view>
+  </view>
+  <image class="lx_cs" src="/page/info/images/jt.png"></image>
+</navigator>
+
+<!-- <navigator></navigator> -->
+<navigator class="lx_le" url="../recent/recent?mas={{mar.id}}" wx:if="{{mar.status==0}}">
+  <view class="lx_lar">
+    <view>计划时间：{{mar.execTime}}</view>
+    <view>如上述时间不方便,请申请改期或联系医生申请{{gaiqi}}</view>
+  </view>
+  <view class="lx_pe" style="display:{{aa}}">
+  改期 〉
+  </view>
+</navigator>
+
+<view class="lx_le" url="../recent/recent?mas={{mar.id}}" wx:if="{{mar.status!=0}}">
+  <view class="lx_lar">
+    <view>计划时间：{{mar.execTime}}</view>
+    <view>如再需改动,请联系医生申请{{gaiqi}}</view>
+  </view>
+  <view class="lx_pe" style="display:{{aa}}">
+
+  </view>
+</view>
+
+
+<view class="lx_po">
+  <view>方案名称</view>
+  <view>{{mar.name}}</view>
+</view>
+<view class="lx_po">
+  <view>服务名称</view>
+  <view>{{mar.planNameAs}}</view>
+</view>
+<view class="lx_po">
+  <view>理论时间</view>
+  <view>{{mar.execTime}}</view>
+</view>
+<view class="lx_po" style="margin-top:30rpx;">
+  <view>服务对象</view>
+  <view>{{mar.memberName}}</view>
+</view>
+<view class="lx_po">
+  <view>联系地址</view>
+  <view>{{userId.provinceName}}{{userId.cityName}}{{userId.districtName}}(联系电话：{{mar.userMobile}})</view>
+</view>
+
+
+
+

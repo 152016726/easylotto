@@ -1,0 +1,47 @@
+<view class="block1">
+  <view class="clearfox">
+    <text class="left">{{hospDetail.hospName}}</text>
+    <text class="right lz-navigation-ico"></text>
+  </view>
+  <view class="clearfox">
+    <text class="left">{{hospDetail.hospDesc}}</text>
+    <text class="right lz-location-circle-ico"></text>
+  </view>
+  <view class="bookwrap">
+    <view class="lefttag">预约时间</view>
+    <view class="rightcontent">
+      <view>{{options.schDate}} {{options.timePeriod==1?'上午':(options.timePeriod==2?'下午':'晚上')}}</view>
+      <view>{{options.beginTime}} - {{options.endTime}}</view>
+    </view>
+  </view>
+  <view class="bookwrap">
+    <view class="lefttag">挂号费用</view>
+    <view class="rightcontent">
+      <view>{{options.schRegfee}}元</view>
+    </view>
+  </view>
+</view>
+<view class="block2">
+  <navigator class="header clearfox" url="../../../info/pages/visitor/add/add" hover-class="none">
+    <text class="borderleft left"></text>
+    <text class="left">选择就诊人</text>
+    <text class="right lz-add-ico"></text>
+  </navigator>
+  <scroll-view scroll-x style="width: {{width}}" bindscroll="scrolltap">
+    <radio-group bindchange="radioChange" class="scroll-wrap">
+      <view wx:for="{{memberList}}" class="scroll-view-item">
+        <radio value="{{item.id}}" checked=""/>
+        <view class="item">
+          <view class="name">{{item.patName}}</view>
+          <view>
+            <image src="{{item.imgUrl?item.imgUrl : item.patSex=='1'?'/images/img_famMale.png':'/images/img_famFemale.png'}}"></image>
+          </view>
+          <!--view class="namedic">外甥</view-->
+        </view>
+      </view>
+    </radio-group>
+  </scroll-view>
+  <view class="btn-area">
+      <button class="btn-primary" bindtap="confirmTap">确定</button>
+  </view>
+</view>

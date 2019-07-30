@@ -1,0 +1,158 @@
+.wl_log {
+  background: #0099ff;
+  height: 170rpx;
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+}
+
+.wl_log view {
+  display: inline-block;
+}
+
+.wl_log view:first-child {
+  width: 500rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.wl_log view:nth-child(2) {
+  width: 230rpx;
+  font-size: 30rpx;
+  color: #f7ff88;
+  text-align: center;
+}
+
+.wl_log view:nth-child(3) {
+  margin-top: 50rpx;
+  width: 500rpx;
+  font-size: 30rpx;
+  color: #dcddf2;
+}
+
+.wl_zl {
+  width: 660rpx;
+  margin: 25rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 15rpx;
+}
+
+.wl_zl view {
+  display: inline-block;
+}
+
+.wl_mc view:first-child {
+    color: #adadad;
+  font-size: 28rpx;
+}
+
+.wl_mc view:nth-child(2) {
+  font-size: 28rpx;
+  color: #adadad;
+  margin-left: 10rpx;
+}
+
+.wl_mc view:nth-child(3) {
+  font-size: 30rpx;
+  color: #adadad;
+  margin-left: 10rpx;
+}
+
+.wl_tl {
+  width: 660rpx;
+  height: 100rpx;
+  color: #adadad;
+  font-size: 30rpx;
+}
+
+.wl_qd {
+  width: 750rpx;
+    margin-top: 575rpx;
+}
+
+.wl_qd view {
+  display: inline-block;
+  height: 80rpx;
+  margin-left: 90rpx;
+  width: 240rpx;
+  border-radius: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  z-index: 3
+}
+
+.wl_qd .mageb {
+  border: 1px solid #777;
+  color: #777;
+}
+
+.wl_qd view:nth-child(2) {
+color:#fff;
+background: #0099ff;
+}
+.wo_xlas {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  
+}
+
+.wo_gbs {
+  width: 626rpx;
+  height: 470rpx;
+  background: #fff;
+  margin-top: 220rpx;
+  margin-left: 42rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.wo_gne {
+  text-align: center;
+  width: 100%;
+  font-size:30rpx;
+  padding-top: 10rpx;
+}
+
+.wo_kax {
+  border: 1px solid #979797;
+  border-radius: 15rpx;
+  padding: 10rpx;
+  margin-top: 20rpx;
+}
+
+.wo_kax textarea {
+  height: 200rpx;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #979797;
+}
+
+.wo_qfs {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.wo_qfs view {
+  width: 40%;
+  height: 77rpx;
+  margin-left:6%; 
+  font-size: 30rpx;
+  display: inline-block;
+  border-radius: 77rpx;
+  text-align: center;
+  line-height: 77rpx;
+
+}
+.wo_qfs view:first-child{
+  border: 1px solid #e9e9e9;
+
+}
+.wo_qfs view:nth-child(2){
+ background: #0099ff;
+  color:#fff;
+}

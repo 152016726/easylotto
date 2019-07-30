@@ -1,0 +1,72 @@
+.sm-wap{
+	border-top:none;
+}
+.address-list{
+	margin-bottom: 120rpx;
+	background-color: #fff;
+}
+.list-null-box{
+	top:40%;
+}
+.address-txt {
+	font-size: 32rpx;
+	color: #979797;
+	margin-top:45rpx;
+}
+.editinfo-list{
+	padding: 28rpx 65rpx 24rpx 40rpx;
+}
+.list-block{
+	border-top:1rpx solid #eee;
+}
+.addressinfo-name{
+	font-size: 32rpx;
+	color: #3a3a3a;
+	margin: 0 38rpx 16rpx 0;
+}
+.addressinfo-phone{
+	font-size: 27rpx;
+	color: #999;
+}
+.addressinfo-address{
+	font-size: 28rpx;
+	color: #999;
+}
+.address-set{
+	margin-left: 30rpx;
+	padding: 10rpx 11rpx 11rpx 0; 
+	border-top: 1rpx solid #e5e5e5;
+	height: 70rpx;
+	position: relative;
+}
+.address-checkbox{
+	display: inline-block;
+	position: absolute;
+	top: 25rpx;
+}
+.address-setdef{
+	display: inline-block; 
+	margin-left: 60rpx;
+	font-size: 24rpx;
+	color: #525252;
+	margin-top: 16rpx;
+}
+.address-btn{
+	float: right; 
+}
+.address-set button{
+	margin-right: 36rpx;
+}
+button:after{border:0;}
+.address-add{
+	font-size: 34rpx;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 120rpx;
+	width: 100%;
+	background: linear-gradient(to right,#1ac2f9,#0099ff);
+}

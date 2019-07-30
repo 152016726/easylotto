@@ -1,0 +1,24 @@
+.form-line{
+	height: 140rpx;
+	position: relative;
+}
+.form-line:first{
+	border: none;
+}
+.form-label{
+	width: 135rpx;
+} 
+.btn-area{
+	padding-top: 40rpx;
+	padding-bottom: 40rpx;
+}
+.rel-arrow{
+	position: absolute;
+	right: 38rpx;
+	width: 18rpx;
+	height:26rpx;
+  top:57rpx;
+}
+.form-value{
+	width: calc(100% - 200rpx);
+}

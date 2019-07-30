@@ -1,0 +1,144 @@
+<view class="yt-wrap">
+	<view class="page-content_unfixed">
+		<scroll-view class="" scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!scroll.ifNull}}"> 
+			<radio-group class="radio-group scroll-view" bindchange="radioChange">
+				<label class="" wx:for="{{scrollboxList}}">
+					<radio value="{{item.teamName}}" checked="{{item.checked}}"/>
+					<view class="scroll-box"> 
+						<view class="flex-between">
+							<view class="box-title">{{item.teamName}}</view>
+							<view class="lz-choosen-ico"></view>
+						</view>
+						<view class="weui-flex">
+							<view class="scroll-block">{{item.teamNum}}名成员</view>
+							<view class="scroll-block margin-left_xxs">{{item.teamLeader}}</view>
+						</view>
+						<view class="flex-between">
+							<view class="flex-center">
+								<view class="lz-write-grey-ico"></view>
+								<view class="lz-write-white-ico"></view>
+								签约<text class="margin-l_xxs">{{item.signNum}}</text>
+							</view>
+							<view class="flex-center">
+								<view class="lz-calendar-grey-ico"></view>
+								<view class="lz-calendar-white-ico"></view>
+								服务<text class="margin-l_xxs">{{item.serveNum}}</text>
+							</view>
+						</view>
+					</view> 
+				</label>
+			</radio-group>
+		</scroll-view> 
+		<!-- 中间信息栏 -->
+		<view class="wrap-middle">
+			<view class="wrap-edit">
+				<view class="flex-between wrap-line1">
+					<view class="title-block">签约人</view>
+					<view class="flex-center">
+						<button class="flex-center">
+							<view class="lz-edit-ico"></view>
+							<view class="font-grey_s margin-left_xxs">编辑</view>
+						</button>
+						<checkbox-group class="margin-left_s" bindchange="checkAllChange">
+							<checkbox class="lz-checkbox-circle" checked="{{checkAll}}"/>
+							<text class="margin-left_xxs">全选</text>
+						</checkbox-group>
+					</view>
+				</view>
+			</view>
+			<scroll-view class="scroll-view_middle" scroll-x="true"> 
+				<checkbox-group class="content" bindchange="checkboxSelected">
+					<view class="box" wx:for="{{checkboxList}}">
+						<checkbox value="{{item.value}}" checked="{{item.checked}}" wx:if="{{item.signStatus=='0'}}"/>
+						<view class="content-wap">
+							<view class="name {{(item.signStatus=='1')?'signed':''}}">{{item.name}}</view>
+							<view><image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../images/img_famMale.png':'../../../images/img_famFemale.png'}}" mode="aspectFill"></image></view>
+							<view class="relation">{{item.relation}}</view>
+							<view class="selected-ico"></view>
+							<view class="signed-tag" wx:if="{{item.signStatus=='1'}}">已签</view>
+						</view>
+					</view>
+					<view wx:if="{{checkboxList.length < 10}}" class="box" bindtap="linkAddMemberTap">
+						<view><image src="../../../images/add.png" mode="aspectFit"></image></view> 
+						<view class="name" style="opacity:0">...</view>
+					</view>
+				</checkbox-group>
+			</scroll-view> 
+			<view class="wrap-edit">
+				<view class="flex-between wrap-line2">
+					<view class="wrap-left">已选：</view>
+					<view class="weui-flex__item">
+						<block wx:for="{{checkboxList}}">
+							<text wx:if="{{ index <checkboxList.length-1}}">{{item.relation}}({{item.name}})、</text>
+							<text wx:else>{{item.relation}}({{item.name}})</text>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 地址栏 -->
+		<form bindsubmit="bindFormSubmit">	
+			<view class="wrap-edit_bottom">	  
+				<view class="flex-between wrap-title">
+					<view>地址信息</view>
+					<view class="flex-center">
+						<button class="flex-center" bindtap="bindEditTap" wx:if="{{showEdit}}">
+							<view class="lz-edit-ico"></view>
+							<view class="font-grey_s margin-left_xxs">编辑</view>
+						</button>
+						<view class="flex-center" wx:if="{{!showEdit}}">
+							<button class="flex-center" form-type="submit" >
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">保存</view>
+							</button>
+							<button class="flex-center" bindtap="bindQuitEdit">
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">取消</view>
+							</button>
+						</view>
+					</view>
+				</view>
+				<view class="wrap-content">
+					<textarea class="font-grey_s" value="{{textVal}}" focus="" disabled="{{textareaDisabled}}" name="textarea"/>
+				</view>
+			</view>
+		</form>
+	</view>
+	<!-- 底边栏 -->
+	<view class="page-bottom_fixed">
+		<view class="flex-center">
+			<checkbox-group bindchange="checkboxSign">
+				<label class="checkbox">
+					<checkbox class="lz-checkbox-circle" checked="" value="{{readChecked}}"/>
+					<text class="margin-left_xs">已阅读并同意 <text class="f-c_warn">签约协议</text></text>
+				</label>
+			</checkbox-group>
+		</view>
+		<button class="weui-btn weui-btn_info" url="" disabled="{{signbtnDisabled}}" bindtap="bindSign">签约</button>
+	</view>
+</view>
+
+ <!-- <view class="block block3">
+	<view class="header clearfox">
+		<view class="left">选择家庭成员</view>
+		<checkbox-group class="check-wap right" bindchange="checkAllChange">
+			<text>全选</text>
+			<checkbox class="ws-checkbox" checked="{{checkAll}}"/>
+		</checkbox-group>
+	</view>
+	<checkbox-group class="content" bindchange="checkboxChange">
+		<view class="box" wx:for="{{checkboxList}}">
+			<checkbox value="{{item.value}}" checked="{{item.checked}}" wx:if="{{item.signStatus=='0'}}"/>
+			<view class="content-wap">
+				<view><image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../images/img_famMale.png':'../../../images/img_famFemale.png'}}" mode="aspectFill"></image></view>
+				<view class="name">{{item.name}}</view>
+				<view class="selected-ico"></view>
+				<view class="signed-tag" wx:if="{{item.signStatus=='1'}}">已签</view>
+			</view>
+		</view>
+		<view wx:if="{{checkboxList.length < 10}}" class="box" bindtap="linkAddMemberTap">
+			<view><image src="../../../images/add.png" mode="aspectFit"></image></view>
+			<view class="name" style="opacity:0">...</view>
+		</view>
+	</checkbox-group>
+</view> -->

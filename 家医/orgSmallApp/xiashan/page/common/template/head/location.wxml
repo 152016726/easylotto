@@ -1,0 +1,3 @@
+<template name="location">
+    <view class="head-hd"><text class="lz-location-ico"></text>湛江</view>
+</template>

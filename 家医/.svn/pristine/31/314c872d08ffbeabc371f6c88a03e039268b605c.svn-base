@@ -1,0 +1,137 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wxf9b46d65f027cf94",
+	"projectname": "%E9%9B%B7%E5%B7%9E%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"svr": "/",
+	"client": "/",
+	"qcloudRoot": "/",
+	"miniprogramRoot": "/",
+	"pluginRoot": "/",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": -1,
+					"name": "快速签约",
+					"pathName": "page/quicksign/quicksign/quicksign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图标",
+					"pathName": "page/lzico/lzico",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已签约",
+					"pathName": "page/quicksign/signresult/signresult",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "本人签约",
+					"pathName": "page/familydoctor/pages/sign/ownsign/ownsign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "家庭签约",
+					"pathName": "page/familydoctor/pages/sign/familysign/familysign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "家庭医生首页",
+					"pathName": "page/familydoctor/pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加家庭成员",
+					"pathName": "page/info/pages/family/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "成员列表",
+					"pathName": "page/info/pages/family/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "接种管理",
+					"pathName": "page/inoculation/inoculation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队详情",
+					"pathName": "page/info/pages/doctors/teamdetail/teamdetail",
+					"query": "id=761754301381358001"
+				},
+				{
+					"id": -1,
+					"name": "就诊人列表",
+					"pathName": "page/info/pages/visitor/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "就诊人添加",
+					"pathName": "page/info/pages/visitor/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "科室列表",
+					"pathName": "page/reservation/pages/selectdoctor/selectdoctor",
+					"query": "id=581265028660350976"
+				},
+				{
+					"id": 13,
+					"name": "报告详情",
+					"pathName": "page/info/pages/report/list/list",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "我的预约",
+					"pathName": "page/info/pages/reservation/list/list",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "订单支付",
+					"pathName": "page/reservation/pages/orderpay/orderpay",
+					"query": "id=813190107948863500"
+				}
+			]
+		}
+	}
+}

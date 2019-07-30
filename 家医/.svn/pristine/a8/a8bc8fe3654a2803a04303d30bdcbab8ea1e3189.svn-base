@@ -1,0 +1,184 @@
+/* pages/info/report/detail/detail.wxss */
+/*检查*/
+.yt-wrap{
+	font-size: 30rpx;
+	color: #7a7a7a;
+}
+.wrap-flex{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.wrap-flex_top{width: 100%;}
+.wrap-line1{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	padding:30rpx 25rpx 17rpx 63rpx;
+	font-size: 26rpx;
+}
+.lz-time-grey-ico,
+.lz-order-grey-ico{
+	margin-bottom: -5rpx;
+}
+.wrap-line2{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	padding:25rpx 25rpx 0rpx 63rpx;
+	font-size: 34rpx;
+	font-weight: 600;
+	color:#000;
+}
+.wrap-line2_l{
+	margin-left: 20rpx;
+	font-size: 28rpx;
+}
+.wrap-line3{
+	padding:19rpx 25rpx 22rpx 63rpx;
+	font-size: 28rpx;
+	color:#7a7a7a;
+}
+.wrap-middle_check{
+	width:700rpx;
+	margin:34rpx auto;
+	border:1rpx soild #e8e8e8;
+	border-radius:10rpx;
+	box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+	background-color: #fff;
+}
+.wrap-title{
+	position: relative;
+	padding:25rpx 34rpx;
+	font-size:34rpx;
+	font-weight: 600;
+	color:#000;
+}
+.wrap-title:before{
+    content: " ";
+    position: absolute;
+    left:12rpx;
+    top:50%;
+    width:22rpx;
+    height:40rpx;
+    background:#5394ff;
+    border-radius:8rpx;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5) translateY(-50%); /*压缩及垂直居中*/
+    transform: scaleX(0.5) translateY(-50%);
+}
+.wrap-content{
+	line-height:1.5em;
+	padding:10rpx 36rpx 46rpx;
+}
+.wrap-bottom_inspect{
+	position: fixed;
+	top:250rpx;
+	bottom: 0;
+	width:700rpx;
+	border:1rpx soild #e8e8e8;
+	border-radius:10rpx;
+	box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+	background-color: #fff;
+	font-size:30rpx;
+	color:#7a7a7a;
+	overflow-y: auto;
+}
+.box-small{
+	width:146rpx;
+	height:35rpx; 
+	line-height: 35rpx;
+	font-size:28rpx;
+	color:#ff8801;
+	text-align: center;
+	border:2rpx solid #ff8801;
+	border-radius:100rpx;
+}
+/*报告详情条形图*/
+.barBox{
+	position: relative;
+	padding:50rpx 0 95rpx;
+	font-size:28rpx;
+	color:#7a7a7a;
+}
+.barBox-bar_grey{
+	height:30rpx;
+    background:#f4f4f4;
+	border-radius:19rpx;
+}
+.barBox-bar_blue{
+	position: absolute;
+	top:53rpx;
+	left: 34rpx;
+	width:560rpx;
+	height:24rpx;
+	background-image:linear-gradient(-138deg,#76cfff 0%,#59a1f4 100%);
+	box-shadow:4rpx 4rpx 10rpx 0 rgba(0,0,0,0.06);
+	border-radius:19rpx;
+}
+.barBox-value_min{
+	position: absolute;
+	top:10rpx;
+	left: 34rpx;
+}
+.barBox-value_max{
+	position: absolute;
+	top:10rpx;
+	right: 34rpx;
+}
+.barBox-value{
+	position: absolute;
+	top:94rpx;
+	left: 140rpx;
+	min-width:80rpx;
+	padding: 7rpx 10rpx;
+	margin-right:30rpx;
+	text-align: center;
+	font-size:28rpx;
+	color:#fff;
+	background:#70b9fb;
+	border-radius: 100rpx;
+	z-index:10;
+}
+.barBox-value:after{
+	position: absolute;
+	content: '';
+	left: 40%;
+	top: -14rpx;
+	border-top: 0rpx solid transparent;
+	border-bottom: 15rpx solid #70b9fb;
+	border-left: 11rpx solid transparent;
+	border-right: 11rpx solid transparent;
+}
+.barBox-value.is-abnormal{
+	background:#fba559;
+}
+.barBox-value.is-abnormal:after{
+	border-bottom: 15rpx solid #fba559;
+}
+/*检查项没有范围值*/
+.yt-wrap .weui-cell{
+	padding:30rpx 0;
+}
+.yt-wrap .weui-cell::before{
+	left:0;
+	border-top: 1rpx dashed #e5e5e5;
+}
+.yt-wrap .weui-cell:last-child{
+	border-bottom: 1rpx dashed #e5e5e5;
+}
+.font-blue_m{
+	color: #70b9fb;
+	font-size: 30rpx;
+}

@@ -1,0 +1,34 @@
+
+<view class="manageList" wx:for="{{ manageList }}" data-index="{{ index }}" wx:key="{{ item }}" bindlongtap='longtapHandler'>
+  <view class='confirm' wx:if="{{ inx === index }}">
+      <view class='delete' bindtap='deleteHandler'>删除</view>
+      <view class='cancel' bindtap='cancelHandler'>取消</view>
+  </view>
+  <image class="checked" data-index="{{ index }}" data-status="{{ item.isChecked }}" bindtap='changeStatus' src='{{ item.isChecked?"./images/check_user.png":"./images/nocheck_user.png" }}'></image>
+  <view class='radius'></view>
+  <view class='list-right'>
+    <view class="essential-i">
+      <text class="name">{{ item.name }}</text>
+      <text class="sex">{{ item.sex }}</text>
+      <text class="age">{{ item.age }}</text>
+    </view>
+    <view>
+        <image class='card-img' src='{{ item.cardimgSrc }}'></image>
+        <text class="card">{{ item.card }}</text>
+      </view>
+      <view>
+      <image class='phone-img' src='{{ item.phoneimgSrc }}'></image>
+      <text class="phone">{{ item.phone }}</text>
+    </view>
+  </view>
+</view>
+
+<view class='manageremind'>
+  <image class='remind-img' src='./images/remind_user.png'></image>
+  <text class="reminduser">还能再增加{{ num }}位就诊人。</text>
+</view>
+
+<button class="managebutton" wx:if="{{ num>0  }}" bindtap="addPatient">
+  <text class="sure">新增就诊人</text>
+</button>
+<view class='shadow'  bindtap='cancelHandler' wx:if="{{ inx !== '' }}"></view>

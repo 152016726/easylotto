@@ -1,0 +1,42 @@
+<view class="wl_log">
+  <view>{{mas.name}}</view>
+  <view>{{mas.jihua}}</view>
+  <view>计划时间：{{mas.nextTime}}</view>
+</view>
+
+<view class="wl_zl">
+  <view class="wl_mc">
+    <view>{{mas.userName}}</view>
+    <view>{{los.xingbie}}</view>
+    <view wx:if="los.age">{{los.age}}岁</view>
+  </view>
+  <view class="wl_tl">{{los.provinceName}}{{los.cityName}}{{los.districtName}}{{los.address}}({{los.userName}}:{{los.userMobile}})</view>
+</view>
+
+
+<view class="wl_qd" wx:if='{{mas.status==3}}'>
+  <view bindtap='quexiao' class="mageb">关闭任务</view>
+  <view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
+      <view class="picker" style="margin-left:0rpx;">
+        确定完成
+      </view>
+    </picker>
+  </view>
+</view>
+
+
+
+<view class="wo_xlas" style="height:{{gaodu}}px;display:{{xianshi3}}">
+  <view class="wo_gbs">
+    <view class="wo_gne">关闭任务</view>
+    <view class="wo_kax">
+      <textarea name="txt" clos=",50" rows="5" warp="virtual" placeholder='请输入关闭理由' value="{{ceshi}}" bindblur="bindTextAreaBlur"></textarea>
+    </view>
+    <view class="wo_qfs">
+      <view bindtap='qxiao'>取消</view>
+      <view bindtap="queding">确定</view>
+    </view>
+  </view>
+
+</view>

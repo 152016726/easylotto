@@ -1,0 +1,195 @@
+<view style="background:#ddd">
+<view>
+  <view class="location-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">location-ico</text>
+</view>
+<view>
+  <view class="location-line-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">location-line-ico</text>
+</view>
+<view>
+  <view class="pen-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">pen-ico</text>
+</view>
+<view>
+  <view class="selected-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">selected-ico</text>
+</view>
+<view>
+  <view class="pen-circle-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">pen-circle-ico</text>
+</view>
+<view>
+  <view class="love-circle-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">love-circle-ico</text>
+</view>
+<view>
+  <view class="delete-small-line-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">delete-small-line-ico</text>
+</view>
+<view>
+  <view class="delete-small-red-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">delete-small-red-ico</text>
+</view>
+<view>
+  <view class="delete-big-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">delete-big-ico</text>
+</view>
+<view>
+  <view class="time-big-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">time-big-ico</text>
+</view>
+<view>
+  <view class="complete-big-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">complete-big-ico</text>
+</view>
+<view>
+  <view class="setting-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">setting-ico</text>
+</view>
+<view>
+  <view class="search-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">search-ico</text>
+</view>
+<view>
+  <view class="question-grey-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">question-grey-ico</text>
+</view>
+<view>
+  <view class="question-white-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">question-white-ico</text>
+</view>
+<view>
+  <view class="top-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">top-ico</text>
+</view>
+<view>
+  <view class="down-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">down-ico</text>
+</view>
+<view>
+  <view class="right-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">right-ico</text>
+</view>
+<view>
+  <view class="arrow-up-org-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">arrow-up-org-ico</text>
+</view>
+<view>
+  <view class="arrow-down-blue-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">arrow-down-blue-ico</text>
+</view>
+<view>
+  <view class="male-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">male-ico</text>
+</view>
+<view>
+  <view class="female-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">female-ico</text>
+</view>
+<view>
+  <view class="list-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">list-ico</text>
+</view>
+<view>
+  <view class="group-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">group-ico</text>
+</view>
+<view>
+  <view class="family-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">family-ico</text>
+</view>
+<view>
+  <view class="location-blue-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">location-blue-ico</text>
+</view>
+<view>
+  <view class="house-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">house-ico</text>
+</view>
+<view>
+  <view class="building-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">building-ico</text>
+</view>
+<view>
+  <view class="notice-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">notice-ico</text>
+</view>
+<view>
+  <view class="calendar-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">calendar-ico</text>
+</view>
+<view>
+  <view class="time-grey-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">time-grey-ico</text>
+</view>
+<view>
+  <view class="time-white-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">time-white-ico</text>
+</view>
+<view>
+  <view class="user-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">user-ico</text>
+</view>
+<view>
+  <view class="indications-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">indications-ico</text>
+</view>
+<view>
+  <view class="like-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">like-ico</text>
+</view>
+<view>
+  <view class="mark-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">mark-ico</text>
+</view>
+<view>
+  <view class="code-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">code-ico</text>
+</view>
+<view>
+  <view class="code-circle-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">code-circle-ico</text>
+</view>
+<view>
+  <view class="location-null-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">location-null-ico</text>
+</view>
+<view>
+  <view class="error-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">error-ico</text>
+</view>
+<view>
+  <view class="list-back-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">list-back-ico</text>
+</view>
+<view>
+  <view class="file-back-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">file-back-ico</text>
+</view>
+<view>
+  <view class="doctor-man-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">doctor-man-ico</text>
+</view>
+<view>
+  <view class="sign-success-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">sign-success-ico</text>
+</view>
+<view>
+<view>
+  <view class="list-null-ico"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">list-null-ico</text>
+</view>
+  <view class="blue-block-back"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">blue-block-back</text>
+</view>
+<view>
+  <view class="red-block-back"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">red-block-back</text>
+</view>
+<view>
+  <view class="green-block-back"></view>
+  <text style="margin-left:20rpx;font-size:26rpx;">green-block-back</text>
+</view>
+
+</view>

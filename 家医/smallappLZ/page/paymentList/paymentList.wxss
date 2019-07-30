@@ -1,0 +1,96 @@
+.selectBox{
+   background-color: #fff;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1
+  }
+ .selectBox  .select-item{
+   display: flex;
+   padding:20rpx 0; 
+   border-bottom:2px solid #eaeaea;
+ }
+.selectBox .select-item .select{
+   flex: 1;
+   height: 60rpx;
+   line-height:60rpx;
+   text-align: center;
+   font-size: 30rpx;
+}
+.selectBox .select-item .select image{
+   width: 16px;
+   height: 8px;
+   margin-left:30rpx;
+}
+.selectBox .active{
+  color:#52d728
+}
+.selectBox .patientList{
+   font-size: 28rpx;
+   background: #fff;
+  }
+  .selectBox .show{
+     display: block   
+  } 
+  .selectBox .patientList .down,.selectBox .patientList .checked{
+     background: #ececec
+  }
+  .selectBox .patientList .patientItem{
+      text-indent: 20rpx;
+      height: 40px;
+      line-height: 40px;
+      border-bottom:1px solid #dddbdb;
+      text-align: center
+  }
+  
+   .shadow{
+     position: fixed;
+     height: 100%;
+     width: 100%;
+     z-index: 0;
+     top:0;
+     background:rgba(0,0,0,0.5);
+   }
+
+   .paymentList{
+     padding: 118rpx 20rpx 20rpx;
+      
+   }
+   .paymentList .paymentItem{
+      border-radius: 20rpx;
+      background: #fff;
+      padding: 30rpx 40rpx;
+      margin-bottom: 20rpx;
+      box-shadow: 2px 1px 8px #dddbdb
+   }
+    .paymentList .paymentItem .paymentItem-tit{
+      height: 80rpx;
+      line-height: 80rpx;  
+      font-weight: bold;
+      border-bottom:1px dashed #cbcbcb;
+      padding-bottom: 20rpx; 
+      font-size: 34rpx; 
+    }
+    .paymentList .paymentItem .paymentItem-tit .name{
+      float: left
+    }
+      .paymentList .paymentItem .paymentItem-tit .price{
+      float: right;
+      color: #ff8801
+    }
+     .paymentList .paymentItem .patient,.paymentList .paymentItem .time{
+        padding-top: 26rpx;
+        font-size: 32rpx; 
+     }
+    .paymentList .paymentItem .status{
+         width: 140rpx;
+         height: 60rpx;
+         line-height: 60rpx;
+         border-radius:30rpx;
+         border: 1px solid #7a7a7a;
+         box-sizing: border-box;
+         font-size: 32rpx; 
+         text-align: center;
+         color:#7a7a7a;
+         margin-top: 30rpx;
+    }

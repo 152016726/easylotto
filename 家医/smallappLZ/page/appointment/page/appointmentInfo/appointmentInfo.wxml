@@ -1,0 +1,40 @@
+<view class="app_location">
+  <view>
+    <view class="app_locationname">
+      <view>陈小林很肥</view>
+      <image src="../../../../images/ic-dl.png"></image>
+    </view>
+    <view class="app_locationnames">
+      <view>陈小林无敌肥</view>
+      <image src="../../../../images/ic-ip.png"></image>
+    </view>
+  </view>
+  <view class="app_time">
+    <view>预约时间</view>
+    <view>
+      2019年 05月05日 下午 01:00-04:00/05:12
+    </view>
+  </view>
+</view>
+<view class="app_height">
+  <view class="app_add">
+    <view></view>
+    <view>选择就诊人</view>
+    <image src="../../../../images/ic_add.png"></image>
+  </view>
+  <swiper class='swiperClass' indicator-color="#a39f99" indicator-active-color="#f49641" interval="2000" duration="1000" previous-margin="30px" next-margin="30px" circular='true' bindchange="bindchange">
+    <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <view class="swiperview {{swiperIndex == index ? 'marginClass' : 'fontClass'}}">{{item.name}}</view>
+      <image src="{{item.imgs}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+      </image>
+      <view class="swiperview {{swiperIndex == index ? 'latsClass' : 'latsmarginClass'}}">{{item.name}}</view>
+    </swiper-item>
+  </swiper>
+  <view class="app_scaleplate">
+    <image src="../../../../images/ic_xz.png"></image>
+  </view>
+  <view class="app_confirm">
+    <view>确定</view>
+  </view>
+
+</view>

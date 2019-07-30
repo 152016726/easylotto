@@ -1,0 +1,96 @@
+<view class="yt-wrap">
+	<view class="page-content_unfixed">
+		<scroll-view class="" scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!scroll.ifNull}}"> 
+			<radio-group class="radio-group scroll-view" bindchange="radioChange">
+				<label class="" wx:for="{{scrollboxList}}">
+					<radio value="{{item.teamName}}" checked="{{item.checked}}"/>
+					<view class="scroll-box"> 
+						<view class="flex-between">
+							<view class="box-title">{{item.teamName}}</view>
+							<view class="lz-choosen-ico"></view>
+						</view>
+						<view class="weui-flex">
+							<view class="scroll-block">{{item.teamNum}}名成员</view>
+							<view class="scroll-block margin-left_xxs">{{item.teamLeader}}</view>
+						</view>
+						<view class="flex-between">
+							<view class="flex-center">
+								<view class="lz-write-grey-ico"></view>
+								<view class="lz-write-white-ico"></view>
+								签约<text class="margin-l_xxs">{{item.signNum}}</text>
+							</view>
+							<view class="flex-center">
+								<view class="lz-calendar-grey-ico"></view>
+								<view class="lz-calendar-white-ico"></view>
+								服务<text class="margin-l_xxs">{{item.serveNum}}</text>
+							</view>
+						</view>
+					</view> 
+				</label>
+			</radio-group>
+		</scroll-view> 
+		<!-- 中间信息栏 -->
+		<view class="wrap-edit_middle font-grey_s">
+			<view class="flex-between wrap-line1">
+				<view class="title-block">签约人</view>
+				<button class="flex-center">
+					<view class="lz-edit-ico"></view>
+					<view class="font-grey_s margin-left_xxs">编辑</view>
+				</button>
+			</view>
+			<view class="flex-center wrap-line2">
+				<text class="font-black_xl">张三</text>
+				<view class="lz-phone-grey-ico margin-left_s"></view>
+				<text class="margin-left_xxs">{{phoneNumber}}</text>
+			</view>
+			<view class="flex-center wrap-line3">
+				<view class="lz-idCard-ico"></view>
+				<text class="margin-left_xxs">{{idCard}}</text>
+			</view>	
+			<view class="flex-center wrap-line3">
+				<view class="lz-location-grey-ico margin-left_xxs"></view>
+				<view class="margin-left_xxs">广州市天河区基河区基河区基区基河区基区基</view>
+			</view>	
+		</view>
+		<!-- 地址栏 -->
+		<form bindsubmit="bindFormSubmit">	
+			<view class="wrap-edit_bottom">	  
+				<view class="flex-between wrap-title">
+					<view>地址信息</view>
+					<view class="flex-center">
+						<button class="flex-center" bindtap="bindEditTap" wx:if="{{showEdit}}">
+							<view class="lz-edit-ico"></view>
+							<view class="font-grey_s margin-left_xxs">编辑</view>
+						</button>
+						<view class="flex-center" wx:if="{{!showEdit}}">
+							<button class="flex-center" form-type="submit" >
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">保存</view>
+							</button>
+							<button class="flex-center" bindtap="bindQuitEdit">
+								<view class="lz-edit-ico"></view>
+								<view class="font-grey_s margin-left_xxs">取消</view>
+							</button>
+						</view>
+					</view>
+				</view>
+				<view class="wrap-content">
+					<textarea class="font-grey_s" value="{{textVal}}" focus="" disabled="{{textareaDisabled}}" name="textarea"/>
+				</view>
+			</view>
+		</form>
+	</view>
+	<!-- 底边栏 -->
+	<view class="page-bottom_fixed">
+		<view class="flex-center">
+			<checkbox-group bindchange="checkboxChange">
+				<label class="checkbox">
+					<checkbox class="lz-checkbox-circle" checked="" value="{{readChecked}}"></checkbox>  
+					<text class="margin-left_xs">已阅读并同意 <text class="f-c_warn">签约协议</text></text>
+				</label>
+			</checkbox-group>
+		</view>
+		<button class="weui-btn weui-btn_info" url="" disabled="{{signbtnDisabled}}" bindtap="bindSign">签约</button>
+	</view>
+</view>
+

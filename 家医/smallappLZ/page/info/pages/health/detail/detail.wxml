@@ -1,0 +1,98 @@
+<view class="yt-wrap">
+  <block wx:if="{{type=='2'}}">
+    <view class="flex-center wrap-top">
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.maxValueMax}}/{{statValue.minValueMax}}</view>
+        <view class="font-grey_m">最高</view>
+      </view>
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.maxValueAvg}}/{{statValue.minValueAvg}}</view>
+        <view class="font-grey_m">平均</view>
+      </view>
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.maxValueMin}}/{{statValue.minValueMin}}</view>
+        <view class="font-grey_m">最低</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type!='2'}}">
+    <view class="flex-center wrap-top">
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.valueMax}}</view>
+        <view class="font-grey_m">最高</view>
+      </view>
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.valueAvg}}</view>
+        <view class="font-grey_m">平均</view>
+      </view>
+      <view class="flex-center wrap-topBox">
+        <view>{{statValue.valueMin}}</view>
+        <view class="font-grey_m">最低</view>
+      </view>
+    </view>
+  </block>
+  <view class="wrap-chart">
+    <view class="weui-flex">
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="font-info_m nav-item {{currentTab==index ? 'nav-item_active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+    <block wx:if="{{chartLength!=0}}">
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+    </block>
+    <block wx:if="{{chartLength==0}}">
+      <view class="flex-center flex-flow_column padding-default">
+        <view class="pic-null error-ico"></view>
+        <text class="font-info_m">暂无数据</text>
+      </view>
+    </block>
+
+
+
+    <block wx:if="{{type=='2'}}">
+      <view class="di_loe">
+        <image src="../../../images/jt.png" class="de_le" bindtap='qiehuan' data-dis="0"></image>
+        <view class="font-grey_m">{{endDate}}</view>
+        <image src="../../../images/jt.png" class="de_ri" bindtap='qiehuan' data-dis="1"></image>
+        <view class="font-b2b2b2_s">({{unit}})</view>
+        <view class="dl_mer">
+          <view>高压
+            <text class="font-blue_xb margin-left_xxs">{{maxIndiValuelatest}}</text>
+          </view>
+          <view class="margin-left_s">低压
+            <text class="font-org_xb margin-left_xxs">{{minIndiValuelatest}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{type!='2'}}">
+
+      <view class="di_loe ">
+        <image src="../../../images/jt.png" class="de_le" bindtap='qiehuan' data-dis="0"></image>
+        <view class="font-grey_m">{{endDate}}</view>
+        <image src="../../../images/jt.png" class="de_ri" bindtap='qiehuan' data-dis="1"></image>
+        <view class="font-b2b2b2_s">({{unit}})</view>
+        <view class="font-blue_xb">{{indiValuelatest}}</view>
+      </view>
+    </block>
+    <view class="btn-area">
+      <button class="weui-btn weui-btn_info" url="" disabled="" bindtap="bindRecord">新增记录</button>
+    </view>
+  </view>
+  <view class="news-wrap">
+    <view class="flex-center news-wrap_title" bindtap="linkCList">
+      <view class="lz-news-ico"></view>
+      <view class="weui-flex__item">健康资讯</view>
+      <view class="lz-right-ico"></view>
+    </view>
+    <!-- <view wx:if="{{scroll.ifNull}}" class="null-type">{{scroll.nullText}}</view> -->
+    <scroll-view class="scroll-view" scroll-y="true" style="height: {{height}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view wx:for="{{communityList}}" data-id="{{item.id}}" class="news-item weui-flex" bindtap="linkCDetail">
+        <view class="weui-flex__item news-item_bd">
+          <view class="news-item_title">{{item.title}}</view>
+          <view class="fc-time">{{item.createTime}}</view>
+        </view>
+        <image mode="aspectFill" src="{{item.iconUrl}}" class="news-image"></image>
+      </view>
+      <view class="load-text">{{scroll.loadText}}</view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+/* pages/info/register/list/list.wxss */
+.register-timeBox{
+	width:340rpx;
+	height: 44rpx;
+	margin:22rpx auto;
+	border-radius: 100rpx;
+	background-color: #fff;
+	font-size: 26rpx;
+	color:#7a7a7a;
+	line-height:44rpx;
+	text-align: center;
+}
+.register-content{
+	width:696rpx;
+	margin:12rpx auto 34rpx;
+	padding:0 0rpx 0 22rpx;
+	border:1rpx soild #e8e8e8;
+	border-radius:10rpx;
+	box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.16);
+	background-color: #fff;
+}
+.content-line{
+	position: relative;
+	padding:29rpx 34rpx 20rpx 12rpx;
+	line-height: 2em;
+	font-size: 30rpx;
+	color:#000;
+	border-top: 1rpx dashed #979797;
+}
+.content-line:nth-of-type(1){
+	padding:28rpx 34rpx 19rpx 12rpx;
+	font-size: 32rpx;
+	font-weight: 600;
+	border-top: 0;
+}
+.content-line:nth-of-type(4){
+	padding:10rpx 34rpx 27rpx 12rpx;
+}
+.flex-between{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 2rem;
+}
+.weui-btn_info{
+	display: inline-block;
+	width:200rpx;
+	line-height: 60rpx;
+	color:#fff;
+	font-size: 34rpx;
+	text-align: center;
+	background:#5394ff;
+	border-radius:100rpx;
+}
+.weui-btn_info:visited{color:#d0d0d0;}
+.weui-btn_info:active{color:#d0d0d0;}
+.weui-btn_fail{
+	display: inline-block;
+	width:200rpx;
+	line-height: 60rpx;
+	color:#fff;
+	font-size: 34rpx;
+	background:#b2b2b2;
+	border-radius:100rpx;
+	text-align: center;
+}
+.weui-btn_fail:visited{color:rgba(255, 255, 255,0.4);}
+.weui-btn_fail:active{color:rgba(255, 255, 255,0.4); }

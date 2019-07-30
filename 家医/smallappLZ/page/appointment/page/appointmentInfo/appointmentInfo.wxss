@@ -1,0 +1,191 @@
+.swiperClass {
+  margin: 0;
+}
+
+swiper image.active {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+
+swiper {
+  height: 354rpx;
+  padding-top: 60rpx;
+  background: #fff;
+}
+
+swiper image {
+  border: 4rpx solid #eee;
+}
+
+swiper image.quiet {
+  transform: scale(0.7);
+  transition: all 0.2s ease-in 0s;
+}
+
+swiper-item {
+  width: 200rpx !important;
+  margin-left: 220rpx;
+}
+
+.slide-image {
+  width: 200rpx !important;
+  height: 200rpx;
+  border-radius: 200rpx;
+  position: relative;
+}
+
+.swiperview {
+  text-align: center;
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+
+.fontClass {
+  margin-top: 20rpx;
+  margin-bottom: -24rpx;
+  color: #7a7a7a;
+}
+
+.marginClass {
+  margin-bottom: 10rpx;
+}
+
+.latsClass {
+  margin-top: -14rpx;
+  color: #b2b2b2;
+  font-size: 28rpx;
+}
+
+.latsmarginClass {
+  margin-top: -42rpx;
+  color: #b2b2b2;
+  font-size: 28rpx;
+}
+
+.app_scaleplate {
+  background: #fff;
+  text-align: center;
+  height: 65rpx;
+}
+
+.app_scaleplate image {
+  width: 64rpx;
+  height: 76rpx;
+  margin-top: -20rpx;
+  /* border: 1rpx solid #000; */
+}
+
+.app_confirm {
+  text-align: center;
+  padding: 36rpx 40rpx;
+  background: #fff;
+  padding-top: 76rpx;
+  font-size: 30rpx;
+}
+
+.app_confirm view {
+  color: #fff;
+  background: #5394ff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 80rpx;
+}
+
+.app_add {
+  height: 40rpx;
+  padding: 40rpx;
+  background: #fff;
+  border-bottom: 1px dashed #eee;
+  line-height: 40rpx;
+  margin-top: 24rpx;
+}
+
+.app_add view:first-child {
+  width: 12rpx;
+  background: #5394ff;
+  border-radius: 20rpx;
+  height: 40rpx;
+}
+
+.app_add view {
+  margin-right: 12rpx;
+  height: 40rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  line-height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.app_add  image {
+  width: 42rpx;
+  height: 42rpx;
+  float: right;
+}
+
+.app_location {
+  margin: 26rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.app_location>view:first-child {
+  height: 140rpx;
+  padding: 20rpx 20rpx;
+}
+
+.app_locationname {
+  height: 40rpx;
+  line-height: 40rpx;
+    font-size: 38rpx;
+    margin: 25rpx 0;
+}
+.app_locationnames {
+  height: 40rpx;
+  line-height: 40rpx;
+    font-size: 30rpx;
+    color:#7a7a7a;
+ margin: 25rpx 0;
+}
+.app_time{
+  height: 130rpx;
+  color:#fff;
+ background: linear-gradient(#FFBA66,#FBA13C);
+}
+
+
+.app_locationname view:first-child,.app_locationnames view:first-child {
+
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block
+}
+.app_locationname image,.app_locationnames image{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+.app_time view:first-child{
+  height: 130rpx;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 130rpx;
+  width: 200rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.app_time view:nth-child(2){
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 34rpx;
+  width: 400rpx;
+  height: 110rpx;
+  padding: 10rpx 0;
+}
+.app_height{
+  height: calc(100vh - 360rpx);
+  background: #fff;
+}

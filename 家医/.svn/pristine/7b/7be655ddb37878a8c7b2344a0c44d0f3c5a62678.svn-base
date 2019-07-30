@@ -1,0 +1,57 @@
+<view class="yt-wrap">
+	<!--咨询医生-->
+	<view class="page-content_unfixed ">
+		<view class="scroll-view_hd" wx:if="{{checkboxList.length>0}}">咨询医生 <text>(不选医生，即默认对全团队咨询。)</text></view>
+		<scroll-view class="scroll-view_middle" scroll-x="true" wx:if="{{checkboxList.length>0}}">
+			<view class="content">
+				<view class="box {{item.active}}" wx:for="{{checkboxList}}" bindtap="checkboxSelected" data-id="{{item.id}}">
+					<view class="content-wap">
+						<view><image src="{{item.imgUrl?item.imgUrl : item.sex=='1'?'../../../../../images/img_famMale.png':'../../../../../images/img_famFemale.png'}}" mode="aspectFill"></image></view>
+						<view class="name">{{item.docName}}</view>
+						<view class="selected-ico"></view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+
+		<view class="forminfo">
+			<view class="item-title">咨询主题 <text class="item-star">*</text></view>
+			<view class="input-wrap">
+				<input class="input-view" placeholder="请输入咨询主题" bindinput="themeInputTap"/>
+				<view class="error">{{themeTip}}</view>
+			</view>
+			<view class="item-title">发病时间<text class="item-star">*</text></view>
+			<!--选择接种时间-->
+			<view class="input-wrap">
+				<picker mode="date" value="{{diseaseDate}}" start="2015-09-01" end="2067-09-01" bindchange="binDiseaseDateChange">
+					<view class="input-view">{{diseaseDate}}</view>
+					<view class="lz-right-ico input-icon_right"></view>
+				</picker>
+				<!--<view class="error">不能为空</view>-->
+			</view>
+			<view class="item-title">主要症状<text class="item-star">*</text></view>
+			<view class="textarea-wrap">
+				<textarea class="textarea-view" placeholder="尽可能详细描述您的症状，疾病和身体状况，以便医生提供更好的意见" show-confirm-bar="{{false}}" bindinput="symptomInputTap"/>
+				<view class="error">{{symptomTip}}</view>
+			</view>
+			<view class="item-title">就诊经历(选填)</view>
+			<view class="textarea-wrap">
+				<textarea class="textarea-view" placeholder="如有过相关就诊经历，请您详细描述情况" show-confirm-bar="{{false}}" bindinput="experienceInputTap"/>
+			</view>
+		</view>
+	</view>
+	<!-- 底边栏 -->
+	<view class="page-bottom_fixed">
+		<view class="flex-center">
+			<checkbox-group bindchange="checkboxConsult">
+				<label class="checkbox">
+					<checkbox class="lz-checkbox-circle" checked="" value="{{readChecked}}"/>
+					<text class="margin-left_xs">已阅读并同意 <text class="f-c_warn">咨询说明</text></text>
+				</label>
+			</checkbox-group>
+		</view>
+		<button class="weui-btn weui-btn_info" url="" disabled="{{submitbtnDisabled}}" bindtap="bindSubmit">提交</button>
+	</view>
+</view>
+
+ 

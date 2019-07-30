@@ -1,0 +1,16 @@
+<view class="paymentDir">
+    <view class="dirList">
+       <view class="listTit">缴费说明</view>
+       <view>1:目前只支持微信支付</view>
+       <view>2:微信支付只提供自费缴费,如需医保请移步人工窗口处进行缴费</view>
+       <view>3:如需打印发票、费用清单或者办理退费请移步到人工窗口咨询办理</view>
+       <label class="checkbox" bindtap='toggleAgree'>
+        <checkbox class="checkbox-hidden" />
+        <icon class="checkbox-nogroup-circle-icon agr-icon" type="success" size="18" wx:if="{{ agree }}"></icon>
+        <icon class="checkbox-nogroup-circle-icon agr-icon" type="circle" size="18" wx:if="{{!agree}}"></icon>
+        我已阅读缴费说明
+       </label>
+    </view>
+    <button class="next" bindtap='toPayList' disabled="{{ !agree }}">下一步</button>
+</view>
+

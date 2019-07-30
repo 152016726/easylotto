@@ -1,0 +1,14 @@
+<view class='officeBox'>
+      <view class="officeList">
+        <view class="officeLeft scrollbar">
+          <view class="officeItem" class="{{ item.status?'active officeItem':'officeItem'  }}"  wx:for="{{ officeList }}" wx:key="{{ index }}">
+             {{ item.name }}
+           </view>
+        </view>
+        <view class="officeRight scrollbar">
+             <view class="officeItem" bindtap='toSlectTime' class="{{ item.status?'active officeItem':'officeItem'  }}"  wx:for="{{ officeList }}" wx:key="{{ index }}">
+                  {{ item.name }}
+              </view>
+        </view>
+      </view>
+</view>
